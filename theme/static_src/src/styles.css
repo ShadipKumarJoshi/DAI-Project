@@ -8,3 +8,19 @@
   * the scope of this path.
   */
 @source "../../../**/*.{html,py,js}";
+
+
+/* Custom classes */
+.btn-black {
+  @apply bg-black text-white px-4 py-1 rounded text-sm hover:bg-gray-800 hover:text-blue-600 active:bg-blue-600 cursor-pointer;
+}
+
+.btn-white {
+  @apply border px-4 py-1 rounded text-sm hover:bg-gray-200  hover:text-blue-600 active:bg-blue-600 cursor-pointer;
+}
+
+.btn-blue {
+  @apply mt-4 md:mt-0 bg-blue-600 text-white px-4 py-2 rounded-md 
+         hover:bg-blue-900 transition duration-300 text-lg shadow-md 
+         active:bg-black active:text-white cursor-pointer
+}
