@@ -1,7 +1,6 @@
-<section class="bg-white py-20 px-6 text-center">
-  <!-- Swiper Container with relative positioning and bottom padding -->
-  <div class="swiper max-w-5xl mx-auto relative pb-16">
-
+<section class="bg-white py-20 px-6 text-center relative">
+  <!-- Swiper Container -->
+  <div class="swiper max-w-5xl mx-auto pb-10">
     <!-- Slides wrapper -->
     <div class="swiper-wrapper">
       <!-- Slide 1 -->
@@ -47,15 +46,13 @@
       </div>
     </div>
 
-   
     <!-- Navigation buttons -->
     <div class="swiper-button-prev text-black"></div>
     <div class="swiper-button-next text-black"></div>
+  </div>
 
- <!-- Pagination bullets -->
-   <div class="w-full flex justify-center absolute bottom- z-10">
-  <div class="swiper-pagination"></div>
-</div>
-
+  <!-- Pagination bullets outside swiper container, but visually aligned below -->
+  <div class="w-full flex justify-center mt-6">
+    <div class="swiper-pagination"></div>
   </div>
 </section>

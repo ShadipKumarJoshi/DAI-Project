@@ -6,23 +6,21 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title>
-      {% block title %}
-
-      {% endblock %}
-    </title>
-    {% tailwind_css %}
-
+    <title> {% block title %} {% endblock %}</title>
+    {% tailwind_css %} 
     <!-- Swiper CSS CDN -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
   </head>
   <body>
+
     {% include 'core/components/navbar.html' %}
 
     {% block content %}
 
     {% endblock %}
     {% include 'core/components/footer.html' %}
+
+
 
     <!-- Swiper JS CDN -->
     <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
