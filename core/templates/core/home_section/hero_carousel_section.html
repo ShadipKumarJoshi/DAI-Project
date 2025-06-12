@@ -9,7 +9,7 @@
             {{ slide.title|safe }}
           </h1>
           <p class="text-gray-600 max-w-xl mx-auto mb-6">
-            {{ slide.description }}
+            {{ slide.description | safe }}
           </p>
           <div class="space-x-4">
             <button class="{{ slide.button1_class }}">{{ slide.button1_text }}</button>
