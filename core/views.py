@@ -1,4 +1,6 @@
 from django.shortcuts import render
+from . import models 
 
-def home(req):
-    return render(req, 'core/home.html')
+def home(request):
+    sliders = models.Slider.objects.all()
+    return render(request, 'core/home.html', {'sliders': sliders})
