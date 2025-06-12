@@ -1,7 +1,7 @@
 {% load static %}
 
 <footer class="bg-white border-t border-gray-200 text-[#0F1324] text-sm font-satoshi mt-10">
-  <div class="max-w-7xl mx-auto  py-10 grid grid-cols-1 md:grid-cols-4 gap-8">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 grid grid-cols-1 md:grid-cols-4 gap-8">
     <!-- Left section: Logo and description -->
     <div class="space-y-3">
       <div class="flex items-center space-x-2">
@@ -62,19 +62,20 @@
     </div>
   </div>
 
-  <!-- Bottom bar -->
-  <div class="border-t border-gray-200 py-4 flex flex-col md:flex-row items-center justify-between px-4 sm:px-6 lg:px-8">
-    <p class="text-xs text-gray-500">2025 © DAI All Rights Reserved</p>
-    <div class="flex space-x-4 mt-2 md:mt-0">
-      <a href="#" class="block w-5 h-5">
-    <img src="{% static 'core/images/icons/twitter.png' %}" alt="Twitter" class="w-full h-full object-contain hover:opacity-70 transition" />
-  </a>
-  <a href="#" class="block w-5 h-5">
-    <img src="{% static 'core/images/icons/instagram.png' %}" alt="Instagram" class="w-full h-full object-contain hover:opacity-70 transition" />
-  </a>
-  <a href="#" class="block w-5 h-5">
-    <img src="{% static 'core/images/icons/facebook.png' %}" alt="Facebook" class="w-full h-full object-contain hover:opacity-70 transition" />
-  </a>
+<!-- Bottom bar -->
+  <div class="border-t border-gray-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex flex-col md:flex-row items-center justify-between">
+      <p class="text-xs text-gray-500">2025 © DAI All Rights Reserved</p>
+      <div class="flex space-x-4 mt-2 md:mt-0">
+        <a href="#" class="block w-5 h-5">
+          <img src="{% static 'core/images/icons/twitter.png' %}" alt="Twitter" class="w-full h-full object-contain hover:opacity-70 transition" />
+        </a>
+        <a href="#" class="block w-5 h-5">
+          <img src="{% static 'core/images/icons/instagram.png' %}" alt="Instagram" class="w-full h-full object-contain hover:opacity-70 transition" />
+        </a>
+        <a href="#" class="block w-5 h-5">
+          <img src="{% static 'core/images/icons/facebook.png' %}" alt="Facebook" class="w-full h-full object-contain hover:opacity-70 transition" />
+        </a>
+      </div>
     </div>
   </div>
-</footer>

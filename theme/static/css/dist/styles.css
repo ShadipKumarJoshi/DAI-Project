@@ -650,11 +650,6 @@
     transition-duration: var(--tw-duration, var(--default-transition-duration));
   }
   @media (hover: hover) {
-    .hover\:text-\[\#0F1324\]:hover {
-      color: #0F1324;
-    }
-  }
-  @media (hover: hover) {
     .hover\:text-blue-600:hover {
       color: var(--color-blue-600);
     }
