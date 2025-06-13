@@ -41,3 +41,19 @@ class SMEDevelopmentStepAdmin(admin.ModelAdmin):
     list_editable = ('order', 'is_active')
     list_filter = ('is_active', 'section')
     ordering = ['section', 'order']
+
+@admin.register(models.ServiceTag)
+class ServiceTagAdmin(admin.ModelAdmin):
+    list_display = ('name', 'is_active')
+    list_editable = ('is_active',)
+    search_fields = ('name',)
+    list_filter = ('is_active',)
+
+
+@admin.register(models.ServiceCard)
+class ServiceCardAdmin(admin.ModelAdmin):
+    list_display = ('title', 'is_active', 'order')
+    list_editable = ('is_active', 'order')
+    list_filter = ('is_active', 'tags')
+    search_fields = ('title', 'description')
+    filter_horizontal = ('tags',)

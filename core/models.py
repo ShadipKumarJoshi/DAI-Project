@@ -17,7 +17,7 @@ class NavbarItem(models.Model):
     def __str__(self):
         return self.title or "Unnamed Item"
 
-
+# hero_carousel_section.html
 class Slider(models.Model):
     title = models.TextField()
     description = models.TextField()
@@ -51,7 +51,7 @@ class Slider(models.Model):
     def __str__(self):
         return self.title[:50]
 
-
+# sme_development_steps_section.html
 class SMEDevelopmentStepSection(models.Model):
     title = models.CharField(max_length=200, default="SME Development Steps")
     description = models.TextField(blank=True, null=True)
@@ -94,3 +94,26 @@ class SMEDevelopmentStep(models.Model):
 
     def __str__(self):
         return self.title
+
+# our_services_section.html    
+class ServiceTag(models.Model):
+    name = models.CharField(max_length=50)
+    is_active = models.BooleanField(default=True)
+
+    def __str__(self):
+        return self.name
+
+class ServiceCard(models.Model):
+    title = models.CharField(max_length=150)
+    description = models.TextField()
+    icon_path = models.CharField(max_length=255, blank=True, null=True)  # Static path or URL
+    tags = models.ManyToManyField(ServiceTag, related_name='services', blank=True)
+    is_active = models.BooleanField(default=True)
+    order = models.PositiveIntegerField(default=0)
+
+    class Meta:
+        ordering = ['order']
+
+    def __str__(self):
+        return self.title
+
