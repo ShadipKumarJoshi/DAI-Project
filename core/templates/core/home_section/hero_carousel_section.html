@@ -4,20 +4,24 @@
     <!-- Slides wrapper -->
     <div class="swiper-wrapper">
       {% for slide in sliders %}
-        <div class="swiper-slide text-center">
-          <h1 class="font-satoshi font-medium text-[50px] text-[#0F1324] mb-4">
-            {{ slide.title|safe }}
-          </h1>
-          <p class="text-gray-600 max-w-xl mx-auto mb-6">
-            {{ slide.description | safe }}
-          </p>
-          <div class="space-x-4">
-            <button class="{{ slide.button1_class }}">{{ slide.button1_text }}</button>
-            {% if slide.button2_text %}
-              <button class="{{ slide.button2_class }}">{{ slide.button2_text }}</button>
+        {% if slide.is_visible %}
+          <div class="swiper-slide text-center">
+            <h1 class="font-satoshi font-medium text-[50px] text-[#0F1324] mb-4">
+              {{ slide.title|safe }}
+            </h1>
+            <p class="text-gray-600 max-w-xl mx-auto mb-6">
+              {{ slide.description|safe }}
+            </p>
+
+            {% if slide.is_button and slide.button_text %}
+              <div class="space-x-4">
+                <a href="{% url slide.button_url %}">
+                  <button class="btn-{{ slide.button_class }}">{{ slide.button_text }}</button>
+                </a>
+              </div>
             {% endif %}
           </div>
-        </div>
+        {% endif %}
       {% empty %}
         <p>No slides available</p>
       {% endfor %}

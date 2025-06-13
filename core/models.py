@@ -21,11 +21,17 @@ class NavbarItem(models.Model):
 class Slider(models.Model):
     title = models.TextField()
     description = models.TextField()
-    button1_text = models.CharField(max_length=50)
-    button1_class = models.CharField(max_length=50, default='btn-black')
-    button2_text = models.CharField(max_length=50, blank=True)
-    button2_class = models.CharField(
-        max_length=50, default='btn-white', blank=True)
+
+    is_button = models.BooleanField(default=False)
+    button_text = models.CharField(max_length=50, blank=True, null=True)
+    button_class = models.CharField(
+        max_length=10,
+        choices=[('black', 'Black'), ('white', 'White'), ('blue', 'Blue')],
+        null=True, blank=True
+    )
+    button_url = models.CharField(max_length=255, blank=True, null=True)
+    is_visible = models.BooleanField(default=True)  
+
     order = models.PositiveIntegerField(default=0)
 
     class Meta:
