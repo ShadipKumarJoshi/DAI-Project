@@ -1,6 +1,6 @@
 {% load static %}
 
-<nav class="bg-white shadow">
+<nav class="bg-white shadow fixed top-0 w-full z-50">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex items-center justify-between">
     <!-- Left: Logos and Menu -->
     <div class="flex items-center space-x-4">
@@ -11,7 +11,7 @@
       <nav class="hidden md:flex space-x-6 text-sm font-medium">
         {% for item in navbar_items %}
           {% if not item.is_button and item.is_visible %}
-            <a href="{{ item.url }}" class="hover:text-blue-600 hover:underline cursor-pointer">
+            <a href="{% url item.url %}"  class="hover:text-blue-600 hover:underline cursor-pointer">
               {{ item.title }}
             </a>
           {% endif %}
@@ -23,7 +23,7 @@
     <div class="space-x-2">
       {% for item in navbar_items %}
         {% if item.is_button and item.is_visible %}
-          <a href="{{ item.url }}">
+          <a href="{% url item.url %}">
             <button class="btn-{{ item.button_style }}">{{ item.title }}</button>
           </a>
         {% endif %}
