@@ -1,19 +1,25 @@
 from django.contrib import admin
 from . import models
 
+
 @admin.register(models.NavbarItem)
 class NavbarItemAdmin(admin.ModelAdmin):
-    list_display = ('title', 'url', 'is_button', 'button_style', 'order', 'is_visible')
-    list_editable = ('is_visible', 'order')
-    list_filter = ('is_button', 'button_style', 'is_visible')
+    list_display = ('title', 'url', 'is_button',
+                    'button_style', 'order', 'is_active')
+    list_editable = ('is_active', 'order')
+    list_filter = ('is_button', 'button_style', 'is_active')
     search_fields = ('title', 'url')
+
 
 @admin.register(models.Slider)
 class SliderAdmin(admin.ModelAdmin):
-    list_display = ('title', 'order', 'is_slide_visible')  # Add the visibility column 
+    # Add the visibility column
+    list_display = ('title', 'order', 'is_slide_active')
     ordering = ['order']
-    list_editable = ('is_slide_visible', 'order')  # O make it editable directly in the list view
-    list_filter = ('is_slide_visible',)  #  adds filter sidebar for visibility
+    # O make it editable directly in the list view
+    list_editable = ('is_slide_active', 'order')
+    list_filter = ('is_slide_active',)  # adds filter sidebar for visibility
+
 
 class SMEDevelopmentStepInline(admin.TabularInline):
     model = models.SMEDevelopmentStep
@@ -24,14 +30,14 @@ class SMEDevelopmentStepInline(admin.TabularInline):
 
 @admin.register(models.SMEDevelopmentStepSection)
 class SMEDevelopmentStepSectionAdmin(admin.ModelAdmin):
-    list_display = ('title', 'is_visible')
-    list_editable = ('is_visible',)
+    list_display = ('title', 'is_active')
+    list_editable = ('is_active',)
     inlines = [SMEDevelopmentStepInline]
 
 
 @admin.register(models.SMEDevelopmentStep)
 class SMEDevelopmentStepAdmin(admin.ModelAdmin):
-    list_display = ('title', 'order', 'is_visible', 'section')
-    list_editable = ('order', 'is_visible')
-    list_filter = ('is_visible', 'section')
+    list_display = ('title', 'order', 'is_active', 'section')
+    list_editable = ('order', 'is_active')
+    list_filter = ('is_active', 'section')
     ordering = ['section', 'order']

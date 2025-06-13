@@ -12,7 +12,7 @@ class NavbarItem(models.Model):
         choices=[('black', 'Black'), ('white', 'White')],
         null=True, blank=True
     )
-    is_visible = models.BooleanField(default=True)
+    is_active = models.BooleanField(default=True)
 
     def __str__(self):
         return self.title or "Unnamed Item"
@@ -22,10 +22,10 @@ class Slider(models.Model):
     title = models.TextField()
     description = models.TextField()
 
-    is_slide_visible = models.BooleanField(default=True) # Slide visibility
+    is_slide_active = models.BooleanField(default=True)  # Slide visibility
 
     # Button 1
-    is_button1_visible = models.BooleanField(default=False)
+    is_button1_active = models.BooleanField(default=False)
     button1_text = models.CharField(max_length=50, blank=True, null=True)
     button1_class = models.CharField(
         max_length=10,
@@ -33,10 +33,9 @@ class Slider(models.Model):
         null=True, blank=True
     )
     button1_url = models.URLField(max_length=255, blank=True, null=True)
-    
 
     # Button 2
-    is_button2_visible = models.BooleanField(default=False)
+    is_button2_active = models.BooleanField(default=False)
     button2_text = models.CharField(max_length=50, blank=True, null=True)
     button2_class = models.CharField(
         max_length=10,
@@ -51,14 +50,15 @@ class Slider(models.Model):
 
     def __str__(self):
         return self.title[:50]
-    
+
+
 class SMEDevelopmentStepSection(models.Model):
     title = models.CharField(max_length=200, default="SME Development Steps")
     description = models.TextField(blank=True, null=True)
-    is_visible = models.BooleanField(default=True)
+    is_active = models.BooleanField(default=True)
 
     # Optional button
-    is_button_visible = models.BooleanField(default=False)
+    is_button_active = models.BooleanField(default=False)
     button_text = models.CharField(max_length=50, blank=True, null=True)
     button_class = models.CharField(
         max_length=10,
@@ -66,21 +66,21 @@ class SMEDevelopmentStepSection(models.Model):
         null=True, blank=True
     )
     button_url = models.URLField(max_length=255, blank=True, null=True)
-    
 
     def __str__(self):
         return self.title
 
 
 class SMEDevelopmentStep(models.Model):
-    section = models.ForeignKey(SMEDevelopmentStepSection, on_delete=models.CASCADE, related_name='steps')
+    section = models.ForeignKey(
+        SMEDevelopmentStepSection, on_delete=models.CASCADE, related_name='steps')
     title = models.CharField(max_length=150)
     description = models.TextField()
     order = models.PositiveIntegerField(default=0)
-    is_visible = models.BooleanField(default=True)
+    is_active = models.BooleanField(default=True)
 
     # Optional Button
-    is_button_visible = models.BooleanField(default=False)
+    is_button_active = models.BooleanField(default=False)
     button_text = models.CharField(max_length=50, blank=True, null=True)
     button_class = models.CharField(
         max_length=10,

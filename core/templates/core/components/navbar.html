@@ -10,10 +10,8 @@
       <!-- Dynamic Nav Links -->
       <nav class="hidden md:flex space-x-6 text-sm font-medium">
         {% for item in navbar_items %}
-          {% if not item.is_button and item.is_visible %}
-            <a href="{% url item.url %}"  class="hover:text-blue-600 hover:underline cursor-pointer">
-              {{ item.title }}
-            </a>
+          {% if not item.is_button and item.is_active %}
+            <a href="{% url item.url %}" class="hover:text-blue-600 hover:underline cursor-pointer">{{ item.title }}</a>
           {% endif %}
         {% endfor %}
       </nav>
@@ -22,10 +20,8 @@
     <!-- Right: Dynamic Buttons -->
     <div class="space-x-2">
       {% for item in navbar_items %}
-        {% if item.is_button and item.is_visible %}
-          <a href="{% url item.url %}">
-            <button class="btn-{{ item.button_style }}">{{ item.title }}</button>
-          </a>
+        {% if item.is_button and item.is_active %}
+          <a href="{% url item.url %}"><button class="btn-{{ item.button_style }}">{{ item.title }}</button></a>
         {% endif %}
       {% endfor %}
     </div>
