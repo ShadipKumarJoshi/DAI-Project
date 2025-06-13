@@ -57,3 +57,9 @@ class ServiceCardAdmin(admin.ModelAdmin):
     list_filter = ('is_active', 'tags')
     search_fields = ('title', 'description')
     filter_horizontal = ('tags',)
+
+@admin.register(models.SMEGuidelineCard)
+class SMEGuidelineCardAdmin(admin.ModelAdmin):
+    list_display = ('title', 'order', 'is_active')
+    list_editable = ('order', 'is_active')
+    ordering = ('order',)
