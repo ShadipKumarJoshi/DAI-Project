@@ -1,10 +1,10 @@
 from django.db import models
+from django.core.validators import URLValidator
 
 
 class NavbarItem(models.Model):
     title = models.CharField(max_length=100, null=True, blank=True)
-    url = models.CharField(max_length=255, null=True,
-                           blank=True)  # USE NAMED URL ONLY
+    url = models.URLField(max_length=255, blank=True, null=True)
     order = models.PositiveIntegerField(default=0)
     is_button = models.BooleanField(default=False)
     button_style = models.CharField(
@@ -32,7 +32,7 @@ class Slider(models.Model):
         choices=[('black', 'Black'), ('white', 'White'), ('blue', 'Blue')],
         null=True, blank=True
     )
-    button1_url = models.CharField(max_length=255, blank=True, null=True, help_text="Enter the named URL (e.g., 'home', 'about', 'contact')")
+    button1_url = models.URLField(max_length=255, blank=True, null=True)
     
 
     # Button 2
@@ -43,9 +43,7 @@ class Slider(models.Model):
         choices=[('black', 'Black'), ('white', 'White'), ('blue', 'Blue')],
         null=True, blank=True
     )
-    button2_url = models.CharField(max_length=255, blank=True, null=True, help_text="Enter the named URL (e.g., 'home', 'about', 'contact')")
-    
-
+    button2_url = models.URLField(max_length=255, blank=True, null=True)
     order = models.PositiveIntegerField(default=0)
 
     class Meta:
@@ -67,11 +65,8 @@ class SMEDevelopmentStepSection(models.Model):
         choices=[('black', 'Black'), ('white', 'White'), ('blue', 'Blue')],
         null=True, blank=True
     )
-    button_url = models.CharField(
-        max_length=255,
-        blank=True, null=True,
-        help_text="Enter the named URL (e.g., 'home', 'about', 'contact')"
-    )
+    button_url = models.URLField(max_length=255, blank=True, null=True)
+    
 
     def __str__(self):
         return self.title
@@ -92,7 +87,7 @@ class SMEDevelopmentStep(models.Model):
         choices=[('black', 'Black'), ('white', 'White'), ('blue', 'Blue')],
         null=True, blank=True
     )
-    button_url = models.CharField(max_length=255, blank=True, null=True)
+    button_url = models.URLField(max_length=255, blank=True, null=True)
 
     class Meta:
         ordering = ['order']

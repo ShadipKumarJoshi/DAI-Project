@@ -15,12 +15,12 @@
 
             <div class="space-x-4">
               {% if slide.is_button1_visible and slide.button1_text %}
-                <a href="{% url slide.button1_url %}"> 
+                <a href="{{ slide.button1_url }}"> 
                   <button class="btn-{{ slide.button1_class }}">{{ slide.button1_text }}</button>
                 </a>
               {% endif %}
               {% if slide.is_button2_visible and slide.button2_text %}
-                <a href="{% url slide.button2_url %}">
+                <a href="{{ slide.button2_url }}">
                   <button class="btn-{{ slide.button2_class }}">{{ slide.button2_text }}</button>
                 </a>
               {% endif %}

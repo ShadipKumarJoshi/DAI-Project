@@ -23,7 +23,7 @@
                 <h3 class="font-semibold text-gray-900 mb-1">{{ step.title }}</h3>
                 <p class="text-sm text-gray-700 max-w-[150px]">{{ step.description }}</p>
                 {% if step.is_button_visible %}
-                    <a href="{% url step.button_url %}" class="btn-{{ step.button_class }}">{{ step.button_text }}</a>
+                    <a href="{{ step.button_url }}" class="btn-{{ step.button_class }}">{{ step.button_text }}</a>
                 {% endif %}
             </div>
             {% endif %}
@@ -36,7 +36,7 @@
                 <h3 class="font-semibold text-gray-900 mb-1">{{ step.title }}</h3>
                 <p class="text-sm text-gray-700 max-w-[150px]">{{ step.description }}</p>
                 {% if step.is_button_visible %}
-                    <a href="{% url step.button_url %}" class="btn-{{ step.button_class }}">{{ step.button_text }}</a>
+                    <a href="{{ step.button_url }}" class="btn-{{ step.button_class }}">{{ step.button_text }}</a>
                 {% endif %}
             </div>
             {% endif %}
@@ -49,7 +49,7 @@
                 <h3 class="font-semibold text-gray-900 mb-1">{{ step.title }}</h3>
                 <p class="text-sm text-gray-700 max-w-[150px]">{{ step.description }}</p>
                 {% if step.is_button_visible %}
-                    <a href="{% url step.button_url %}" class="btn-{{ step.button_class }}">{{ step.button_text }}</a>
+                    <a href="{{ step.button_url }}" class="btn-{{ step.button_class }}">{{ step.button_text }}</a>
                 {% endif %}
             </div>
             {% endif %}
@@ -62,7 +62,7 @@
                 <h3 class="font-semibold text-gray-900 mb-1">{{ step.title }}</h3>
                 <p class="text-sm text-gray-700 max-w-[150px]">{{ step.description }}</p>
                 {% if step.is_button_visible %}
-                    <a href="{% url step.button_url %}" class="btn-{{ step.button_class }}">{{ step.button_text }}</a>
+                    <a href="{{ step.button_url }}" class="btn-{{ step.button_class }}">{{ step.button_text }}</a>
                 {% endif %}
             </div>
             {% endif %}
@@ -74,7 +74,7 @@
             <h2 class="text-4xl font-bold text-gray-900 mb-4">{{ sme_section.title }}</h2>
             <p class="text-lg text-gray-600 mb-6">{{ sme_section.description }}</p>
             {% if sme_section.is_button_visible %}
-                <a href="{% url sme_section.button_url %}" class="btn-{{ sme_section.button_class }}">{{ sme_section.button_text }}</a>
+                <a href="{{ sme_section.button_url }}" class="btn-{{ sme_section.button_class }}">{{ sme_section.button_text }}</a>
             {% endif %}
         </div>
     </div>
