@@ -10,6 +10,7 @@ class NavbarItemAdmin(admin.ModelAdmin):
 
 @admin.register(models.Slider)
 class SliderAdmin(admin.ModelAdmin):
-    list_display = ('title', 'order')
+    list_display = ('title', 'order', 'is_slide_visible')  # Add the visibility column 
     ordering = ['order']
-
+    list_editable = ('is_slide_visible', 'order')  # O make it editable directly in the list view
+    list_filter = ('is_slide_visible',)  #  adds filter sidebar for visibility

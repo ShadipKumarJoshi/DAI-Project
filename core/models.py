@@ -22,15 +22,29 @@ class Slider(models.Model):
     title = models.TextField()
     description = models.TextField()
 
-    is_button = models.BooleanField(default=False)
-    button_text = models.CharField(max_length=50, blank=True, null=True)
-    button_class = models.CharField(
+    is_slide_visible = models.BooleanField(default=True) # Slide visibility
+
+    # Button 1
+    is_button1_visible = models.BooleanField(default=False)
+    button1_text = models.CharField(max_length=50, blank=True, null=True)
+    button1_class = models.CharField(
         max_length=10,
         choices=[('black', 'Black'), ('white', 'White'), ('blue', 'Blue')],
         null=True, blank=True
     )
-    button_url = models.CharField(max_length=255, blank=True, null=True)
-    is_visible = models.BooleanField(default=True)  
+    button1_url = models.CharField(max_length=255, blank=True, null=True, help_text="Enter the named URL (e.g., 'home', 'about', 'contact')")
+    
+
+    # Button 2
+    is_button2_visible = models.BooleanField(default=False)
+    button2_text = models.CharField(max_length=50, blank=True, null=True)
+    button2_class = models.CharField(
+        max_length=10,
+        choices=[('black', 'Black'), ('white', 'White'), ('blue', 'Blue')],
+        null=True, blank=True
+    )
+    button2_url = models.CharField(max_length=255, blank=True, null=True, help_text="Enter the named URL (e.g., 'home', 'about', 'contact')")
+    
 
     order = models.PositiveIntegerField(default=0)
 

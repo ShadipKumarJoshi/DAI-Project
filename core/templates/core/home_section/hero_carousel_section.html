@@ -4,7 +4,7 @@
     <!-- Slides wrapper -->
     <div class="swiper-wrapper">
       {% for slide in sliders %}
-        {% if slide.is_visible %}
+        {% if slide.is_slide_visible %}
           <div class="swiper-slide text-center">
             <h1 class="font-satoshi font-medium text-[50px] text-[#0F1324] mb-4">
               {{ slide.title|safe }}
@@ -13,13 +13,18 @@
               {{ slide.description|safe }}
             </p>
 
-            {% if slide.is_button and slide.button_text %}
-              <div class="space-x-4">
-                <a href="{% url slide.button_url %}">
-                  <button class="btn-{{ slide.button_class }}">{{ slide.button_text }}</button>
+            <div class="space-x-4">
+              {% if slide.is_button1_visible and slide.button1_text %}
+                <a href="{% url slide.button1_url %}"> 
+                  <button class="btn-{{ slide.button1_class }}">{{ slide.button1_text }}</button>
                 </a>
-              </div>
-            {% endif %}
+              {% endif %}
+              {% if slide.is_button2_visible and slide.button2_text %}
+                <a href="{% url slide.button2_url %}">
+                  <button class="btn-{{ slide.button2_class }}">{{ slide.button2_text }}</button>
+                </a>
+              {% endif %}
+            </div>
           </div>
         {% endif %}
       {% empty %}
