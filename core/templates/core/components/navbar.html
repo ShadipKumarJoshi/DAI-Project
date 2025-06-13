@@ -2,21 +2,32 @@
 
 <nav class="bg-white shadow">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex items-center justify-between">
+    <!-- Left: Logos and Menu -->
     <div class="flex items-center space-x-4">
       <img src="{% static 'core/images/logos/dai_logo.png' %}" alt="DAI Logo" class="h-10" />
       <img src="{% static 'core/images/logos/Emblem_of_Nepal.png' %}" alt="Nepal Emblem" class="h-10" />
+
+      <!-- Dynamic Nav Links -->
       <nav class="hidden md:flex space-x-6 text-sm font-medium">
-        <a href="#" class="hover:text-blue-600 hover:underline cursor-pointer" >Home</a>
-        <a href="#" class="hover:text-blue-600 hover:underline cursor-pointer">About</a>
-        <a href="#" class="hover:text-blue-600 hover:underline cursor-pointer">Schemes</a>
-        <a href="#" class="hover:text-blue-600 hover:underline cursor-pointer">Policies</a>
-        <a href="#" class="hover:text-blue-600 hover:underline cursor-pointer">Contact</a>
+        {% for item in navbar_items %}
+          {% if not item.is_button and item.is_visible %}
+            <a href="{{ item.url }}" class="hover:text-blue-600 hover:underline cursor-pointer">
+              {{ item.title }}
+            </a>
+          {% endif %}
+        {% endfor %}
       </nav>
     </div>
-    <div class="space-x-2">
-      <button class="btn-black">Register</button>
 
-      <button class="btn-white">login</button>
+    <!-- Right: Dynamic Buttons -->
+    <div class="space-x-2">
+      {% for item in navbar_items %}
+        {% if item.is_button and item.is_visible %}
+          <a href="{{ item.url }}">
+            <button class="btn-{{ item.button_style }}">{{ item.title }}</button>
+          </a>
+        {% endif %}
+      {% endfor %}
     </div>
   </div>
 </nav>
