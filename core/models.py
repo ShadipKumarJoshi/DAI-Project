@@ -1,5 +1,7 @@
 from django.db import models
+from django.utils import timezone
 from django.core.validators import URLValidator
+from django.db.models import Q
 
 
 class NavbarItem(models.Model):
@@ -129,3 +131,51 @@ class SMEGuidelineCard(models.Model):
 
     def __str__(self):
         return self.title
+    
+# our_news_events_section.html
+class NewsEventType(models.Model):
+    name = models.CharField(max_length=50, unique=True)
+
+    def __str__(self):
+        return self.name
+
+
+class NewsEventStatus(models.Model):
+    name = models.CharField(max_length=50, unique=True)
+
+    def __str__(self):
+        return self.name
+
+
+class NewsEvent(models.Model):
+    title = models.CharField(max_length=255)
+    description = models.TextField()
+    location = models.CharField(max_length=100)
+    image = models.ImageField(upload_to='news_images/')
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+
+    status_tag = models.ForeignKey(
+        NewsEventStatus, on_delete=models.SET_NULL, null=True, blank=True)
+    type = models.ForeignKey(
+        NewsEventType, on_delete=models.SET_NULL, null=True, blank=True)
+
+    is_featured = models.BooleanField(default=False)
+    is_active = models.BooleanField(default=True)
+
+    publication_start = models.DateTimeField(null=True, blank=True)
+    publication_end = models.DateTimeField(null=True, blank=True)
+
+    class Meta:
+        ordering = ['-created_at']
+
+    def __str__(self):
+        return self.title
+
+    def is_published_now(self):
+        now = timezone.now()
+        if self.publication_start and now < self.publication_start:
+            return False
+        if self.publication_end and now > self.publication_end:
+            return False
+        return True

@@ -1,77 +1,87 @@
 {% load static %}
 
-  {% comment %}Our News & Events{% endcomment %}
-  <section class="news preview">
-    <div class="max-w-7xl mx-auto">
-      <div class="flex justify-between items-center mb-10">
-        <h2 class="text-4xl font-bold text-gray-900">Our News & Events</h2>
-        <button class="btn-blue">See All Events Posts</button>
+{% comment %}Our News & Events{% endcomment %}
+<section class="news preview">
+  <div class="max-w-7xl mx-auto">
+    <div class="flex justify-between items-center mb-10">
+      <h2 class="text-4xl font-bold text-gray-900">Our News & Events</h2>
+      <button class="btn-blue">See All Events Posts</button>
+    </div>
+
+    {% comment %}Left: featured news preview{% endcomment %}
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+      <div class="lg:col-span-2 grid grid-cols-1 md:grid-cols-2 gap-8">
+        {% for news in featured_news %}
+          <div class="news{{ forloop.counter }}">
+            <div class="relative">
+              {% if news.image %}
+                <img src="{{ news.image.url }}" alt="{{ news.title }}" class="w-full h-48 object-cover rounded-3xl" />
+              {% else %}
+                <img src="{% static 'core/images/news/news.jpg' %}" alt="Event Image" class="w-full h-48 object-cover rounded-3xl" />
+              {% endif %}
+
+              {% if news.status_tag %}
+                <span class="absolute top-3 left-3 bg-yellow-200 text-black text-xs px-3 py-1 rounded-md shadow">
+                  {{ news.status_tag.name }}
+                </span>
+              {% endif %}
+            </div>
+
+            <div class="news preview">
+              <div class="flex justify-between items-center text-sm text-gray-500 mb-2 py-2">
+                <div class="flex space-x-2">
+                  <p>{{ news.created_at|date:"d-m-Y" }}</p>
+
+                  {% if news.updated_at and news.updated_at != news.created_at %}
+                    <p>[Update] {{ news.updated_at|date:"d-m-Y" }}</p>
+                  {% endif %}
+
+                  <p class="text-xs">· {{ news.location }}</p>
+                </div>
+
+                {% if news.type %}
+                  <p class="text-xs">· {{ news.type.name }}</p>
+                {% endif %}
+              </div>
+
+              <h3 class="text-xl font-semibold text-gray-900 mb-2">{{ news.title }}</h3>
+              <p class="text-base text-gray-700">{{ news.description }}</p>
+            </div>
+          </div>
+        {% empty %}
+          <p>No featured news available.</p>
+        {% endfor %}
       </div>
 
-      {% comment %}Left: news preview{% endcomment %}
-      <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
-        <div class="lg:col-span-2 grid grid-cols-1 md:grid-cols-2 gap-8">
-          <div class="news1">
-            <div class="relative">
-              <img src="{% static 'core/images/news/news.jpg' %}" alt="Event Image" class="w-full h-48 object-cover rounded-3xl" />
-              <span class="absolute top-3 left-3 bg-yellow-200 text-black text-xs px-3 py-1 rounded-md shadow">Coming Soon</span>
-            </div>
-            <div class="news preview">
-              <p class="text-sm text-gray-500 mb-2 py-2">08-11-2024 · Kathmandu</p>
-              <h3 class="text-xl font-semibold text-gray-900 mb-2">Government Launches SME Support Fund in Koshi</h3>
-              <p class="text-base text-gray-700">A new initiative to improve financing access for local enterprises. Six curiosity day assurance bed necessary.</p>
-            </div>
-          </div>
-          <div class="news2">
-            <div class="relative">
-              <img src="{% static 'core/images/news/news1.jpg' %}" alt="Event Image" class="w-full h-48 object-cover rounded-3xl" />
-              <span class="absolute top-3 left-3 bg-green-200 text-black text-xs px-3 py-1 rounded-md shadow">New</span>
-            </div>
-            <div class="news preview">
-              <p class="text-sm text-gray-500 mb-2 py-2">08-11-2024 · Itahari</p>
-              <h3 class="text-xl font-semibold text-gray-900 mb-2">Digital Ecosystem for SMEs and BDSPs Goes Live</h3>
-              <p class="text-base text-gray-700">A province-wide platform empowering small businesses through technology. And partially estimating terminated day everything.</p>
-            </div>
-          </div>
-        </div>
+      {% comment %}Right: other news/events{% endcomment %}
+      <div class="lg:col-span-1 space-y-6">
+        {% for news in other_news %}
+          <div class="flex items-center p-4">
+            {% if news.image %}
+              <img src="{{ news.image.url }}" alt="{{ news.title }}" class="w-24 h-16 object-cover rounded-md mr-4" />
+            {% else %}
+              <img src="{% static 'core/images/news/news_placeholder.jpg' %}" alt="News Thumbnail" class="w-24 h-16 object-cover rounded-md mr-4" />
+            {% endif %}
 
-        {% comment %}Right: other news{% endcomment %}
-        <div class="lg:col-span-1 space-y-6">
-          <div class="flex items-center p-4">
-            <img src="{% static 'core/images/news/news3.jpg' %}" alt="News Thumbnail" class="w-24 h-16 object-cover rounded-md mr-4" />
             <div>
-              <p class="text-xs text-gray-500 mb-1">08-11-2021 · News</p>
-              <h4 class="text-base font-semibold text-gray-900">Digital Marketing for Local Enterprises</h4>
+              <p class="text-xs text-gray-500 mb-1">{{ news.created_at|date:"d-m-Y" }} · 
+                {% if news.type %}
+                  {{ news.type.name }}
+                {% else %}
+                  News
+                {% endif %}
+              </p>
+              <h4 class="text-base font-semibold text-gray-900">{{ news.title }}</h4>
             </div>
           </div>
-          <!-- 🔽 Line separator between news items -->
-          <div class="border-t border-gray-200 -my-1 -mt-7"></div>
-          <div class="flex items-center p-4">
-            <img src="{% static 'core/images/news/news4.jpg' %}" alt="News Thumbnail" class="w-24 h-16 object-cover rounded-md mr-4" />
-            <div>
-              <p class="text-xs text-gray-500 mb-1">08-11-2021 · News</p>
-              <h4 class="text-base font-semibold text-gray-900">Koshi Business Growth Summit 2023</h4>
-            </div>
-          </div>
-          <!-- 🔽 Line separator between news items -->
-          <div class="border-t border-gray-200 -my-1 -mt-7"></div>
-          <div class="flex items-center p-4">
-            <img src="{% static 'core/images/news/news5.jpg' %}" alt="News Thumbnail" class="w-24 h-16 object-cover rounded-md mr-4" />
-            <div>
-              <p class="text-xs text-gray-500 mb-1">08-11-2021 · News</p>
-              <h4 class="text-base font-semibold text-gray-900">Village did removed enjoyed explain nor ham saw.</h4>
-            </div>
-          </div>
-          <!-- 🔽 Line separator between news items -->
-          <div class="border-t border-gray-200 -my-1 -mt-7"></div>
-          <div class="flex items-center p-4">
-            <img src="{% static 'core/images/news/news6.jpg' %}" alt="Webinar Thumbnail" class="w-24 h-16 object-cover rounded-md mr-4" />
-            <div>
-              <p class="text-xs text-gray-500 mb-1">08-11-2021 · Webinar</p>
-              <h4 class="text-base font-semibold text-gray-900">Unlocking Finance for SMEs</h4>
-            </div>
-          </div>
-        </div>
+
+          {% if not forloop.last %}
+            <div class="border-t border-gray-200 -my-1 -mt-7"></div>
+          {% endif %}
+        {% empty %}
+          <p>No other news available.</p>
+        {% endfor %}
       </div>
     </div>
-  </section>
+  </div>
+</section>

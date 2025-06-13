@@ -63,3 +63,22 @@ class SMEGuidelineCardAdmin(admin.ModelAdmin):
     list_display = ('title', 'order', 'is_active')
     list_editable = ('order', 'is_active')
     ordering = ('order',)
+    
+@admin.register(models.NewsEventType)
+class NewsEventTypeAdmin(admin.ModelAdmin):
+    list_display = ['name']
+
+@admin.register(models.NewsEventStatus)
+class NewsEventStatusAdmin(admin.ModelAdmin):
+    list_display = ['name']
+
+@admin.register(models.NewsEvent)
+class NewsEventAdmin(admin.ModelAdmin):
+    list_display = [
+        'title', 'location', 'type', 'status_tag', 'is_featured', 'is_active', 
+        'publication_start', 'publication_end', 'created_at', 'updated_at'
+    ]
+    list_filter = ['is_active', 'is_featured', 'type', 'status_tag']
+    list_editable = ('is_featured', 'is_active')
+    search_fields = ['title', 'description', 'location']
+    ordering = ['-created_at']
