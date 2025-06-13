@@ -14,3 +14,24 @@ class SliderAdmin(admin.ModelAdmin):
     ordering = ['order']
     list_editable = ('is_slide_visible', 'order')  # O make it editable directly in the list view
     list_filter = ('is_slide_visible',)  #  adds filter sidebar for visibility
+
+class SMEDevelopmentStepInline(admin.TabularInline):
+    model = models.SMEDevelopmentStep
+    extra = 0
+    min_num = 4
+    max_num = 4
+
+
+@admin.register(models.SMEDevelopmentStepSection)
+class SMEDevelopmentStepSectionAdmin(admin.ModelAdmin):
+    list_display = ('title', 'is_visible')
+    list_editable = ('is_visible',)
+    inlines = [SMEDevelopmentStepInline]
+
+
+@admin.register(models.SMEDevelopmentStep)
+class SMEDevelopmentStepAdmin(admin.ModelAdmin):
+    list_display = ('title', 'order', 'is_visible', 'section')
+    list_editable = ('order', 'is_visible')
+    list_filter = ('is_visible', 'section')
+    ordering = ['section', 'order']
