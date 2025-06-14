@@ -76,6 +76,9 @@ class SMEDevelopmentStepSection(models.Model):
 class SMEDevelopmentStep(models.Model):
     section = models.ForeignKey(
         SMEDevelopmentStepSection, on_delete=models.CASCADE, related_name='steps')
+    image = models.ImageField(upload_to='development_steps_images', null=True,
+        blank=True,
+        default='development_steps_images/default_img.png')
     title = models.CharField(max_length=150)
     description = models.TextField()
     order = models.PositiveIntegerField(default=0)
