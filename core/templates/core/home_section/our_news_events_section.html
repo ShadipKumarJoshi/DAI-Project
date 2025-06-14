@@ -14,12 +14,7 @@
         {% for news in featured_news %}
           <div class="news{{ forloop.counter }}">
             <div class="relative">
-              {% if news.image %}
                 <img src="{{ news.image.url }}" alt="{{ news.title }}" class="w-full h-48 object-cover rounded-3xl" />
-              {% else %}
-                <img src="{% static 'core/images/news/news.jpg' %}" alt="Event Image" class="w-full h-48 object-cover rounded-3xl" />
-              {% endif %}
-
               {% if news.status_tag %}
                 <span class="absolute top-3 left-3 bg-yellow-200 text-black text-xs px-3 py-1 rounded-md shadow">{{ news.status_tag.name }}</span>
               {% endif %}
@@ -57,12 +52,7 @@
       <div class="lg:col-span-1 space-y-6">
         {% for news in other_news %}
           <div class="flex items-center p-4">
-            {% if news.image %}
               <img src="{{ news.image.url }}" alt="{{ news.title }}" class="w-24 h-16 object-cover rounded-md mr-4" />
-            {% else %}
-              <img src="{% static 'core/images/news/news.jpg' %}" alt="News Thumbnail" class="w-24 h-16 object-cover rounded-md mr-4" />
-            {% endif %}
-
             <div>
               <p class="text-xs text-gray-500 mb-1">
                 {{ news.created_at|date:'d-m-Y' }} ·{% if news.type %}

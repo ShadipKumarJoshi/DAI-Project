@@ -123,7 +123,7 @@ class ServiceCard(models.Model):
 class SMEGuidelineCard(models.Model):
     icon = models.ImageField(upload_to='guidelines_icons', null=True,
         blank=True,
-        default='guidelines_icons\default.svg')
+        default='guidelines_icons/default.svg')
     title = models.CharField(max_length=200)
     description = models.TextField()
     order = models.PositiveIntegerField(default=0)
@@ -154,7 +154,9 @@ class NewsEvent(models.Model):
     title = models.CharField(max_length=255)
     description = models.TextField()
     location = models.CharField(max_length=100)
-    image = models.ImageField(upload_to='news_images/')
+    image = models.ImageField(upload_to='news_images', null=True,
+        blank=True,
+        default='news_images/default_news.jpg')
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
