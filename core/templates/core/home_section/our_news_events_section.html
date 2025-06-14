@@ -21,22 +21,22 @@
               {% endif %}
 
               {% if news.status_tag %}
-                <span class="absolute top-3 left-3 bg-yellow-200 text-black text-xs px-3 py-1 rounded-md shadow">
-                  {{ news.status_tag.name }}
-                </span>
+                <span class="absolute top-3 left-3 bg-yellow-200 text-black text-xs px-3 py-1 rounded-md shadow">{{ news.status_tag.name }}</span>
               {% endif %}
             </div>
 
             <div class="news preview">
               <div class="flex justify-between items-center text-sm text-gray-500 mb-2 py-2">
                 <div class="flex space-x-2">
-                  <p>{{ news.created_at|date:"d-m-Y" }}</p>
+                  <p>{{ news.created_at|date:'d-m-Y' }}</p>
 
-                  {% if news.updated_at and news.updated_at != news.created_at %}
-                    <p>[Update] {{ news.updated_at|date:"d-m-Y" }}</p>
+                  {% if news.updated_at|date:'Y-m-d' != news.created_at|date:'Y-m-d' %}
+                    <p class=" text-gray-500">[Updated] {{ news.updated_at|date:'d-m-Y' }}</p>
                   {% endif %}
 
-                  <p class="text-xs">· {{ news.location }}</p>
+                  {% if news.location %}
+                    <p class="location">· {{ news.location }}</p>
+                  {% endif %}
                 </div>
 
                 {% if news.type %}
@@ -64,8 +64,8 @@
             {% endif %}
 
             <div>
-              <p class="text-xs text-gray-500 mb-1">{{ news.created_at|date:"d-m-Y" }} · 
-                {% if news.type %}
+              <p class="text-xs text-gray-500 mb-1">
+                {{ news.created_at|date:'d-m-Y' }} ·{% if news.type %}
                   {{ news.type.name }}
                 {% else %}
                   News
