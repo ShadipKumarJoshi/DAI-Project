@@ -9,7 +9,7 @@
     </div>
 
     <!-- Right Column: Dynamic Grid of Cards -->
-    <div class="lg:w-2/3 grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
+    {% comment %} <div class="lg:w-2/3 grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
       {% for card in guideline_cards %}
         <div class="bg-white rounded-xl shadow-2xl p-6 border border-gray-100">
           <div class="w-12 h-12 p-2 rounded-lg mb-4 flex items-center justify-center">
@@ -23,7 +23,20 @@
           <p class="text-base text-gray-600">{{ card.description }}</p>
         </div>
       {% endfor %}
-    </div>
+    </div> {% endcomment %}
+
+    <!-- Right Column: Dynamic Grid of Cards -->
+  <div class="lg:w-2/3 grid grid-cols-1 md:grid-cols-2 gap-8 items-start">
+    {% for card in guideline_cards %}
+      <div class="bg-white rounded-xl shadow-2xl p-6 border border-gray-100">
+        <div class="w-12 h-12 p-2 rounded-lg mb-4 flex items-center justify-center">
+          <img src="{{ card.icon.url }}" alt="Icon" class="w-8 h-8" />
+        </div>
+        <h3 class="text-xl font-semibold text-gray-900 mb-2">{{ card.title }}</h3>
+        <p class="text-base text-gray-600">{{ card.description }}</p>
+      </div>
+    {% endfor %}
+  </div>
 
   </div>
 </section>

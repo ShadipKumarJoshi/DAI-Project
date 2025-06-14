@@ -121,7 +121,9 @@ class ServiceCard(models.Model):
 
 # sme_guidelines_section.html
 class SMEGuidelineCard(models.Model):
-    # icon = models.ImageField(upload_to='guidelines_icons/')
+    icon = models.ImageField(upload_to='guidelines_icons', null=True,
+        blank=True,
+        default='guidelines_icons\default.svg')
     title = models.CharField(max_length=200)
     description = models.TextField()
     order = models.PositiveIntegerField(default=0)
