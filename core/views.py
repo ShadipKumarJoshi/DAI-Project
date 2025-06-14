@@ -29,7 +29,7 @@ def home(request):
     featured_news = list(news_list[:2])
 
     # Show rest (excluding the 2 already shown) on the right
-    other_news = news_list.exclude(id__in=[n.id for n in featured_news])
+    other_news = news_list.exclude(id__in=[n.id for n in featured_news])[:4] #limit preview to 4 news on right
 
     
     return render(request, 'core/home.html', {
