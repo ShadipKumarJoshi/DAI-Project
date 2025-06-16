@@ -203,7 +203,7 @@ class FooterQuickLink(models.Model):
 
 
 class FooterContactInfo(models.Model):
-    icon = models.ImageField(upload_to='footer_icons', blank=True, null=True)
+    icon = models.FileField(upload_to='footer_icons', blank=True, null=True)
     label = models.CharField(max_length=100)  # e.g. "Email", "Phone", "Location"
     value = models.CharField(max_length=255)  # e.g. email address, phone number, location text
     url = models.URLField(blank=True, null=True)  # optional clickable link (e.g. mailto: or tel:)
@@ -219,7 +219,7 @@ class FooterContactInfo(models.Model):
 
 class FooterSocialMedia(models.Model):
     platform_name = models.CharField(max_length=50)  # e.g. Twitter, Facebook
-    icon = models.ImageField(upload_to='social_icons')  # icon image
+    icon = models.FileField(upload_to='social_icons')  # icon image
     url = models.URLField()
     order = models.PositiveIntegerField(default=0)
     is_active = models.BooleanField(default=True)
