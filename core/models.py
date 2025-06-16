@@ -53,7 +53,6 @@ class Slider(models.Model):
     def __str__(self):
         return self.title[:50]
 
-# sme_development_steps_section.html
 class SMEDevelopmentStepSection(models.Model):
     title = models.CharField(max_length=200, default="SME Development Steps")
     description = models.TextField(blank=True, null=True)
@@ -71,7 +70,6 @@ class SMEDevelopmentStepSection(models.Model):
 
     def __str__(self):
         return self.title
-
 
 class SMEDevelopmentStep(models.Model):
     section = models.ForeignKey(
@@ -122,7 +120,6 @@ class ServiceCard(models.Model):
     def __str__(self):
         return self.title
 
-# sme_guidelines_section.html
 class SMEGuidelineCard(models.Model):
     icon = models.ImageField(upload_to='guidelines_icons', null=True,
         blank=True,
@@ -201,7 +198,6 @@ class FooterQuickLink(models.Model):
     def __str__(self):
         return self.title
 
-
 class FooterContactInfo(models.Model):
     icon = models.FileField(upload_to='footer_icons', blank=True, null=True)
     label = models.CharField(max_length=100)  # e.g. "Email", "Phone", "Location"
@@ -215,7 +211,6 @@ class FooterContactInfo(models.Model):
 
     def __str__(self):
         return f"{self.label}: {self.value}"
-
 
 class FooterSocialMedia(models.Model):
     platform_name = models.CharField(max_length=50)  # e.g. Twitter, Facebook
