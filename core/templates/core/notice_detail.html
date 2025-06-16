@@ -22,7 +22,7 @@
         <img src="{{ notice.image.url }}" alt="{{ notice.title }}" class="w-full h-64 object-cover rounded-xl mb-6" />
       {% endif %}
 
-      <div class="text-gray-700 leading-relaxed space-y-4 text-base mb-6">{{ notice.content|linebreaks }}</div>
+      <div class="text-gray-700 leading-relaxed space-y-4 text-base mb-6">{{ notice.content|urlize|linebreaks }}</div>
 
       {% if attachments %}
         <div>

@@ -2,6 +2,7 @@ from django.shortcuts import render, get_object_or_404
 from . import models
 from django.utils import timezone
 from django.db.models import Q
+from django.core.paginator import Paginator
 
 def home(request):
     hero_carousels = models.HeroCarousel.objects.filter(is_slide_active=True).order_by(
@@ -43,7 +44,10 @@ def home(request):
 
 
 def notice(request):
-    notices = models.Notice.objects.order_by('-published_date')
+    notice_list = models.Notice.objects.order_by('-published_date')
+    paginator = Paginator(notice_list, 6)  # Show N notices per page
+    page_number = request.GET.get('page')
+    notices = paginator.get_page(page_number)
     return render(request, 'core/notice.html', {'notices': notices})
 
 def notice_detail(request, pk):
