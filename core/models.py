@@ -26,7 +26,6 @@ class HeroCarousel(models.Model):
     is_slide_active = models.BooleanField(default=True)  # Slide visibility
 
     # Button 1
-    is_button1_active = models.BooleanField(default=False)
     button1_text = models.CharField(max_length=50, blank=True, null=True)
     button1_class = models.CharField(
         max_length=10,
@@ -36,7 +35,6 @@ class HeroCarousel(models.Model):
     button1_url = models.URLField(max_length=255, blank=True, null=True)
 
     # Button 2
-    is_button2_active = models.BooleanField(default=False)
     button2_text = models.CharField(max_length=50, blank=True, null=True)
     button2_class = models.CharField(
         max_length=10,
