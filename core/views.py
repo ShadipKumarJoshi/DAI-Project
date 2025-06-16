@@ -41,3 +41,8 @@ def home(request):
         'featured_news': featured_news,
         'other_news': other_news,
     })
+    
+def dummy(request):
+    return render(request, 'core/dummy.html',)
+        
+        
