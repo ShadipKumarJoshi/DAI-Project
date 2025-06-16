@@ -22,7 +22,7 @@
           <div class="flex flex-wrap gap-2 mb-2">
             {% for tag in service.tags.all %}
               {% if tag.is_active %}
-                <span class="text-sm text-gray-500 px-3 py-1">{{ tag.name }}</span>
+                <span class="text-sm text-gray-500 py-1 mr-0">{{ tag.name }}</span>
               {% endif %}
             {% endfor %}
           </div>
