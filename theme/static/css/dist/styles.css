@@ -236,6 +236,9 @@
   .left-3 {
     left: calc(var(--spacing) * 3);
   }
+  .left-6 {
+    left: calc(var(--spacing) * 6);
+  }
   .left-20 {
     left: calc(var(--spacing) * 20);
   }
@@ -573,6 +576,9 @@
   }
   .py-4 {
     padding-block: calc(var(--spacing) * 4);
+  }
+  .py-6 {
+    padding-block: calc(var(--spacing) * 6);
   }
   .py-10 {
     padding-block: calc(var(--spacing) * 10);
