@@ -219,6 +219,7 @@ class Notice(models.Model):
     content = models.TextField()
     published_date = models.DateField()
     image = models.ImageField(upload_to='notices/', blank=True, null=True)
+    pop_up = models.BooleanField(default=False)
 
     def __str__(self):
         return self.title

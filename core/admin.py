@@ -107,5 +107,12 @@ class NoticeAttachmentInline(admin.TabularInline):
 
 @admin.register(models.Notice)
 class NoticeAdmin(admin.ModelAdmin):
-    list_display = ('title', 'published_date')
+    list_display = ('title', 'published_date', 'pop_up')
     inlines = [NoticeAttachmentInline]
+    list_editable = ('pop_up',)
+
+    def save_model(self, request, obj, form, change):
+        if obj.pop_up:
+            # Ensure only one notice is marked to show in popup
+            models.Notice.objects.exclude(pk=obj.pk).update(pop_up=False)
+        super().save_model(request, obj, form, change)

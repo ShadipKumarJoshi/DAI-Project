@@ -1,0 +1,46 @@
+{% if pop_up_notice %}
+  <!-- Popup Overlay -->
+  <div id="notice-popup" 
+       class="fixed inset-0 bg-gray-700 bg-opacity-60 flex items-center justify-center z-50"
+       style="min-height: 100vh;">
+    <!-- Popup Content -->
+    <div class="bg-white rounded-xl shadow-lg max-w-xl w-1/2 max-h-[75vh] overflow-y-auto p-6 relative">
+      
+      <!-- Close Button -->
+      <button id="close-popup" 
+              class="absolute top-4 right-4 text-red-600 hover:text-red-800 text-3xl font-bold"
+              aria-label="Close popup">&times;</button>
+
+      <!-- Red Notice Label -->
+      <h3 class="text-red-600 font-extrabold uppercase mb-4 text-center">NOTICE</h3>
+
+      <!-- Popup Title -->
+      <h2 class="text-2xl font-bold mb-4 cursor-pointer text-blue-700 hover:underline" 
+          onclick="window.location.href='{% url 'notice-detail' pop_up_notice.pk %}'">
+        {{ pop_up_notice.title }}
+      </h2>
+
+      <!-- Published Date -->
+      <p class="text-sm text-gray-500 mb-4">Published on: {{ pop_up_notice.published_date|date:"d M Y" }}</p>
+
+      <!-- Popup Content -->
+      <div class="text-gray-700 whitespace-pre-line mb-4">
+        {{ pop_up_notice.content|linebreaks }}
+      </div>
+
+      <!-- Image if any -->
+      {% if pop_up_notice.image %}
+        <img src="{{ pop_up_notice.image.url }}" alt="{{ pop_up_notice.title }}" 
+             class="rounded mb-4 object-contain mx-auto" 
+             style="width: 50vw; max-height: 50vh;" />
+      {% endif %}
+    </div>
+  </div>
+
+  <script>
+    // Close popup when clicking the close button
+    document.getElementById('close-popup').addEventListener('click', function() {
+      document.getElementById('notice-popup').style.display = 'none';
+    });
+  </script>
+{% endif %}

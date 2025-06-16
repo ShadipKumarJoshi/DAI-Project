@@ -31,6 +31,9 @@ def home(request):
     # Show rest (excluding the 2 already shown) on the right
     other_news = news_list.exclude(id__in=[n.id for n in featured_news])[
         :4]  # limit preview to 4 news on right
+    
+    # Get the popup notice (the latest one marked for popup)
+    pop_up_notice = models.Notice.objects.filter(pop_up=True).order_by('-published_date').first()
 
     return render(request, 'core/home.html', {
         'hero_carousels': hero_carousels,
@@ -40,6 +43,7 @@ def home(request):
         'guideline_cards': guideline_cards,
         'featured_news': featured_news,
         'other_news': other_news,
+        'pop_up_notice': pop_up_notice,
     })
 
 
