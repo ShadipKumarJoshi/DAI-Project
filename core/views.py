@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from . import models
 from django.utils import timezone
 from django.db.models import Q
@@ -39,6 +39,19 @@ def home(request):
         'guideline_cards': guideline_cards,
         'featured_news': featured_news,
         'other_news': other_news,
+    })
+
+
+def notice(request):
+    notices = models.Notice.objects.order_by('-published_date')
+    return render(request, 'core/notice.html', {'notices': notices})
+
+def notice_detail(request, pk):
+    notice = get_object_or_404(models.Notice, pk=pk)
+    attachments = notice.attachments.all()
+    return render(request, 'core/notice_detail.html', {
+        'notice': notice,
+        'attachments': attachments,
     })
 
 def dummy(request):

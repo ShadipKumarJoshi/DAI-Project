@@ -1,0 +1,41 @@
+{% extends 'core/base.html' %}
+{% load static %}
+
+{% block title %}
+  Notice-detail
+{% endblock %}
+
+{% block content %}
+  <section class="bg-[#F8FAFC] px-6 pt-20 pb-32 min-h-screen">
+    <div class="max-w-3xl mx-auto bg-white p-10 rounded-xl shadow-lg">
+      <div class="mb-6">
+        <a href="{% url 'notice' %}" class="hover:text-blue-600 hover:underline text-sm">&larr; Back to Notices</a>
+      </div>
+
+      <p class="text-sm text-gray-500 mb-2">
+        Published on: <span class="font-medium">{{ notice.published_date|date:'d M Y' }}</span>
+      </p>
+
+      <h1 class="text-3xl font-bold text-gray-900 mb-4">{{ notice.title }}</h1>
+
+      {% if notice.image %}
+        <img src="{{ notice.image.url }}" alt="{{ notice.title }}" class="w-full h-64 object-cover rounded-xl mb-6" />
+      {% endif %}
+
+      <div class="text-gray-700 leading-relaxed space-y-4 text-base mb-6">{{ notice.content|linebreaks }}</div>
+
+      {% if attachments %}
+        <div>
+          <h3 class="font-semibold mb-2">Attachments:</h3>
+          <ul class="list-disc list-inside text-blue-600">
+            {% for attachment in attachments %}
+              <li>
+                <a href="{{ attachment.file.url }}" target="_blank" class="hover:underline hover:text-blue-600">{{ attachment.file.name }}</a>
+              </li>
+            {% endfor %}
+          </ul>
+        </div>
+      {% endif %}
+    </div>
+  </section>
+{% endblock %}
