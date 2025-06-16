@@ -25,9 +25,9 @@
                 <div class="flex space-x-2">
                   <p>{{ news.created_at|date:'d-m-Y' }}</p>
 
-                  {% if news.updated_at|date:'Y-m-d' != news.created_at|date:'Y-m-d' %}
+                  {% comment %} {% if news.updated_at|date:'Y-m-d' != news.created_at|date:'Y-m-d' %}
                     <p class=" text-gray-500">[Updated] {{ news.updated_at|date:'d-m-Y' }}</p>
-                  {% endif %}
+                  {% endif %} {% endcomment %}
 
                   {% if news.location %}
                     <p class="location">· {{ news.location }}</p>
