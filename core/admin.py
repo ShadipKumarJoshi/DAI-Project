@@ -82,3 +82,21 @@ class NewsEventAdmin(admin.ModelAdmin):
     list_editable = ('is_featured', 'is_active')
     search_fields = ['title', 'description', 'location']
     ordering = ['-created_at']
+    
+@admin.register(models.FooterQuickLink)
+class FooterQuickLinkAdmin(admin.ModelAdmin):
+    list_display = ('title', 'url', 'order', 'is_active')
+    list_editable = ('order', 'is_active')
+    ordering = ('order',)
+
+@admin.register(models.FooterContactInfo)
+class FooterContactInfoAdmin(admin.ModelAdmin):
+    list_display = ('label', 'value', 'order', 'is_active')
+    list_editable = ('order', 'is_active')
+    ordering = ('order',)
+
+@admin.register(models.FooterSocialMedia)
+class FooterSocialMediaAdmin(admin.ModelAdmin):
+    list_display = ('platform_name', 'url', 'order', 'is_active')
+    list_editable = ('order', 'is_active')
+    ordering = ('order',)

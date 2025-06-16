@@ -15,18 +15,15 @@
     <div>
       <h4 class="font-semibold mb-3">Quick Links</h4>
       <ul class="space-y-2 text-gray-600">
-        <li>
-          <a href="#" class="cursor-pointer hover:text-blue-600 hover:underline">Events & Trainings</a>
-        </li>
-        <li>
-          <a href="#" class="cursor-pointer hover:text-blue-600 hover:underline]">Governance & Policy</a>
-        </li>
-        <li>
-          <a href="#" class="cursor-pointer hover:text-blue-600 hover:underline">Contact</a>
-        </li>
-        <li>
-          <a href="#" class="cursor-pointer hover:text-blue-600 hover:underline">FAQs</a>
-        </li>
+        {% for link in footer_quick_links %}
+          <li>
+            <a href="{{ link.url|default:'#' }}" class="cursor-pointer hover:text-blue-600 hover:underline">
+              {{ link.title }}
+            </a>
+          </li>
+        {% empty %}
+          <li>No links available.</li>
+        {% endfor %}
       </ul>
     </div>
 
@@ -34,18 +31,23 @@
     <div>
       <h4 class="font-semibold mb-3">Contact us</h4>
       <ul class="space-y-2 text-gray-600">
-        <li class="flex items-center space-x-2 cursor-pointer hover:text-blue-600 hover:underline">
-          <img src="{% static 'core/images/icons/contact.svg' %}" class="w-4 h-4" alt="Email Icon" />
-          <span>contact@company.com</span>
-        </li>
-        <li class="flex items-center space-x-2">
-          <img src="{% static 'core/images/icons/phone.svg' %}" class="w-4 h-4 text-[#0F1324]" alt="Phone Icon" />
-          <span>(977) 9807890435</span>
-        </li>
-        <li class="flex items-center space-x-2">
-          <img src="{% static 'core/images/icons/location.svg' %}" class="w-4 h-4 text-[#0F1324]" alt="Location Icon" />
-          <span>Kathmandu, Nepal</span>
-        </li>
+        {% for contact in footer_contact_infos %}
+          <li class="flex items-center space-x-2 {% if contact.url %}hover:text-blue-600 hover:underline cursor-pointer{% endif %}">
+            {% if contact.icon %}
+              <img src="{{ contact.icon.url }}" class="w-4 h-4" alt="{{ contact.label }} Icon" />
+            {% else %}
+              <!-- fallback icon or empty span -->
+              <span class="w-4 h-4"></span>
+            {% endif %}
+            {% if contact.url %}
+              <a href="{{ contact.url }}">{{ contact.value }}</a>
+            {% else %}
+              <span>{{ contact.value }}</span>
+            {% endif %}
+          </li>
+        {% empty %}
+          <li>No contact info available.</li>
+        {% endfor %}
       </ul>
     </div>
 
@@ -62,20 +64,20 @@
     </div>
   </div>
 
-<!-- Bottom bar -->
+  <!-- Bottom bar -->
   <div class="border-t border-gray-200">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex flex-col md:flex-row items-center justify-between">
       <p class="text-xs text-gray-500">2025 © DAI All Rights Reserved</p>
       <div class="flex space-x-4 mt-2 md:mt-0">
-        <a href="#" class="block w-5 h-5">
-          <img src="{% static 'core/images/icons/twitter.png' %}" alt="Twitter" class="w-full h-full object-contain hover:opacity-70 transition" />
-        </a>
-        <a href="#" class="block w-5 h-5">
-          <img src="{% static 'core/images/icons/instagram.png' %}" alt="Instagram" class="w-full h-full object-contain hover:opacity-70 transition" />
-        </a>
-        <a href="#" class="block w-5 h-5">
-          <img src="{% static 'core/images/icons/facebook.png' %}" alt="Facebook" class="w-full h-full object-contain hover:opacity-70 transition" />
-        </a>
+        {% for social in footer_social_medias %}
+          <a href="{{ social.url }}" class="block w-5 h-5" target="_blank" rel="noopener noreferrer">
+            <img src="{{ social.icon.url }}" alt="{{ social.platform_name }}" class="w-full h-full object-contain hover:opacity-70 transition" />
+          </a>
+        {% empty %}
+          <!-- fallback or empty -->
+          <span>No social media links.</span>
+        {% endfor %}
       </div>
     </div>
   </div>
+</footer>
