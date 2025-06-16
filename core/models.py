@@ -19,8 +19,7 @@ class NavbarItem(models.Model):
     def __str__(self):
         return self.title or "Unnamed Item"
 
-# hero_carousel_section.html
-class Slider(models.Model):
+class HeroCarousel(models.Model):
     title = models.TextField()
     description = models.TextField()
 

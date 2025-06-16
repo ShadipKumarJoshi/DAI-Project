@@ -11,8 +11,8 @@ class NavbarItemAdmin(admin.ModelAdmin):
     search_fields = ('title', 'url')
 
 
-@admin.register(models.Slider)
-class SliderAdmin(admin.ModelAdmin):
+@admin.register(models.HeroCarousel)
+class HeroCarouselAdmin(admin.ModelAdmin):
     # Add the visibility column
     list_display = ('title', 'order', 'is_slide_active')
     ordering = ['order']

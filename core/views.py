@@ -6,8 +6,8 @@ from django.db.models import Q
 
 
 def home(request):
-    sliders = models.Slider.objects.filter(is_slide_active=True).order_by(
-        'order')  # Fetch only active sliders
+    hero_carousels = models.HeroCarousel.objects.filter(is_slide_active=True).order_by(
+        'order')  # Fetch only active hero_carousels
     sme_section = models.SMEDevelopmentStepSection.objects.filter(
         is_active=True).first()
     sme_steps = sme_section.steps.filter(
@@ -33,7 +33,7 @@ def home(request):
 
     
     return render(request, 'core/home.html', {
-        'sliders': sliders,
+        'hero_carousels': hero_carousels,
         'sme_section': sme_section,
         'sme_steps': sme_steps,
         'service_cards': service_cards,

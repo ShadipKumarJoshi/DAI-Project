@@ -3,7 +3,7 @@
   <div class="swiper max-w-5xl mx-auto pb-10">
     <!-- Slides wrapper -->
     <div class="swiper-wrapper">
-      {% for slide in sliders %}
+      {% for slide in hero_carousels %}
         {% if slide.is_slide_active %}
           <div class="swiper-slide text-center">
             <h1 class="font-satoshi font-medium text-[50px] text-[#0F1324] mb-4">{{ slide.title|safe }}</h1>
