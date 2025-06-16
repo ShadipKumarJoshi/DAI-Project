@@ -80,16 +80,6 @@ class SMEDevelopmentStep(models.Model):
     order = models.PositiveIntegerField(default=0)
     is_active = models.BooleanField(default=True)
 
-    # Optional Button
-    is_button_active = models.BooleanField(default=False)
-    button_text = models.CharField(max_length=50, blank=True, null=True)
-    button_class = models.CharField(
-        max_length=10,
-        choices=constants.BUTTON_STYLE_CHOICES,
-        null=True, blank=True
-    )
-    button_url = models.URLField(max_length=255, blank=True, null=True)
-
     class Meta:
         ordering = ['order']
 
