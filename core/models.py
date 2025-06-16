@@ -2,6 +2,7 @@ from django.db import models
 from django.utils import timezone
 from django.core.validators import URLValidator
 from django.db.models import Q
+from . import constants 
 
 
 class NavbarItem(models.Model):
@@ -11,7 +12,7 @@ class NavbarItem(models.Model):
     is_button = models.BooleanField(default=False)
     button_style = models.CharField(
         max_length=10,
-        choices=[('black', 'Black'), ('white', 'White')],
+        choices=constants.BUTTON_STYLE_CHOICES,
         null=True, blank=True
     )
     is_active = models.BooleanField(default=True)
@@ -29,7 +30,7 @@ class HeroCarousel(models.Model):
     button1_text = models.CharField(max_length=50, blank=True, null=True)
     button1_class = models.CharField(
         max_length=10,
-        choices=[('black', 'Black'), ('white', 'White'), ('blue', 'Blue')],
+        choices=constants.BUTTON_STYLE_CHOICES,
         null=True, blank=True
     )
     button1_url = models.URLField(max_length=255, blank=True, null=True)
@@ -38,7 +39,7 @@ class HeroCarousel(models.Model):
     button2_text = models.CharField(max_length=50, blank=True, null=True)
     button2_class = models.CharField(
         max_length=10,
-        choices=[('black', 'Black'), ('white', 'White'), ('blue', 'Blue')],
+        choices=constants.BUTTON_STYLE_CHOICES,
         null=True, blank=True
     )
     button2_url = models.URLField(max_length=255, blank=True, null=True)
@@ -60,7 +61,7 @@ class SMEDevelopmentStepSection(models.Model):
     button_text = models.CharField(max_length=50, blank=True, null=True)
     button_class = models.CharField(
         max_length=10,
-        choices=[('black', 'Black'), ('white', 'White'), ('blue', 'Blue')],
+        choices=constants.BUTTON_STYLE_CHOICES,
         null=True, blank=True
     )
     button_url = models.URLField(max_length=255, blank=True, null=True)
@@ -84,7 +85,7 @@ class SMEDevelopmentStep(models.Model):
     button_text = models.CharField(max_length=50, blank=True, null=True)
     button_class = models.CharField(
         max_length=10,
-        choices=[('black', 'Black'), ('white', 'White'), ('blue', 'Blue')],
+        choices=constants.BUTTON_STYLE_CHOICES,
         null=True, blank=True
     )
     button_url = models.URLField(max_length=255, blank=True, null=True)
