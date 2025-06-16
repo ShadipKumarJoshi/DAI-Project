@@ -3,8 +3,6 @@ from . import models
 from django.utils import timezone
 from django.db.models import Q
 
-
-
 def home(request):
     hero_carousels = models.HeroCarousel.objects.filter(is_slide_active=True).order_by(
         'order')  # Fetch only active hero_carousels
@@ -13,15 +11,16 @@ def home(request):
     sme_steps = sme_section.steps.filter(
         is_active=True).order_by('order') if sme_section else []
     service_cards = models.ServiceCard.objects.filter(
-        is_active=True).prefetch_related('tags')
+        is_active=True).prefetch_related('tags')    # Efficiently fetches many-to-many or reverse foreign key related objects in a single batch query, reducing database hits.
     guideline_cards = models.SMEGuidelineCard.objects.filter(
         is_active=True).order_by('order')
     now = timezone.now()
     # Filter news within publication window
     news_list = models.NewsEvent.objects.filter(
         is_active=True,
-        publication_start__lte=now
+        publication_start__lte=now  # lte = Less Than or Equal To
     ).filter(
+        # gte = Greater Than or Equal To
         Q(publication_end__gte=now) | Q(publication_end__isnull=True)
     ).order_by('-is_featured', '-created_at')  # Featured first, then latest
 
@@ -29,9 +28,9 @@ def home(request):
     featured_news = list(news_list[:2])
 
     # Show rest (excluding the 2 already shown) on the right
-    other_news = news_list.exclude(id__in=[n.id for n in featured_news])[:4] #limit preview to 4 news on right
+    other_news = news_list.exclude(id__in=[n.id for n in featured_news])[
+        :4]  # limit preview to 4 news on right
 
-    
     return render(request, 'core/home.html', {
         'hero_carousels': hero_carousels,
         'sme_section': sme_section,
@@ -41,8 +40,6 @@ def home(request):
         'featured_news': featured_news,
         'other_news': other_news,
     })
-    
+
 def dummy(request):
     return render(request, 'core/dummy.html',)
-        
-        
