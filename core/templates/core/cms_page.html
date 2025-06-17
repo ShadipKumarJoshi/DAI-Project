@@ -4,6 +4,11 @@
   {{ page.title }}
 {% endblock %}
 
+{% block meta_tags %}
+  <meta name="description" content="{{ page.seo_description|default:page.content|truncatewords:25 }}">
+  <meta name="keywords" content="{{ page.seo_keywords|default:'' }}">
+{% endblock %}
+
 {% block content %}
   <section class="px-6 pt-16 pb-40 min-h-screen max-w-4xl mx-auto">
     <h1 class="text-4xl font-bold mb-6">{{ page.title }}</h1>
