@@ -1,5 +1,8 @@
 from django.contrib import admin
 from . import models
+from ckeditor_uploader.widgets import CKEditorUploadingWidget
+from django import forms
+
 
 
 @admin.register(models.NavbarItem)
@@ -111,11 +114,20 @@ class NoticeAdmin(admin.ModelAdmin):
     list_display = ('title', 'published_date', 'pop_up')
     inlines = [NoticeAttachmentInline]
     list_editable = ('pop_up',)
-    
+ 
+class CMSPageAdminForm(forms.ModelForm):
+    content = forms.CharField(widget=CKEditorUploadingWidget())
+
+    class Meta:
+        model = models.CMSPage
+        fields = '__all__'
+   
 @admin.register(models.CMSPage)
 class CMSPageAdmin(admin.ModelAdmin):
-    list_display = ('title', 'slug', 'published', 'updated_at')
+    form = CMSPageAdminForm
+    list_display = ('title', 'slug', 'published', 'created_at', 'updated_at')
     prepopulated_fields = {"slug": ("title",)}
-    list_filter = ('published',)
+    list_filter = ('published', 'created_at', 'updated_at')
     search_fields = ('title', 'content')
+
 
