@@ -3,6 +3,8 @@ from . import models
 from django.utils import timezone
 from django.db.models import Q
 from django.core.paginator import Paginator
+from django.utils.html import strip_tags
+from django.utils.text import Truncator
 
 def home(request):
     hero_carousels = models.HeroCarousel.objects.filter(is_slide_active=True).order_by(
@@ -32,9 +34,19 @@ def home(request):
     other_news = news_list.exclude(id__in=[n.id for n in featured_news])[
         :4]  # limit preview to 4 news on right
     
-    # Get the popup notice (the latest one marked for popup)
-    pop_up_notice = models.Notice.objects.filter(pop_up=True).order_by('-published_date').first()
-
+     # ✅ Get all pop-up notices
+    popup_notices_qs = models.Notice.objects.filter(pop_up=True).order_by('-published_date')
+    
+    # ✅ Simplify and serialize notices for frontend
+    pop_up_notices = []
+    for notice in popup_notices_qs:
+        pop_up_notices.append({
+            'id': notice.id,
+            'title': notice.title,
+            'content': Truncator(strip_tags(notice.content)).chars(300),
+            'image': notice.image.url if notice.image else None,
+        })
+        
     return render(request, 'core/home.html', {
         'hero_carousels': hero_carousels,
         'sme_section': sme_section,
@@ -43,7 +55,7 @@ def home(request):
         'guideline_cards': guideline_cards,
         'featured_news': featured_news,
         'other_news': other_news,
-        'pop_up_notice': pop_up_notice,
+        'pop_up_notices': pop_up_notices,
     })
 
 

@@ -111,8 +111,8 @@ class NoticeAdmin(admin.ModelAdmin):
     inlines = [NoticeAttachmentInline]
     list_editable = ('pop_up',)
 
-    def save_model(self, request, obj, form, change):
-        if obj.pop_up:
-            # Ensure only one notice is marked to show in popup
-            models.Notice.objects.exclude(pk=obj.pk).update(pop_up=False)
-        super().save_model(request, obj, form, change)
+    # def save_model(self, request, obj, form, change):
+    #     if obj.pop_up:
+    #         # Ensure only one notice is marked to show in popup
+    #         models.Notice.objects.exclude(pk=obj.pk).update(pop_up=False)
+    #     super().save_model(request, obj, form, change)
