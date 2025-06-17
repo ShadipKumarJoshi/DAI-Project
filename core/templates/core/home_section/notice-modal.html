@@ -1,12 +1,12 @@
 {% if pop_up_notice %}
 <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
 
-<div x-data="{ open: true }" x-show="open" class="relative z-10" aria-labelledby="dialog-title" role="dialog" aria-modal="true">
+<div x-data="{ open: true }" x-show="open"  class="fixed inset-0 z-[9999]"  aria-labelledby="dialog-title" role="dialog" aria-modal="true">
   <!-- Backdrop -->
   <div class="fixed inset-0 bg-gray-500/75 transition-opacity" aria-hidden="true"></div>
 
   <!-- Modal content -->
-  <div class="fixed inset-0 z-10 w-screen overflow-y-auto">
+  <div class="w-screen overflow-y-auto">
     <div class="flex min-h-full items-end justify-center p-4 text-center sm:items-center sm:p-0">
       <div 
         x-show="open" 
