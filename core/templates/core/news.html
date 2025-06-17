@@ -1,0 +1,48 @@
+{% extends 'core/base.html' %}
+
+{% load static %}
+
+{% block title %}
+  News & Events
+{% endblock %}
+
+{% block content %}
+  <section class="px-6 pt-16 pb-40 min-h-screen">
+    <div class="max-w-7xl mx-auto">
+      <h1 class="text-3xl font-bold mb-8">News & Events</h1>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 ">
+        {% for news in news_list %}
+          <a href="{% url 'news-detail' news.pk %}" class="bg-white rounded-xl shadow-2xl p-6 border border-gray-100 hover:shadow-xl transition block">
+            {% if news.image %}
+            <img src="{{ news.image.url }}" alt="{{ news.title }}" class="w-full h-40 object-cover rounded-lg mb-4" />
+            {% endif %}
+            <h2 class="text-xl font-semibold mb-2">{{ news.title }}</h2>
+            <p class="text-sm text-gray-500 mb-2">Published on: {{ news.created_at|date:'d M Y' }}</p>
+            <p class="text-gray-700 truncate">{{ news.description|truncatechars:100 }}</p>
+          </a>
+        {% empty %}
+          <p>No news or events available.</p>
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+
+  <!-- Pagination Controls -->
+  <div class="mt-10 flex justify-center space-x-2">
+    {% if news_list.has_previous %}
+      <a href="?page={{ news_list.previous_page_number }}" class="px-4 py-2 bg-gray-200 text-gray-700 rounded hover:bg-gray-300">&larr; Prev</a>
+    {% endif %}
+
+    {% for num in news_list.paginator.page_range %}
+      {% if news_list.number == num %}
+        <span class="px-4 py-2 bg-blue-600 text-white rounded">{{ num }}</span>
+      {% elif num > news_list.number|add:-2 and num < news_list.number|add:2 %}
+        <a href="?page={{ num }}" class="px-4 py-2 bg-gray-100 text-gray-700 rounded hover:bg-gray-200">{{ num }}</a>
+      {% endif %}
+    {% endfor %}
+
+    {% if news_list.has_next %}
+      <a href="?page={{ news_list.next_page_number }}" class="px-4 py-2 bg-gray-200 text-gray-700 rounded hover:bg-gray-300">Next &rarr;</a>
+    {% endif %}
+  </div>
+{% endblock %}

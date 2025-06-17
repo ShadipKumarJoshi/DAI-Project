@@ -5,7 +5,7 @@
   <div class="max-w-7xl mx-auto">
     <div class="flex justify-between items-center mb-10">
       <h2 class="text-4xl font-bold text-gray-900">Our News & Events</h2>
-      <a href="http://127.0.0.1:8000/dummy" class="btn-blue">See All Events Posts</a>
+      <a href="{% url 'news' %}" class="btn-blue">See All Events Posts</a>
 
     </div>
 
@@ -13,7 +13,7 @@
     <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
       <div class="lg:col-span-2 grid grid-cols-1 md:grid-cols-2 gap-8">
         {% for news in featured_news %}
-          <a href="http://127.0.0.1:8000/dummy" class="news{{ forloop.counter }}">
+          <a href="{% url 'news-detail' news.pk %}" class="news{{ forloop.counter }}">
             <div class="relative">
                 <img src="{{ news.image.url }}" alt="{{ news.title }}" class="w-full h-48 object-cover rounded-3xl" />
               {% if news.status_tag %}
@@ -52,7 +52,7 @@
       {% comment %}Right: other news/events{% endcomment %}
       <div class="lg:col-span-1 space-y-6">
         {% for news in other_news %}
-          <a href="http://127.0.0.1:8000/dummy" class="flex items-center p-4">
+          <a href="{% url 'news-detail' news.pk %}" class="flex items-center p-4">
               <img src="{{ news.image.url }}" alt="{{ news.title }}" class="w-24 h-16 object-cover rounded-md mr-4" />
             <div>
               <p class="text-xs text-gray-500 mb-1">
