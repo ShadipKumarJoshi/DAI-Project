@@ -11,12 +11,16 @@
         {% for service in service_cards %}
           <div class="swiper-slide px-2">
             <a href="{% url 'service_detail' service.id %}" class="block h-full">
-              <div class="bg-white rounded-xl shadow-md p-6 flex flex-col items-start border border-gray-200 h-full hover:shadow-lg transition-shadow duration-300">
+              <div class="bg-white rounded-xl shadow-md p-6 flex flex-col items-start border border-gray-200 h-full hover:shadow-lg transition-shadow duration-300" style="height: 230px; display: flex; flex-direction: column;">
                 <div class="w-12 h-12 p-2 rounded-lg mb-4 flex items-center justify-center bg-gray-100">
-                  <img src="{% if service.icon_path %}{{ service.icon_path }}{% else %}{% static 'core/images/icons/light.svg' %}{% endif %}"
-                       alt="Icon"
-                       class="w-8 h-8"
-                       onerror="this.onerror=null;this.src='https://placehold.co/32x32/E0E0E0/808080?text=Icon';" />
+                  <img src="{% if service.icon_path %}
+                      {{ service.icon_path }}
+                    {% else %}
+                      {% static 'core/images/icons/light.svg' %}
+                    {% endif %}"
+                    alt="Icon"
+                    class="w-8 h-8"
+                    onerror="this.onerror=null;this.src='https://placehold.co/32x32/E0E0E0/808080?text=Icon';" />
                 </div>
                 <div class="flex flex-wrap gap-2 mb-2">
                   {% for tag in service.tags.all %}
@@ -26,7 +30,7 @@
                   {% endfor %}
                 </div>
                 <h3 class="text-xl font-semibold text-gray-900 mb-2">{{ service.title }}</h3>
-                <p class="text-base text-gray-600">{{ service.description }}</p>
+                <p class="text-base text-gray-600">{{ service.description|truncatechars:100 }}</p>
               </div>
             </a>
           </div>
@@ -38,7 +42,7 @@
       <div class="swiper-button-next text-black"></div>
 
       <!-- Pagination bullets -->
-      <div class="swiper-pagination mt-6"></div>
+      {% comment %} <div class="swiper-pagination mt-6"></div> {% endcomment %}
     </div>
   </div>
 
