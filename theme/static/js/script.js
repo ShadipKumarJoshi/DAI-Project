@@ -1,4 +1,4 @@
-// static/core/js/script.js
+// custom scripts for carousel 
 
 document.addEventListener("DOMContentLoaded", function () {
   const swiper = new Swiper('.swiper', {
