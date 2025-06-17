@@ -111,9 +111,11 @@ class NoticeAdmin(admin.ModelAdmin):
     list_display = ('title', 'published_date', 'pop_up')
     inlines = [NoticeAttachmentInline]
     list_editable = ('pop_up',)
+    
+@admin.register(models.CMSPage)
+class CMSPageAdmin(admin.ModelAdmin):
+    list_display = ('title', 'slug', 'published', 'updated_at')
+    prepopulated_fields = {"slug": ("title",)}
+    list_filter = ('published',)
+    search_fields = ('title', 'content')
 
-    # def save_model(self, request, obj, form, change):
-    #     if obj.pop_up:
-    #         # Ensure only one notice is marked to show in popup
-    #         models.Notice.objects.exclude(pk=obj.pk).update(pop_up=False)
-    #     super().save_model(request, obj, form, change)

@@ -101,3 +101,7 @@ def news_detail(request, pk):
 
 def dummy(request):
     return render(request, 'core/dummy.html',)
+
+def cms_page_view(request, slug):
+    page = get_object_or_404(models.CMSPage, slug=slug, published=True)
+    return render(request, 'core/cms_page.html', {'page': page})

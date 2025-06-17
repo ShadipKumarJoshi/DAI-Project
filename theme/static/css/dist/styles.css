@@ -451,6 +451,9 @@
   .max-w-\[150px\] {
     max-width: 150px;
   }
+  .max-w-full {
+    max-width: 100%;
+  }
   .max-w-xl {
     max-width: var(--container-xl);
   }
