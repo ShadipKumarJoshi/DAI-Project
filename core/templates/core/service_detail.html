@@ -1,0 +1,20 @@
+{% extends 'core/base.html' %}
+{% load static %}
+
+{% block title %}{{ service.title }}{% endblock %}
+
+{% block content %}
+<section class="bg-[#F8FAFC] px-6 pt-20 pb-32 min-h-screen">
+  <div class="max-w-4xl mx-auto bg-white p-10 rounded-xl shadow-lg">
+    <a href="{% url 'home' %}#our-services" class="text-sm text-blue-500 hover:underline">&larr; Back to Services</a>
+
+    <h1 class="text-3xl font-bold text-gray-900 mt-4 mb-6">{{ service.title }}</h1>
+
+    {% if service.image %}
+      <img src="{{ service.image.url }}" alt="{{ service.title }}" class="rounded-xl mb-6 w-full h-64 object-cover">
+    {% endif %}
+
+    <p class="text-gray-700 leading-relaxed text-base">{{ service.description|linebreaks }}</p>
+  </div>
+</section>
+{% endblock %}

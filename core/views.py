@@ -74,5 +74,9 @@ def notice_detail(request, pk):
         'attachments': attachments,
     })
 
+def service_detail(request, pk):
+    service = get_object_or_404(models.ServiceCard, pk=pk)
+    return render(request, 'core/service_detail.html', {'service': service})
+
 def dummy(request):
     return render(request, 'core/dummy.html',)

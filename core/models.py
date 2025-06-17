@@ -99,6 +99,7 @@ class ServiceCard(models.Model):
     description = models.TextField()
     icon_path = models.CharField(max_length=255, blank=True, null=True)  # Static path or URL
     tags = models.ManyToManyField(ServiceTag, related_name='services', blank=True)
+    image = models.ImageField(upload_to='service_images/', null=True, blank=True)
     is_active = models.BooleanField(default=True)
     order = models.PositiveIntegerField(default=0)
 
