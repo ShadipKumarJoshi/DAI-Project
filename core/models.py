@@ -55,7 +55,11 @@ class NavbarItem(models.Model):
             except NoReverseMatch:
                 return '#'
         if self.link_type == 'cms' and self.cms_page:
-            return f"/{self.cms_page.slug}/"
+            from django.urls import reverse
+            try:
+                return reverse('cms_page', kwargs={'slug': self.cms_page.slug})
+            except Exception:
+                return f"/{self.cms_page.slug}/"  # fallback
         if self.link_type == 'external' and self.external_url:
             return self.external_url
         return '#'
