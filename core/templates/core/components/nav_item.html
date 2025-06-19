@@ -4,7 +4,7 @@
   {% if item.children.all %}
     <!-- Parent with children: button toggles submenu -->
     <button @click="open = !open" type="button"
-            class="flex items-center space-x-1 hover:text-blue-600 focus:outline-none">
+            class="flex justify-between items-center hover:text-blue-600 px-2 py-1 w-full">
       <span>{{ item.title }}</span>
       <svg class="w-4 h-4 transform transition-transform duration-200"
            :class="{ 'rotate-180': open }"
@@ -16,8 +16,9 @@
   {% else %}
     <!-- Leaf node: regular link -->
     <a href="{{ item.url|default:'#' }}"
-       class="block hover:text-blue-600 px-2 py-1">
-      {{ item.title }}
+       class="flex items-center hover:text-blue-600 px-2 py-1">
+  <span>{{ item.title }}</span>
+      
     </a>
   {% endif %}
 
