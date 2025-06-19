@@ -2,7 +2,7 @@ from django.contrib import admin
 from . import models
 from ckeditor_uploader.widgets import CKEditorUploadingWidget
 from django import forms
-from .forms import NavbarItemForm
+from .forms import NavbarItemForm, CMSPageForm
 
 @admin.register(models.NavbarItem)
 class NavbarItemAdmin(admin.ModelAdmin):
@@ -123,7 +123,7 @@ class CMSPageAdminForm(forms.ModelForm):
    
 @admin.register(models.CMSPage)
 class CMSPageAdmin(admin.ModelAdmin):
-    form = CMSPageAdminForm
+    form =  CMSPageForm
     list_display = ('title', 'slug', 'published', 'created_at', 'updated_at')
     prepopulated_fields = {"slug": ("title",)}
     list_filter = ('published', 'created_at', 'updated_at')

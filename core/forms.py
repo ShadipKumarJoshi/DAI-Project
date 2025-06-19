@@ -3,6 +3,8 @@ from django.core.exceptions import ValidationError
 from django.urls import get_resolver, Resolver404, reverse
 from . import models
 from . import constants
+from django.utils.text import slugify
+
 
 # Custom ModelChoiceField to display "title - slug" in the dropdown
 class CMSPageModelChoiceField(forms.ModelChoiceField):
@@ -96,3 +98,26 @@ class NavbarItemForm(forms.ModelForm):
             cleaned_data['external_url'] = ''
 
         return cleaned_data
+    
+    
+
+class CMSPageForm(forms.ModelForm):
+    class Meta:
+        model = models.CMSPage
+        fields = '__all__'
+
+    def clean_slug(self):
+        # Slug from input or title
+        slug = self.cleaned_data.get('slug')
+        title = self.cleaned_data.get('title')
+        base_slug = slugify(slug or title)
+        slug = base_slug
+        counter = 1
+
+        # Avoid conflict with existing slugs
+        while models.CMSPage.objects.filter(slug=slug).exclude(pk=self.instance.pk).exists():
+            slug = f"{base_slug}-{counter}"
+            counter += 1
+
+        return slug
+
