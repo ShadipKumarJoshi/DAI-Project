@@ -1,5 +1,6 @@
 from django import forms
 from django.core.exceptions import ValidationError
+from django.urls import get_resolver, Resolver404, reverse
 from . import models
 from . import constants
 
@@ -7,7 +8,7 @@ from . import constants
 class CMSPageModelChoiceField(forms.ModelChoiceField):
     def label_from_instance(self, obj):
         return f"{obj.title} - {obj.slug}"
-    
+
 class NavbarItemForm(forms.ModelForm):
     class Meta:
         model = models.NavbarItem
@@ -19,13 +20,36 @@ class NavbarItemForm(forms.ModelForm):
         # Style the dropdown
         self.fields['link_type'].widget.attrs.update({'class': 'vSelect'})
 
-         # Use the custom ModelChoiceField for cms_page
+        # Use the custom ModelChoiceField for cms_page
         if 'cms_page' in self.fields:
             self.fields['cms_page'] = CMSPageModelChoiceField(
                 queryset=models.CMSPage.objects.filter(published=True),
                 required=False,
                 empty_label="Select CMS Page"
             )
+
+        # Build dropdown choices for module_name based on named URLs
+        choices = [('', 'Select Module (Named URL)')]
+
+        # Get all named URL patterns from the default resolver
+        url_patterns = get_resolver().reverse_dict.items()
+
+        # Filter for named URLs which are strings and exclude admin URLs or undesired ones
+        for name, data in url_patterns:
+            if isinstance(name, str):
+                # Optionally, exclude admin and other internal routes here
+                if name.startswith('admin:'):
+                    continue
+                # Add choice tuple (value, display)
+                choices.append((name, name))
+
+        # Replace the module_name field widget with ChoiceField with these choices
+        self.fields['module_name'] = forms.ChoiceField(
+            choices=choices,
+            required=False,
+            widget=forms.Select(attrs={'class': 'vSelect'})
+        )
+
     def clean(self):
         cleaned_data = super().clean()
 
