@@ -8,7 +8,7 @@ from ckeditor_uploader.fields import RichTextUploadingField
 from django.core.exceptions import ValidationError
 
 class NavbarItem(models.Model):
-    title = models.CharField(max_length=100, null=True, blank=True)
+    title = models.CharField(max_length=100, null=False, blank=False)
     parent = models.ForeignKey('self', null=True, blank=True, related_name='children', on_delete=models.CASCADE)
     order = models.PositiveIntegerField(default=0)
     is_button = models.BooleanField(default=False)
@@ -18,7 +18,7 @@ class NavbarItem(models.Model):
     # New link fields
     link_type = models.CharField(max_length=10, choices=constants.LINK_TYPE_CHOICES, blank=True, null=True)
     module_name = models.CharField(max_length=100, blank=True, null=True)
-    cms_page = models.ForeignKey('CMSPage', null=True, blank=True, on_delete=models.SET_NULL)
+    cms_page = models.ForeignKey('CMSPage', null=True, blank=True, on_delete=models.CASCADE)
     external_url = models.URLField(max_length=255, blank=True, null=True)
 
     def __str__(self):
