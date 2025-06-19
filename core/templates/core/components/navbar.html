@@ -14,7 +14,7 @@
       <ul class="hidden md:flex space-x-6 text-sm font-medium">
         {% for item in navbar_items %}
           {% if not item.is_button and item.is_active %}
-            {% include 'core/components/nav_item.html' with item=item %}
+            {% include 'core/components/nav_item.html' with item=item level=1 %}
           {% endif %}
         {% endfor %}
       </ul>

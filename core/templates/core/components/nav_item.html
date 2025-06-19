@@ -1,7 +1,8 @@
-<li x-data="{ open: false }" class="relative">
+{% with level|default:1 as lvl %}
+<li x-data="{ open: false }" class="relative whitespace-nowrap">
 
   {% if item.children.all %}
-    <!-- Has children: button with toggle -->
+    <!-- Parent with children: button toggles submenu -->
     <button @click="open = !open" type="button"
             class="flex items-center space-x-1 hover:text-blue-600 focus:outline-none">
       <span>{{ item.title }}</span>
@@ -24,12 +25,19 @@
     <ul 
       x-show="open"
       x-transition
-      class="absolute bg-white shadow-md rounded mt-2 left-0 min-w-max z-50"
+      class="absolute bg-white shadow-md rounded z-50 min-w-max
+        {% if lvl == 1 %}
+          left-0 top-full mt-2
+        {% else %}
+          top-0 left-full ml-1
+        {% endif %}"
       @click.outside="open = false"
+      style="display: none;"
     >
       {% for child in item.children.all %}
-        {% include 'core/components/nav_item.html' with item=child %}
+        {% include 'core/components/nav_item.html' with item=child level=lvl|add:'1' %}
       {% endfor %}
     </ul>
   {% endif %}
 </li>
+{% endwith %}
