@@ -1,28 +1,69 @@
 from django import forms
 from django.core.exceptions import ValidationError
 from . import models
+from . import constants
 
+# Custom ModelChoiceField to display "title - slug" in the dropdown
+class CMSPageModelChoiceField(forms.ModelChoiceField):
+    def label_from_instance(self, obj):
+        return f"{obj.title} - {obj.slug}"
+    
 class NavbarItemForm(forms.ModelForm):
     class Meta:
         model = models.NavbarItem
         fields = '__all__'
 
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+
+        # Style the dropdown
+        self.fields['link_type'].widget.attrs.update({'class': 'vSelect'})
+
+         # Use the custom ModelChoiceField for cms_page
+        if 'cms_page' in self.fields:
+            self.fields['cms_page'] = CMSPageModelChoiceField(
+                queryset=models.CMSPage.objects.filter(published=True),
+                required=False,
+                empty_label="Select CMS Page"
+            )
     def clean(self):
         cleaned_data = super().clean()
+
         is_button = cleaned_data.get('is_button')
         parent = cleaned_data.get('parent')
+        link_type = cleaned_data.get('link_type')
+        module_name = cleaned_data.get('module_name')
+        cms_page = cleaned_data.get('cms_page')
+        external_url = cleaned_data.get('external_url')
 
+        # ---------- Button / Hierarchy Rules ----------
         if is_button and parent is not None:
             raise ValidationError("Button items cannot have a parent.")
-
-        if is_button:
-            # Check children if this is an existing instance
-            if self.instance.pk:
-                children = self.instance.children.all()
-                if children.exists():
-                    raise ValidationError("Button items cannot have children.")
-
+        if is_button and self.instance.pk and self.instance.children.exists():
+            raise ValidationError("Button items cannot have children.")
         if parent and parent.is_button:
             raise ValidationError("Non-button items cannot have a button as parent.")
+
+        # ---------- Link Validation ----------
+        if link_type == 'module':
+            if not module_name:
+                raise ValidationError("Module name must be provided when link type is 'module'.")
+            cleaned_data['cms_page'] = None
+            cleaned_data['external_url'] = ''
+        elif link_type == 'cms':
+            if not cms_page:
+                raise ValidationError("CMS Page must be selected when link type is 'cms'.")
+            cleaned_data['module_name'] = ''
+            cleaned_data['external_url'] = ''
+        elif link_type == 'external':
+            if not external_url:
+                raise ValidationError("External URL must be provided when link type is 'external'.")
+            cleaned_data['module_name'] = ''
+            cleaned_data['cms_page'] = None
+        else:
+            # If no link_type selected, clear all link fields
+            cleaned_data['module_name'] = ''
+            cleaned_data['cms_page'] = None
+            cleaned_data['external_url'] = ''
 
         return cleaned_data

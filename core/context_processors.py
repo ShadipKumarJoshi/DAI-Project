@@ -9,7 +9,6 @@ def navbar_buttons(request):
     buttons = models.NavbarItem.objects.filter(is_active=True, is_button=True).order_by('order')
     return {'navbar_buttons': buttons}
 
-
 def footer_data(request):
     quick_links = models.FooterQuickLink.objects.filter(is_active=True)
     contact_infos = models.FooterContactInfo.objects.filter(is_active=True)

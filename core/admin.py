@@ -2,12 +2,13 @@ from django.contrib import admin
 from . import models
 from ckeditor_uploader.widgets import CKEditorUploadingWidget
 from django import forms
+from .forms import NavbarItemForm
 
 @admin.register(models.NavbarItem)
 class NavbarItemAdmin(admin.ModelAdmin):
-    # form = forms.NavbarItemForm
-    list_display = ('title', 'url', 'is_button',
-                    'button_style', 'order', 'is_active')
+    form = NavbarItemForm  
+
+    list_display = ('title', 'url', 'is_button', 'button_style', 'order', 'is_active')
     list_editable = ('is_active', 'order')
     list_filter = ('is_button', 'button_style', 'is_active')
     search_fields = ('title', 'url')
