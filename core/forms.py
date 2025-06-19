@@ -13,6 +13,11 @@ class NavbarItemForm(forms.ModelForm):
     class Meta:
         model = models.NavbarItem
         fields = '__all__'
+    
+    class Media:
+        js = ('admin/js/vendor/jquery/jquery.js',  
+            'js/navbar_item_admin.js',)
+        
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
