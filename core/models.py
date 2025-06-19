@@ -28,7 +28,7 @@ class NavbarItem(models.Model):
         if self.is_button:
             if self.parent is not None:
                 raise ValidationError("Button items cannot have a parent.")
-            if self.children.exists():
+            if self.pk and self.children.exists():
                 raise ValidationError("Button items cannot have children.")
         # Non-buttons cannot have a button as parent
         if self.parent and self.parent.is_button:
