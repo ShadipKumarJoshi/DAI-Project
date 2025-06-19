@@ -3,16 +3,14 @@ from . import models
 from ckeditor_uploader.widgets import CKEditorUploadingWidget
 from django import forms
 
-
-
 @admin.register(models.NavbarItem)
 class NavbarItemAdmin(admin.ModelAdmin):
+    # form = forms.NavbarItemForm
     list_display = ('title', 'url', 'is_button',
                     'button_style', 'order', 'is_active')
     list_editable = ('is_active', 'order')
     list_filter = ('is_button', 'button_style', 'is_active')
     search_fields = ('title', 'url')
-
 
 @admin.register(models.HeroCarousel)
 class HeroCarouselAdmin(admin.ModelAdmin):

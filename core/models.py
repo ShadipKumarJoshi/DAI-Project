@@ -5,7 +5,7 @@ from django.db.models import Q
 from . import constants 
 from django.utils.text import slugify
 from ckeditor_uploader.fields import RichTextUploadingField
-
+from django.core.exceptions import ValidationError
 
 class NavbarItem(models.Model):
     title = models.CharField(max_length=100, null=True, blank=True)
@@ -23,6 +23,20 @@ class NavbarItem(models.Model):
     def __str__(self):
         return self.title or "Unnamed Item"
 
+    def clean(self):
+        # Buttons cannot have parents or children
+        if self.is_button:
+            if self.parent is not None:
+                raise ValidationError("Button items cannot have a parent.")
+            if self.children.exists():
+                raise ValidationError("Button items cannot have children.")
+        # Non-buttons cannot have a button as parent
+        if self.parent and self.parent.is_button:
+            raise ValidationError("Non-button items cannot have a button as parent.")
+
+    def save(self, *args, **kwargs):
+        self.clean()  # validate before saving
+        super().save(*args, **kwargs)
 
 class HeroCarousel(models.Model):
     title = models.TextField()
