@@ -1,29 +1,33 @@
 {% load static %}
+ <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+ <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
 
 <nav class="bg-white shadow fixed top-0 w-full z-50">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex items-center justify-between">
+
     <!-- Left: Logos and Menu -->
     <div class="flex items-center space-x-4">
       <img src="{% static 'core/images/logos/dai_logo.png' %}" alt="DAI Logo" class="h-10" />
       <img src="{% static 'core/images/logos/Emblem_of_Nepal.png' %}" alt="Nepal Emblem" class="h-10" />
 
-      <!-- Dynamic Nav Links -->
-      <nav class="hidden md:flex space-x-6 text-sm font-medium">
+      <!-- Main Nav Container -->
+      <ul class="hidden md:flex space-x-6 text-sm font-medium">
         {% for item in navbar_items %}
           {% if not item.is_button and item.is_active %}
-            <a href="{{item.url }}" class="hover:text-blue-600 hover:underline cursor-pointer">{{ item.title }}</a>
+            {% include 'core/components/nav_item.html' with item=item %}
           {% endif %}
         {% endfor %}
-      </nav>
+      </ul>
     </div>
 
-    <!-- Right: Dynamic Buttons -->
+    <!-- Right: Button Links -->
     <div class="space-x-2">
       {% for item in navbar_items %}
         {% if item.is_button and item.is_active %}
-          <a href="{{item.url }}"><button class="btn-{{ item.button_style }}">{{ item.title }}</button></a>
+          <a href="{{ item.url }}"><button class="btn-{{ item.button_style }}">{{ item.title }}</button></a>
         {% endif %}
       {% endfor %}
     </div>
+
   </div>
 </nav>

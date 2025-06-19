@@ -10,6 +10,7 @@ from ckeditor_uploader.fields import RichTextUploadingField
 class NavbarItem(models.Model):
     title = models.CharField(max_length=100, null=True, blank=True)
     url = models.URLField(max_length=255, blank=True, null=True)
+    parent = models.ForeignKey('self', null=True, blank=True, related_name='children', on_delete=models.CASCADE)
     order = models.PositiveIntegerField(default=0)
     is_button = models.BooleanField(default=False)
     button_style = models.CharField(
@@ -21,6 +22,7 @@ class NavbarItem(models.Model):
 
     def __str__(self):
         return self.title or "Unnamed Item"
+
 
 class HeroCarousel(models.Model):
     title = models.TextField()

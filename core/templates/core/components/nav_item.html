@@ -1,0 +1,35 @@
+<li x-data="{ open: false }" class="relative">
+
+  {% if item.children.all %}
+    <!-- Has children: button with toggle -->
+    <button @click="open = !open" type="button"
+            class="flex items-center space-x-1 hover:text-blue-600 focus:outline-none">
+      <span>{{ item.title }}</span>
+      <svg class="w-4 h-4 transform transition-transform duration-200"
+           :class="{ 'rotate-180': open }"
+           xmlns="http://www.w3.org/2000/svg" fill="none"
+           viewBox="0 0 24 24" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+      </svg>
+    </button>
+  {% else %}
+    <!-- Leaf node: regular link -->
+    <a href="{{ item.url|default:'#' }}"
+       class="block hover:text-blue-600 px-2 py-1">
+      {{ item.title }}
+    </a>
+  {% endif %}
+
+  {% if item.children.all %}
+    <ul 
+      x-show="open"
+      x-transition
+      class="absolute bg-white shadow-md rounded mt-2 left-0 min-w-max z-50"
+      @click.outside="open = false"
+    >
+      {% for child in item.children.all %}
+        {% include 'core/components/nav_item.html' with item=child %}
+      {% endfor %}
+    </ul>
+  {% endif %}
+</li>
