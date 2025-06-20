@@ -1,0 +1,94 @@
+{% extends 'core/base.html' %}
+
+{% load static %}
+
+{% block title %}
+  Login
+{% endblock %}
+
+{% block content %}
+  <section class="min-h-screen bg-gray-100 flex items-center justify-center">
+    <div class="bg-white p-10 rounded-lg shadow-lg w-full max-w-xl">
+      <!-- Logo -->
+      <div class="flex justify-center mb-6">
+        <img src="{% static 'core/images/logos/dai_logo.png' %}" alt="DAI Logo" class="h-5" />
+      </div>
+
+      <!-- Title -->
+      <h2 class="text-2xl font-bold mb-6">Login to your account</h2>
+
+      <!-- Login Form -->
+      <form method="POST" class="space-y-5">
+        {% csrf_token %}
+
+        <!-- Email Field -->
+        <div>
+          <label for="email" class="block text-sm font-medium mb-1">Email</label>
+          <input type="email" name="email" id="email" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="you@example.com" required />
+        </div>
+
+        <!-- Password Field -->
+        <div>
+          <label for="password" class="block text-sm font-medium mb-1">Password</label>
+          <div class="relative">
+            <input type="password" name="password" id="password" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500" placeholder="Enter your password" required />
+            <!-- Eye icon (optional toggle script can be added later) -->
+            <!-- Toggle button -->
+            <button type="button" id="togglePassword" class="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400 cursor-pointer">
+              <!-- Eye icon (visible initially) -->
+              <svg id="eyeIcon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-eye" viewBox="0 0 16 16">
+                <path d="M16 8s-3-5.5-8-5.5S0 8 0 8s3 5.5 8 5.5S16 8 16 8M1.173 8a13 13 0 0 1 1.66-2.043C4.12 4.668 5.88 3.5 8 3.5s3.879 1.168 5.168 2.457A13 13 0 0 1 14.828 8q-.086.13-.195.288c-.335.48-.83 1.12-1.465 1.755C11.879 11.332 10.119 12.5 8 12.5s-3.879-1.168-5.168-2.457A13 13 0 0 1 1.172 8z" />
+                <path d="M8 5.5a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5M4.5 8a3.5 3.5 0 1 1 7 0 3.5 3.5 0 0 1-7 0" />
+              </svg>
+
+              <!-- Eye-slash icon (hidden by default) -->
+              <svg id="eyeSlashIcon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-eye-slash hidden" viewBox="0 0 16 16">
+                <path d="M13.359 11.238C15.06 9.72 16 8 16 8s-3-5.5-8-5.5a7 7 0 0 0-2.79.588l.77.771A6 6 0 0 1 8 3.5c2.12 0 3.879 1.168 5.168 2.457A13 13 0 0 1 14.828 8q-.086.13-.195.288c-.335.48-.83 1.12-1.465 1.755q-.247.248-.517.486z" />
+                <path d="M11.297 9.176a3.5 3.5 0 0 0-4.474-4.474l.823.823a2.5 2.5 0 0 1 2.829 2.829zm-2.943 1.299.822.822a3.5 3.5 0 0 1-4.474-4.474l.823.823a2.5 2.5 0 0 0 2.829 2.829" />
+                <path d="M3.35 5.47q-.27.24-.518.487A13 13 0 0 0 1.172 8l.195.288c.335.48.83 1.12 1.465 1.755C4.121 11.332 5.881 12.5 8 12.5c.716 0 1.39-.133 2.02-.36l.77.772A7 7 0 0 1 8 13.5C3 13.5 0 8 0 8s.939-1.721 2.641-3.238l.708.709zm10.296 8.884-12-12 .708-.708 12 12z" />
+              </svg>
+            </button>
+          </div>
+        </div>
+
+        <!-- Forgot Password -->
+        <div class="flex justify-end text-sm">
+          <a href="#" class="text-blue-600 hover:underline">Forgot Password?</a>
+        </div>
+
+        <!-- Login Button -->
+        <button type="submit" class="w-full py-2 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 transition">Login</button>
+
+        <!-- Register Link -->
+        <p class="text-center text-sm text-gray-600 mt-4">
+          Don’t Have An Account?
+          <a href="{% url 'register' %}" class="text-blue-600 hover:underline">Register</a>
+        </p>
+      </form>
+
+      <!-- Terms -->
+      <p class="text-xs text-gray-400 text-center mt-6">
+        By continuing, you agree to this Platform’s
+        <a href="#" class="underline">Terms of Use</a> and
+        <a href="#" class="underline">Privacy Policy</a>.
+      </p>
+    </div>
+  </section>
+  <script>
+    const passwordInput = document.getElementById('password')
+    const togglePassword = document.getElementById('togglePassword')
+    const eyeIcon = document.getElementById('eyeIcon')
+    const eyeSlashIcon = document.getElementById('eyeSlashIcon')
+    
+    togglePassword.addEventListener('click', () => {
+      const isPassword = passwordInput.type === 'password'
+    
+      // Toggle input type
+      passwordInput.type = isPassword ? 'text' : 'password'
+    
+      // Toggle icon visibility
+      eyeIcon.classList.toggle('hidden', !isPassword)
+      eyeSlashIcon.classList.toggle('hidden', isPassword)
+    })
+  </script>
+{% endblock %}

@@ -99,9 +99,15 @@ def news_detail(request, pk):
     news = get_object_or_404(models.NewsEvent, pk=pk, is_active=True)
     return render(request, 'core/news_detail.html', {'news': news})
 
-def dummy(request):
-    return render(request, 'core/dummy.html',)
-
 def cms_page_view(request, slug):
     page = get_object_or_404(models.CMSPage, slug=slug, published=True)
     return render(request, 'core/cms_page.html', {'page': page})
+
+def login(request):
+    return render(request, 'core/login.html',)
+
+def register(request):
+    return render(request, 'core/register.html',)
+
+def dummy(request):
+    return render(request, 'core/dummy.html',)
