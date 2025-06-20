@@ -1,10 +1,21 @@
 {% extends 'core/dashboard.html' %}
 {% block dashboard_content %}
-  <h1 class="text-xl font-bold mb-4">{{ title }}</h1>
-  <p>Are you sure you want to delete: <strong>{{ object }}</strong>?</p>
-  <form method="post">
+  <h1 class="text-2xl font-extrabold text-red-600 mb-6">{{ title }}</h1>
+  
+  <p class="mb-6 text-gray-700">
+    Are you sure you want to delete: 
+    <strong class="text-red-700">{{ object }}</strong>?
+  </p>
+  
+  <form method="post" class="space-x-4 flex">
     {% csrf_token %}
-    <button type="submit" class="btn btn-danger">Yes, delete</button>
-    <a href="{% url 'dashboard_model_list' model_name %}" class="btn btn-secondary">Cancel</a>
+    <button type="submit"
+      class="px-5 py-2 bg-red-600 hover:bg-red-700 text-white rounded-md text-sm font-semibold transition duration-150 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-1">
+      Yes, delete
+    </button>
+    <a href="{% url 'dashboard_model_list' model_name %}"
+      class="px-5 py-2 bg-gray-200 hover:bg-gray-300 text-gray-700 rounded-md text-sm font-semibold transition duration-150 focus:outline-none focus:ring-2 focus:ring-gray-400 focus:ring-offset-1">
+      Cancel
+    </a>
   </form>
 {% endblock %}

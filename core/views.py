@@ -173,7 +173,8 @@ def dashboard_model_add(request, model_name):
     return render(request, 'core/dashboard/model_form.html', {
         'form': form,
         'title': f"Add {config['title']}",
-        'model_name': model_name
+        'model_name': model_name,
+        'dashboard_models': DASHBOARD_MODEL_MAP
     })
 
 @login_required
@@ -197,7 +198,8 @@ def dashboard_model_edit(request, model_name, pk):
     return render(request, 'core/dashboard/model_form.html', {
         'form': form,
         'title': f"Edit {config['title']}",
-        'model_name': model_name
+        'model_name': model_name,
+        'dashboard_models': DASHBOARD_MODEL_MAP
     })
 
 @login_required
@@ -216,7 +218,8 @@ def dashboard_model_delete(request, model_name, pk):
     return render(request, 'core/dashboard/confirm_delete.html', {
         'object': obj,
         'title': f"Delete {config['title']}",
-        'model_name': model_name
+        'model_name': model_name,
+        'dashboard_models': DASHBOARD_MODEL_MAP
     })
 
 

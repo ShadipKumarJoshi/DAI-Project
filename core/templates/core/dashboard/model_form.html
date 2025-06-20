@@ -1,10 +1,23 @@
 {% extends 'core/dashboard.html' %}
 {% block dashboard_content %}
-  <h1 class="text-xl font-bold mb-4">{{ title }}</h1>
-  <form method="post" enctype="multipart/form-data" class="space-y-4">
+  <div class="mb-6">
+    <h1 class="text-2xl font-bold text-gray-800">{{ title }}</h1>
+  </div>
+
+  <form method="post" enctype="multipart/form-data" class="space-y-6 bg-white p-6 rounded-lg shadow-md max-w-lg">
     {% csrf_token %}
-    {{ form.as_p }}
-    <button type="submit" class="btn btn-primary">Save</button>
-    <a href="{% url 'dashboard_model_list' model_name %}" class="btn btn-secondary">Cancel</a>
+
+    <div class="space-y-4">
+      {{ form.as_p }}
+    </div>
+
+    <div class="flex space-x-4 pt-4">
+      <button type="submit" class="px-5 py-2 bg-blue-600 text-white rounded-md text-sm font-semibold hover:bg-blue-700 transition duration-150">
+        Save
+      </button>
+      <a href="{% url 'dashboard_model_list' model_name %}" class="px-5 py-2 bg-gray-200 text-gray-700 rounded-md text-sm font-semibold hover:bg-gray-300 transition duration-150">
+        Cancel
+      </a>
+    </div>
   </form>
 {% endblock %}

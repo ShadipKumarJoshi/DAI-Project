@@ -1,16 +1,27 @@
 {% extends 'core/dashboard.html' %}
+
 {% block dashboard_content %}
-  <h1 class="text-xl font-bold mb-4">{{ title }}</h1>
-  <a href="{% url 'dashboard_model_add' model_name %}" class="btn btn-primary mb-4">Add New</a>
-  <ul class="bg-white shadow rounded p-4">
-    {% for obj in objects %}
-      <li class="border-b py-2 flex justify-between">
-        {{ obj }}
-        <div>
-          <a href="{% url 'dashboard_model_edit' model_name obj.id %}" class="text-blue-600">Edit</a> |
-          <a href="{% url 'dashboard_model_delete' model_name obj.id %}" class="text-red-600">Delete</a>
-        </div>
-      </li>
-    {% endfor %}
-  </ul>
+  <div class="flex justify-between items-center mb-6">
+    <h1 class="text-2xl font-bold text-gray-800">{{ title }}</h1>
+    <a href="{% url 'dashboard_model_add' model_name %}" class="inline-flex items-center px-4 py-2 bg-blue-600 text-white text-sm font-medium rounded-md shadow hover:bg-blue-700 transition duration-150">
+      + Add New
+    </a>
+  </div>
+
+  <div class="bg-white shadow-md rounded-lg overflow-hidden">
+    <ul>
+      {% for obj in objects %}
+        <li class="px-6 py-4 border-b last:border-b-0 flex justify-between items-center hover:bg-gray-50 transition duration-150">
+          <span class="text-gray-700 font-medium">{{ obj }}</span>
+          <div class="space-x-2">
+            <a href="{% url 'dashboard_model_edit' model_name obj.id %}" class="text-blue-600 hover:text-blue-800 text-sm font-semibold">Edit</a>
+            <span>|</span>
+            <a href="{% url 'dashboard_model_delete' model_name obj.id %}" class="text-red-600 hover:text-red-800 text-sm font-semibold">Delete</a>
+          </div>
+        </li>
+      {% empty %}
+        <li class="px-6 py-4 text-gray-500">No entries found.</li>
+      {% endfor %}
+    </ul>
+  </div>
 {% endblock %}
