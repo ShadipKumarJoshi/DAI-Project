@@ -1,0 +1,10 @@
+{% extends 'core/dashboard.html' %}
+{% block dashboard_content %}
+  <h1 class="text-xl font-bold mb-4">{{ title }}</h1>
+  <p>Are you sure you want to delete: <strong>{{ object }}</strong>?</p>
+  <form method="post">
+    {% csrf_token %}
+    <button type="submit" class="btn btn-danger">Yes, delete</button>
+    <a href="{% url 'dashboard_model_list' model_name %}" class="btn btn-secondary">Cancel</a>
+  </form>
+{% endblock %}

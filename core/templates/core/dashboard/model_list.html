@@ -1,0 +1,16 @@
+{% extends 'core/dashboard.html' %}
+{% block dashboard_content %}
+  <h1 class="text-xl font-bold mb-4">{{ title }}</h1>
+  <a href="{% url 'dashboard_model_add' model_name %}" class="btn btn-primary mb-4">Add New</a>
+  <ul class="bg-white shadow rounded p-4">
+    {% for obj in objects %}
+      <li class="border-b py-2 flex justify-between">
+        {{ obj }}
+        <div>
+          <a href="{% url 'dashboard_model_edit' model_name obj.id %}" class="text-blue-600">Edit</a> |
+          <a href="{% url 'dashboard_model_delete' model_name obj.id %}" class="text-red-600">Delete</a>
+        </div>
+      </li>
+    {% endfor %}
+  </ul>
+{% endblock %}
