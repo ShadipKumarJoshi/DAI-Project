@@ -121,3 +121,72 @@ class CMSPageForm(forms.ModelForm):
 
         return slug
 
+class HeroCarouselForm(forms.ModelForm):
+    class Meta:
+        model = models.HeroCarousel
+        fields = '__all__'
+
+class SMEDevelopmentStepSectionForm(forms.ModelForm):
+    class Meta:
+        model = models.SMEDevelopmentStepSection
+        fields = '__all__'
+
+class SMEDevelopmentStepForm(forms.ModelForm):
+    class Meta:
+        model = models.SMEDevelopmentStep
+        fields = '__all__'
+
+class ServiceTagForm(forms.ModelForm):
+    class Meta:
+        model = models.ServiceTag
+        fields = '__all__'
+
+class ServiceCardForm(forms.ModelForm):
+    class Meta:
+        model = models.ServiceCard
+        fields = '__all__'
+
+class SMEGuidelineCardForm(forms.ModelForm):
+    class Meta:
+        model = models.SMEGuidelineCard
+        fields = '__all__'
+
+class NewsEventTypeForm(forms.ModelForm):
+    class Meta:
+        model = models.NewsEventType
+        fields = '__all__'
+
+class NewsEventStatusForm(forms.ModelForm):
+    class Meta:
+        model = models.NewsEventStatus
+        fields = '__all__'
+
+class NewsEventForm(forms.ModelForm):
+    class Meta:
+        model = models.NewsEvent
+        fields = '__all__'
+
+class FooterQuickLinkForm(forms.ModelForm):
+    class Meta:
+        model = models.FooterQuickLink
+        fields = '__all__'
+
+class FooterContactInfoForm(forms.ModelForm):
+    class Meta:
+        model = models.FooterContactInfo
+        fields = '__all__'
+
+class FooterSocialMediaForm(forms.ModelForm):
+    class Meta:
+        model = models.FooterSocialMedia
+        fields = '__all__'
+
+class NoticeForm(forms.ModelForm):
+    class Meta:
+        model = models.Notice
+        fields = '__all__'
+
+class NoticeAttachmentForm(forms.ModelForm):
+    class Meta:
+        model = models.NoticeAttachment
+        fields = '__all__'
