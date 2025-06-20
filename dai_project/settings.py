@@ -158,3 +158,12 @@ CKEDITOR_CONFIGS = {
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+
+LOGIN_REDIRECT_URL = 'dashboard'  # or 'home', wherever you want after login
+LOGOUT_REDIRECT_URL = 'login'
+
+AUTHENTICATION_BACKENDS = [
+    'core.backends.EmailBackend',  # your custom backend
+    'django.contrib.auth.backends.ModelBackend',  # fallback to default
+]

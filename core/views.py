@@ -1,10 +1,12 @@
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, get_object_or_404, redirect
 from . import models
 from django.utils import timezone
 from django.db.models import Q
 from django.core.paginator import Paginator
 from django.utils.html import strip_tags
 from django.utils.text import Truncator
+from django.contrib.auth import authenticate, login as auth_login, logout as auth_logout
+from django.contrib import messages
 
 def home(request):
     hero_carousels = models.HeroCarousel.objects.filter(is_slide_active=True).order_by(
@@ -104,10 +106,27 @@ def cms_page_view(request, slug):
     return render(request, 'core/cms_page.html', {'page': page})
 
 def login(request):
+    if request.method == 'POST':
+        email = request.POST.get('email')
+        password = request.POST.get('password')
+
+        user = authenticate(request, username=email, password=password)  # username=email due to custom backend
+        if user:
+            auth_login(request, user)
+            return redirect('dashboard')  # or wherever you want to redirect after login
+        else:
+            messages.error(request, 'Invalid email or password')
     return render(request, 'core/login.html',)
+
+def logout_view(request):
+    auth_logout(request)  
+    return redirect('login')
 
 def register(request):
     return render(request, 'core/register.html',)
+
+def dashboard(request):
+    return render(request, 'core/dashboard.html',)
 
 def dummy(request):
     return render(request, 'core/dummy.html',)

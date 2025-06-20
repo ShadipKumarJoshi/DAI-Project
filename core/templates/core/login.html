@@ -7,6 +7,17 @@
 {% endblock %}
 
 {% block content %}
+
+<!-- Display error messages here -->
+{% if messages %}
+  <div class="mb-4">
+    {% for message in messages %}
+      <p class="text-red-600 font-semibold">{{ message }}</p>
+    {% endfor %}
+  </div>
+{% endif %}
+
+
   <section class="min-h-screen bg-gray-100 flex items-center justify-center">
     <div class="bg-white p-10 rounded-lg shadow-lg w-full max-w-xl">
       <!-- Logo -->
