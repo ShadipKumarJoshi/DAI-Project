@@ -8,47 +8,101 @@
 
 {% block content %}
   <section class="dashboard px-6 pt-16 pb-40 overflow-hidden">
-    <div class="max-w-7xl mx-auto flex">
-      <!-- left sidebar -->
-      <aside class="w-1/5 pr-6 flex flex-col justify-between h-[80vh]">
-        <div class="mb-8">
-          <h2 class="text-lg font-semibold">Welcome, Pramisha <br /> to BDSP Portal</h2>
+    <div class="max-w-7xl mx-auto relative flex">
+      <!-- Sidebar container -->
+      <aside id="sidebar" class="fixed top-16 left-0 h-[calc(100vh-4rem)] bg-white shadow flex flex-col justify-between transition-all duration-300 ease-in-out w-56">
+        <div>
+          <div class="flex items-center justify-between px-4 py-3 border-b border-gray-200">
+            <h2 id="sidebar-title" class="text-lg font-semibold truncate">Welcome, {{ user.username|default:"User" }} <br /> to BDSP Portal</h2>
+            <button id="toggleSidebar" aria-label="Toggle sidebar" class="text-gray-600 hover:text-blue-600 focus:outline-none">
+              <!-- Hamburger / close icon -->
+              
+              <svg id="iconOpen" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+              </svg>
+              <svg id="iconClose" xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+              </svg>
+            </button>
+          </div>
 
-          <!-- Dynamic Sidebar -->
-          <nav class="space-y-4 text-sm font-semibold py-10">
+          <!-- Navigation -->
+          <nav id="sidebar-nav" class="space-y-4 text-sm font-semibold py-6 px-4">
             {% for model_key, config in dashboard_models.items %}
-              <a href="{% url 'dashboard_model_list' model_key %}" class="block hover:text-blue-600 flex items-center">
-                <svg xmlns="http://www.w3.org/2000/svg" class="bi bi-grid" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
-                  <path d="M1 2.5A1.5 1.5 0 0 1 2.5 1h3A1.5 1.5 0 0 1 7 2.5v3A1.5 1.5 0 0 1 5.5 7h-3A1.5 1.5 0 0 1 1 5.5zM2.5 2a.5.5..." />
+              <a href="{% url 'dashboard_model_list' model_key %}" class="flex items-center hover:text-blue-600 transition-colors duration-200">
+                <svg xmlns="http://www.w3.org/2000/svg" class="bi bi-grid flex-shrink-0" width="20" height="20" fill="currentColor" viewBox="0 0 16 16">
+                  <path d="M1 2.5A1.5 1.5 0 0 1 2.5 1h3A1.5 1.5 0 0 1 7 2.5v3A1.5 1.5 0 0 1 5.5 7h-3A1.5 1.5 0 0 1 1 5.5zM2.5 2a.5.5 0 0 0-.5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 0-.5-.5zm6.5.5A1.5 1.5 0 0 1 10.5 1h3A1.5 1.5 0 0 1 15 2.5v3A1.5 1.5 0 0 1 13.5 7h-3A1.5 1.5 0 0 1 9 5.5zm1.5-.5a.5.5 0 0 0-.5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 0-.5-.5zM1 10.5A1.5 1.5 0 0 1 2.5 9h3A1.5 1.5 0 0 1 7 10.5v3A1.5 1.5 0 0 1 5.5 15h-3A1.5 1.5 0 0 1 1 13.5zm1.5-.5a.5.5 0 0 0-.5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 0-.5-.5zm6.5.5A1.5 1.5 0 0 1 10.5 9h3a1.5 1.5 0 0 1 1.5 1.5v3a1.5 1.5 0 0 1-1.5 1.5h-3A1.5 1.5 0 0 1 9 13.5zm1.5-.5a.5.5 0 0 0-.5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 0-.5-.5z" />
                 </svg>
-                <span class="ml-2">{{ config.title }}</span>
+                <span class="ml-3" id="sidebar-label-{{ forloop.counter }}">{{ config.title }}</span>
               </a>
             {% endfor %}
           </nav>
         </div>
 
-        <div class="pt-4 border-t border-gray-300">
-          <a href="#" class="block hover:text-blue-600 flex">
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-grid" viewBox="0 0 16 16">
-              <path d="M1 2.5A1.5 1.5 0 0 1 2.5 1h3A1.5 1.5 0 0 1 7 2.5v3A1.5 1.5 0 0 1 5.5 7h-3A1.5 1.5 0 0 1 1 5.5zM2.5 2a.5.5 0 0 0-.5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 0-.5-.5zm6.5.5A1.5 1.5 0 0 1 10.5 1h3A1.5 1.5 0 0 1 15 2.5v3A1.5 1.5 0 0 1 13.5 7h-3A1.5 1.5 0 0 1 9 5.5zm1.5-.5a.5.5 0 0 0-.5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 0-.5-.5zM1 10.5A1.5 1.5 0 0 1 2.5 9h3A1.5 1.5 0 0 1 7 10.5v3A1.5 1.5 0 0 1 5.5 15h-3A1.5 1.5 0 0 1 1 13.5zm1.5-.5a.5.5 0 0 0-.5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 0-.5-.5zm6.5.5A1.5 1.5 0 0 1 10.5 9h3a1.5 1.5 0 0 1 1.5 1.5v3a1.5 1.5 0 0 1-1.5 1.5h-3A1.5 1.5 0 0 1 9 13.5zm1.5-.5a.5.5 0 0 0-.5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 0-.5-.5z" />
+        <div class="pt-4 border-t border-gray-300 px-4">
+          <a href="#" class="flex items-center hover:text-blue-600 py-2 transition-colors duration-200">
+            <svg xmlns="http://www.w3.org/2000/svg" class="bi bi-gear flex-shrink-0" width="20" height="20" fill="currentColor" viewBox="0 0 16 16">
+              <path d="..." />
             </svg>
-            <span class="ml-2">Settingss</span>
+            <span class="ml-3" id="sidebar-settings-label">Settings</span>
           </a>
-          <a href="{% url 'logout' %}" class="block hover:text-blue-600 flex">
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-grid" viewBox="0 0 16 16">
-              <path d="M1 2.5A1.5 1.5 0 0 1 2.5 1h3A1.5 1.5 0 0 1 7 2.5v3A1.5 1.5 0 0 1 5.5 7h-3A1.5 1.5 0 0 1 1 5.5zM2.5 2a.5.5 0 0 0-.5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 0-.5-.5zm6.5.5A1.5 1.5 0 0 1 10.5 1h3A1.5 1.5 0 0 1 15 2.5v3A1.5 1.5 0 0 1 13.5 7h-3A1.5 1.5 0 0 1 9 5.5zm1.5-.5a.5.5 0 0 0-.5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 0-.5-.5zM1 10.5A1.5 1.5 0 0 1 2.5 9h3A1.5 1.5 0 0 1 7 10.5v3A1.5 1.5 0 0 1 5.5 15h-3A1.5 1.5 0 0 1 1 13.5zm1.5-.5a.5.5 0 0 0-.5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 0-.5-.5zm6.5.5A1.5 1.5 0 0 1 10.5 9h3a1.5 1.5 0 0 1 1.5 1.5v3a1.5 1.5 0 0 1-1.5 1.5h-3A1.5 1.5 0 0 1 9 13.5zm1.5-.5a.5.5 0 0 0-.5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 0-.5-.5z" />
+          <a href="{% url 'logout' %}" class="flex items-center hover:text-blue-600 py-2 transition-colors duration-200">
+            <svg xmlns="http://www.w3.org/2000/svg" class="bi bi-box-arrow-right flex-shrink-0" width="20" height="20" fill="currentColor" viewBox="0 0 16 16">
+              <path d="..." />
             </svg>
-            <span class="ml-2">Logout</span>
+            <span class="ml-3" id="sidebar-logout-label">Logout</span>
           </a>
         </div>
       </aside>
 
-      <!-- right dashboard -->
-      <div class="flex-1 bg-gray-50 p-6 rounded-lg">
+      <!-- main content -->
+      <div id="mainContent" class="ml-56 transition-all duration-300 ease-in-out bg-gray-50 p-6 rounded-lg min-h-screen flex-1">
         {% block dashboard_content %}
           <h1>main dashboard</h1>
         {% endblock %}
       </div>
     </div>
   </section>
+
+  <script>
+    const toggleBtn = document.getElementById('toggleSidebar');
+    const sidebar = document.getElementById('sidebar');
+    const mainContent = document.getElementById('mainContent');
+    const iconOpen = document.getElementById('iconOpen');
+    const iconClose = document.getElementById('iconClose');
+
+    toggleBtn.addEventListener('click', () => {
+      if (sidebar.classList.contains('w-56')) {
+        // Collapse sidebar
+        sidebar.classList.remove('w-56');
+        sidebar.classList.add('w-16');
+        mainContent.classList.remove('ml-56');
+        mainContent.classList.add('ml-16');
+
+        iconOpen.classList.add('hidden');
+        iconClose.classList.remove('hidden');
+
+        // Hide all sidebar labels
+        document.querySelectorAll('[id^="sidebar-label-"]').forEach(el => el.style.display = 'none');
+        document.getElementById('sidebar-settings-label').style.display = 'none';
+        document.getElementById('sidebar-logout-label').style.display = 'none';
+        document.getElementById('sidebar-title').style.display = 'none';
+      } else {
+        // Expand sidebar
+        sidebar.classList.remove('w-16');
+        sidebar.classList.add('w-56');
+        mainContent.classList.remove('ml-16');
+        mainContent.classList.add('ml-56');
+
+        iconOpen.classList.remove('hidden');
+        iconClose.classList.add('hidden');
+
+        // Show all sidebar labels
+        document.querySelectorAll('[id^="sidebar-label-"]').forEach(el => el.style.display = 'inline');
+        document.getElementById('sidebar-settings-label').style.display = 'inline';
+        document.getElementById('sidebar-logout-label').style.display = 'inline';
+        document.getElementById('sidebar-title').style.display = 'block';
+      }
+    });
+  </script>
 {% endblock %}

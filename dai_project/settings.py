@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'django_browser_reload',
     'ckeditor',
     'ckeditor_uploader',
+    'widget_tweaks',
     
     # custom apps
     'core',
