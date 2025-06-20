@@ -6,6 +6,7 @@ from django.core.paginator import Paginator
 from django.utils.html import strip_tags
 from django.utils.text import Truncator
 from django.contrib.auth import authenticate, login as auth_login, logout as auth_logout
+from django.contrib.auth.decorators import login_required
 from django.contrib import messages
 
 def home(request):
@@ -123,6 +124,7 @@ def login(request):
             messages.error(request, 'Invalid email or password')
     return render(request, 'core/login.html',)
 
+@login_required(login_url='login')
 def logout_view(request):
     auth_logout(request)  
     return redirect('login')
