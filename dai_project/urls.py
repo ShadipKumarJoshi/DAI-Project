@@ -9,6 +9,7 @@ urlpatterns = [
     path('ckeditor/', include('ckeditor_uploader.urls')),
     path('', include('core.urls')),
     path('accounts/', include('accounts.urls')),
+    path('admin-dashboard/', include('admin_dashboard.urls')),
 ]
 
 # This serves media files during development

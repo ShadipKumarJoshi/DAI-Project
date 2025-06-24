@@ -49,7 +49,7 @@ INSTALLED_APPS = [
     # custom apps
     'core',
     'accounts',
-    'dashboard',
+    'admin_dashboard',
 ]
 
 TAILWIND_APP_NAME = 'theme'

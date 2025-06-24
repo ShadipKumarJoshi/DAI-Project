@@ -1,6 +1,6 @@
-# core/utils.py
+# admin_dashboard/utils.py
 
-from . import models, forms
+from core import models, forms
 
 DASHBOARD_MODEL_MAP = {
     'navbaritem': {
