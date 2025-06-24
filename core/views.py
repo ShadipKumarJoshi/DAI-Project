@@ -107,32 +107,6 @@ def cms_page_view(request, slug):
     page = get_object_or_404(models.CMSPage, slug=slug, published=True)
     return render(request, 'core/cms_page.html', {'page': page})
 
-def login(request):
-    if request.method == 'POST':
-        email = request.POST.get('email')
-        password = request.POST.get('password')
-
-        user = authenticate(request, username=email, password=password)  # username=email due to custom backend
-        if user:
-            auth_login(request, user)
-            if user.is_staff or user.is_superuser:  
-                # Admin users go to dashboard
-                return redirect('dashboard')
-            else:
-                # Other users go to home
-                return redirect('home')
-        else:
-            messages.error(request, 'Invalid email or password')
-    return render(request, 'core/login.html',)
-
-@login_required(login_url='login')
-def logout_view(request):
-    auth_logout(request)  
-    return redirect('login')
-
-def register(request):
-    return render(request, 'core/register.html',)
-
 @login_required
 def dashboard(request):
     return render(request, 'core/dashboard.html', {
