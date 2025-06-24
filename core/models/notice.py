@@ -18,6 +18,12 @@ class Notice(models.Model):
     
     def clean(self):
         super().clean()
+        # Only validate date order if both are set
+        if self.popup_start_date and self.popup_end_date:
+            if self.popup_end_date < self.popup_start_date:
+                raise ValidationError({
+                    'popup_end_date': "Popup end date cannot be earlier than popup start date."
+                })
         if self.pop_up:
             # popup_start_date is required
             if not self.popup_start_date:
