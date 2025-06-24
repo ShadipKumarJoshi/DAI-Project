@@ -3,7 +3,7 @@
 # //verbose menuitems
 # //dont snakefiy admin titles 
 # //learn more if we can simplfy passing the context since we are passing every context from the views
-# start date end date,, add logic to prevent enetering old startdate than today
+V start date end date,, add logic to prevent enetering old startdate than today
 # no need to show created at updated at at admin
 # add paginations on the lists
 # is active button needed for notices/ banners/ wherever necessary
@@ -17,4 +17,4 @@ V a child can never be the parent of its parent
 V when parent contating children is deleted, it should automatically shift to a auto built other item .
 # def get_absolute_url learn about it, what is this function called. 
 # separate list choices from the logic into a separate component
-# 
+# multiple images

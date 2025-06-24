@@ -1,5 +1,6 @@
 from django.db import models
 from django.utils import timezone
+from django.core.exceptions import ValidationError
 
 # our_news_events_section.html
 class NewsEventType(models.Model):
@@ -50,3 +51,9 @@ class NewsEvent(models.Model):
         if self.publication_end and now > self.publication_end:
             return False
         return True
+    
+    def clean(self):
+        # Ensure end is not earlier than start
+        if self.publication_start and self.publication_end:
+            if self.publication_end < self.publication_start:
+                raise ValidationError("Publication end date cannot be earlier than start date.")
