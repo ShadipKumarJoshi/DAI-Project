@@ -6,7 +6,7 @@ from django.core.exceptions import ValidationError
 class NavbarItem(models.Model):
     title = models.CharField(max_length=100, null=False, blank=False)
     parent = models.ForeignKey(
-        'self', null=True, blank=True, related_name='children', on_delete=models.CASCADE)
+        'self', null=True, blank=True, related_name='children', on_delete=models.PROTECT)
     order = models.PositiveIntegerField(default=0)
     is_button = models.BooleanField(default=False)
     button_style = models.CharField(
