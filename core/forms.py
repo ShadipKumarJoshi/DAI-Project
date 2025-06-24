@@ -2,7 +2,7 @@ from django import forms
 from django.core.exceptions import ValidationError
 from django.urls import get_resolver, Resolver404, reverse
 from . import models
-from . import constants
+from core import constants
 from django.utils.text import slugify
 
 

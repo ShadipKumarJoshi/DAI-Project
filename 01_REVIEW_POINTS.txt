@@ -1,0 +1,20 @@
+# //cms CMSPage
+# //truncate words
+# //verbose menuitems
+# //dont snakefiy admin titles 
+# //learn more if we can simplfy passing the context since we are passing every context from the views
+# start date end date,, add logic to prevent enetering old startdate than today
+# no need to show created at updated at at admin
+# add paginations on the lists
+# is active button needed for notices/ banners/ wherever necessary
+# learn more about [:4] what it does, what if we want to access the last items? waht if [: 1,2,5]
+# in the content field, add WYSIWYG editor
+# merge all apps and porevent making the apps unnecessarily
+# categorize the news instead of tags
+# add * to mark compulsory fields
+# a child can never be the parent of its parent
+# when deleting any items, instead of redirecting , popup display( for parent containing child, deleteing parent should popup a warning shwoing what it might afffect)
+# when parent contating children is deleted, it should automatically shift to a auto built other item .
+# def get_absolute_url learn about it, what is this function called. 
+# separate list choices from the logic into a separate component
+# 
