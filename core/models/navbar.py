@@ -34,6 +34,13 @@ class NavbarItem(models.Model):
         if self.parent and self.parent.is_button:
             raise ValidationError(
                 "Non-button items cannot have a button as parent.")
+        
+         # Cyclic relationship prevention
+        ancestor = self.parent
+        while ancestor is not None:
+            if ancestor == self:
+                raise ValidationError("Cannot set a child as parent (cyclic relationship).")
+            ancestor = ancestor.parent
 
         # Validate based on link_type
         if self.link_type == 'module' and not self.module_name:
