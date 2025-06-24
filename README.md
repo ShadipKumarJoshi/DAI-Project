@@ -6,7 +6,14 @@ This guide outlines how to activate the virtual environment, run the development
 
 ## 📦 Setup Instructions
 
-### ✅ 1. Activate the Virtual Environment
+### ✅ 1. Create the Virtual Environment
+
+```bash
+python -m venv venv
+```
+
+
+### ✅ 1.1. Activate the Virtual Environment
 
 ```bash
 source venv/Scripts/activate
