@@ -2,13 +2,14 @@ from django.db import models
 from django.core.exceptions import ValidationError
 from django.utils import timezone
 from ckeditor_uploader.fields import RichTextUploadingField
+import os
 
 # Notice
 class Notice(models.Model):
     title = models.CharField(max_length=255)
     content = RichTextUploadingField(help_text="HTML or Markdown content")
     published_date = models.DateField()
-    image = models.ImageField(upload_to='notices/', blank=True, null=True)
+    image = models.FileField(upload_to='notices/', blank=True, null=True, help_text="Upload an image or PDF file")
     pop_up = models.BooleanField(default=False)
     
     popup_start_date = models.DateField(null=True, blank=True)
@@ -19,6 +20,14 @@ class Notice(models.Model):
     
     def clean(self):
         super().clean()
+        
+         # Validate image field to accept only images or PDFs
+        if self.image:
+            ext = os.path.splitext(self.image.name)[1].lower()
+            allowed_extensions = ['.jpg', '.jpeg', '.png', '.gif', '.pdf']
+            if ext not in allowed_extensions:
+                raise ValidationError({'image': 'Only image or PDF files are allowed.'})
+
         # Only validate date order if both are set
         if self.popup_start_date and self.popup_end_date:
             if self.popup_end_date < self.popup_start_date:
