@@ -18,9 +18,16 @@
 
       <h1 class="text-3xl font-bold text-gray-900 mb-4">{{ news.title }}</h1>
 
-      {% if news.image %}
-        <img src="{{ news.image.url }}" alt="{{ news.title }}" class="w-full h-64 object-cover rounded-xl mb-6" />
-      {% endif %}
+     {% if news.image and news.image.url %}
+  {% if ".pdf" in news.image.url|lower %}
+    <iframe src="{{ news.image.url }}" width="100%" height="500px" class="rounded shadow"></iframe>
+    <p><a href="{{ news.image.url }}" target="_blank" class="text-blue-600 underline">Open PDF in new tab</a></p>
+  {% else %}
+    <img src="{{ news.image.url }}" alt="{{ news.title }}" class="rounded shadow-lg max-w-full" />
+  {% endif %}
+{% endif %}
+
+
 
       <div class="text-gray-700 leading-relaxed space-y-4 text-base mb-6">{{ news.description|safe }}</div>
 
