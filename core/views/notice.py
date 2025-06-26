@@ -15,9 +15,12 @@ def notice(request):
 def notice_detail(request, pk):
     notice = get_object_or_404(models.Notice, pk=pk)
     attachments = notice.attachments.all()
+    latest_notices = models.Notice.objects.exclude(pk=pk).order_by('-published_date')[:6]
+
     return render(request, 'core/notice/notice_detail.html', {
         'notice': notice,
         'attachments': attachments,
+        'latest_notices': latest_notices,
     })
 
 def popup_notices(request):
