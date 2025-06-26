@@ -22,7 +22,7 @@
 
             <h2 class="text-xl font-semibold mb-2">{{ page.title }}</h2>
             <p class="text-sm text-gray-500 mb-2">Published on: {{ page.created_at|date:'d M Y' }}</p>
-            <p class="text-gray-700 truncate">{{ page.content|truncatechars:100|striptags }}</p>
+            <p class="text-gray-700 truncate">{{ page.content|striptags|truncatechars:100 }}</p>
           </a>
         {% empty %}
           <p>No pages available.</p>

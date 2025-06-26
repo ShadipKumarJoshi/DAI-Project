@@ -25,7 +25,7 @@
             {% endif %}
             <h2 class="text-xl font-semibold mb-2">{{ notice.title }}</h2>
             <p class="text-sm text-gray-500 mb-2">Published on: {{ notice.published_date|date:'d M Y' }}</p>
-            <p class="text-gray-700 truncate">{{ notice.content|truncatechars:100|striptags }}</p>
+            <p class="text-gray-700 truncate">{{ notice.content|striptags|truncatechars:100 }}</p>
           </a>
         {% empty %}
           <p>No notices available.</p>
