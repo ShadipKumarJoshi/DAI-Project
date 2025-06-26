@@ -1,3 +1,5 @@
+# for login with email instead of default django username login
+
 from django.contrib.auth.backends import ModelBackend
 from django.contrib.auth import get_user_model
 

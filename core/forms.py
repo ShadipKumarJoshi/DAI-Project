@@ -4,6 +4,7 @@ from django.urls import get_resolver, Resolver404, reverse
 from . import models
 from core import constants
 from django.utils.text import slugify
+import re  # for pattern matching
 
 
 # Custom ModelChoiceField to display "title - slug" in the dropdown
@@ -34,6 +35,44 @@ class NavbarItemForm(forms.ModelForm):
                 required=False,
                 empty_label="Select CMS Page"
             )
+            
+          # Helper to prettify URL names: replace _ and - with spaces, title case
+        def prettify_name(name):
+            return name.replace('_', ' ').replace('-', ' ').title()
+
+        # CHANGE HERE: Logic to auto-exclude dynamic/internal/debug/detail URLs
+        def is_allowed_named_url(name, data):
+            # Exclude admin, dashboard, debug, ckeditor, and internal routes
+            if (
+                name.startswith('admin:') or
+                name.startswith('ckeditor') or
+                name.startswith('debug') or
+                name.startswith('dashboard') or
+                name.startswith('api') or
+                'upload' in name or
+                'browse' in name
+            ):
+                return False
+
+            # Exclude common dynamic/detail/edit/delete/view slugs
+            if re.search(r'(detail|edit|delete|update|view)$', name):
+                return False
+
+            # Exclude routes that have path converters like <int:pk>, <slug:...>
+            for entry in data:
+                if isinstance(entry, (list, tuple)):
+                    pattern = entry[0]
+                    if hasattr(pattern, 'pattern') and '<' in str(pattern.pattern):
+                        return False
+
+            return True
+
+        # Manual overrides (optional)
+        OVERRIDE_LABELS = {
+            'cms_page': 'CMS Page',
+            'dummy': 'Dummy Page',
+        }
+
 
         # Build dropdown choices for module_name based on named URLs
         choices = [('', 'Select Module (Named URL)')]
@@ -43,12 +82,11 @@ class NavbarItemForm(forms.ModelForm):
 
         # Filter for named URLs which are strings and exclude admin URLs or undesired ones
         for name, data in url_patterns:
-            if isinstance(name, str):
-                # Optionally, exclude admin and other internal routes here
-                if name.startswith('admin:'):
-                    continue
-                # Add choice tuple (value, display)
-                choices.append((name, name))
+            if isinstance(name, str) and is_allowed_named_url(name, data):  # CHANGE HERE
+                label = OVERRIDE_LABELS.get(name, prettify_name(name))
+                choices.append((name, label))
+
+               
 
         # Replace the module_name field widget with ChoiceField with these choices
         self.fields['module_name'] = forms.ChoiceField(
