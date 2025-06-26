@@ -1,6 +1,7 @@
 from django.db import models
 from django.utils import timezone
 from django.core.exceptions import ValidationError
+from ckeditor_uploader.fields import RichTextUploadingField
 
 # our_news_events_section.html
 class NewsEventType(models.Model):
@@ -19,7 +20,7 @@ class NewsEventStatus(models.Model):
 
 class NewsEvent(models.Model):
     title = models.CharField(max_length=255)
-    description = models.TextField()
+    description = RichTextUploadingField(help_text="HTML or Markdown content")
     location = models.CharField(max_length=100)
     image = models.ImageField(upload_to='news_images', null=True,
         blank=True,

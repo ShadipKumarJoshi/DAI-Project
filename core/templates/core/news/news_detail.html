@@ -22,7 +22,7 @@
         <img src="{{ news.image.url }}" alt="{{ news.title }}" class="w-full h-64 object-cover rounded-xl mb-6" />
       {% endif %}
 
-      <div class="text-gray-700 leading-relaxed space-y-4 text-base mb-6">{{ news.description|urlize|linebreaks }}</div>
+      <div class="text-gray-700 leading-relaxed space-y-4 text-base mb-6">{{ news.description|safe }}</div>
 
       {% comment %}
       Add attachments if you have attachment model related to NewsEvent (optional)

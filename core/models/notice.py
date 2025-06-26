@@ -1,11 +1,12 @@
 from django.db import models
 from django.core.exceptions import ValidationError
 from django.utils import timezone
+from ckeditor_uploader.fields import RichTextUploadingField
 
 # Notice
 class Notice(models.Model):
     title = models.CharField(max_length=255)
-    content = models.TextField()
+    content = RichTextUploadingField(help_text="HTML or Markdown content")
     published_date = models.DateField()
     image = models.ImageField(upload_to='notices/', blank=True, null=True)
     pop_up = models.BooleanField(default=False)
