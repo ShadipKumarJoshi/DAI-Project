@@ -23,4 +23,9 @@ def news(request):
 
 def news_detail(request, pk):
     news = get_object_or_404(models.NewsEvent, pk=pk, is_active=True)
-    return render(request, 'core/news/news_detail.html', {'news': news})
+
+    latest_news = models.NewsEvent.objects.filter(
+        is_active=True
+    ).exclude(pk=news.pk).order_by('-created_at')[:6]
+
+    return render(request, 'core/news/news_detail.html', {'news': news, 'latest_news': latest_news, })

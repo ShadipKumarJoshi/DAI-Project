@@ -6,34 +6,62 @@
 {% endblock %}
 
 {% block content %}
-  <section class="bg-[#F8FAFC] px-6 pt-20 pb-32 min-h-screen">
-    <div class="max-w-3xl mx-auto bg-white p-10 rounded-xl shadow-lg">
+<section class="bg-[#F8FAFC] px-6 pt-20 pb-32 min-h-screen">
+  <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-4 gap-10">
+    
+   
+    <!-- ✅ Left Column: News Detail -->
+    <div class="lg:col-span-3 bg-white p-10 rounded-xl shadow-lg">
       <div class="mb-6">
         <a href="{% url 'news' %}" class="hover:text-blue-600 hover:underline text-sm">&larr; Back to News & Events</a>
       </div>
 
       <p class="text-sm text-gray-500 mb-2">
-        Published on: <span class="font-medium">{{ news.created_at|date:'d M Y' }}</span>
+        Published on: <span class="font-medium">{{ news.created_at|date:'d M Y' }}  · {{ item.type.name|default:"News" }}</span>
       </p>
 
       <h1 class="text-3xl font-bold text-gray-900 mb-4">{{ news.title }}</h1>
 
-     {% if news.image and news.image.url %}
-  {% if ".pdf" in news.image.url|lower %}
-    <iframe src="{{ news.image.url }}" width="100%" height="500px" class="rounded shadow"></iframe>
-    <p><a href="{{ news.image.url }}" target="_blank" class="text-blue-600 underline">Open PDF in new tab</a></p>
-  {% else %}
-    <img src="{{ news.image.url }}" alt="{{ news.title }}" class="rounded shadow-lg max-w-full" />
-  {% endif %}
-{% endif %}
+      {% if news.image and news.image.url %}
+        {% if ".pdf" in news.image.url|lower %}
+          <iframe src="{{ news.image.url }}" width="100%" height="500px" class="rounded shadow"></iframe>
+          <p><a href="{{ news.image.url }}" target="_blank" class="text-blue-600 underline">Open PDF in new tab</a></p>
+        {% else %}
+          <img src="{{ news.image.url }}" alt="{{ news.title }}" class="rounded shadow-lg max-w-full" />
+        {% endif %}
+      {% endif %}
 
-
-
-      <div class="text-gray-700 leading-relaxed space-y-4 text-base mb-6">{{ news.description|safe }}</div>
-
-      {% comment %}
-      Add attachments if you have attachment model related to NewsEvent (optional)
-      {% endcomment %}
+      <div class="text-gray-700 leading-relaxed space-y-4 text-base mt-6">
+        {{ news.description|safe }}
+      </div>
     </div>
-  </section>
+
+     <!-- ✅ Right Column: Latest News Sidebar -->
+    <aside class="lg:col-span-1 space-y-6">
+      <div class="flex justify-between items-center mb-4">
+        <h2 class="text-xl font-bold text-gray-900">Latest News</h2>
+        <a href="{% url 'news' %}" class="text-blue-600 text-sm hover:underline">See All Events Posts</a>
+      </div>
+
+      {% for item in latest_news %}
+        <a href="{% url 'news-detail' item.pk %}" class="flex items-center p-4 rounded-lg hover:bg-gray-100 transition">
+          <img src="{{ item.image.url }}" alt="{{ item.title }}" class="w-24 h-16 object-cover rounded-md mr-4" />
+          <div>
+            <p class="text-xs text-gray-500 mb-1">
+              {{ item.created_at|date:'d-m-Y' }} · {{ item.type.name|default:"News" }}
+            </p>
+            <h4 class="text-sm font-semibold text-gray-900">{{ item.title|truncatewords:8 }}</h4>
+          </div>
+        </a>
+
+        {% if not forloop.last %}
+          <div class="border-t border-gray-200 -my-1 -mt-5"></div>
+        {% endif %}
+      {% empty %}
+        <p>No latest news available.</p>
+      {% endfor %}
+    </aside>
+
+  </div>
+</section>
 {% endblock %}
