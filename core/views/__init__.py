@@ -1,3 +1,4 @@
+from .cms_page import cms_list_view
 from .cms_page import cms_page_view
 from .admin_dashboard import dashboard, dashboard_model_list, dashboard_model_add, dashboard_model_edit, dashboard_model_delete
 from .notice import notice, notice_detail

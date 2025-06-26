@@ -11,6 +11,7 @@ urlpatterns = [
     path('news/', views.news, name='news'),
     path('news/<int:pk>/', views.news_detail, name='news-detail'),
     path('services/<int:pk>/', views.service_detail, name='service_detail'),
+    path('cms/', views.cms_list_view, name='cms-list'),
     path('<slug:slug>/', views.cms_page_view, name='cms_page'),
     
     

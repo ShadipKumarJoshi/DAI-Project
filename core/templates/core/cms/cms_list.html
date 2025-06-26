@@ -1,0 +1,52 @@
+{% extends 'core/base.html' %}
+
+{% block title %}
+  CMS Pages
+{% endblock %}
+
+{% block content %}
+  <section class="px-6 pt-16 pb-40 min-h-screen">
+    <div class="max-w-7xl mx-auto">
+      <h1 class="text-3xl font-bold mb-8">Pages</h1>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        {% for page in pages %}
+          <a href="{% url 'cms_page' page.slug %}" class="bg-white rounded-xl shadow-2xl p-6 border border-gray-100 hover:shadow-xl transition block">
+
+            {% if page.image and page.image.url and ".pdf" not in page.image.url|lower %}
+              <img src="{{ page.image.url }}" alt="{{ page.title }}" class="w-full h-40 object-cover rounded-lg mb-4" />
+            {% else %}
+              <div class="w-full h-40 bg-gray-300 rounded-lg mb-4 flex items-center justify-center text-xs text-gray-500">
+                No Image
+              </div>
+            {% endif %}
+
+            <h2 class="text-xl font-semibold mb-2">{{ page.title }}</h2>
+            <p class="text-sm text-gray-500 mb-2">Published on: {{ page.created_at|date:'d M Y' }}</p>
+            <p class="text-gray-700 truncate">{{ page.content|truncatechars:100|striptags }}</p>
+          </a>
+        {% empty %}
+          <p>No pages available.</p>
+        {% endfor %}
+      </div>
+    </div>
+  </section>
+
+  <!-- Pagination Controls -->
+  <div class="mt-10 flex justify-center space-x-2">
+    {% if pages.has_previous %}
+      <a href="?page={{ pages.previous_page_number }}" class="px-4 py-2 bg-gray-200 text-gray-700 rounded hover:bg-gray-300">&larr; Prev</a>
+    {% endif %}
+
+    {% for num in pages.paginator.page_range %}
+      {% if pages.number == num %}
+        <span class="px-4 py-2 bg-blue-600 text-white rounded">{{ num }}</span>
+      {% elif num > pages.number|add:-2 and num < pages.number|add:2 %}
+        <a href="?page={{ num }}" class="px-4 py-2 bg-gray-100 text-gray-700 rounded hover:bg-gray-200">{{ num }}</a>
+      {% endif %}
+    {% endfor %}
+
+    {% if pages.has_next %}
+      <a href="?page={{ pages.next_page_number }}" class="px-4 py-2 bg-gray-200 text-gray-700 rounded hover:bg-gray-300">Next &rarr;</a>
+    {% endif %}
+  </div>
+{% endblock %}
