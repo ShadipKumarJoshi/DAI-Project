@@ -1,5 +1,7 @@
 {% extends 'core/admin_dashboard/dashboard.html' %}
+{% load static %}
 {% load custom_filters %}
+
 
 {% block dashboard_content %}
   <div class="flex justify-between items-center mb-4">
@@ -31,7 +33,9 @@
       <thead class="bg-gray-100 text-left text-gray-700 uppercase tracking-wider">
         <tr>
           <th class="px-6 py-3 font-semibold">S.N.</th>
-          <th class="px-6 py-3 font-semibold">Object</th>
+          {% for field_name in list_display %}
+            <th class="px-6 py-3 font-semibold">{{ field_name|capfirst}}</th>
+          {% endfor %}
           <th class="px-6 py-3 font-semibold text-right">Actions</th>
         </tr>
       </thead>
@@ -39,16 +43,21 @@
         {% for obj in objects %}
           <tr class="hover:bg-gray-50">
             <td class="px-6 py-4">{{ forloop.counter }}</td>
-            <td class="px-6 py-4 text-gray-800">{{ obj }}</td>
+            {% for field_name in list_display %}
+              <td class="px-6 py-4 text-gray-800">
+                {# Try to get attribute, fallback to empty string #}
+                {{ obj|attr:field_name }}
+              </td>
+            {% endfor %}
             <td class="px-6 py-4 text-right space-x-2">
-              <a href="{% url 'dashboard_model_edit' model_name obj.id %}" class="text-blue-600 hover:text-blue-800 font-semibold">Edit</a>
+              <a href="{% url 'dashboard_model_edit' model_name obj.pk %}" class="text-blue-600 hover:text-blue-800 font-semibold">Edit</a>
               <span>|</span>
-              <a href="{% url 'dashboard_model_delete' model_name obj.id %}" class="text-red-600 hover:text-red-800 font-semibold">Delete</a>
+              <a href="{% url 'dashboard_model_delete' model_name obj.pk %}" class="text-red-600 hover:text-red-800 font-semibold">Delete</a>
             </td>
           </tr>
         {% empty %}
           <tr>
-            <td colspan="3" class="px-6 py-4 text-center text-gray-500">No matching entries found.</td>
+            <td colspan="{{ list_display|length|add:'2' }}" class="px-6 py-4 text-center text-gray-500">No matching entries found.</td>
           </tr>
         {% endfor %}
       </tbody>

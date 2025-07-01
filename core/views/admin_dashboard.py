@@ -46,12 +46,16 @@ def dashboard_model_list(request, model_name):
     except EmptyPage:
         objects = paginator.page(paginator.num_pages)
 
+    # Pass list_display to template for dynamic columns
+    list_display = config.get('list_display', [])
+    
     return render(request, 'core/admin_dashboard/model_list.html', {
         'model_name': model_name,
         'objects': objects,
         'title': config['title'],
         'dashboard_models': DASHBOARD_MODEL_MAP,
         'query': query,
+        'list_display': list_display,
     })
 
     
