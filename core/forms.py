@@ -202,7 +202,15 @@ class NewsEventStatusForm(forms.ModelForm):
         fields = '__all__'
 
 class NewsEventForm(forms.ModelForm):
-    content = forms.CharField(widget=CKEditorUploadingWidget()) 
+    # content = forms.CharField(widget=CKEditorUploadingWidget()) 
+    publication_start = forms.DateTimeField(
+        required=False,
+        widget=forms.DateTimeInput(attrs={'type': 'datetime-local'})
+    )
+    publication_end = forms.DateTimeField(
+        required=False,
+        widget=forms.DateTimeInput(attrs={'type': 'datetime-local'})
+    )
     class Meta:
         model = models.NewsEvent
         fields = '__all__'
@@ -223,6 +231,17 @@ class FooterSocialMediaForm(forms.ModelForm):
         fields = '__all__'
 
 class NoticeForm(forms.ModelForm):
+    published_date = forms.DateField(
+        widget=forms.DateInput(attrs={'type': 'date'})
+    )
+    popup_start_date = forms.DateField(
+        required=False,
+        widget=forms.DateInput(attrs={'type': 'date'})
+    )
+    popup_end_date = forms.DateField(
+        required=False,
+        widget=forms.DateInput(attrs={'type': 'date'})
+    )
     content = forms.CharField(widget=CKEditorUploadingWidget()) 
     class Meta:
         model = models.Notice
