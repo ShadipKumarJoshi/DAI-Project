@@ -1,6 +1,8 @@
 # core/utils.py
 
 from . import models, forms
+from .admin_utils import get_list_display_for_model  # import the helper
+
 
 DASHBOARD_MODEL_MAP = {
     'navbaritem': {
@@ -84,3 +86,7 @@ DASHBOARD_MODEL_MAP = {
         'title': 'Notice Attachments',
     },
 }
+
+# Add dynamic 'list_display' attribute to each config
+for key, config in DASHBOARD_MODEL_MAP.items():
+    config['list_display'] = get_list_display_for_model(config['model'])

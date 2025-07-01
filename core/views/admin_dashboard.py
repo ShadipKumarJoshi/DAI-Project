@@ -18,11 +18,13 @@ def dashboard_model_list(request, model_name):
         return redirect('dashboard')
     model = config['model']
     objects = model.objects.all()
+
     return render(request, 'core/admin_dashboard/model_list.html', {
         'model_name': model_name,
         'objects': objects,
         'title': config['title'],
-        'dashboard_models': DASHBOARD_MODEL_MAP  # required for sidebar to stay dynamic
+        'list_display': config.get('list_display', ('__str__',)),
+        'dashboard_models': DASHBOARD_MODEL_MAP  # for sidebar
     })
 
 @login_required

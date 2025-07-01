@@ -1,4 +1,5 @@
 {% extends 'core/admin_dashboard/dashboard.html' %}
+{% load custom_filters %}
 
 {% block dashboard_content %}
   <div class="flex justify-between items-center mb-6">
@@ -8,20 +9,32 @@
     </a>
   </div>
 
-  <div class="bg-white shadow-md rounded-lg overflow-hidden">
-    <ul>
-      {% for obj in objects %}
-        <li class="px-6 py-4 border-b last:border-b-0 flex justify-between items-center hover:bg-gray-50 transition duration-150">
-          <span class="text-gray-700 font-medium">{{ obj }}</span>
-          <div class="space-x-2">
-            <a href="{% url 'dashboard_model_edit' model_name obj.id %}" class="text-blue-600 hover:text-blue-800 text-sm font-semibold">Edit</a>
-            <span>|</span>
-            <a href="{% url 'dashboard_model_delete' model_name obj.id %}" class="text-red-600 hover:text-red-800 text-sm font-semibold">Delete</a>
-          </div>
-        </li>
-      {% empty %}
-        <li class="px-6 py-4 text-gray-500">No entries found.</li>
-      {% endfor %}
-    </ul>
+  <div class="overflow-x-auto bg-white shadow-md rounded-lg">
+    <table class="min-w-full divide-y divide-gray-200 text-sm">
+      <thead class="bg-gray-100 text-left text-gray-700 uppercase tracking-wider">
+        <tr>
+          <th class="px-6 py-3 font-semibold">S.N.</th>
+          <th class="px-6 py-3 font-semibold">Object</th>
+          <th class="px-6 py-3 font-semibold text-right">Actions</th>
+        </tr>
+      </thead>
+      <tbody class="divide-y divide-gray-100">
+        {% for obj in objects %}
+          <tr class="hover:bg-gray-50">
+            <td class="px-6 py-4">{{ forloop.counter }}</td>
+            <td class="px-6 py-4 text-gray-800">{{ obj }}</td>
+            <td class="px-6 py-4 text-right space-x-2">
+              <a href="{% url 'dashboard_model_edit' model_name obj.id %}" class="text-blue-600 hover:text-blue-800 font-semibold">Edit</a>
+              <span>|</span>
+              <a href="{% url 'dashboard_model_delete' model_name obj.id %}" class="text-red-600 hover:text-red-800 font-semibold">Delete</a>
+            </td>
+          </tr>
+        {% empty %}
+          <tr>
+            <td colspan="3" class="px-6 py-4 text-center text-gray-500">No entries found.</td>
+          </tr>
+        {% endfor %}
+      </tbody>
+    </table>
   </div>
 {% endblock %}
