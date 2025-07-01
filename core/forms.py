@@ -5,6 +5,7 @@ from . import models
 from core import constants
 from django.utils.text import slugify
 import re  # for pattern matching
+from ckeditor_uploader.widgets import CKEditorUploadingWidget
 
 
 # Custom ModelChoiceField to display "title - slug" in the dropdown
@@ -140,6 +141,7 @@ class NavbarItemForm(forms.ModelForm):
     
 
 class CMSPageForm(forms.ModelForm):
+    content = forms.CharField(widget=CKEditorUploadingWidget()) 
     class Meta:
         model = models.CMSPage
         fields = '__all__'
@@ -200,6 +202,7 @@ class NewsEventStatusForm(forms.ModelForm):
         fields = '__all__'
 
 class NewsEventForm(forms.ModelForm):
+    content = forms.CharField(widget=CKEditorUploadingWidget()) 
     class Meta:
         model = models.NewsEvent
         fields = '__all__'
@@ -220,6 +223,7 @@ class FooterSocialMediaForm(forms.ModelForm):
         fields = '__all__'
 
 class NoticeForm(forms.ModelForm):
+    content = forms.CharField(widget=CKEditorUploadingWidget()) 
     class Meta:
         model = models.Notice
         fields = '__all__'
