@@ -46,6 +46,9 @@ def dashboard_model_list(request, model_name):
         objects = paginator.page(1)
     except EmptyPage:
         objects = paginator.page(paginator.num_pages)
+        
+    # Calculate start_index after objects is defined
+    start_index = objects.start_index() - 1
 
     # Pass list_display to template for dynamic columns
     list_display = config.get('list_display', [])
@@ -57,6 +60,7 @@ def dashboard_model_list(request, model_name):
         'dashboard_models': DASHBOARD_MODEL_MAP,
         'query': query,
         'list_display': config.get('list_display', []),
+        'start_index': start_index,
     })
 
     

@@ -42,7 +42,8 @@
       <tbody class="divide-y divide-gray-100">
         {% for obj in objects %}
           <tr class="hover:bg-gray-50">
-            <td class="px-6 py-4">{{ forloop.counter }}</td>
+           <td class="px-6 py-4">{{ forloop.counter0|add:start_index|add:1 }}</td>
+
             {% for field_name in list_display %}
               <td class="px-6 py-4 text-gray-800">
                 {# Try to get attribute, fallback to empty string #}
