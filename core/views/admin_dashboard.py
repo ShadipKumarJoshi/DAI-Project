@@ -37,7 +37,7 @@ def dashboard_model_list(request, model_name):
         object_list = object_list.filter(q_objects)
 
     # Pagination
-    paginator = Paginator(object_list.order_by('pk'), 10)
+    paginator = Paginator(object_list.order_by('pk'), 5)
     page = request.GET.get('page', 1)
     try:
         objects = paginator.page(page)
@@ -55,7 +55,7 @@ def dashboard_model_list(request, model_name):
         'title': config['title'],
         'dashboard_models': DASHBOARD_MODEL_MAP,
         'query': query,
-        'list_display': list_display,
+        'list_display': config.get('list_display', []),
     })
 
     
