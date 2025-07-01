@@ -2,6 +2,7 @@ from django.shortcuts import render, get_object_or_404, redirect
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
 from ..utils import DASHBOARD_MODEL_MAP
+from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 
 
 
@@ -11,22 +12,33 @@ def dashboard(request):
         'dashboard_models': DASHBOARD_MODEL_MAP
     })
 
+
 @login_required
 def dashboard_model_list(request, model_name):
     config = DASHBOARD_MODEL_MAP.get(model_name)
     if not config:
         return redirect('dashboard')
+
     model = config['model']
-    objects = model.objects.all()
+    object_list = model.objects.all().order_by('pk')  # or order as you prefer
+
+    paginator = Paginator(object_list, 10)  # Show 10 items per page
+
+    page = request.GET.get('page', 1)
+    try:
+        objects = paginator.page(page)
+    except PageNotAnInteger:
+        objects = paginator.page(1)
+    except EmptyPage:
+        objects = paginator.page(paginator.num_pages)
 
     return render(request, 'core/admin_dashboard/model_list.html', {
         'model_name': model_name,
         'objects': objects,
         'title': config['title'],
-        'list_display': config.get('list_display', ('__str__',)),
         'dashboard_models': DASHBOARD_MODEL_MAP  # for sidebar
     })
-
+    
 @login_required
 def dashboard_model_add(request, model_name):
     config = DASHBOARD_MODEL_MAP.get(model_name)
