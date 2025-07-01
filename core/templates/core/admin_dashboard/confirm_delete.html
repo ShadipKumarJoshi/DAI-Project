@@ -1,12 +1,18 @@
 {% extends 'core/admin_dashboard/dashboard.html' %}
 {% block dashboard_content %}
   <h1 class="text-2xl font-extrabold text-red-600 mb-6">{{ title }}</h1>
-  
+
+  {% if error_message %}
+    <div class="mb-4 p-3 bg-red-100 border border-red-400 text-red-700 rounded">
+      {{ error_message }}
+    </div>
+  {% endif %}
+
   <p class="mb-6 text-gray-700">
     Are you sure you want to delete: 
     <strong class="text-red-700">{{ object }}</strong>?
   </p>
-  
+
   <form method="post" class="space-x-4 flex">
     {% csrf_token %}
     <button type="submit"

@@ -4,6 +4,7 @@ from django.contrib import messages
 from ..utils import DASHBOARD_MODEL_MAP
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 from django.db.models import Q  
+from django.db.models import ProtectedError
 
 
 
@@ -37,7 +38,7 @@ def dashboard_model_list(request, model_name):
         object_list = object_list.filter(q_objects)
 
     # Pagination
-    paginator = Paginator(object_list.order_by('pk'), 5)
+    paginator = Paginator(object_list.order_by('pk'), 10)
     page = request.GET.get('page', 1)
     try:
         objects = paginator.page(page)
@@ -108,6 +109,7 @@ def dashboard_model_edit(request, model_name, pk):
         'dashboard_models': DASHBOARD_MODEL_MAP
     })
 
+
 @login_required
 def dashboard_model_delete(request, model_name, pk):
     config = DASHBOARD_MODEL_MAP.get(model_name)
@@ -117,14 +119,27 @@ def dashboard_model_delete(request, model_name, pk):
 
     obj = get_object_or_404(config['model'], pk=pk)
     if request.method == 'POST':
-        obj.delete()
-        messages.success(request, "Deleted successfully")
-        return redirect('dashboard_model_list', model_name=model_name)
+        try:
+            obj.delete()
+            messages.success(request, "Deleted successfully")
+            return redirect('dashboard_model_list', model_name=model_name)
+        except ProtectedError:
+            error_message = (
+                f"Cannot delete this {model_name} because it is referenced by other items."
+            )
+            # Render the same confirmation page with the error message
+            return render(request, 'core/admin_dashboard/confirm_delete.html', {
+                'object': obj,
+                'title': f"Delete {config['title']}",
+                'model_name': model_name,
+                'dashboard_models': DASHBOARD_MODEL_MAP,
+                'error_message': error_message,
+            })
 
     return render(request, 'core/admin_dashboard/confirm_delete.html', {
         'object': obj,
         'title': f"Delete {config['title']}",
         'model_name': model_name,
-        'dashboard_models': DASHBOARD_MODEL_MAP
+        'dashboard_models': DASHBOARD_MODEL_MAP,
     })
 
