@@ -3,6 +3,7 @@ from django.contrib.auth.decorators import login_required
 from django.contrib import messages
 from ..utils import DASHBOARD_MODEL_MAP
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
+from django.db.models import Q  
 
 
 
@@ -13,6 +14,7 @@ def dashboard(request):
     })
 
 
+
 @login_required
 def dashboard_model_list(request, model_name):
     config = DASHBOARD_MODEL_MAP.get(model_name)
@@ -20,10 +22,22 @@ def dashboard_model_list(request, model_name):
         return redirect('dashboard')
 
     model = config['model']
-    object_list = model.objects.all().order_by('pk')  # or order as you prefer
+    query = request.GET.get('q', '')
 
-    paginator = Paginator(object_list, 10)  # Show 10 items per page
+    # Start with all objects
+    object_list = model.objects.all()
 
+    # Basic search on common text fields
+    if query:
+        search_fields = [field.name for field in model._meta.fields
+                         if field.get_internal_type() in ['CharField', 'TextField']]
+        q_objects = Q()
+        for field in search_fields:
+            q_objects |= Q(**{f"{field}__icontains": query})
+        object_list = object_list.filter(q_objects)
+
+    # Pagination
+    paginator = Paginator(object_list.order_by('pk'), 10)
     page = request.GET.get('page', 1)
     try:
         objects = paginator.page(page)
@@ -36,8 +50,10 @@ def dashboard_model_list(request, model_name):
         'model_name': model_name,
         'objects': objects,
         'title': config['title'],
-        'dashboard_models': DASHBOARD_MODEL_MAP  # for sidebar
+        'dashboard_models': DASHBOARD_MODEL_MAP,
+        'query': query,
     })
+
     
 @login_required
 def dashboard_model_add(request, model_name):
