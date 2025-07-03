@@ -10,10 +10,11 @@ def login(request):
         email = request.POST.get('email')
         password = request.POST.get('password')
 
-        user = authenticate(request, username=email, password=password)  # username=email due to custom backend
+        # username=email due to custom backend
+        user = authenticate(request, username=email, password=password)
         if user:
             auth_login(request, user)
-            if user.is_staff or user.is_superuser:  
+            if user.is_staff or user.is_superuser:
                 # Admin users go to dashboard
                 return redirect('dashboard')
             else:
@@ -23,10 +24,26 @@ def login(request):
             messages.error(request, 'Invalid email or password')
     return render(request, 'core/accounts/login.html',)
 
+
 @login_required(login_url='login')
 def logout_view(request):
-    auth_logout(request)  
+    auth_logout(request)
     return redirect('login')
+
 
 def register(request):
     return render(request, 'core/accounts/register.html',)
+
+
+def register_type(request):
+    return render(request, 'core/accounts/register_type.html')
+
+
+def sme_register(request):
+    return render(request, 'core/accounts/sme_register.html')
+    pass
+
+
+def bdsp_register(request):
+    return render(request, 'core/accounts/bdsp_register.html')
+    pass
