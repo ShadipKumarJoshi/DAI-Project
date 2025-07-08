@@ -4,6 +4,7 @@ from ckeditor_uploader.widgets import CKEditorUploadingWidget
 from django import forms
 from .forms import NavbarItemForm, CMSPageForm
 
+
 @admin.register(models.NavbarItem)
 class NavbarItemAdmin(admin.ModelAdmin):
     form = NavbarItemForm  

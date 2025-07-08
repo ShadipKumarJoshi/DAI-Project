@@ -1,7 +1,5 @@
 {% extends 'core/accounts/auth_base.html' %}
 
-{% load static %}
-
 {% block title %}
   BDSP Register
 {% endblock %}
@@ -16,25 +14,21 @@
 
       <!-- Business Info -->
       <div>
-        <label for="business_type" class="block text-sm font-medium text-gray-700 mb-1">Business Type</label>
-        <select name="business_type" id="business_type" class="w-full border rounded-md px-4 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500">
-          <option value="">Select business type</option>
-          <option value="firm">Firm</option>
-          <option value="company">Company</option>
-          <option value="partnership">Partnership</option>
-          <option value="proprietorship">Proprietorship</option>
-          <option value="nonprofit">Non-profit</option>
-        </select>
+        <label for="{{ form.business_type.id_for_label }}" class="block text-sm font-medium text-gray-700 mb-1">Business Type</label>
+        {{ form.business_type }}
+        {{ form.business_type.errors }}
       </div>
 
       <div>
-        <label class="block text-sm font-medium text-gray-700 mb-1">Full name</label>
-        <input type="text" name="full_name" placeholder="Business name" class="w-full border rounded-md px-4 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500" />
+        <label for="{{ form.full_name.id_for_label }}" class="block text-sm font-medium text-gray-700 mb-1">Full name</label>
+        {{ form.full_name }}
+        {{ form.full_name.errors }}
       </div>
 
       <div>
-        <label class="block text-sm font-medium text-gray-700 mb-1">PAN/VAT Number</label>
-        <input type="text" name="pan_vat" placeholder="Business pan/vat number" class="w-full border rounded-md px-4 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500" />
+        <label for="{{ form.pan_vat.id_for_label }}" class="block text-sm font-medium text-gray-700 mb-1">PAN/VAT Number</label>
+        {{ form.pan_vat }}
+        {{ form.pan_vat.errors }}
       </div>
 
       <!-- User Login Details -->
@@ -42,43 +36,50 @@
         <h3 class="text-sm font-semibold text-gray-800 mb-4">User Login Details</h3>
 
         <div class="mb-4">
-          <label class="block text-sm font-medium text-gray-700 mb-1">Business Email</label>
-          <input type="email" name="email" placeholder="Your business email address" class="w-full border rounded-md px-4 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500" />
+          <label for="{{ form.email.id_for_label }}" class="block text-sm font-medium text-gray-700 mb-1">Business Email</label>
+          {{ form.email }}
+          {{ form.email.errors }}
         </div>
 
         <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
           <div>
-            <label class="block text-sm font-medium text-gray-700 mb-1">Password</label>
-            <input type="password" name="password" placeholder="Must be at least 8 characters" class="w-full border rounded-md px-4 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500" />
+            <label for="{{ form.password.id_for_label }}" class="block text-sm font-medium text-gray-700 mb-1">Password</label>
+            {{ form.password }}
+            {{ form.password.errors }}
           </div>
           <div>
-            <label class="block text-sm font-medium text-gray-700 mb-1">Confirm Password</label>
-            <input type="password" name="confirm_password" placeholder="Must be at least 8 characters" class="w-full border rounded-md px-4 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500" />
+            <label for="{{ form.confirm_password.id_for_label }}" class="block text-sm font-medium text-gray-700 mb-1">Confirm Password</label>
+            {{ form.confirm_password }}
+            {{ form.confirm_password.errors }}
           </div>
         </div>
 
         <!-- User Details -->
         <div class="mt-4">
           <h3 class="text-sm font-semibold text-gray-800 mb-2">User Details</h3>
-          <p class="text-xs text-gray-500 mb-4 flex  gap-2">
+          <p class="text-xs text-gray-500 mb-4 flex gap-2">
             <i class="fa-solid fa-circle-info"></i>
             Please enter the details of the person who will manage this business account. This may be the business owner, partner, or authorized representative.
           </p>
         </div>
         <div class="mb-4">
-          <label class="block text-sm font-medium text-gray-700 mb-1">Your Name</label>
-          <input type="text" name="full_name" placeholder="Your full name" class="w-full border rounded-md px-4 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500" />
+          <label for="{{ form.full_name.id_for_label }}" class="block text-sm font-medium text-gray-700 mb-1">Your Name</label>
+          {{ form.full_name }}
+          {{ form.full_name.errors }}
         </div>
 
         <div>
-          <label class="block text-sm font-medium text-gray-700 mb-1">Your Mobile Number</label>
-          <input type="text" name="mobile" placeholder="+977  Your mobile name" class="w-full border rounded-md px-4 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500" />
+          <label for="{{ form.mobile.id_for_label }}" class="block text-sm font-medium text-gray-700 mb-1">Your Mobile Number</label>
+          {{ form.mobile }}
+          {{ form.mobile.errors }}
         </div>
       </div>
 
       <!-- Terms and Submit -->
       <p class="text-xs text-gray-500 mt-2">
-        By continuing you agree to the DAI <a href="#" class="text-blue-600 underline font-bold">terms of service</a> and <a href="#" class="text-blue-600 underline font-bold">privacy policy</a>.
+        By continuing you agree to the DAI
+        <a href="#" class="text-blue-600 underline font-bold">terms of service</a> and
+        <a href="#" class="text-blue-600 underline font-bold">privacy policy</a>.
       </p>
 
       <div class="flex flex-col items-end mt-6 space-y-2">

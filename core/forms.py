@@ -251,3 +251,63 @@ class NoticeAttachmentForm(forms.ModelForm):
     class Meta:
         model = models.NoticeAttachment
         fields = '__all__'
+        
+
+
+TAILWIND_INPUT_CLASSES = "w-full border rounded-md px-4 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500"
+BUSINESS_TYPE_CHOICES = [
+    ('firm', 'Firm'),
+    ('company', 'Company'),
+    ('partnership', 'Partnership'),
+    ('proprietorship', 'Proprietorship'),
+    ('nonprofit', 'Non-profit'),
+]
+
+class BaseRegistrationForm(forms.Form):
+    email = forms.EmailField(widget=forms.EmailInput(attrs={"class": TAILWIND_INPUT_CLASSES}))
+    password = forms.CharField(
+        widget=forms.PasswordInput(attrs={"class": TAILWIND_INPUT_CLASSES})
+    )
+    confirm_password = forms.CharField(
+        widget=forms.PasswordInput(attrs={"class": TAILWIND_INPUT_CLASSES})
+    )
+
+    business_name = forms.CharField(
+        max_length=255, widget=forms.TextInput(attrs={"class": TAILWIND_INPUT_CLASSES})
+    )
+    pan_vat = forms.CharField(
+        max_length=100,
+        required=False,
+        widget=forms.TextInput(attrs={"class": TAILWIND_INPUT_CLASSES}),
+    )
+    full_name = forms.CharField(
+        max_length=255, widget=forms.TextInput(attrs={"class": TAILWIND_INPUT_CLASSES})
+    )
+    mobile = forms.CharField(
+        max_length=20, widget=forms.TextInput(attrs={"class": TAILWIND_INPUT_CLASSES})
+    )
+
+    def clean(self):
+        cleaned_data = super().clean()
+        pwd = cleaned_data.get("password")
+        cpwd = cleaned_data.get("confirm_password")
+        if pwd and cpwd and pwd != cpwd:
+            raise ValidationError("Passwords do not match.")
+        return cleaned_data
+
+
+class SMERegistrationForm(BaseRegistrationForm):
+    registration_number = forms.CharField(
+        max_length=100,
+        required=False,
+        widget=forms.TextInput(attrs={"class": TAILWIND_INPUT_CLASSES}),
+    )
+
+
+
+class BDSPRegistrationForm(BaseRegistrationForm):
+    business_type = forms.ChoiceField(
+        choices=BUSINESS_TYPE_CHOICES,
+        required=False,
+        widget=forms.Select(attrs={"class": TAILWIND_INPUT_CLASSES}),
+    )
