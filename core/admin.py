@@ -3,6 +3,23 @@ from . import models
 from ckeditor_uploader.widgets import CKEditorUploadingWidget
 from django import forms
 from .forms import NavbarItemForm, CMSPageForm
+from django.contrib.auth.admin import UserAdmin as BaseUserAdmin
+from .models.user import User
+
+class UserAdmin(BaseUserAdmin):
+    fieldsets = BaseUserAdmin.fieldsets + (
+        ('Additional Info', {
+            'fields': (
+                'role', 'business_name', 'pan_vat',
+                'full_name', 'mobile',
+                'business_registration_number', 'business_type',
+            ),
+        }),
+    )
+    list_display = BaseUserAdmin.list_display + ('role',)
+
+admin.site.register(User, UserAdmin)
+
 
 @admin.register(models.NavbarItem)
 class NavbarItemAdmin(admin.ModelAdmin):

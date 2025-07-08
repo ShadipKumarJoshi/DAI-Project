@@ -7,6 +7,48 @@ from django.utils.text import slugify
 import re  # for pattern matching
 from ckeditor_uploader.widgets import CKEditorUploadingWidget
 
+from django.contrib.auth import get_user_model
+
+User = get_user_model()
+
+
+class BaseRegistrationForm(forms.ModelForm):
+    password = forms.CharField(widget=forms.PasswordInput, min_length=8)
+    confirm_password = forms.CharField(widget=forms.PasswordInput, min_length=8)
+
+    class Meta:
+        model = User
+        fields = ['email', 'password', 'confirm_password', 'full_name', 'mobile', 'pan_vat', 'business_name']
+
+    def clean(self):
+        cleaned_data = super().clean()
+        password = cleaned_data.get('password')
+        confirm = cleaned_data.get('confirm_password')
+        if password and confirm and password != confirm:
+            raise forms.ValidationError("Passwords do not match")
+        return cleaned_data
+
+
+class SMERegistrationForm(BaseRegistrationForm):
+    business_registration_number = forms.CharField()
+
+    class Meta(BaseRegistrationForm.Meta):
+        fields = BaseRegistrationForm.Meta.fields + ['business_registration_number']
+
+
+class BDSPRegistrationForm(BaseRegistrationForm):
+    business_type = forms.ChoiceField(choices=[
+        ('firm', 'Firm'),
+        ('company', 'Company'),
+        ('partnership', 'Partnership'),
+        ('proprietorship', 'Proprietorship'),
+        ('nonprofit', 'Non-profit'),
+    ])
+
+    class Meta(BaseRegistrationForm.Meta):
+        fields = BaseRegistrationForm.Meta.fields + ['business_type']
+
+
 
 # Custom ModelChoiceField to display "title - slug" in the dropdown
 class CMSPageModelChoiceField(forms.ModelChoiceField):

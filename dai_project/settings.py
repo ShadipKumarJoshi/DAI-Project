@@ -40,6 +40,9 @@ INSTALLED_APPS = [
     'core',
 ]
 
+AUTH_USER_MODEL = 'core.User'
+
+
 TAILWIND_APP_NAME = 'theme'
 
 NPM_BIN_PATH = 'npm.cmd'
