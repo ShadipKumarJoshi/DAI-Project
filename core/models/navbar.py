@@ -2,6 +2,11 @@ from django.db import models
 from core import constants
 from django.core.exceptions import ValidationError
 
+VISIBLE_CHOICES = (
+    ('all', 'All Users'),
+    ('anonymous', 'Only Anonymous'),
+    ('authenticated', 'Only Logged-in'),
+)
 
 class NavbarItem(models.Model):
     title = models.CharField(max_length=100, null=False, blank=False)
@@ -12,6 +17,13 @@ class NavbarItem(models.Model):
     button_style = models.CharField(
         max_length=10, choices=constants.BUTTON_STYLE_CHOICES, null=True, blank=True)
     is_active = models.BooleanField(default=True)
+    visible_to = models.CharField(
+    max_length=20,
+    choices=VISIBLE_CHOICES,
+    default='all',
+    null=False,
+    blank=False,
+)
 
     # New link fields
     link_type = models.CharField(

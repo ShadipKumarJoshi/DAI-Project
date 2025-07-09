@@ -142,3 +142,306 @@
 [2025-07-09 14:40:02,495] INFO "GET /login HTTP/1.1" 302 0
 [2025-07-09 14:40:02,581] INFO "GET / HTTP/1.1" 200 31271
 [2025-07-09 14:40:02,621] INFO "GET /static/css/dist/styles.css?v=1752051302 HTTP/1.1" 200 36568
+[2025-07-09 14:53:46,185] INFO D:\Young Minds\DAI Project\core\models\navbar.py changed, reloading.
+[2025-07-09 14:53:46,853] INFO Watching for file changes with StatReloader
+[2025-07-09 14:53:47,217] INFO "GET / HTTP/1.1" 200 30493
+[2025-07-09 14:53:47,331] INFO "GET /static/css/dist/styles.css?v=1752052127 HTTP/1.1" 200 36568
+[2025-07-09 14:53:47,415] INFO "GET /media/development_steps_images/start.png HTTP/1.1" 200 28659
+[2025-07-09 14:53:47,415] INFO "GET /media/development_steps_images/manage.png HTTP/1.1" 200 56327
+[2025-07-09 14:53:47,481] INFO "GET /media/development_steps_images/growth.png HTTP/1.1" 200 19339
+[2025-07-09 14:53:47,526] INFO "GET /media/guidelines_icons/1.png HTTP/1.1" 200 20143
+[2025-07-09 14:53:47,530] INFO "GET /media/development_steps_images/sustain.png HTTP/1.1" 200 17599
+[2025-07-09 14:53:47,533] INFO "GET /media/guidelines_icons/2.png HTTP/1.1" 200 25783
+[2025-07-09 14:53:47,544] INFO "GET /media/guidelines_icons/4_KH4ihLj.png HTTP/1.1" 200 20892
+[2025-07-09 14:53:47,555] INFO "GET /media/guidelines_icons/3_qlCJaku.png HTTP/1.1" 200 20742
+[2025-07-09 14:53:47,565] INFO "GET /media/news_images/pexels-pixabay-159833.jpg HTTP/1.1" 200 1160214
+[2025-07-09 14:53:47,575] INFO "GET /media/news_images/news4.jpg HTTP/1.1" 200 2468140
+[2025-07-09 14:53:47,590] INFO "GET /media/footer_icons/contact.svg HTTP/1.1" 200 959
+[2025-07-09 14:53:47,591] INFO "GET /media/news_images/pexels-mizyuk-1674114.jpg HTTP/1.1" 200 334686
+[2025-07-09 14:53:47,604] INFO "GET /media/footer_icons/location.svg HTTP/1.1" 200 645
+[2025-07-09 14:53:47,605] INFO "GET /media/footer_icons/phone.svg HTTP/1.1" 200 4640
+[2025-07-09 14:53:47,619] INFO "GET /media/social_icons/facebook.png HTTP/1.1" 200 11246
+[2025-07-09 14:53:47,622] INFO "GET /media/social_icons/instagram.png HTTP/1.1" 200 11601
+[2025-07-09 14:53:47,623] INFO "GET /media/news_images/news1_aDBnYpe.jpg HTTP/1.1" 200 5619910
+[2025-07-09 14:53:47,632] INFO "GET /media/social_icons/twitter.png HTTP/1.1" 200 13368
+[2025-07-09 14:53:50,313] INFO D:\Young Minds\DAI Project\core\models\navbar.py changed, reloading.
+[2025-07-09 14:53:50,951] INFO Watching for file changes with StatReloader
+[2025-07-09 14:53:51,354] INFO "GET / HTTP/1.1" 200 30493
+[2025-07-09 14:53:51,409] INFO "GET /static/css/dist/styles.css?v=1752052131 HTTP/1.1" 200 36568
+[2025-07-09 14:54:31,436] INFO D:\Young Minds\DAI Project\core\models\navbar.py changed, reloading.
+[2025-07-09 14:54:32,051] INFO Watching for file changes with StatReloader
+[2025-07-09 14:54:32,943] ERROR Internal Server Error: /
+Traceback (most recent call last):
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\db\backends\utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\db\backends\sqlite3\base.py", line 360, in execute
+    return super().execute(query, params)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+sqlite3.OperationalError: no such column: core_navbaritem.visible_to
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\Young Minds\DAI Project\core\views\home.py", line 52, in home
+    return render(request, 'core/home/home.html', {
+        'hero_carousels': hero_carousels,
+    ...<6 lines>...
+        'pop_up_notices': pop_up_notices,
+    })
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\backends\django.py", line 107, in render
+    return self.template.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\loader_tags.py", line 210, in render
+    return template.render(context)
+           ~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\base.py", line 173, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\defaulttags.py", line 199, in render
+    len_values = len(values)
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\db\models\query.py", line 366, in __len__
+    self._fetch_all()
+    ~~~~~~~~~~~~~~~^^
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\db\models\query.py", line 1949, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+                         ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\db\models\query.py", line 91, in __iter__
+    results = compiler.execute_sql(
+        chunked_fetch=self.chunked_fetch, chunk_size=self.chunk_size
+    )
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\db\models\sql\compiler.py", line 1623, in execute_sql
+    cursor.execute(sql, params)
+    ~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\db\backends\utils.py", line 122, in execute
+    return super().execute(sql, params)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\db\backends\utils.py", line 79, in execute
+    return self._execute_with_wrappers(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        sql, params, many=False, executor=self._execute
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\db\backends\utils.py", line 92, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\db\backends\utils.py", line 100, in _execute
+    with self.db.wrap_database_errors:
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\db\utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\db\backends\utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\db\backends\sqlite3\base.py", line 360, in execute
+    return super().execute(query, params)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+django.db.utils.OperationalError: no such column: core_navbaritem.visible_to
+[2025-07-09 14:54:32,951] ERROR "GET / HTTP/1.1" 500 252864
+[2025-07-09 14:55:56,728] INFO Watching for file changes with StatReloader
+[2025-07-09 14:55:57,581] INFO "GET / HTTP/1.1" 200 30493
+[2025-07-09 14:55:57,697] INFO "GET /static/css/dist/styles.css?v=1752052257 HTTP/1.1" 200 36568
+[2025-07-09 14:56:50,316] INFO D:\Young Minds\DAI Project\core\context_processors.py changed, reloading.
+[2025-07-09 14:56:51,065] INFO Watching for file changes with StatReloader
+[2025-07-09 14:56:51,534] ERROR Internal Server Error: /
+Traceback (most recent call last):
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\Young Minds\DAI Project\core\views\home.py", line 52, in home
+    return render(request, 'core/home/home.html', {
+        'hero_carousels': hero_carousels,
+    ...<6 lines>...
+        'pop_up_notices': pop_up_notices,
+    })
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\backends\django.py", line 107, in render
+    return self.template.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\base.py", line 169, in render
+    with context.bind_template(self):
+         ~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python313\Lib\contextlib.py", line 141, in __enter__
+    return next(self.gen)
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\context.py", line 259, in bind_template
+    context = processor(self.request)
+  File "D:\Young Minds\DAI Project\core\context_processors.py", line 15, in navbar_buttons
+    models.Q(visible_to='all') | models.Q(visible_to='authenticated')
+    ^^^^^^^^
+AttributeError: module 'core.models' has no attribute 'Q'
+[2025-07-09 14:56:51,550] ERROR "GET / HTTP/1.1" 500 118233
+[2025-07-09 14:57:50,118] INFO D:\Young Minds\DAI Project\core\context_processors.py changed, reloading.
+[2025-07-09 14:57:50,782] INFO Watching for file changes with StatReloader
+[2025-07-09 14:57:51,141] ERROR Internal Server Error: /
+Traceback (most recent call last):
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\Young Minds\DAI Project\core\views\home.py", line 52, in home
+    return render(request, 'core/home/home.html', {
+        'hero_carousels': hero_carousels,
+    ...<6 lines>...
+        'pop_up_notices': pop_up_notices,
+    })
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\backends\django.py", line 107, in render
+    return self.template.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\base.py", line 169, in render
+    with context.bind_template(self):
+         ~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "C:\Users\Lenovo\AppData\Local\Programs\Python\Python313\Lib\contextlib.py", line 141, in __enter__
+    return next(self.gen)
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\context.py", line 259, in bind_template
+    context = processor(self.request)
+  File "D:\Young Minds\DAI Project\core\context_processors.py", line 16, in navbar_buttons
+    models.Q(visible_to='all') | models.Q(visible_to='authenticated')
+    ^^^^^^^^
+AttributeError: module 'core.models' has no attribute 'Q'
+[2025-07-09 14:57:51,146] ERROR "GET / HTTP/1.1" 500 118363
+[2025-07-09 14:58:07,307] INFO D:\Young Minds\DAI Project\core\context_processors.py changed, reloading.
+[2025-07-09 14:58:08,106] INFO Watching for file changes with StatReloader
+[2025-07-09 14:58:08,412] INFO "GET / HTTP/1.1" 200 30493
+[2025-07-09 14:58:08,495] INFO "GET /static/css/dist/styles.css?v=1752052388 HTTP/1.1" 200 36568
+[2025-07-09 14:58:09,729] INFO "GET / HTTP/1.1" 200 30493
+[2025-07-09 14:58:09,760] INFO "GET /static/css/dist/styles.css?v=1752052389 HTTP/1.1" 200 36568
+[2025-07-09 14:58:14,489] INFO "GET /admin/ HTTP/1.1" 302 0
+[2025-07-09 14:58:14,524] INFO "GET / HTTP/1.1" 200 31253
+[2025-07-09 14:58:14,566] INFO "GET /static/css/dist/styles.css?v=1752052394 HTTP/1.1" 200 36568
+[2025-07-09 14:58:16,937] INFO "GET /logout/ HTTP/1.1" 302 0
+[2025-07-09 14:58:16,999] INFO "GET /login HTTP/1.1" 200 15639
+[2025-07-09 14:58:17,044] INFO "GET /static/css/dist/styles.css?v=1752052396 HTTP/1.1" 200 36568
+[2025-07-09 14:58:20,150] WARNING Not Found: /login/admin
+[2025-07-09 14:58:20,151] WARNING "GET /login/admin HTTP/1.1" 404 8291
+[2025-07-09 14:58:26,777] INFO "GET /admin/ HTTP/1.1" 302 0
+[2025-07-09 14:58:26,868] INFO "GET / HTTP/1.1" 200 31253
+[2025-07-09 14:58:26,905] INFO "GET /static/css/dist/styles.css?v=1752052406 HTTP/1.1" 200 36568
+[2025-07-09 14:58:28,423] INFO "GET /login HTTP/1.1" 200 15639
+[2025-07-09 14:58:28,462] INFO "GET /static/css/dist/styles.css?v=1752052408 HTTP/1.1" 200 36568
+[2025-07-09 14:58:32,791] INFO "POST /login HTTP/1.1" 302 0
+[2025-07-09 14:58:32,848] INFO "GET /dashboard HTTP/1.1" 200 24695
+[2025-07-09 14:58:32,892] INFO "GET /static/css/dist/styles.css?v=1752052412 HTTP/1.1" 200 36568
+[2025-07-09 14:58:36,233] INFO "GET /admin/ HTTP/1.1" 200 19874
+[2025-07-09 14:58:36,277] INFO "GET /static/admin/css/base.css HTTP/1.1" 304 0
+[2025-07-09 14:58:36,282] INFO "GET /static/admin/css/dashboard.css HTTP/1.1" 304 0
+[2025-07-09 14:58:36,283] INFO "GET /static/admin/css/dark_mode.css HTTP/1.1" 304 0
+[2025-07-09 14:58:36,283] INFO "GET /static/admin/js/theme.js HTTP/1.1" 304 0
+[2025-07-09 14:58:36,285] INFO "GET /static/admin/css/nav_sidebar.css HTTP/1.1" 304 0
+[2025-07-09 14:58:36,286] INFO "GET /static/admin/css/responsive.css HTTP/1.1" 304 0
+[2025-07-09 14:58:36,299] INFO "GET /static/admin/js/nav_sidebar.js HTTP/1.1" 304 0
+[2025-07-09 14:58:36,315] INFO "GET /static/admin/img/icon-changelink.svg HTTP/1.1" 304 0
+[2025-07-09 14:58:36,315] INFO "GET /static/admin/img/icon-addlink.svg HTTP/1.1" 304 0
+[2025-07-09 14:58:42,648] INFO "GET /admin/core/navbaritem/ HTTP/1.1" 200 27647
+[2025-07-09 14:58:42,700] INFO "GET /static/admin/css/changelists.css HTTP/1.1" 200 6878
+[2025-07-09 14:58:42,701] INFO "GET /static/admin/css/forms.css HTTP/1.1" 200 8525
+[2025-07-09 14:58:42,723] INFO "GET /static/admin/js/jquery.init.js HTTP/1.1" 200 347
+[2025-07-09 14:58:42,724] INFO "GET /static/admin/css/widgets.css HTTP/1.1" 200 11991
+[2025-07-09 14:58:42,734] INFO "GET /static/admin/js/core.js HTTP/1.1" 200 6208
+[2025-07-09 14:58:42,738] INFO "GET /static/admin/js/admin/RelatedObjectLookups.js HTTP/1.1" 200 9777
+[2025-07-09 14:58:42,753] INFO "GET /static/admin/js/urlify.js HTTP/1.1" 200 7887
+[2025-07-09 14:58:42,757] INFO "GET /static/admin/js/actions.js HTTP/1.1" 200 8076
+[2025-07-09 14:58:42,760] INFO "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+[2025-07-09 14:58:42,762] INFO "GET /static/admin/js/prepopulate.js HTTP/1.1" 200 1531
+[2025-07-09 14:58:42,762] INFO "GET /static/admin/img/icon-no.svg HTTP/1.1" 304 0
+[2025-07-09 14:58:42,769] INFO "GET /static/admin/img/search.svg HTTP/1.1" 200 458
+[2025-07-09 14:58:42,784] INFO "GET /static/admin/js/vendor/jquery/jquery.js HTTP/1.1" 200 285314
+[2025-07-09 14:58:42,805] INFO "GET /static/admin/js/filters.js HTTP/1.1" 200 978
+[2025-07-09 14:58:42,826] INFO "GET /static/admin/img/icon-yes.svg HTTP/1.1" 200 436
+[2025-07-09 14:58:42,942] INFO "GET /static/admin/js/vendor/xregexp/xregexp.js HTTP/1.1" 200 325171
+[2025-07-09 14:58:42,976] INFO "GET /static/admin/img/icon-viewlink.svg HTTP/1.1" 200 581
+[2025-07-09 14:58:42,977] INFO "GET /static/admin/img/tooltag-add.svg HTTP/1.1" 200 331
+[2025-07-09 14:58:50,180] INFO "GET /admin/core/navbaritem/3/change/ HTTP/1.1" 200 24958
+[2025-07-09 14:58:50,226] INFO "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+[2025-07-09 14:58:50,237] INFO "GET /static/admin/js/prepopulate_init.js HTTP/1.1" 200 586
+[2025-07-09 14:58:50,259] INFO "GET /static/admin/img/icon-deletelink.svg HTTP/1.1" 200 392
+[2025-07-09 14:58:50,273] INFO "GET /static/admin/js/change_form.js HTTP/1.1" 200 606
+[2025-07-09 14:59:01,591] INFO "POST /admin/core/navbaritem/3/change/ HTTP/1.1" 302 0
+[2025-07-09 14:59:01,669] INFO "GET /admin/core/navbaritem/ HTTP/1.1" 200 27856
+[2025-07-09 14:59:01,717] INFO "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+[2025-07-09 14:59:07,314] INFO "GET /admin/core/navbaritem/2/change/ HTTP/1.1" 200 24946
+[2025-07-09 14:59:07,359] INFO "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+[2025-07-09 14:59:10,840] INFO "POST /admin/core/navbaritem/2/change/ HTTP/1.1" 302 0
+[2025-07-09 14:59:10,921] INFO "GET /admin/core/navbaritem/ HTTP/1.1" 200 27853
+[2025-07-09 14:59:10,964] INFO "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+[2025-07-09 14:59:16,178] INFO "GET /admin/core/navbaritem/10/change/ HTTP/1.1" 200 24944
+[2025-07-09 14:59:16,222] INFO "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+[2025-07-09 14:59:26,736] INFO "GET / HTTP/1.1" 200 30327
+[2025-07-09 14:59:26,796] INFO "GET /static/css/dist/styles.css?v=1752052466 HTTP/1.1" 200 36568
+[2025-07-09 14:59:26,865] INFO "GET /media/development_steps_images/start.png HTTP/1.1" 200 28659
+[2025-07-09 14:59:26,867] INFO "GET /media/guidelines_icons/1.png HTTP/1.1" 200 20143
+[2025-07-09 14:59:26,867] INFO "GET /media/development_steps_images/sustain.png HTTP/1.1" 200 17599
+[2025-07-09 14:59:26,870] INFO "GET /media/development_steps_images/growth.png HTTP/1.1" 200 19339
+[2025-07-09 14:59:26,870] INFO "GET /media/development_steps_images/manage.png HTTP/1.1" 200 56327
+[2025-07-09 14:59:26,894] INFO "GET /media/guidelines_icons/2.png HTTP/1.1" 200 25783
+[2025-07-09 14:59:26,896] INFO "GET /media/guidelines_icons/4_KH4ihLj.png HTTP/1.1" 200 20892
+[2025-07-09 14:59:26,899] INFO "GET /media/guidelines_icons/3_qlCJaku.png HTTP/1.1" 200 20742
+[2025-07-09 14:59:26,915] INFO "GET /media/footer_icons/contact.svg HTTP/1.1" 200 959
+[2025-07-09 14:59:26,926] INFO "GET /media/footer_icons/phone.svg HTTP/1.1" 200 4640
+[2025-07-09 14:59:26,931] INFO "GET /media/news_images/pexels-mizyuk-1674114.jpg HTTP/1.1" 200 334686
+[2025-07-09 14:59:26,938] INFO "GET /media/footer_icons/location.svg HTTP/1.1" 200 645
+[2025-07-09 14:59:26,949] INFO "GET /media/social_icons/facebook.png HTTP/1.1" 200 11246
+[2025-07-09 14:59:26,951] INFO "GET /media/social_icons/instagram.png HTTP/1.1" 200 11601
+[2025-07-09 14:59:26,960] INFO "GET /media/social_icons/twitter.png HTTP/1.1" 200 13368
+[2025-07-09 14:59:26,962] INFO "GET /media/news_images/pexels-pixabay-159833.jpg HTTP/1.1" 200 1160214
+[2025-07-09 14:59:26,987] INFO "GET /media/news_images/news4.jpg HTTP/1.1" 200 2468140
+[2025-07-09 14:59:27,014] INFO "GET /media/news_images/news1_aDBnYpe.jpg HTTP/1.1" 200 5619910
+[2025-07-09 14:59:54,147] INFO "POST /admin/core/navbaritem/10/change/ HTTP/1.1" 302 0
+[2025-07-09 14:59:54,231] INFO "GET /admin/core/navbaritem/ HTTP/1.1" 200 27855
+[2025-07-09 14:59:54,276] INFO "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+[2025-07-09 14:59:58,641] INFO "GET / HTTP/1.1" 200 30140
+[2025-07-09 14:59:58,675] INFO "GET /static/css/dist/styles.css?v=1752052498 HTTP/1.1" 200 36568
+[2025-07-09 15:00:08,302] INFO "GET /logout/ HTTP/1.1" 302 0
+[2025-07-09 15:00:08,353] INFO "GET /login HTTP/1.1" 200 15373
+[2025-07-09 15:00:08,392] INFO "GET /static/css/dist/styles.css?v=1752052508 HTTP/1.1" 200 36568

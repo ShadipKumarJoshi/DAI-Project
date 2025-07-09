@@ -1,4 +1,5 @@
 from . import models
+from django.db.models import Q
 
 
 def navbar_items(request):
@@ -6,8 +7,23 @@ def navbar_items(request):
     return {'navbar_items': items}
 
 def navbar_buttons(request):
-    buttons = models.NavbarItem.objects.filter(is_active=True, is_button=True).order_by('order')
+    user = request.user
+    if user.is_authenticated:
+        buttons = models.NavbarItem.objects.filter(
+            is_active=True,
+            is_button=True,
+        ).filter(
+            Q(visible_to='all') | Q(visible_to='authenticated')
+        ).order_by('order')
+    else:
+        buttons = models.NavbarItem.objects.filter(
+            is_active=True,
+            is_button=True,
+        ).filter(
+            Q(visible_to='all') | Q(visible_to='anonymous')
+        ).order_by('order')
     return {'navbar_buttons': buttons}
+
 
 def footer_data(request):
     quick_links = models.FooterQuickLink.objects.filter(is_active=True)
