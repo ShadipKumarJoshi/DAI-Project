@@ -18,7 +18,8 @@
             {% endif %}
             <h2 class="text-xl font-semibold mb-2">{{ news.title }}</h2>
             <p class="text-sm text-gray-500 mb-2">Published on: {{ news.created_at|date:'d M Y' }}</p>
-            <p class="text-gray-700 truncate">{{ news.description|striptags|truncatechars:100 }}</p>
+           <p class="text-gray-700 truncate">{{ news.description|striptags|truncatechars:100 }}</p>
+
           </a>
         {% empty %}
           <p>No news or events available.</p>

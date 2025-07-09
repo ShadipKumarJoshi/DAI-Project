@@ -41,7 +41,7 @@
               </div>
 
               <h3 class="text-xl font-semibold text-gray-900 mb-2">{{ news.title }}</h3>
-              <p class="text-base text-gray-700">{{ news.description |truncatewords:10 }}</p>
+              <p class="text-base text-gray-700">{{ news.description|striptags|truncatechars:100 }}</p>
             </div>
           </a>
         {% empty %}
