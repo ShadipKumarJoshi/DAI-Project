@@ -6,6 +6,7 @@ from core.forms import SMERegistrationForm, BDSPRegistrationForm
 from django.contrib.auth import get_user_model
 
 def login(request):
+    email = ''
     if request.method == 'POST':
         email = request.POST.get('email')
         password = request.POST.get('password')
@@ -14,6 +15,8 @@ def login(request):
         user = authenticate(request, username=email, password=password)
         if user:
             auth_login(request, user)
+            messages.success(request, f"Login is successful! <br>Welcome {user.full_name}!")
+
             if user.is_staff or user.is_superuser:
                 # Admin users go to dashboard
                 return redirect('dashboard')
@@ -22,7 +25,7 @@ def login(request):
                 return redirect('home')
         else:
             messages.error(request, 'Invalid email or password')
-    return render(request, 'core/accounts/login.html',)
+    return render(request, 'core/accounts/login.html', {'email': email})
 
 
 @login_required(login_url='login')

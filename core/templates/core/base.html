@@ -24,6 +24,43 @@
   </head>
   <body class="pt-20">
     {% include 'core/components/navbar.html' %}
+    <!-- Global messages -->
+{% if messages %}
+  <div class="fixed top-20 left-1/2 transform -translate-x-1/2 z-50 w-full max-w-xl px-4 space-y-2">
+    {% for message in messages %}
+      <div
+        class="relative flex items-start gap-2 px-4 py-3 rounded-lg shadow-sm border text-sm transition-opacity duration-500 ease-in-out
+        {% if message.tags == 'success' %}
+          bg-green-100 text-green-700 border-green-200 auto-dismiss
+        {% elif message.tags == 'error' %}
+          bg-red-100 text-red-700 border-red-200
+        {% elif message.tags == 'warning' %}
+          bg-yellow-100 text-yellow-700 border-yellow-200
+        {% elif message.tags == 'info' %}
+          bg-blue-100 text-blue-700 border-blue-200 auto-dismiss
+        {% endif %}">
+        
+        <div class="pt-0.5">
+          {% if message.tags == 'success' %} ✔️
+          {% elif message.tags == 'error' %} ❌
+          {% elif message.tags == 'warning' %} ⚠️
+          {% elif message.tags == 'info' %} ℹ️
+          {% endif %}
+        </div>
+
+        <div class="flex-1">
+          {{ message|safe }}
+
+        </div>
+
+        <button type="button" class="absolute top-1 right-2 text-xl font-bold text-gray-400 hover:text-gray-600 focus:outline-none" onclick="this.parentElement.style.display='none';">
+          ×
+        </button>
+      </div>
+    {% endfor %}
+  </div>
+{% endif %}
+
 
     {% block content %}
 
@@ -35,5 +72,20 @@
 
     <!-- Custom script -->
     <script src="{% static 'js/script.js' %}"></script>
+    <!-- Auto-dismiss script -->
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const alerts = document.querySelectorAll('.auto-dismiss');
+    alerts.forEach(alert => {
+      setTimeout(() => {
+        alert.classList.add('opacity-0');
+        setTimeout(() => {
+          alert.style.display = 'none';
+        }, 500);
+      }, 4000); // Dismiss after 4s
+    });
+  });
+</script>
+
   </body>
 </html>
