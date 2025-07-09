@@ -24,7 +24,7 @@ class NewsEvent(models.Model):
     location = models.CharField(max_length=100)
     image = models.ImageField(upload_to='news_images', null=True,
         blank=True,
-        default='news_images/default_news.jpg')
+        default='news_images/news.jpg')
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 

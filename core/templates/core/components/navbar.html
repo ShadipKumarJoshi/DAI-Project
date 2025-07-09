@@ -1,15 +1,15 @@
 {% load static %}
 <head>
- <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
- <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js" defer></script>
 </head>
 
 <nav class="bg-white shadow fixed top-0 w-full z-50">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex items-center justify-between">
-
     <!-- Left: Logos and Menu -->
     <div class="flex items-center space-x-4">
-      <img src="{% static 'core/images/logos/dai_logo.png' %}" alt="DAI Logo" class="h-10" />
+      <a href="{% url 'home' %}"><img src="{% static 'core/images/logos/dai_logo.png' %}" alt="DAI Logo" class="h-12" /></a>
+
       <img src="{% static 'core/images/logos/Emblem_of_Nepal.png' %}" alt="Nepal Emblem" class="h-10" />
 
       <!-- Main Nav Container -->
@@ -23,11 +23,8 @@
     <!-- Right: Button Links -->
     <div class="space-x-2">
       {% for button in navbar_buttons %}
-        <a href="{{ button.url }}">
-          <button class="btn-{{ button.button_style }}">{{ button.title }}</button>
-        </a>
+        <a href="{{ button.url }}"><button class="btn-{{ button.button_style }}">{{ button.title }}</button></a>
       {% endfor %}
     </div>
-
   </div>
 </nav>
