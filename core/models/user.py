@@ -10,14 +10,14 @@ class User(AbstractUser):
     # Role and business info
     role = models.CharField(max_length=10, choices=ROLE_CHOICES)
     business_name = models.CharField(max_length=255)
-    pan_vat = models.CharField(max_length=100, blank=True, null=True)
+    pan_vat = models.CharField(max_length=100, blank=True, null=True, unique=True)
 
     # User info
     full_name = models.CharField(max_length=255)
     mobile = models.CharField(max_length=20)
 
     # SME specific
-    business_registration_number = models.CharField(max_length=100, blank=True, null=True)
+    business_registration_number = models.CharField(max_length=100, blank=True, null=True, unique=True)
 
     # BDSP specific
     business_type = models.CharField(max_length=100, blank=True, null=True)
