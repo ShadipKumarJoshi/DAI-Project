@@ -58,6 +58,7 @@ MIDDLEWARE = [
     "django_browser_reload.middleware.BrowserReloadMiddleware",
     'core.middleware.AdminOnlyMiddleware',
     'core.middleware.RequestLoggingMiddleware',
+    'core.middleware.RedirectAuthenticatedMiddleware',
 ]
 
 ROOT_URLCONF = 'dai_project.urls'

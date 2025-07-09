@@ -18,6 +18,34 @@ class AdminOnlyMiddleware:
                 return redirect(reverse('home'))
 
         return self.get_response(request)
+    
+from django.shortcuts import redirect
+from django.urls import reverse
+
+class RedirectAuthenticatedMiddleware:
+    """
+    Redirect authenticated users away from login and registration pages.
+    """
+
+    def __init__(self, get_response):
+        self.get_response = get_response
+        self.protected_paths = [
+            reverse('login'),
+            reverse('register'),
+            reverse('register_type'),
+            reverse('sme_register'),
+            reverse('bdsp_register'),
+        ]
+
+    def __call__(self, request):
+        # If user is authenticated and trying to access any login/register page
+        if request.user.is_authenticated and request.path in self.protected_paths:
+            messages.info(request, "You are already logged in.")
+            return redirect('home')
+
+        response = self.get_response(request)
+        return response
+
 
 
 logger = logging.getLogger(__name__)  # Uses Django's logging config
