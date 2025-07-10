@@ -1485,3 +1485,9 @@ AttributeError: module 'core.models' has no attribute 'Q'
 [2025-07-10 11:28:00,165] INFO "GET /dashboard HTTP/1.1" 200 24342
 [2025-07-10 11:28:00,193] INFO "GET /static/css/dist/styles.css?v=1752126180 HTTP/1.1" 200 36568
 [2025-07-10 11:28:02,613] INFO "GET /admin/ HTTP/1.1" 200 16640
+[2025-07-10 11:28:05,727] INFO "GET /admin/core/user/ HTTP/1.1" 200 20426
+[2025-07-10 11:28:05,755] INFO "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+[2025-07-10 11:28:14,792] INFO "POST /admin/core/user/ HTTP/1.1" 200 15220
+[2025-07-10 11:28:15,945] INFO "POST /admin/core/user/ HTTP/1.1" 302 0
+[2025-07-10 11:28:15,974] INFO "GET /admin/core/user/ HTTP/1.1" 200 19060
+[2025-07-10 11:28:15,998] INFO "GET /admin/jsi18n/ HTTP/1.1" 200 3342
