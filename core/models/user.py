@@ -10,11 +10,13 @@ class User(AbstractUser):
     # Role and business info
     role = models.CharField(max_length=10, choices=ROLE_CHOICES)
     business_name = models.CharField(max_length=255)
-    pan_vat = models.CharField(max_length=100, blank=True, null=True, unique=True)
+    pan_vat = models.CharField(max_length=100, unique=True)
 
     # User info
     full_name = models.CharField(max_length=255)
     mobile = models.CharField(max_length=20)
+     # Overriding email to make it required
+    email = models.EmailField(unique=True, blank=False, null=False)
 
     # SME specific
     business_registration_number = models.CharField(max_length=100, blank=True, null=True, unique=True)

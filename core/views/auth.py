@@ -31,6 +31,7 @@ def login(request):
 @login_required(login_url='login')
 def logout_view(request):
     auth_logout(request)
+    messages.success(request, 'You have successfully logged out!')
     return redirect('login')
 
 
@@ -62,7 +63,7 @@ def sme_register(request):
                 authenticated_user = authenticate(request, username=email, password=form.cleaned_data['password'])
                 if authenticated_user is not None:
                     auth_login(request, authenticated_user)
-                    return redirect('dashboard')
+                    return redirect('home')
                 else:
                     messages.error(request, 'Authentication failed after registration.')
     else:
@@ -87,7 +88,7 @@ def bdsp_register(request):
                 authenticated_user = authenticate(request, username=email, password=form.cleaned_data['password'])
                 if authenticated_user is not None:
                     auth_login(request, authenticated_user)
-                    return redirect('dashboard')
+                    return redirect('home')
                 else:
                     messages.error(request, 'Authentication failed after registration.')
     else:

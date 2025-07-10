@@ -20,6 +20,24 @@ class BaseRegistrationForm(forms.ModelForm):
         model = User
         fields = ['email', 'password', 'confirm_password', 'full_name', 'mobile', 'pan_vat', 'business_name']
 
+    def clean_full_name(self):
+        full_name = self.cleaned_data.get('full_name')
+
+        # Match words made of letters with optional dot at the end, separated by a single space
+        pattern = r'^([A-Za-z]+\.?)( [A-Za-z]+\.?)*$'
+
+        if not re.fullmatch(pattern, full_name):
+            raise ValidationError("Full name must contain only words with alphabets.")
+
+        return full_name
+
+
+    def clean_mobile(self):
+        mobile = self.cleaned_data.get('mobile')
+        if not re.fullmatch(r'9\d{9}', mobile):
+            raise ValidationError("Mobile number must start with 9 and be exactly 10 digits long.")
+        return mobile
+    
     def clean(self):
         cleaned_data = super().clean()
         password = cleaned_data.get('password')
