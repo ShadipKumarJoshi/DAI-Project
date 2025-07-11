@@ -5,6 +5,7 @@ from django.contrib import messages
 from core.forms import SMERegistrationForm, BDSPRegistrationForm
 from django.contrib.auth import get_user_model
 
+
 def login(request):
     email = ''
     if request.method == 'POST':
@@ -15,7 +16,8 @@ def login(request):
         user = authenticate(request, username=email, password=password)
         if user:
             auth_login(request, user)
-            messages.success(request, f"Login is successful! <br>Welcome {user.full_name}!")
+            messages.success(
+                request, f"Login is successful! <br>Welcome {user.full_name}!")
 
             if user.is_staff or user.is_superuser:
                 # Admin users go to dashboard
@@ -60,12 +62,16 @@ def sme_register(request):
                 user.set_password(form.cleaned_data['password'])
                 user.save()
                 # Authenticate to get backend set
-                authenticated_user = authenticate(request, username=email, password=form.cleaned_data['password'])
+                authenticated_user = authenticate(
+                    request, username=email, password=form.cleaned_data['password'])
                 if authenticated_user is not None:
                     auth_login(request, authenticated_user)
-                    return redirect('home')
+                    messages.success(
+                        request, 'Registration is successful. Welcome!')
+                    return redirect('sme_profile_wizard')
                 else:
-                    messages.error(request, 'Authentication failed after registration.')
+                    messages.error(
+                        request, 'Authentication failed after registration.')
     else:
         form = SMERegistrationForm()
     return render(request, 'core/accounts/sme_register.html', {'form': form})
@@ -85,12 +91,16 @@ def bdsp_register(request):
                 user.set_password(form.cleaned_data['password'])
                 user.save()
                 # Authenticate to get backend set
-                authenticated_user = authenticate(request, username=email, password=form.cleaned_data['password'])
+                authenticated_user = authenticate(
+                    request, username=email, password=form.cleaned_data['password'])
                 if authenticated_user is not None:
                     auth_login(request, authenticated_user)
+                    messages.success(
+                        request, 'Registration is successful. Please login to access your account!')
                     return redirect('home')
                 else:
-                    messages.error(request, 'Authentication failed after registration.')
+                    messages.error(
+                        request, 'Authentication failed after registration.')
     else:
         form = BDSPRegistrationForm()
     return render(request, 'core/accounts/bdsp_register.html', {'form': form})

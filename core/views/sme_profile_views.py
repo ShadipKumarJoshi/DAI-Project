@@ -1,6 +1,8 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth.decorators import login_required
 from core.models import SMEProfile
+from django.contrib import messages
+
 
 @login_required
 def sme_profile_view(request):
@@ -8,7 +10,9 @@ def sme_profile_view(request):
         profile = request.user.sme_profile
     except SMEProfile.DoesNotExist:
         # Redirect to the wizard if no profile exists
+        messages.error(request, 'Please complete your profile before accessing this page.')
         return redirect('sme_profile_wizard')
+    messages.success(request, 'Your Profile is successfully updated.')
 
     return render(request, 'core/accounts/sme_profile_view.html', {
         'profile': profile,
