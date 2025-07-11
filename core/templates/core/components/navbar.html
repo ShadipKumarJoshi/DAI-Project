@@ -6,25 +6,26 @@
 
 <nav class="bg-white shadow fixed top-0 w-full z-50">
   <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex items-center justify-between">
-    <!-- Left: Logos and Menu -->
+
+    <!-- Left Side -->
     <div class="flex items-center space-x-4">
       <a href="{% url 'home' %}"><img src="{% static 'core/images/logos/dai_logo.png' %}" alt="DAI Logo" class="h-12" /></a>
-
       <img src="{% static 'core/images/logos/Emblem_of_Nepal.png' %}" alt="Nepal Emblem" class="h-10" />
 
-      <!-- Main Nav Container -->
       <ul class="hidden md:flex space-x-6 text-sm font-medium">
-        {% for item in navbar_items %}
+        {% for item in navbar_items_left %}
           {% include 'core/components/nav_item.html' with item=item level=1 %}
         {% endfor %}
       </ul>
     </div>
 
-    <!-- Right: Button Links -->
-    <div class="space-x-2">
-      {% for button in navbar_buttons %}
-        <a href="{{ button.url }}"><button class="btn-{{ button.button_style }}">{{ button.title }}</button></a>
-      {% endfor %}
+    <!-- Right Side -->
+    <div class="flex items-center space-x-4">
+      <ul class="hidden md:flex space-x-6 text-sm font-medium">
+        {% for item in navbar_items_right %}
+          {% include 'core/components/nav_item.html' with item=item level=1 %}
+        {% endfor %}
+      </ul>
     </div>
   </div>
 </nav>

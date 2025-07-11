@@ -12,7 +12,6 @@ def sme_profile_view(request):
         # Redirect to the wizard if no profile exists
         messages.error(request, 'Please complete your profile before accessing this page.')
         return redirect('sme_profile_wizard')
-    messages.success(request, 'Your Profile is successfully updated.')
 
     return render(request, 'core/accounts/sme_profile_view.html', {
         'profile': profile,

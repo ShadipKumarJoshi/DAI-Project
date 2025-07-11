@@ -6,6 +6,8 @@ from core.forms import SMEBusinessInfoWizardForm, SMEServicesOfferedWizardForm, 
 from django.shortcuts import redirect
 from django.core.files.storage import FileSystemStorage
 from core.models import SMEProfile
+from django.contrib import messages
+
 
 # Define the temporary file storage location for the wizard uploads
 file_storage = FileSystemStorage(
@@ -80,7 +82,8 @@ class SMERegistrationWizard(SessionWizardView):
             sme_profile.tax_clearance_certificate = documents_info['tax_clearance_certificate']
 
         sme_profile.save()
-
+        
+        messages.success(self.request, 'Your Profile is successfully updated.')
         return redirect('sme_profile_view')  
 
     def get_form_initial(self, step):

@@ -1,8 +1,14 @@
 {% with level|default:1 as lvl %}
 <li x-data="{ open: false }" class="relative whitespace-nowrap">
 
-  {% if item.children.all %}
-    <!-- Parent with children: button toggles submenu -->
+  {% if item.is_button %}
+    <!-- Render as button -->
+    <a href="{{ item.url|default:'#' }}">
+      <button class="btn-{{ item.button_style }}">{{ item.title }}</button>
+    </a>
+
+  {% elif item.children.all %}
+    <!-- Dropdown trigger -->
     <button @click="open = !open" type="button"
             class="flex justify-between items-center hover:text-blue-600 px-2 py-1 w-full">
       <span>{{ item.title }}</span>
@@ -13,16 +19,8 @@
         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
       </svg>
     </button>
-  {% else %}
-    <!-- Leaf node: regular link -->
-    <a href="{{ item.url|default:'#' }}"
-       class="flex items-center hover:text-blue-600 px-2 py-1">
-  <span>{{ item.title }}</span>
-      
-    </a>
-  {% endif %}
 
-  {% if item.children.all %}
+    <!-- Dropdown children -->
     <ul 
       x-show="open"
       x-transition
@@ -39,6 +37,15 @@
         {% include 'core/components/nav_item.html' with item=child level=lvl|add:'1' %}
       {% endfor %}
     </ul>
+
+  {% else %}
+    <!-- Regular nav item -->
+    <a href="{{ item.url|default:'#' }}"
+       class="flex items-center hover:text-blue-600 px-2 py-1">
+      <span>{{ item.title }}</span>
+    </a>
+
   {% endif %}
+
 </li>
 {% endwith %}

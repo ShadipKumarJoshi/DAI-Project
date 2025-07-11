@@ -2,12 +2,6 @@ from django.db import models
 from core import constants
 from django.core.exceptions import ValidationError
 
-VISIBLE_CHOICES = (
-    ('all', 'All Users'),
-    ('anonymous', 'Only Anonymous'),
-    ('authenticated', 'Only Logged-in'),
-)
-
 class NavbarItem(models.Model):
     title = models.CharField(max_length=100, null=False, blank=False)
     parent = models.ForeignKey(
@@ -19,10 +13,16 @@ class NavbarItem(models.Model):
     is_active = models.BooleanField(default=True)
     visible_to = models.CharField(
     max_length=20,
-    choices=VISIBLE_CHOICES,
+    choices=constants.VISIBLE_CHOICES,
     default='all',
     null=False,
     blank=False,
+)
+    position = models.CharField(
+    max_length=10,
+    choices=constants.POSITION_CHOICES,
+    default='left',
+    help_text="Controls whether the item appears on the left or right of the navbar."
 )
 
     # New link fields

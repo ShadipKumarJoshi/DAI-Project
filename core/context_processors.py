@@ -1,27 +1,43 @@
 from . import models
 from django.db.models import Q
 
-
 def navbar_items(request):
-    items = models.NavbarItem.objects.filter(is_active=True, parent=None, is_button=False).order_by('order')
-    return {'navbar_items': items}
+    user = request.user
+    
+    if user.is_authenticated:
+        visibility_filter = Q(visible_to='all') | Q(visible_to='authenticated')
+    else:
+        visibility_filter = Q(visible_to='all') | Q(visible_to='anonymous')
+
+    left_items = models.NavbarItem.objects.filter(
+        is_active=True,
+        parent=None,
+        position='left'
+    ).filter(visibility_filter).order_by('order')
+
+    right_items = models.NavbarItem.objects.filter(
+        is_active=True,
+        parent=None,
+        position='right'
+    ).filter(visibility_filter).order_by('order')
+
+    return {
+        'navbar_items_left': left_items,
+        'navbar_items_right': right_items,
+    }
 
 def navbar_buttons(request):
     user = request.user
+    visibility_filter = Q(visible_to='all')
     if user.is_authenticated:
-        buttons = models.NavbarItem.objects.filter(
-            is_active=True,
-            is_button=True,
-        ).filter(
-            Q(visible_to='all') | Q(visible_to='authenticated')
-        ).order_by('order')
+        visibility_filter |= Q(visible_to='authenticated')
     else:
-        buttons = models.NavbarItem.objects.filter(
-            is_active=True,
-            is_button=True,
-        ).filter(
-            Q(visible_to='all') | Q(visible_to='anonymous')
-        ).order_by('order')
+        visibility_filter |= Q(visible_to='anonymous')
+
+    buttons = models.NavbarItem.objects.filter(
+        is_active=True,
+        is_button=True,
+    ).filter(visibility_filter).order_by('order')
     return {'navbar_buttons': buttons}
 
 

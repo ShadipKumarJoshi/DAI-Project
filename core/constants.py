@@ -4,6 +4,17 @@ BUTTON_STYLE_CHOICES = [
     ('blue', 'Blue'),
 ]
 
+VISIBLE_CHOICES = (
+    ('all', 'All Users'),
+    ('anonymous', 'Only Anonymous'),
+    ('authenticated', 'Only Logged-in'),
+)
+
+POSITION_CHOICES = (
+    ('left', 'Left'),
+    ('right', 'Right'),
+)
+
 LINK_TYPE_CHOICES = [
     ('module', 'Module (Named URL)'),
     ('cms', 'CMS Page'),
