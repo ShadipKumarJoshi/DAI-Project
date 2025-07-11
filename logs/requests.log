@@ -60637,3 +60637,5 @@ ImportError: Module "core.context_processors" does not define a "navbar_buttons"
 [2025-07-11 16:35:54,875] INFO "GET /static/css/dist/styles.css?v=1752231054 HTTP/1.1" 200 44232
 [2025-07-11 16:35:58,086] INFO "GET /login HTTP/1.1" 200 15594
 [2025-07-11 16:35:58,124] INFO "GET /static/css/dist/styles.css?v=1752231058 HTTP/1.1" 200 44232
+[2025-07-11 16:36:03,473] INFO "GET /login HTTP/1.1" 200 15594
+[2025-07-11 16:36:03,499] INFO "GET /static/css/dist/styles.css?v=1752231063 HTTP/1.1" 200 44223
