@@ -73,14 +73,15 @@ class SMERegistrationWizard(SessionWizardView):
         if services_info.get('service_logo'):
             sme_profile.service_logo = services_info['service_logo']
 
-        # Step 3 - Documents
-        sme_profile.registration_certificate = documents_info['registration_certificate']
+        # Step 3 - Documents (only replace if new file uploaded)
+        if documents_info.get('registration_certificate'):
+            sme_profile.registration_certificate = documents_info['registration_certificate']
         if documents_info.get('tax_clearance_certificate'):
             sme_profile.tax_clearance_certificate = documents_info['tax_clearance_certificate']
 
         sme_profile.save()
 
-        return redirect('sme_profile_detail')  
+        return redirect('home')  
 
     def get_form_initial(self, step):
         """
@@ -103,8 +104,29 @@ class SMERegistrationWizard(SessionWizardView):
                     'service_name': profile.service_name,
                     'service_type': profile.service_type,
                     'service_description': profile.service_description,
-                    # Don't include logo here — file fields don't prefill
+                    #  file fields don't prefill
                 }
             elif step == 'step3':
                 return {}
         return {}
+    
+    def get_context_data(self, form, **kwargs):
+        """
+        Pass file URLs to template so uploaded files can be shown.
+        """
+        context = super().get_context_data(form=form, **kwargs)
+
+        if self.request.user.is_authenticated and hasattr(self.request.user, 'sme_profile'):
+            profile = self.request.user.sme_profile
+
+            if self.steps.current == 'step3':
+                context.update({
+                    'existing_registration_certificate': profile.registration_certificate.url if profile.registration_certificate else None,
+                    'existing_tax_clearance_certificate': profile.tax_clearance_certificate.url if profile.tax_clearance_certificate else None,
+                })
+            elif self.steps.current == 'step2':
+                context.update({
+                    'existing_service_logo': profile.service_logo.url if profile.service_logo else None,
+            })
+
+        return context

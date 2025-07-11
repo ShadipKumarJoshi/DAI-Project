@@ -53382,3 +53382,1885 @@ NotImplementedError: Your SMERegistrationWizard class has not defined a done() m
 [2025-07-11 10:01:05,568] INFO "POST /sme/profile/ HTTP/1.1" 200 5030
 [2025-07-11 10:01:05,605] INFO "GET /admin/core/smeprofile/1/change/ HTTP/1.1" 200 27829
 [2025-07-11 10:01:05,939] INFO "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+[2025-07-11 10:04:33,924] INFO "GET /admin/core/smeprofile/1/change/ HTTP/1.1" 200 27829
+[2025-07-11 10:04:34,255] ERROR Internal Server Error: /sme/profile/
+Traceback (most recent call last):
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\smartif.py", line 180, in translate_token
+    op = OPERATORS[token]
+         ~~~~~~~~~^^^^^^^
+KeyError: 'wizard.storage.get_step_data(wizard.steps.current)'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\core\handlers\base.py", line 220, in _get_response
+    response = response.render()
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\response.py", line 114, in render
+    self.content = self.rendered_content
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\response.py", line 90, in rendered_content
+    template = self.resolve_template(self.template_name)
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\response.py", line 72, in resolve_template
+    return select_template(template, using=self.using)
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\loader.py", line 42, in select_template
+    return engine.get_template(template_name)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\backends\django.py", line 79, in get_template
+    return Template(self.engine.get_template(template_name), self)
+                    ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\engine.py", line 177, in get_template
+    template, origin = self.find_template(template_name)
+                       ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\engine.py", line 159, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\loaders\cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\loaders\base.py", line 28, in get_template
+    return Template(
+        contents,
+    ...<2 lines>...
+        self.engine,
+    )
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+                    ~~~~~~~~~~~~~~~~~~~~~^^
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\base.py", line 196, in compile_nodelist
+    nodelist = parser.parse()
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\loader_tags.py", line 299, in do_extends
+    nodelist = parser.parse()
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\loader_tags.py", line 234, in do_block
+    nodelist = parser.parse(("endblock",))
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\defaulttags.py", line 862, in do_for
+    nodelist_loop = parser.parse(
+        (
+    ...<2 lines>...
+        )
+    )
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\defaulttags.py", line 962, in do_if
+    nodelist = parser.parse(("elif", "else", "endif"))
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\defaulttags.py", line 961, in do_if
+    condition = TemplateIfParser(parser, bits).parse()
+                ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\defaulttags.py", line 894, in __init__
+    super().__init__(*args, **kwargs)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\smartif.py", line 171, in __init__
+    mapped_tokens.append(self.translate_token(token))
+                         ~~~~~~~~~~~~~~~~~~~~^^^^^^^
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\smartif.py", line 182, in translate_token
+    return self.create_var(token)
+           ~~~~~~~~~~~~~~~^^^^^^^
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\defaulttags.py", line 897, in create_var
+    return TemplateLiteral(self.template_parser.compile_filter(value), value)
+                           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\base.py", line 609, in compile_filter
+    return FilterExpression(token, self)
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\base.py", line 710, in __init__
+    raise TemplateSyntaxError(
+    ...<2 lines>...
+    )
+django.template.exceptions.TemplateSyntaxError: Could not parse the remainder: '(wizard.steps.current)' from 'wizard.storage.get_step_data(wizard.steps.current)'
+[2025-07-11 10:04:34,257] INFO "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+[2025-07-11 10:04:34,270] ERROR "POST /sme/profile/ HTTP/1.1" 500 303753
+[2025-07-11 10:04:39,177] ERROR Internal Server Error: /sme/profile/
+Traceback (most recent call last):
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\smartif.py", line 180, in translate_token
+    op = OPERATORS[token]
+         ~~~~~~~~~^^^^^^^
+KeyError: 'wizard.storage.get_step_data(wizard.steps.current)'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\core\handlers\base.py", line 220, in _get_response
+    response = response.render()
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\response.py", line 114, in render
+    self.content = self.rendered_content
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\response.py", line 90, in rendered_content
+    template = self.resolve_template(self.template_name)
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\response.py", line 72, in resolve_template
+    return select_template(template, using=self.using)
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\loader.py", line 42, in select_template
+    return engine.get_template(template_name)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\backends\django.py", line 79, in get_template
+    return Template(self.engine.get_template(template_name), self)
+                    ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\engine.py", line 177, in get_template
+    template, origin = self.find_template(template_name)
+                       ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\engine.py", line 159, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\loaders\cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\loaders\base.py", line 28, in get_template
+    return Template(
+        contents,
+    ...<2 lines>...
+        self.engine,
+    )
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+                    ~~~~~~~~~~~~~~~~~~~~~^^
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\base.py", line 196, in compile_nodelist
+    nodelist = parser.parse()
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\loader_tags.py", line 299, in do_extends
+    nodelist = parser.parse()
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\loader_tags.py", line 234, in do_block
+    nodelist = parser.parse(("endblock",))
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\defaulttags.py", line 862, in do_for
+    nodelist_loop = parser.parse(
+        (
+    ...<2 lines>...
+        )
+    )
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\defaulttags.py", line 962, in do_if
+    nodelist = parser.parse(("elif", "else", "endif"))
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\defaulttags.py", line 961, in do_if
+    condition = TemplateIfParser(parser, bits).parse()
+                ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\defaulttags.py", line 894, in __init__
+    super().__init__(*args, **kwargs)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\smartif.py", line 171, in __init__
+    mapped_tokens.append(self.translate_token(token))
+                         ~~~~~~~~~~~~~~~~~~~~^^^^^^^
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\smartif.py", line 182, in translate_token
+    return self.create_var(token)
+           ~~~~~~~~~~~~~~~^^^^^^^
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\defaulttags.py", line 897, in create_var
+    return TemplateLiteral(self.template_parser.compile_filter(value), value)
+                           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\base.py", line 609, in compile_filter
+    return FilterExpression(token, self)
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\base.py", line 710, in __init__
+    raise TemplateSyntaxError(
+    ...<2 lines>...
+    )
+django.template.exceptions.TemplateSyntaxError: Could not parse the remainder: '(wizard.steps.current)' from 'wizard.storage.get_step_data(wizard.steps.current)'
+[2025-07-11 10:04:39,188] ERROR "POST /sme/profile/ HTTP/1.1" 500 303884
+[2025-07-11 10:04:41,829] INFO "GET /sme/profile/ HTTP/1.1" 200 7482
+[2025-07-11 10:04:43,396] INFO "POST /sme/profile/ HTTP/1.1" 200 6319
+[2025-07-11 10:04:44,776] ERROR Internal Server Error: /sme/profile/
+Traceback (most recent call last):
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\smartif.py", line 180, in translate_token
+    op = OPERATORS[token]
+         ~~~~~~~~~^^^^^^^
+KeyError: 'wizard.storage.get_step_data(wizard.steps.current)'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\core\handlers\base.py", line 220, in _get_response
+    response = response.render()
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\response.py", line 114, in render
+    self.content = self.rendered_content
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\response.py", line 90, in rendered_content
+    template = self.resolve_template(self.template_name)
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\response.py", line 72, in resolve_template
+    return select_template(template, using=self.using)
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\loader.py", line 42, in select_template
+    return engine.get_template(template_name)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\backends\django.py", line 79, in get_template
+    return Template(self.engine.get_template(template_name), self)
+                    ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\engine.py", line 177, in get_template
+    template, origin = self.find_template(template_name)
+                       ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\engine.py", line 159, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\loaders\cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\loaders\base.py", line 28, in get_template
+    return Template(
+        contents,
+    ...<2 lines>...
+        self.engine,
+    )
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+                    ~~~~~~~~~~~~~~~~~~~~~^^
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\base.py", line 196, in compile_nodelist
+    nodelist = parser.parse()
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\loader_tags.py", line 299, in do_extends
+    nodelist = parser.parse()
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\loader_tags.py", line 234, in do_block
+    nodelist = parser.parse(("endblock",))
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\defaulttags.py", line 862, in do_for
+    nodelist_loop = parser.parse(
+        (
+    ...<2 lines>...
+        )
+    )
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\defaulttags.py", line 962, in do_if
+    nodelist = parser.parse(("elif", "else", "endif"))
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\defaulttags.py", line 961, in do_if
+    condition = TemplateIfParser(parser, bits).parse()
+                ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\defaulttags.py", line 894, in __init__
+    super().__init__(*args, **kwargs)
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\smartif.py", line 171, in __init__
+    mapped_tokens.append(self.translate_token(token))
+                         ~~~~~~~~~~~~~~~~~~~~^^^^^^^
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\smartif.py", line 182, in translate_token
+    return self.create_var(token)
+           ~~~~~~~~~~~~~~~^^^^^^^
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\defaulttags.py", line 897, in create_var
+    return TemplateLiteral(self.template_parser.compile_filter(value), value)
+                           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\base.py", line 609, in compile_filter
+    return FilterExpression(token, self)
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\base.py", line 710, in __init__
+    raise TemplateSyntaxError(
+    ...<2 lines>...
+    )
+django.template.exceptions.TemplateSyntaxError: Could not parse the remainder: '(wizard.steps.current)' from 'wizard.storage.get_step_data(wizard.steps.current)'
+[2025-07-11 10:04:44,786] ERROR "POST /sme/profile/ HTTP/1.1" 500 303884
+[2025-07-11 10:05:41,064] INFO "POST /sme/profile/ HTTP/1.1" 200 5030
+[2025-07-11 10:05:41,096] INFO "GET /admin/core/smeprofile/1/change/ HTTP/1.1" 200 27829
+[2025-07-11 10:05:41,178] INFO "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+[2025-07-11 10:05:59,131] INFO "GET /admin/core/smeprofile/1/change/ HTTP/1.1" 200 27829
+[2025-07-11 10:05:59,173] ERROR Internal Server Error: /sme/profile/
+Traceback (most recent call last):
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\core\handlers\base.py", line 220, in _get_response
+    response = response.render()
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\response.py", line 114, in render
+    self.content = self.rendered_content
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\response.py", line 92, in rendered_content
+    return template.render(context, self._request)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\backends\django.py", line 107, in render
+    return self.template.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\loader_tags.py", line 159, in render
+    return compiled_parent._render(context)
+           ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\loader_tags.py", line 65, in render
+    result = block.nodelist.render(context)
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\base.py", line 1075, in render
+    output = self.filter_expression.resolve(context)
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\base.py", line 749, in resolve
+    new_obj = func(obj, *arg_vals)
+  File "D:\Young Minds\DAI Project\core\templatetags\form_tags.py", line 7, in add_class
+    return field.as_widget(attrs={"class": css})
+           ^^^^^^^^^^^^^^^
+AttributeError: 'str' object has no attribute 'as_widget'
+[2025-07-11 10:05:59,182] ERROR "POST /sme/profile/ HTTP/1.1" 500 170836
+[2025-07-11 10:05:59,187] INFO "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+[2025-07-11 10:06:45,762] INFO "POST /sme/profile/ HTTP/1.1" 200 5030
+[2025-07-11 10:06:45,783] INFO "GET /admin/core/smeprofile/1/change/ HTTP/1.1" 200 27829
+[2025-07-11 10:06:45,852] INFO "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+[2025-07-11 10:18:16,667] INFO D:\Young Minds\DAI Project\core\forms.py changed, reloading.
+[2025-07-11 10:18:17,434] INFO Watching for file changes with StatReloader
+[2025-07-11 10:18:17,776] INFO "POST /sme/profile/ HTTP/1.1" 200 5021
+[2025-07-11 10:18:17,858] INFO "GET /admin/core/smeprofile/1/change/ HTTP/1.1" 200 27829
+[2025-07-11 10:18:18,230] INFO "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+[2025-07-11 10:18:35,245] INFO D:\Young Minds\DAI Project\core\forms.py changed, reloading.
+[2025-07-11 10:18:36,078] INFO Watching for file changes with StatReloader
+[2025-07-11 10:18:36,562] INFO "POST /sme/profile/ HTTP/1.1" 200 5021
+[2025-07-11 10:18:36,603] INFO "GET /admin/core/smeprofile/1/change/ HTTP/1.1" 200 27829
+[2025-07-11 10:18:36,652] INFO "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+[2025-07-11 10:18:37,471] INFO D:\Young Minds\DAI Project\core\forms.py changed, reloading.
+[2025-07-11 10:18:38,175] INFO Watching for file changes with StatReloader
+[2025-07-11 10:18:38,542] INFO "POST /sme/profile/ HTTP/1.1" 200 5021
+[2025-07-11 10:18:38,578] INFO "GET /admin/core/smeprofile/1/change/ HTTP/1.1" 200 27829
+[2025-07-11 10:18:38,628] INFO "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+[2025-07-11 10:18:39,534] INFO D:\Young Minds\DAI Project\core\forms.py changed, reloading.
+[2025-07-11 10:18:40,199] INFO Watching for file changes with StatReloader
+[2025-07-11 10:18:40,572] INFO "POST /sme/profile/ HTTP/1.1" 200 5021
+[2025-07-11 10:18:40,610] INFO "GET /admin/core/smeprofile/1/change/ HTTP/1.1" 200 27829
+[2025-07-11 10:18:40,665] INFO "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+[2025-07-11 10:18:52,303] INFO D:\Young Minds\DAI Project\core\forms.py changed, reloading.
+[2025-07-11 10:18:53,190] INFO Watching for file changes with StatReloader
+[2025-07-11 10:18:53,658] INFO "POST /sme/profile/ HTTP/1.1" 200 5021
+[2025-07-11 10:18:53,700] INFO "GET /admin/core/smeprofile/1/change/ HTTP/1.1" 200 27829
+[2025-07-11 10:18:53,746] INFO "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+[2025-07-11 10:18:54,590] INFO D:\Young Minds\DAI Project\core\forms.py changed, reloading.
+[2025-07-11 10:18:55,436] INFO Watching for file changes with StatReloader
+[2025-07-11 10:18:55,907] INFO "POST /sme/profile/ HTTP/1.1" 200 5021
+[2025-07-11 10:18:55,945] INFO "GET /admin/core/smeprofile/1/change/ HTTP/1.1" 200 27829
+[2025-07-11 10:18:55,990] INFO "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+[2025-07-11 10:19:45,746] INFO D:\Young Minds\DAI Project\core\forms.py changed, reloading.
+[2025-07-11 10:19:46,550] INFO Watching for file changes with StatReloader
+[2025-07-11 10:19:46,838] INFO "POST /sme/profile/ HTTP/1.1" 200 5021
+[2025-07-11 10:19:46,875] INFO "GET /admin/core/smeprofile/1/change/ HTTP/1.1" 200 27829
+[2025-07-11 10:19:47,190] INFO "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+[2025-07-11 10:19:48,187] INFO D:\Young Minds\DAI Project\core\forms.py changed, reloading.
+[2025-07-11 10:19:48,931] INFO Watching for file changes with StatReloader
+[2025-07-11 10:19:49,265] INFO "POST /sme/profile/ HTTP/1.1" 200 5021
+[2025-07-11 10:19:49,323] INFO "GET /admin/core/smeprofile/1/change/ HTTP/1.1" 200 27829
+[2025-07-11 10:19:49,378] INFO "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+[2025-07-11 10:23:05,283] INFO D:\Young Minds\DAI Project\core\views\sme_profile_form_wizard.py changed, reloading.
+[2025-07-11 10:23:05,963] INFO Watching for file changes with StatReloader
+[2025-07-11 10:23:20,109] INFO D:\Young Minds\DAI Project\core\views\sme_profile_form_wizard.py changed, reloading.
+[2025-07-11 10:23:20,833] INFO Watching for file changes with StatReloader
+[2025-07-11 10:23:21,286] INFO "POST /sme/profile/ HTTP/1.1" 200 5021
+[2025-07-11 10:23:21,316] INFO "GET /admin/core/smeprofile/1/change/ HTTP/1.1" 200 27829
+[2025-07-11 10:23:21,396] INFO "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+[2025-07-11 10:23:24,461] INFO D:\Young Minds\DAI Project\core\views\sme_profile_form_wizard.py changed, reloading.
+[2025-07-11 10:23:25,258] INFO Watching for file changes with StatReloader
+[2025-07-11 10:23:25,533] INFO "POST /sme/profile/ HTTP/1.1" 200 5021
+[2025-07-11 10:23:25,577] INFO "GET /admin/core/smeprofile/1/change/ HTTP/1.1" 200 27829
+[2025-07-11 10:23:25,628] INFO "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+[2025-07-11 10:23:46,155] INFO D:\Young Minds\DAI Project\core\views\sme_profile_form_wizard.py changed, reloading.
+[2025-07-11 10:23:47,027] INFO Watching for file changes with StatReloader
+[2025-07-11 10:23:47,464] INFO "POST /sme/profile/ HTTP/1.1" 200 5021
+[2025-07-11 10:23:47,505] INFO "GET /admin/core/smeprofile/1/change/ HTTP/1.1" 200 27829
+[2025-07-11 10:23:47,541] INFO "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+[2025-07-11 10:24:13,300] INFO D:\Young Minds\DAI Project\core\views\sme_profile_form_wizard.py changed, reloading.
+[2025-07-11 10:24:14,173] INFO Watching for file changes with StatReloader
+[2025-07-11 10:24:14,460] INFO "GET /admin/core/smeprofile/1/change/ HTTP/1.1" 200 27829
+[2025-07-11 10:24:14,500] INFO "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+[2025-07-11 10:24:14,662] INFO "POST /sme/profile/ HTTP/1.1" 200 5021
+[2025-07-11 10:24:16,787] INFO D:\Young Minds\DAI Project\core\views\sme_profile_form_wizard.py changed, reloading.
+[2025-07-11 10:24:17,497] INFO Watching for file changes with StatReloader
+[2025-07-11 10:24:20,877] INFO D:\Young Minds\DAI Project\core\views\sme_profile_form_wizard.py changed, reloading.
+[2025-07-11 10:24:21,495] INFO Watching for file changes with StatReloader
+[2025-07-11 10:24:21,846] INFO "POST /sme/profile/ HTTP/1.1" 200 5021
+[2025-07-11 10:24:21,883] INFO "GET /admin/core/smeprofile/1/change/ HTTP/1.1" 200 27829
+[2025-07-11 10:24:21,933] INFO "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+[2025-07-11 10:26:27,552] INFO "GET /admin/core/smeprofile/1/change/ HTTP/1.1" 200 27829
+[2025-07-11 10:26:27,610] ERROR Internal Server Error: /sme/profile/
+Traceback (most recent call last):
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\core\handlers\base.py", line 220, in _get_response
+    response = response.render()
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\response.py", line 114, in render
+    self.content = self.rendered_content
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\response.py", line 90, in rendered_content
+    template = self.resolve_template(self.template_name)
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\response.py", line 72, in resolve_template
+    return select_template(template, using=self.using)
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\loader.py", line 42, in select_template
+    return engine.get_template(template_name)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\backends\django.py", line 79, in get_template
+    return Template(self.engine.get_template(template_name), self)
+                    ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\engine.py", line 177, in get_template
+    template, origin = self.find_template(template_name)
+                       ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\engine.py", line 159, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\loaders\cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\loaders\base.py", line 28, in get_template
+    return Template(
+        contents,
+    ...<2 lines>...
+        self.engine,
+    )
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+                    ~~~~~~~~~~~~~~~~~~~~~^^
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\base.py", line 196, in compile_nodelist
+    nodelist = parser.parse()
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\loader_tags.py", line 299, in do_extends
+    nodelist = parser.parse()
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\loader_tags.py", line 234, in do_block
+    nodelist = parser.parse(("endblock",))
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\defaulttags.py", line 862, in do_for
+    nodelist_loop = parser.parse(
+        (
+    ...<2 lines>...
+        )
+    )
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\defaulttags.py", line 962, in do_if
+    nodelist = parser.parse(("elif", "else", "endif"))
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\defaulttags.py", line 961, in do_if
+    condition = TemplateIfParser(parser, bits).parse()
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\smartif.py", line 198, in parse
+    raise self.error_class(
+        "Unused '%s' at end of if expression." % self.current_token.display()
+    )
+django.template.exceptions.TemplateSyntaxError: Unused 'endswith' at end of if expression.
+[2025-07-11 10:26:27,617] INFO "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+[2025-07-11 10:26:27,628] ERROR "POST /sme/profile/ HTTP/1.1" 500 261918
+[2025-07-11 10:26:45,379] ERROR Internal Server Error: /sme/profile/
+Traceback (most recent call last):
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\core\handlers\base.py", line 220, in _get_response
+    response = response.render()
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\response.py", line 114, in render
+    self.content = self.rendered_content
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\response.py", line 90, in rendered_content
+    template = self.resolve_template(self.template_name)
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\response.py", line 72, in resolve_template
+    return select_template(template, using=self.using)
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\loader.py", line 42, in select_template
+    return engine.get_template(template_name)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\backends\django.py", line 79, in get_template
+    return Template(self.engine.get_template(template_name), self)
+                    ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\engine.py", line 177, in get_template
+    template, origin = self.find_template(template_name)
+                       ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\engine.py", line 159, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\loaders\cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\loaders\base.py", line 28, in get_template
+    return Template(
+        contents,
+    ...<2 lines>...
+        self.engine,
+    )
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+                    ~~~~~~~~~~~~~~~~~~~~~^^
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\base.py", line 196, in compile_nodelist
+    nodelist = parser.parse()
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\loader_tags.py", line 299, in do_extends
+    nodelist = parser.parse()
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\loader_tags.py", line 234, in do_block
+    nodelist = parser.parse(("endblock",))
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\defaulttags.py", line 862, in do_for
+    nodelist_loop = parser.parse(
+        (
+    ...<2 lines>...
+        )
+    )
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\defaulttags.py", line 962, in do_if
+    nodelist = parser.parse(("elif", "else", "endif"))
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\defaulttags.py", line 961, in do_if
+    condition = TemplateIfParser(parser, bits).parse()
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\smartif.py", line 198, in parse
+    raise self.error_class(
+        "Unused '%s' at end of if expression." % self.current_token.display()
+    )
+django.template.exceptions.TemplateSyntaxError: Unused 'endswith' at end of if expression.
+[2025-07-11 10:26:45,385] ERROR "POST /sme/profile/ HTTP/1.1" 500 262049
+[2025-07-11 10:26:49,125] INFO "GET /sme/profile/ HTTP/1.1" 200 7482
+[2025-07-11 10:26:52,051] INFO "POST /sme/profile/ HTTP/1.1" 200 6319
+[2025-07-11 10:26:53,393] ERROR Internal Server Error: /sme/profile/
+Traceback (most recent call last):
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\core\handlers\base.py", line 220, in _get_response
+    response = response.render()
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\response.py", line 114, in render
+    self.content = self.rendered_content
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\response.py", line 90, in rendered_content
+    template = self.resolve_template(self.template_name)
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\response.py", line 72, in resolve_template
+    return select_template(template, using=self.using)
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\loader.py", line 42, in select_template
+    return engine.get_template(template_name)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\backends\django.py", line 79, in get_template
+    return Template(self.engine.get_template(template_name), self)
+                    ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\engine.py", line 177, in get_template
+    template, origin = self.find_template(template_name)
+                       ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\engine.py", line 159, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\loaders\cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\loaders\base.py", line 28, in get_template
+    return Template(
+        contents,
+    ...<2 lines>...
+        self.engine,
+    )
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+                    ~~~~~~~~~~~~~~~~~~~~~^^
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\base.py", line 196, in compile_nodelist
+    nodelist = parser.parse()
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\loader_tags.py", line 299, in do_extends
+    nodelist = parser.parse()
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\loader_tags.py", line 234, in do_block
+    nodelist = parser.parse(("endblock",))
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\defaulttags.py", line 862, in do_for
+    nodelist_loop = parser.parse(
+        (
+    ...<2 lines>...
+        )
+    )
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\defaulttags.py", line 962, in do_if
+    nodelist = parser.parse(("elif", "else", "endif"))
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\defaulttags.py", line 961, in do_if
+    condition = TemplateIfParser(parser, bits).parse()
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\smartif.py", line 198, in parse
+    raise self.error_class(
+        "Unused '%s' at end of if expression." % self.current_token.display()
+    )
+django.template.exceptions.TemplateSyntaxError: Unused 'endswith' at end of if expression.
+[2025-07-11 10:26:53,401] ERROR "POST /sme/profile/ HTTP/1.1" 500 262049
+[2025-07-11 10:28:07,128] INFO "GET /admin/core/smeprofile/1/change/ HTTP/1.1" 200 27829
+[2025-07-11 10:28:07,172] ERROR Internal Server Error: /sme/profile/
+Traceback (most recent call last):
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\core\handlers\base.py", line 220, in _get_response
+    response = response.render()
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\response.py", line 114, in render
+    self.content = self.rendered_content
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\response.py", line 90, in rendered_content
+    template = self.resolve_template(self.template_name)
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\response.py", line 72, in resolve_template
+    return select_template(template, using=self.using)
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\loader.py", line 42, in select_template
+    return engine.get_template(template_name)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\backends\django.py", line 79, in get_template
+    return Template(self.engine.get_template(template_name), self)
+                    ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\engine.py", line 177, in get_template
+    template, origin = self.find_template(template_name)
+                       ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\engine.py", line 159, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\loaders\cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\loaders\base.py", line 28, in get_template
+    return Template(
+        contents,
+    ...<2 lines>...
+        self.engine,
+    )
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+                    ~~~~~~~~~~~~~~~~~~~~~^^
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\base.py", line 196, in compile_nodelist
+    nodelist = parser.parse()
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\loader_tags.py", line 299, in do_extends
+    nodelist = parser.parse()
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\loader_tags.py", line 234, in do_block
+    nodelist = parser.parse(("endblock",))
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\defaulttags.py", line 862, in do_for
+    nodelist_loop = parser.parse(
+        (
+    ...<2 lines>...
+        )
+    )
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\defaulttags.py", line 962, in do_if
+    nodelist = parser.parse(("elif", "else", "endif"))
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\defaulttags.py", line 961, in do_if
+    condition = TemplateIfParser(parser, bits).parse()
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\smartif.py", line 198, in parse
+    raise self.error_class(
+        "Unused '%s' at end of if expression." % self.current_token.display()
+    )
+django.template.exceptions.TemplateSyntaxError: Unused 'endswith' at end of if expression.
+[2025-07-11 10:28:07,181] ERROR "POST /sme/profile/ HTTP/1.1" 500 249828
+[2025-07-11 10:28:07,374] INFO "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+[2025-07-11 10:28:10,631] ERROR Internal Server Error: /sme/profile/
+Traceback (most recent call last):
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\core\handlers\base.py", line 220, in _get_response
+    response = response.render()
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\response.py", line 114, in render
+    self.content = self.rendered_content
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\response.py", line 90, in rendered_content
+    template = self.resolve_template(self.template_name)
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\response.py", line 72, in resolve_template
+    return select_template(template, using=self.using)
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\loader.py", line 42, in select_template
+    return engine.get_template(template_name)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\backends\django.py", line 79, in get_template
+    return Template(self.engine.get_template(template_name), self)
+                    ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\engine.py", line 177, in get_template
+    template, origin = self.find_template(template_name)
+                       ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\engine.py", line 159, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\loaders\cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\loaders\base.py", line 28, in get_template
+    return Template(
+        contents,
+    ...<2 lines>...
+        self.engine,
+    )
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+                    ~~~~~~~~~~~~~~~~~~~~~^^
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\base.py", line 196, in compile_nodelist
+    nodelist = parser.parse()
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\loader_tags.py", line 299, in do_extends
+    nodelist = parser.parse()
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\loader_tags.py", line 234, in do_block
+    nodelist = parser.parse(("endblock",))
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\defaulttags.py", line 862, in do_for
+    nodelist_loop = parser.parse(
+        (
+    ...<2 lines>...
+        )
+    )
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\defaulttags.py", line 962, in do_if
+    nodelist = parser.parse(("elif", "else", "endif"))
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\defaulttags.py", line 961, in do_if
+    condition = TemplateIfParser(parser, bits).parse()
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\smartif.py", line 198, in parse
+    raise self.error_class(
+        "Unused '%s' at end of if expression." % self.current_token.display()
+    )
+django.template.exceptions.TemplateSyntaxError: Unused 'endswith' at end of if expression.
+[2025-07-11 10:28:10,635] ERROR "POST /sme/profile/ HTTP/1.1" 500 249959
+[2025-07-11 10:28:11,749] INFO "GET /sme/profile/ HTTP/1.1" 200 7482
+[2025-07-11 10:28:13,711] INFO "POST /sme/profile/ HTTP/1.1" 200 6319
+[2025-07-11 10:28:15,125] ERROR Internal Server Error: /sme/profile/
+Traceback (most recent call last):
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\core\handlers\base.py", line 220, in _get_response
+    response = response.render()
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\response.py", line 114, in render
+    self.content = self.rendered_content
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\response.py", line 90, in rendered_content
+    template = self.resolve_template(self.template_name)
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\response.py", line 72, in resolve_template
+    return select_template(template, using=self.using)
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\loader.py", line 42, in select_template
+    return engine.get_template(template_name)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\backends\django.py", line 79, in get_template
+    return Template(self.engine.get_template(template_name), self)
+                    ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\engine.py", line 177, in get_template
+    template, origin = self.find_template(template_name)
+                       ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\engine.py", line 159, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\loaders\cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\loaders\base.py", line 28, in get_template
+    return Template(
+        contents,
+    ...<2 lines>...
+        self.engine,
+    )
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+                    ~~~~~~~~~~~~~~~~~~~~~^^
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\base.py", line 196, in compile_nodelist
+    nodelist = parser.parse()
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\loader_tags.py", line 299, in do_extends
+    nodelist = parser.parse()
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\loader_tags.py", line 234, in do_block
+    nodelist = parser.parse(("endblock",))
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\defaulttags.py", line 862, in do_for
+    nodelist_loop = parser.parse(
+        (
+    ...<2 lines>...
+        )
+    )
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\defaulttags.py", line 962, in do_if
+    nodelist = parser.parse(("elif", "else", "endif"))
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\defaulttags.py", line 961, in do_if
+    condition = TemplateIfParser(parser, bits).parse()
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\smartif.py", line 198, in parse
+    raise self.error_class(
+        "Unused '%s' at end of if expression." % self.current_token.display()
+    )
+django.template.exceptions.TemplateSyntaxError: Unused 'endswith' at end of if expression.
+[2025-07-11 10:28:15,134] ERROR "POST /sme/profile/ HTTP/1.1" 500 249959
+[2025-07-11 10:29:05,971] INFO "GET /admin/core/smeprofile/1/change/ HTTP/1.1" 200 27829
+[2025-07-11 10:29:06,017] ERROR Internal Server Error: /sme/profile/
+Traceback (most recent call last):
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\core\handlers\base.py", line 220, in _get_response
+    response = response.render()
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\response.py", line 114, in render
+    self.content = self.rendered_content
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\response.py", line 90, in rendered_content
+    template = self.resolve_template(self.template_name)
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\response.py", line 72, in resolve_template
+    return select_template(template, using=self.using)
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\loader.py", line 42, in select_template
+    return engine.get_template(template_name)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\backends\django.py", line 79, in get_template
+    return Template(self.engine.get_template(template_name), self)
+                    ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\engine.py", line 177, in get_template
+    template, origin = self.find_template(template_name)
+                       ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\engine.py", line 159, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\loaders\cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\loaders\base.py", line 28, in get_template
+    return Template(
+        contents,
+    ...<2 lines>...
+        self.engine,
+    )
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+                    ~~~~~~~~~~~~~~~~~~~~~^^
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\base.py", line 196, in compile_nodelist
+    nodelist = parser.parse()
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\loader_tags.py", line 299, in do_extends
+    nodelist = parser.parse()
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\loader_tags.py", line 234, in do_block
+    nodelist = parser.parse(("endblock",))
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\defaulttags.py", line 862, in do_for
+    nodelist_loop = parser.parse(
+        (
+    ...<2 lines>...
+        )
+    )
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\defaulttags.py", line 962, in do_if
+    nodelist = parser.parse(("elif", "else", "endif"))
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\defaulttags.py", line 961, in do_if
+    condition = TemplateIfParser(parser, bits).parse()
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\smartif.py", line 198, in parse
+    raise self.error_class(
+        "Unused '%s' at end of if expression." % self.current_token.display()
+    )
+django.template.exceptions.TemplateSyntaxError: Unused 'endswith' at end of if expression.
+[2025-07-11 10:29:06,025] ERROR "POST /sme/profile/ HTTP/1.1" 500 249803
+[2025-07-11 10:29:06,041] INFO "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+[2025-07-11 10:29:10,563] INFO "GET /sme/profile/ HTTP/1.1" 200 7482
+[2025-07-11 10:29:12,302] INFO "POST /sme/profile/ HTTP/1.1" 200 6319
+[2025-07-11 10:29:13,768] ERROR Internal Server Error: /sme/profile/
+Traceback (most recent call last):
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\core\handlers\base.py", line 220, in _get_response
+    response = response.render()
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\response.py", line 114, in render
+    self.content = self.rendered_content
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\response.py", line 90, in rendered_content
+    template = self.resolve_template(self.template_name)
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\response.py", line 72, in resolve_template
+    return select_template(template, using=self.using)
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\loader.py", line 42, in select_template
+    return engine.get_template(template_name)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\backends\django.py", line 79, in get_template
+    return Template(self.engine.get_template(template_name), self)
+                    ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\engine.py", line 177, in get_template
+    template, origin = self.find_template(template_name)
+                       ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\engine.py", line 159, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\loaders\cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\loaders\base.py", line 28, in get_template
+    return Template(
+        contents,
+    ...<2 lines>...
+        self.engine,
+    )
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+                    ~~~~~~~~~~~~~~~~~~~~~^^
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\base.py", line 196, in compile_nodelist
+    nodelist = parser.parse()
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\loader_tags.py", line 299, in do_extends
+    nodelist = parser.parse()
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\loader_tags.py", line 234, in do_block
+    nodelist = parser.parse(("endblock",))
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\defaulttags.py", line 862, in do_for
+    nodelist_loop = parser.parse(
+        (
+    ...<2 lines>...
+        )
+    )
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\defaulttags.py", line 962, in do_if
+    nodelist = parser.parse(("elif", "else", "endif"))
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\defaulttags.py", line 961, in do_if
+    condition = TemplateIfParser(parser, bits).parse()
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\smartif.py", line 198, in parse
+    raise self.error_class(
+        "Unused '%s' at end of if expression." % self.current_token.display()
+    )
+django.template.exceptions.TemplateSyntaxError: Unused 'endswith' at end of if expression.
+[2025-07-11 10:29:13,773] ERROR "POST /sme/profile/ HTTP/1.1" 500 249934
+[2025-07-11 10:29:41,632] ERROR Internal Server Error: /sme/profile/
+Traceback (most recent call last):
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\core\handlers\base.py", line 220, in _get_response
+    response = response.render()
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\response.py", line 114, in render
+    self.content = self.rendered_content
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\response.py", line 90, in rendered_content
+    template = self.resolve_template(self.template_name)
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\response.py", line 72, in resolve_template
+    return select_template(template, using=self.using)
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\loader.py", line 42, in select_template
+    return engine.get_template(template_name)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\backends\django.py", line 79, in get_template
+    return Template(self.engine.get_template(template_name), self)
+                    ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\engine.py", line 177, in get_template
+    template, origin = self.find_template(template_name)
+                       ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\engine.py", line 159, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\loaders\cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\loaders\base.py", line 28, in get_template
+    return Template(
+        contents,
+    ...<2 lines>...
+        self.engine,
+    )
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+                    ~~~~~~~~~~~~~~~~~~~~~^^
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\base.py", line 196, in compile_nodelist
+    nodelist = parser.parse()
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\loader_tags.py", line 299, in do_extends
+    nodelist = parser.parse()
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\loader_tags.py", line 234, in do_block
+    nodelist = parser.parse(("endblock",))
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\defaulttags.py", line 862, in do_for
+    nodelist_loop = parser.parse(
+        (
+    ...<2 lines>...
+        )
+    )
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\defaulttags.py", line 962, in do_if
+    nodelist = parser.parse(("elif", "else", "endif"))
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\defaulttags.py", line 961, in do_if
+    condition = TemplateIfParser(parser, bits).parse()
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\smartif.py", line 198, in parse
+    raise self.error_class(
+        "Unused '%s' at end of if expression." % self.current_token.display()
+    )
+django.template.exceptions.TemplateSyntaxError: Unused 'endswith' at end of if expression.
+[2025-07-11 10:29:41,638] ERROR "POST /sme/profile/ HTTP/1.1" 500 249797
+[2025-07-11 10:29:41,640] INFO "GET /admin/core/smeprofile/1/change/ HTTP/1.1" 200 27829
+[2025-07-11 10:29:41,719] INFO "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+[2025-07-11 10:29:42,938] INFO "GET /sme/profile/ HTTP/1.1" 200 7482
+[2025-07-11 10:29:44,973] INFO "POST /sme/profile/ HTTP/1.1" 200 6319
+[2025-07-11 10:29:46,370] ERROR Internal Server Error: /sme/profile/
+Traceback (most recent call last):
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\core\handlers\base.py", line 220, in _get_response
+    response = response.render()
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\response.py", line 114, in render
+    self.content = self.rendered_content
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\response.py", line 90, in rendered_content
+    template = self.resolve_template(self.template_name)
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\response.py", line 72, in resolve_template
+    return select_template(template, using=self.using)
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\loader.py", line 42, in select_template
+    return engine.get_template(template_name)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\backends\django.py", line 79, in get_template
+    return Template(self.engine.get_template(template_name), self)
+                    ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\engine.py", line 177, in get_template
+    template, origin = self.find_template(template_name)
+                       ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\engine.py", line 159, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\loaders\cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\loaders\base.py", line 28, in get_template
+    return Template(
+        contents,
+    ...<2 lines>...
+        self.engine,
+    )
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+                    ~~~~~~~~~~~~~~~~~~~~~^^
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\base.py", line 196, in compile_nodelist
+    nodelist = parser.parse()
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\loader_tags.py", line 299, in do_extends
+    nodelist = parser.parse()
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\loader_tags.py", line 234, in do_block
+    nodelist = parser.parse(("endblock",))
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\defaulttags.py", line 862, in do_for
+    nodelist_loop = parser.parse(
+        (
+    ...<2 lines>...
+        )
+    )
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\defaulttags.py", line 962, in do_if
+    nodelist = parser.parse(("elif", "else", "endif"))
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\defaulttags.py", line 961, in do_if
+    condition = TemplateIfParser(parser, bits).parse()
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\smartif.py", line 198, in parse
+    raise self.error_class(
+        "Unused '%s' at end of if expression." % self.current_token.display()
+    )
+django.template.exceptions.TemplateSyntaxError: Unused 'endswith' at end of if expression.
+[2025-07-11 10:29:46,376] ERROR "POST /sme/profile/ HTTP/1.1" 500 249928
+[2025-07-11 10:30:16,242] ERROR Internal Server Error: /sme/profile/
+Traceback (most recent call last):
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\core\handlers\base.py", line 220, in _get_response
+    response = response.render()
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\response.py", line 114, in render
+    self.content = self.rendered_content
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\response.py", line 90, in rendered_content
+    template = self.resolve_template(self.template_name)
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\response.py", line 72, in resolve_template
+    return select_template(template, using=self.using)
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\loader.py", line 42, in select_template
+    return engine.get_template(template_name)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\backends\django.py", line 79, in get_template
+    return Template(self.engine.get_template(template_name), self)
+                    ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\engine.py", line 177, in get_template
+    template, origin = self.find_template(template_name)
+                       ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\engine.py", line 159, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\loaders\cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\loaders\base.py", line 28, in get_template
+    return Template(
+        contents,
+    ...<2 lines>...
+        self.engine,
+    )
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+                    ~~~~~~~~~~~~~~~~~~~~~^^
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\base.py", line 196, in compile_nodelist
+    nodelist = parser.parse()
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\loader_tags.py", line 299, in do_extends
+    nodelist = parser.parse()
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\loader_tags.py", line 234, in do_block
+    nodelist = parser.parse(("endblock",))
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\defaulttags.py", line 862, in do_for
+    nodelist_loop = parser.parse(
+        (
+    ...<2 lines>...
+        )
+    )
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\defaulttags.py", line 962, in do_if
+    nodelist = parser.parse(("elif", "else", "endif"))
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\defaulttags.py", line 961, in do_if
+    condition = TemplateIfParser(parser, bits).parse()
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\smartif.py", line 198, in parse
+    raise self.error_class(
+        "Unused '%s' at end of if expression." % self.current_token.display()
+    )
+django.template.exceptions.TemplateSyntaxError: Unused 'endswith' at end of if expression.
+[2025-07-11 10:30:16,254] ERROR "POST /sme/profile/ HTTP/1.1" 500 249625
+[2025-07-11 10:30:16,261] INFO "GET /admin/core/smeprofile/1/change/ HTTP/1.1" 200 27829
+[2025-07-11 10:30:16,325] INFO "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+[2025-07-11 10:30:18,674] ERROR Internal Server Error: /sme/profile/
+Traceback (most recent call last):
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\core\handlers\base.py", line 220, in _get_response
+    response = response.render()
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\response.py", line 114, in render
+    self.content = self.rendered_content
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\response.py", line 90, in rendered_content
+    template = self.resolve_template(self.template_name)
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\response.py", line 72, in resolve_template
+    return select_template(template, using=self.using)
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\loader.py", line 42, in select_template
+    return engine.get_template(template_name)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\backends\django.py", line 79, in get_template
+    return Template(self.engine.get_template(template_name), self)
+                    ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\engine.py", line 177, in get_template
+    template, origin = self.find_template(template_name)
+                       ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\engine.py", line 159, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\loaders\cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\loaders\base.py", line 28, in get_template
+    return Template(
+        contents,
+    ...<2 lines>...
+        self.engine,
+    )
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+                    ~~~~~~~~~~~~~~~~~~~~~^^
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\base.py", line 196, in compile_nodelist
+    nodelist = parser.parse()
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\loader_tags.py", line 299, in do_extends
+    nodelist = parser.parse()
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\loader_tags.py", line 234, in do_block
+    nodelist = parser.parse(("endblock",))
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\defaulttags.py", line 862, in do_for
+    nodelist_loop = parser.parse(
+        (
+    ...<2 lines>...
+        )
+    )
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\defaulttags.py", line 962, in do_if
+    nodelist = parser.parse(("elif", "else", "endif"))
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\defaulttags.py", line 961, in do_if
+    condition = TemplateIfParser(parser, bits).parse()
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\smartif.py", line 198, in parse
+    raise self.error_class(
+        "Unused '%s' at end of if expression." % self.current_token.display()
+    )
+django.template.exceptions.TemplateSyntaxError: Unused 'endswith' at end of if expression.
+[2025-07-11 10:30:18,678] ERROR "POST /sme/profile/ HTTP/1.1" 500 249756
+[2025-07-11 10:30:21,919] INFO "GET /sme/profile/ HTTP/1.1" 200 7482
+[2025-07-11 10:30:23,545] INFO "POST /sme/profile/ HTTP/1.1" 200 6319
+[2025-07-11 10:30:24,938] ERROR Internal Server Error: /sme/profile/
+Traceback (most recent call last):
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\core\handlers\base.py", line 220, in _get_response
+    response = response.render()
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\response.py", line 114, in render
+    self.content = self.rendered_content
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\response.py", line 90, in rendered_content
+    template = self.resolve_template(self.template_name)
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\response.py", line 72, in resolve_template
+    return select_template(template, using=self.using)
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\loader.py", line 42, in select_template
+    return engine.get_template(template_name)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\backends\django.py", line 79, in get_template
+    return Template(self.engine.get_template(template_name), self)
+                    ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\engine.py", line 177, in get_template
+    template, origin = self.find_template(template_name)
+                       ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\engine.py", line 159, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\loaders\cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\loaders\base.py", line 28, in get_template
+    return Template(
+        contents,
+    ...<2 lines>...
+        self.engine,
+    )
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+                    ~~~~~~~~~~~~~~~~~~~~~^^
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\base.py", line 196, in compile_nodelist
+    nodelist = parser.parse()
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\loader_tags.py", line 299, in do_extends
+    nodelist = parser.parse()
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\loader_tags.py", line 234, in do_block
+    nodelist = parser.parse(("endblock",))
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\defaulttags.py", line 862, in do_for
+    nodelist_loop = parser.parse(
+        (
+    ...<2 lines>...
+        )
+    )
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\defaulttags.py", line 962, in do_if
+    nodelist = parser.parse(("elif", "else", "endif"))
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\defaulttags.py", line 961, in do_if
+    condition = TemplateIfParser(parser, bits).parse()
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\smartif.py", line 198, in parse
+    raise self.error_class(
+        "Unused '%s' at end of if expression." % self.current_token.display()
+    )
+django.template.exceptions.TemplateSyntaxError: Unused 'endswith' at end of if expression.
+[2025-07-11 10:30:24,946] ERROR "POST /sme/profile/ HTTP/1.1" 500 249756
+[2025-07-11 10:30:50,922] ERROR Internal Server Error: /sme/profile/
+Traceback (most recent call last):
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\core\handlers\base.py", line 220, in _get_response
+    response = response.render()
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\response.py", line 114, in render
+    self.content = self.rendered_content
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\response.py", line 90, in rendered_content
+    template = self.resolve_template(self.template_name)
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\response.py", line 72, in resolve_template
+    return select_template(template, using=self.using)
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\loader.py", line 42, in select_template
+    return engine.get_template(template_name)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\backends\django.py", line 79, in get_template
+    return Template(self.engine.get_template(template_name), self)
+                    ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\engine.py", line 177, in get_template
+    template, origin = self.find_template(template_name)
+                       ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\engine.py", line 159, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\loaders\cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\loaders\base.py", line 28, in get_template
+    return Template(
+        contents,
+    ...<2 lines>...
+        self.engine,
+    )
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+                    ~~~~~~~~~~~~~~~~~~~~~^^
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\base.py", line 196, in compile_nodelist
+    nodelist = parser.parse()
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\loader_tags.py", line 299, in do_extends
+    nodelist = parser.parse()
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\loader_tags.py", line 234, in do_block
+    nodelist = parser.parse(("endblock",))
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\defaulttags.py", line 862, in do_for
+    nodelist_loop = parser.parse(
+        (
+    ...<2 lines>...
+        )
+    )
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\defaulttags.py", line 962, in do_if
+    nodelist = parser.parse(("elif", "else", "endif"))
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\defaulttags.py", line 961, in do_if
+    condition = TemplateIfParser(parser, bits).parse()
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\smartif.py", line 198, in parse
+    raise self.error_class(
+        "Unused '%s' at end of if expression." % self.current_token.display()
+    )
+django.template.exceptions.TemplateSyntaxError: Unused 'endswith' at end of if expression.
+[2025-07-11 10:30:50,937] ERROR "POST /sme/profile/ HTTP/1.1" 500 249428
+[2025-07-11 10:30:50,942] INFO "GET /admin/core/smeprofile/1/change/ HTTP/1.1" 200 27829
+[2025-07-11 10:30:51,021] INFO "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+[2025-07-11 10:30:53,113] ERROR Internal Server Error: /sme/profile/
+Traceback (most recent call last):
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\core\handlers\base.py", line 220, in _get_response
+    response = response.render()
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\response.py", line 114, in render
+    self.content = self.rendered_content
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\response.py", line 90, in rendered_content
+    template = self.resolve_template(self.template_name)
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\response.py", line 72, in resolve_template
+    return select_template(template, using=self.using)
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\loader.py", line 42, in select_template
+    return engine.get_template(template_name)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\backends\django.py", line 79, in get_template
+    return Template(self.engine.get_template(template_name), self)
+                    ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\engine.py", line 177, in get_template
+    template, origin = self.find_template(template_name)
+                       ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\engine.py", line 159, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\loaders\cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\loaders\base.py", line 28, in get_template
+    return Template(
+        contents,
+    ...<2 lines>...
+        self.engine,
+    )
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+                    ~~~~~~~~~~~~~~~~~~~~~^^
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\base.py", line 196, in compile_nodelist
+    nodelist = parser.parse()
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\loader_tags.py", line 299, in do_extends
+    nodelist = parser.parse()
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\loader_tags.py", line 234, in do_block
+    nodelist = parser.parse(("endblock",))
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\defaulttags.py", line 862, in do_for
+    nodelist_loop = parser.parse(
+        (
+    ...<2 lines>...
+        )
+    )
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\defaulttags.py", line 962, in do_if
+    nodelist = parser.parse(("elif", "else", "endif"))
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\defaulttags.py", line 961, in do_if
+    condition = TemplateIfParser(parser, bits).parse()
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\smartif.py", line 198, in parse
+    raise self.error_class(
+        "Unused '%s' at end of if expression." % self.current_token.display()
+    )
+django.template.exceptions.TemplateSyntaxError: Unused 'endswith' at end of if expression.
+[2025-07-11 10:30:53,125] ERROR "POST /sme/profile/ HTTP/1.1" 500 249559
+[2025-07-11 10:31:19,634] ERROR Internal Server Error: /sme/profile/
+Traceback (most recent call last):
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\core\handlers\base.py", line 220, in _get_response
+    response = response.render()
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\response.py", line 114, in render
+    self.content = self.rendered_content
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\response.py", line 90, in rendered_content
+    template = self.resolve_template(self.template_name)
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\response.py", line 72, in resolve_template
+    return select_template(template, using=self.using)
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\loader.py", line 42, in select_template
+    return engine.get_template(template_name)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\backends\django.py", line 79, in get_template
+    return Template(self.engine.get_template(template_name), self)
+                    ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\engine.py", line 177, in get_template
+    template, origin = self.find_template(template_name)
+                       ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\engine.py", line 159, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\loaders\cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\loaders\base.py", line 28, in get_template
+    return Template(
+        contents,
+    ...<2 lines>...
+        self.engine,
+    )
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+                    ~~~~~~~~~~~~~~~~~~~~~^^
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\base.py", line 196, in compile_nodelist
+    nodelist = parser.parse()
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\loader_tags.py", line 299, in do_extends
+    nodelist = parser.parse()
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\loader_tags.py", line 234, in do_block
+    nodelist = parser.parse(("endblock",))
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\defaulttags.py", line 862, in do_for
+    nodelist_loop = parser.parse(
+        (
+    ...<2 lines>...
+        )
+    )
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\defaulttags.py", line 962, in do_if
+    nodelist = parser.parse(("elif", "else", "endif"))
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\defaulttags.py", line 961, in do_if
+    condition = TemplateIfParser(parser, bits).parse()
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\smartif.py", line 198, in parse
+    raise self.error_class(
+        "Unused '%s' at end of if expression." % self.current_token.display()
+    )
+django.template.exceptions.TemplateSyntaxError: Unused 'endswith' at end of if expression.
+[2025-07-11 10:31:19,638] INFO "GET /admin/core/smeprofile/1/change/ HTTP/1.1" 200 27829
+[2025-07-11 10:31:19,641] ERROR "POST /sme/profile/ HTTP/1.1" 500 248810
+[2025-07-11 10:31:19,698] INFO "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+[2025-07-11 10:31:24,724] ERROR Internal Server Error: /sme/profile/
+Traceback (most recent call last):
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\core\handlers\base.py", line 220, in _get_response
+    response = response.render()
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\response.py", line 114, in render
+    self.content = self.rendered_content
+                   ^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\response.py", line 90, in rendered_content
+    template = self.resolve_template(self.template_name)
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\response.py", line 72, in resolve_template
+    return select_template(template, using=self.using)
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\loader.py", line 42, in select_template
+    return engine.get_template(template_name)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\backends\django.py", line 79, in get_template
+    return Template(self.engine.get_template(template_name), self)
+                    ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\engine.py", line 177, in get_template
+    template, origin = self.find_template(template_name)
+                       ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\engine.py", line 159, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\loaders\cached.py", line 57, in get_template
+    template = super().get_template(template_name, skip)
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\loaders\base.py", line 28, in get_template
+    return Template(
+        contents,
+    ...<2 lines>...
+        self.engine,
+    )
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\base.py", line 154, in __init__
+    self.nodelist = self.compile_nodelist()
+                    ~~~~~~~~~~~~~~~~~~~~~^^
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\base.py", line 196, in compile_nodelist
+    nodelist = parser.parse()
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\loader_tags.py", line 299, in do_extends
+    nodelist = parser.parse()
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\loader_tags.py", line 234, in do_block
+    nodelist = parser.parse(("endblock",))
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\defaulttags.py", line 862, in do_for
+    nodelist_loop = parser.parse(
+        (
+    ...<2 lines>...
+        )
+    )
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\defaulttags.py", line 962, in do_if
+    nodelist = parser.parse(("elif", "else", "endif"))
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\base.py", line 518, in parse
+    raise self.error(token, e)
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\base.py", line 516, in parse
+    compiled_result = compile_func(self, token)
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\defaulttags.py", line 961, in do_if
+    condition = TemplateIfParser(parser, bits).parse()
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\smartif.py", line 198, in parse
+    raise self.error_class(
+        "Unused '%s' at end of if expression." % self.current_token.display()
+    )
+django.template.exceptions.TemplateSyntaxError: Unused 'endswith' at end of if expression.
+[2025-07-11 10:31:24,732] ERROR "POST /sme/profile/ HTTP/1.1" 500 248941
+[2025-07-11 10:34:31,679] INFO "POST /sme/profile/ HTTP/1.1" 200 5076
+[2025-07-11 10:34:31,727] INFO "GET /admin/core/smeprofile/1/change/ HTTP/1.1" 200 27829
+[2025-07-11 10:34:31,771] INFO "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+[2025-07-11 10:34:39,084] INFO "POST /sme/profile/ HTTP/1.1" 200 6319
+[2025-07-11 10:34:40,742] INFO "POST /sme/profile/ HTTP/1.1" 200 5076
+[2025-07-11 10:34:52,559] INFO "POST /sme/profile/ HTTP/1.1" 200 5076
+[2025-07-11 10:34:54,250] INFO "GET /sme/profile/ HTTP/1.1" 200 7482
+[2025-07-11 10:34:56,321] INFO "POST /sme/profile/ HTTP/1.1" 200 6319
+[2025-07-11 10:34:57,688] INFO "POST /sme/profile/ HTTP/1.1" 200 5076
+[2025-07-11 10:37:20,882] INFO "POST /sme/profile/ HTTP/1.1" 200 5249
+[2025-07-11 10:37:20,898] INFO "GET /admin/core/smeprofile/1/change/ HTTP/1.1" 200 27829
+[2025-07-11 10:37:20,963] INFO "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+[2025-07-11 10:37:25,912] INFO "POST /sme/profile/ HTTP/1.1" 200 5249
+[2025-07-11 10:37:28,095] INFO "GET /media/certificates/keyboard-shortcuts-windows_iDlbZkv.pdf HTTP/1.1" 200 145725
+[2025-07-11 10:37:37,175] ERROR Internal Server Error: /sme/profile/
+Traceback (most recent call last):
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\views\generic\base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\formtools\wizard\views.py", line 250, in dispatch
+    response = super().dispatch(request, *args, **kwargs)
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\views\generic\base.py", line 144, in dispatch
+    return handler(request, *args, **kwargs)
+  File "D:\Young Minds\DAI Project\core\views\sme_profile_form_wizard.py", line 45, in post
+    return super().post(*args, **kwargs)
+           ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\formtools\wizard\views.py", line 308, in post
+    return self.render_done(form, **kwargs)
+           ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\formtools\wizard\views.py", line 364, in render_done
+    done_response = self.done(list(final_forms.values()), form_dict=final_forms, **kwargs)
+  File "D:\Young Minds\DAI Project\core\views\sme_profile_form_wizard.py", line 84, in done
+    return redirect('sme_profile_detail')
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\shortcuts.py", line 51, in redirect
+    resolve_url(to, *args, **kwargs),
+    ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\shortcuts.py", line 184, in resolve_url
+    return reverse(to, args=args, kwargs=kwargs)
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\urls\base.py", line 98, in reverse
+    resolved_url = resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\urls\resolvers.py", line 831, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'sme_profile_detail' not found. 'sme_profile_detail' is not a valid view function or pattern name.
+[2025-07-11 10:37:37,182] ERROR "POST /sme/profile/ HTTP/1.1" 500 132106
+[2025-07-11 10:38:42,434] INFO D:\Young Minds\DAI Project\core\views\sme_profile_form_wizard.py changed, reloading.
+[2025-07-11 10:38:43,295] INFO Watching for file changes with StatReloader
+[2025-07-11 10:38:43,764] INFO "POST /sme/profile/ HTTP/1.1" 302 0
+[2025-07-11 10:38:43,798] INFO "GET /admin/core/smeprofile/1/change/ HTTP/1.1" 200 28212
+[2025-07-11 10:38:43,846] INFO "GET / HTTP/1.1" 200 29947
+[2025-07-11 10:38:43,873] INFO "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+[2025-07-11 10:38:43,951] INFO - Broken pipe from ('127.0.0.1', 49261)
+[2025-07-11 10:38:47,114] INFO "GET / HTTP/1.1" 200 29947
+[2025-07-11 10:38:47,140] INFO "GET /static/css/dist/styles.css?v=1752209627 HTTP/1.1" 200 36568
+[2025-07-11 10:38:47,161] INFO "GET /media/guidelines_icons/4_KH4ihLj.png HTTP/1.1" 200 20892
+[2025-07-11 10:38:47,212] INFO "GET /static/js/script.js HTTP/1.1" 200 1118
+[2025-07-11 10:38:53,888] INFO "GET /sme/profile/ HTTP/1.1" 200 7482
+[2025-07-11 10:38:55,691] INFO "POST /sme/profile/ HTTP/1.1" 200 6319
+[2025-07-11 10:38:56,890] INFO "POST /sme/profile/ HTTP/1.1" 200 5500
+[2025-07-11 10:39:00,387] INFO "GET /media/certificates/keyboard-shortcuts-windows_e9hVsAX.pdf HTTP/1.1" 200 145725
+[2025-07-11 10:39:06,194] INFO "POST /sme/profile/ HTTP/1.1" 200 6319
+[2025-07-11 10:40:23,855] INFO "POST /sme/profile/ HTTP/1.1" 200 6303
+[2025-07-11 10:40:23,862] INFO "GET /admin/core/smeprofile/1/change/ HTTP/1.1" 200 28212
+[2025-07-11 10:40:24,150] INFO "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+[2025-07-11 10:40:28,343] INFO "POST /sme/profile/ HTTP/1.1" 200 5500
+[2025-07-11 10:40:30,512] INFO "POST /sme/profile/ HTTP/1.1" 200 6303
+[2025-07-11 10:40:35,482] INFO "POST /sme/profile/ HTTP/1.1" 200 5500
+[2025-07-11 10:40:36,741] INFO "POST /sme/profile/ HTTP/1.1" 302 0
+[2025-07-11 10:40:36,813] INFO "GET / HTTP/1.1" 200 29947
+[2025-07-11 10:40:36,833] INFO "GET /static/css/dist/styles.css?v=1752209736 HTTP/1.1" 200 36568
+[2025-07-11 10:40:41,494] INFO "GET /sme/profile/ HTTP/1.1" 200 7482
+[2025-07-11 10:40:43,020] INFO "POST /sme/profile/ HTTP/1.1" 200 6303
+[2025-07-11 10:41:02,514] INFO "POST /sme/profile/ HTTP/1.1" 200 6319
+[2025-07-11 10:41:02,524] INFO "GET /admin/core/smeprofile/1/change/ HTTP/1.1" 200 28542
+[2025-07-11 10:41:02,695] INFO "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+[2025-07-11 10:44:29,927] INFO D:\Young Minds\DAI Project\core\forms.py changed, reloading.
+[2025-07-11 10:44:30,663] INFO Watching for file changes with StatReloader
+[2025-07-11 10:44:31,021] INFO "POST /sme/profile/ HTTP/1.1" 200 6319
+[2025-07-11 10:44:31,057] INFO "GET /admin/core/smeprofile/1/change/ HTTP/1.1" 200 28542
+[2025-07-11 10:44:31,281] INFO "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+[2025-07-11 10:44:34,373] INFO D:\Young Minds\DAI Project\core\forms.py changed, reloading.
+[2025-07-11 10:44:35,135] INFO Watching for file changes with StatReloader
+[2025-07-11 10:44:35,491] INFO "POST /sme/profile/ HTTP/1.1" 200 6319
+[2025-07-11 10:44:35,513] INFO "GET /admin/core/smeprofile/1/change/ HTTP/1.1" 200 28542
+[2025-07-11 10:44:35,557] INFO "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+[2025-07-11 10:44:47,503] INFO D:\Young Minds\DAI Project\core\forms.py changed, reloading.
+[2025-07-11 10:44:48,227] INFO Watching for file changes with StatReloader
+[2025-07-11 10:44:50,481] INFO D:\Young Minds\DAI Project\core\forms.py changed, reloading.
+[2025-07-11 10:44:51,202] INFO Watching for file changes with StatReloader
+[2025-07-11 10:44:51,477] INFO "POST /sme/profile/ HTTP/1.1" 200 6319
+[2025-07-11 10:44:51,515] INFO "GET /admin/core/smeprofile/1/change/ HTTP/1.1" 200 28542
+[2025-07-11 10:44:51,552] INFO "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+[2025-07-11 10:44:52,774] INFO D:\Young Minds\DAI Project\core\forms.py changed, reloading.
+[2025-07-11 10:44:53,505] INFO Watching for file changes with StatReloader
+[2025-07-11 10:44:53,833] INFO "POST /sme/profile/ HTTP/1.1" 200 6319
+[2025-07-11 10:44:53,854] INFO "GET /admin/core/smeprofile/1/change/ HTTP/1.1" 200 28542
+[2025-07-11 10:44:53,905] INFO "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+[2025-07-11 10:45:49,304] INFO D:\Young Minds\DAI Project\core\views\sme_profile_form_wizard.py changed, reloading.
+[2025-07-11 10:45:50,027] INFO Watching for file changes with StatReloader
+[2025-07-11 10:45:50,354] INFO "POST /sme/profile/ HTTP/1.1" 200 6319
+[2025-07-11 10:45:50,414] INFO "GET /admin/core/smeprofile/1/change/ HTTP/1.1" 200 28542
+[2025-07-11 10:45:50,498] INFO "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+[2025-07-11 10:45:51,649] INFO D:\Young Minds\DAI Project\core\views\sme_profile_form_wizard.py changed, reloading.
+[2025-07-11 10:45:52,327] INFO Watching for file changes with StatReloader
+[2025-07-11 10:45:57,845] INFO D:\Young Minds\DAI Project\core\views\sme_profile_form_wizard.py changed, reloading.
+[2025-07-11 10:45:58,627] INFO Watching for file changes with StatReloader
+[2025-07-11 10:45:59,099] INFO "POST /sme/profile/ HTTP/1.1" 200 6319
+[2025-07-11 10:45:59,122] INFO "GET /admin/core/smeprofile/1/change/ HTTP/1.1" 200 28542
+[2025-07-11 10:45:59,159] INFO "GET /admin/jsi18n/ HTTP/1.1" 200 3342

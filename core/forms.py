@@ -181,11 +181,57 @@ class SMEServicesOfferedWizardForm(forms.Form):
         required=False
     )
 
+    ALLOWED_LOGO_CONTENT_TYPES = [
+            'image/jpeg',
+            'image/jpg',
+            'image/gif',
+            'image/svg+xml',
+            'image/png',
+    ]
+    
+    def clean_service_logo(self):
+        file = self.cleaned_data.get('service_logo')
+        if file:
+            content_type = file.content_type
+            if content_type not in self.ALLOWED_LOGO_CONTENT_TYPES:
+                raise forms.ValidationError(
+                    "Only image files (jpeg, jpg, gif, svg, png) are allowed for the logo."
+                )
+        return file
+    
 class SMEDocumentUploadWizardForm(forms.Form):
     registration_certificate = forms.FileField(
-        label="Registration Certificate")
+        label="Registration Certificate",
+        required=False)
     tax_clearance_certificate = forms.FileField(
         label="Tax Clearance Certificate", required=False)
+    
+    ALLOWED_CONTENT_TYPES = [
+        'application/pdf',
+        'image/jpeg',
+        'image/png',
+        'image/jpg',
+
+    ]
+    def clean_registration_certificate(self):
+        file = self.cleaned_data.get('registration_certificate')
+        if file:
+            content_type = file.content_type
+            if content_type not in self.ALLOWED_CONTENT_TYPES:
+                raise forms.ValidationError(
+                    "Only PDF and image files are allowed for Registration Certificate."
+                )
+        return file
+
+    def clean_tax_clearance_certificate(self):
+        file = self.cleaned_data.get('tax_clearance_certificate')
+        if file:
+            content_type = file.content_type
+            if content_type not in self.ALLOWED_CONTENT_TYPES:
+                raise forms.ValidationError(
+                    "Only PDF and image files are allowed for Tax Clearance Certificate."
+                )
+        return file
 
 # ------------------------------
 # CMS Forms
