@@ -1,0 +1,65 @@
+{% extends 'core/accounts/auth_base.html' %}
+{% load static %}
+{% load form_tags %}
+
+{% block title %}Business Information{% endblock %}
+
+{% block content %}
+<section class="max-w-2xl mx-auto pt-16 pb-32 px-6">
+  <!-- Page Title -->
+  <h1 class="text-2xl font-semibold text-gray-900 mb-2">Complete Your Profile</h1>
+  <p class="text-sm text-gray-600 mb-6">
+    Complete the details below to create your account. You’ll receive an OTP to verify your email before accessing the platform.
+  </p>
+
+  <!-- Progress Indicator -->
+  <div class="flex items-center justify-between mb-8">
+    <div class="flex items-center gap-3">
+      <div class="w-6 h-6 rounded-full bg-blue-600 text-white text-sm flex items-center justify-center font-semibold">1</div>
+      <span class="text-sm font-medium text-blue-600">Business Overview</span>
+    </div>
+    <div class="w-6 h-0.5 bg-gray-300"></div>
+    <div class="flex items-center gap-3 text-gray-400">
+      <div class="w-6 h-6 rounded-full border border-gray-300 flex items-center justify-center text-sm">2</div>
+      <span class="text-sm">Services Offered</span>
+    </div>
+    <div class="w-6 h-0.5 bg-gray-300"></div>
+    <div class="flex items-center gap-3 text-gray-400">
+      <div class="w-6 h-6 rounded-full border border-gray-300 flex items-center justify-center text-sm">3</div>
+      <span class="text-sm">Certificates & Documents</span>
+    </div>
+  </div>
+
+  <!-- Step Info -->
+  <p class="text-sm text-gray-700 font-medium mb-2">Step 1 of </p>
+  <h2 class="text-xl font-semibold text-gray-900 mb-6">Business Overview</h2>
+
+  <!-- Form -->
+   <form method="POST">
+    {% csrf_token %}
+    {{ wizard.management_form }}
+
+    {% for field in form.visible_fields %}
+      <div class="mb-4">
+        <label class="block text-sm font-medium text-gray-700 mb-1">{{ field.label }}</label>
+        {{ field|add_class:"w-full border rounded-md px-4 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500" }}
+        {% if field.errors %}
+          <p class="text-red-500 text-sm">{{ field.errors.0 }}</p>
+        {% endif %}
+      </div>
+    {% endfor %}
+
+    {% if form.non_field_errors %}
+      <div class="text-red-500 text-sm mt-2">
+        {{ form.non_field_errors }}
+      </div>
+    {% endif %}
+
+    <div class="flex justify-end mt-6">
+      <button type="submit" class="bg-blue-600 hover:bg-blue-700 text-white font-semibold px-6 py-3 rounded-md">
+        Continue →
+      </button>
+    </div>
+  </form>
+</section>
+{% endblock %}

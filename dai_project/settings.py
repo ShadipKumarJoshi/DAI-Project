@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     
     # custom apps
     'core',
+    'formtools',
 ]
 
 AUTH_USER_MODEL = 'core.User'
@@ -59,6 +60,7 @@ MIDDLEWARE = [
     'core.middleware.AdminOnlyMiddleware',
     'core.middleware.RequestLoggingMiddleware',
     'core.middleware.RedirectAuthenticatedMiddleware',
+    'core.middleware.SMEOnlyMiddleware',
 ]
 
 ROOT_URLCONF = 'dai_project.urls'

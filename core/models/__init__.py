@@ -8,3 +8,4 @@ from .our_services import ServiceTag, ServiceCard
 from .sme_development_steps import SMEDevelopmentStepSection, SMEDevelopmentStep
 from .sme_guideline import SMEGuidelineCard
 from .user import User
+from .sme_profile import SMEProfile

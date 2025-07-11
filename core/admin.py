@@ -5,6 +5,7 @@ from django import forms
 from .forms import NavbarItemForm, CMSPageForm
 from django.contrib.auth.admin import UserAdmin as BaseUserAdmin
 from .models.user import User
+from .models import SMEProfile
 
 class UserAdmin(BaseUserAdmin):
     fieldsets = BaseUserAdmin.fieldsets + (
@@ -20,6 +21,38 @@ class UserAdmin(BaseUserAdmin):
 
 admin.site.register(User, UserAdmin)
 
+
+@admin.register(SMEProfile)
+class SMEProfileAdmin(admin.ModelAdmin):
+    list_display = [
+        'business_name', 'user', 'business_size',
+        'industry_sector', 'business_stage', 'created_at'
+    ]
+    search_fields = ['business_name', 'user__username']
+    list_filter = ['business_size', 'industry_sector', 'business_stage']
+    readonly_fields = ['created_at', 'updated_at']
+
+    fieldsets = (
+        ('User', {'fields': ('user',)}),
+        ('Business Info', {
+            'fields': (
+                'business_name', 'business_size', 'industry_sector',
+                'business_legal_type', 'business_stage', 'ownership_type'
+            )
+        }),
+        ('Service Info', {
+            'fields': (
+                'service_name', 'service_type',
+                'service_description', 'service_logo'
+            )
+        }),
+        ('Documents', {
+            'fields': (
+                'registration_certificate', 'tax_clearance_certificate'
+            )
+        }),
+        ('Timestamps', {'fields': ('created_at', 'updated_at')}),
+    )
 
 @admin.register(models.NavbarItem)
 class NavbarItemAdmin(admin.ModelAdmin):

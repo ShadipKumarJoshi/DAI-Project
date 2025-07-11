@@ -14,11 +14,13 @@ User = get_user_model()
 
 class BaseRegistrationForm(forms.ModelForm):
     password = forms.CharField(widget=forms.PasswordInput, min_length=8)
-    confirm_password = forms.CharField(widget=forms.PasswordInput, min_length=8)
+    confirm_password = forms.CharField(
+        widget=forms.PasswordInput, min_length=8)
 
     class Meta:
         model = User
-        fields = ['email', 'password', 'confirm_password', 'full_name', 'mobile', 'pan_vat', 'business_name']
+        fields = ['email', 'password', 'confirm_password',
+                  'full_name', 'mobile', 'pan_vat', 'business_name']
 
     def clean_full_name(self):
         full_name = self.cleaned_data.get('full_name')
@@ -27,17 +29,18 @@ class BaseRegistrationForm(forms.ModelForm):
         pattern = r'^([A-Za-z]+\.?)( [A-Za-z]+\.?)*$'
 
         if not re.fullmatch(pattern, full_name):
-            raise ValidationError("Full name must contain only words with alphabets.")
+            raise ValidationError(
+                "Full name must contain only words with alphabets.")
 
         return full_name
-
 
     def clean_mobile(self):
         mobile = self.cleaned_data.get('mobile')
         if not re.fullmatch(r'9\d{9}', mobile):
-            raise ValidationError("Mobile number must start with 9 and be exactly 10 digits long.")
+            raise ValidationError(
+                "Mobile number must start with 9 and be exactly 10 digits long.")
         return mobile
-    
+
     def clean(self):
         cleaned_data = super().clean()
         password = cleaned_data.get('password')
@@ -51,7 +54,8 @@ class SMERegistrationForm(BaseRegistrationForm):
     business_registration_number = forms.CharField()
 
     class Meta(BaseRegistrationForm.Meta):
-        fields = BaseRegistrationForm.Meta.fields + ['business_registration_number']
+        fields = BaseRegistrationForm.Meta.fields + \
+            ['business_registration_number']
 
 
 class BDSPRegistrationForm(BaseRegistrationForm):
@@ -66,22 +70,143 @@ class BDSPRegistrationForm(BaseRegistrationForm):
     class Meta(BaseRegistrationForm.Meta):
         fields = BaseRegistrationForm.Meta.fields + ['business_type']
 
+# ------------------------------
+# SME Profile Wizard Forms
+# ------------------------------
 
+
+class SMEBusinessInfoWizardForm(forms.Form):
+    BUSINESS_SIZES = [
+        ('small', 'Small'),
+        ('medium', 'Medium'),
+        ('large', 'Large'),
+    ]
+
+    INDUSTRY_SECTORS = [
+        ('tech', 'Technology'),
+        ('finance', 'Finance'),
+        ('retail', 'Retail'),
+        ('agriculture', 'Agriculture'),
+        ('healthcare', 'Healthcare'),
+        ('others', 'Others'),
+        
+        # Add more as needed
+    ]
+
+    LEGAL_TYPES = [
+        ('sole', 'Sole Proprietorship'),
+        ('partnership', 'Partnership'),
+        ('llc', 'Limited Liability Company (LLC)'),
+        ('corporation', 'Corporation'),
+    ]
+
+    BUSINESS_STAGES = [
+        ('ideation', 'Ideation'),
+        ('early', 'Early Stage'),
+        ('growth', 'Growth'),
+        ('mature', 'Mature'),
+    ]
+
+    OWNERSHIP_TYPES = [
+        ('private', 'Private'),
+        ('public', 'Public'),
+        ('ngo', 'Non-Profit / NGO'),
+    ]
+
+    business_name = forms.CharField(
+        label="Business Name",
+        max_length=100,
+        widget=forms.TextInput(attrs={
+            'placeholder': 'abc company'
+        })
+    )
+
+    business_size = forms.ChoiceField(
+        label="Business Size",
+        choices=[('', 'Select your business type')] + BUSINESS_SIZES
+    )
+
+    industry_sector = forms.ChoiceField(
+        label="Industry Sector",
+        choices=[('', 'Select your business legal type')] + INDUSTRY_SECTORS
+    )
+
+    business_legal_type = forms.ChoiceField(
+        label="Business Legal Type",
+        choices=[('', 'Select your business legal type')] + LEGAL_TYPES
+    )
+
+    business_stage = forms.ChoiceField(
+        label="Business Stage",
+        choices=[('', 'Select your business stage')] + BUSINESS_STAGES
+    )
+
+    ownership_type = forms.ChoiceField(
+        label="Ownership Type",
+        choices=[('', 'Select your business ownership type')] + OWNERSHIP_TYPES
+    )
+
+
+class SMEServicesOfferedWizardForm(forms.Form):
+    SERVICE_TYPES = [
+        ('consulting', 'Consulting'),
+        ('development', 'Development'),
+        ('marketing', 'Marketing'),
+        ('others', 'Others'),
+        
+        # Add more types as needed
+    ]
+
+    service_name = forms.CharField(
+        label="Service Name",
+        max_length=100,
+        widget=forms.TextInput(attrs={'placeholder': 'Your service name'})
+    )
+
+    service_type = forms.ChoiceField(
+        label="Service Type",
+        choices=[('', 'Your service type')] + SERVICE_TYPES
+    )
+
+    service_description = forms.CharField(
+        label="Service Description",
+        widget=forms.Textarea(attrs={
+            'placeholder': 'write your service description',
+            'rows': 4
+        })
+    )
+
+    service_logo = forms.FileField(
+        label="Upload Logo (optional)",
+        required=False
+    )
+
+class SMEDocumentUploadWizardForm(forms.Form):
+    registration_certificate = forms.FileField(
+        label="Registration Certificate")
+    tax_clearance_certificate = forms.FileField(
+        label="Tax Clearance Certificate", required=False)
+
+# ------------------------------
+# CMS Forms
+# ------------------------------
 
 # Custom ModelChoiceField to display "title - slug" in the dropdown
+
+
 class CMSPageModelChoiceField(forms.ModelChoiceField):
     def label_from_instance(self, obj):
         return f"{obj.title} - {obj.slug}"
+
 
 class NavbarItemForm(forms.ModelForm):
     class Meta:
         model = models.NavbarItem
         fields = '__all__'
-    
+
     class Media:
-        js = ('admin/js/vendor/jquery/jquery.js',  
-            'js/navbar_item_admin.js',)
-        
+        js = ('admin/js/vendor/jquery/jquery.js',
+              'js/navbar_item_admin.js',)
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
@@ -96,7 +221,7 @@ class NavbarItemForm(forms.ModelForm):
                 required=False,
                 empty_label="Select CMS Page"
             )
-            
+
           # Helper to prettify URL names: replace _ and - with spaces, title case
         def prettify_name(name):
             return name.replace('_', ' ').replace('-', ' ').title()
@@ -134,7 +259,6 @@ class NavbarItemForm(forms.ModelForm):
             'dummy': 'Dummy Page',
         }
 
-
         # Build dropdown choices for module_name based on named URLs
         choices = [('', 'Select Module (Named URL)')]
 
@@ -146,8 +270,6 @@ class NavbarItemForm(forms.ModelForm):
             if isinstance(name, str) and is_allowed_named_url(name, data):  # CHANGE HERE
                 label = OVERRIDE_LABELS.get(name, prettify_name(name))
                 choices.append((name, label))
-
-               
 
         # Replace the module_name field widget with ChoiceField with these choices
         self.fields['module_name'] = forms.ChoiceField(
@@ -172,22 +294,26 @@ class NavbarItemForm(forms.ModelForm):
         if is_button and self.instance.pk and self.instance.children.exists():
             raise ValidationError("Button items cannot have children.")
         if parent and parent.is_button:
-            raise ValidationError("Non-button items cannot have a button as parent.")
+            raise ValidationError(
+                "Non-button items cannot have a button as parent.")
 
         # ---------- Link Validation ----------
         if link_type == 'module':
             if not module_name:
-                raise ValidationError("Module name must be provided when link type is 'module'.")
+                raise ValidationError(
+                    "Module name must be provided when link type is 'module'.")
             cleaned_data['cms_page'] = None
             cleaned_data['external_url'] = ''
         elif link_type == 'cms':
             if not cms_page:
-                raise ValidationError("CMS Page must be selected when link type is 'cms'.")
+                raise ValidationError(
+                    "CMS Page must be selected when link type is 'cms'.")
             cleaned_data['module_name'] = ''
             cleaned_data['external_url'] = ''
         elif link_type == 'external':
             if not external_url:
-                raise ValidationError("External URL must be provided when link type is 'external'.")
+                raise ValidationError(
+                    "External URL must be provided when link type is 'external'.")
             cleaned_data['module_name'] = ''
             cleaned_data['cms_page'] = None
         else:
@@ -197,11 +323,11 @@ class NavbarItemForm(forms.ModelForm):
             cleaned_data['external_url'] = ''
 
         return cleaned_data
-    
-    
+
 
 class CMSPageForm(forms.ModelForm):
-    content = forms.CharField(widget=CKEditorUploadingWidget()) 
+    content = forms.CharField(widget=CKEditorUploadingWidget())
+
     class Meta:
         model = models.CMSPage
         fields = '__all__'
@@ -221,48 +347,57 @@ class CMSPageForm(forms.ModelForm):
 
         return slug
 
+
 class HeroCarouselForm(forms.ModelForm):
     class Meta:
         model = models.HeroCarousel
         fields = '__all__'
+
 
 class SMEDevelopmentStepSectionForm(forms.ModelForm):
     class Meta:
         model = models.SMEDevelopmentStepSection
         fields = '__all__'
 
+
 class SMEDevelopmentStepForm(forms.ModelForm):
     class Meta:
         model = models.SMEDevelopmentStep
         fields = '__all__'
+
 
 class ServiceTagForm(forms.ModelForm):
     class Meta:
         model = models.ServiceTag
         fields = '__all__'
 
+
 class ServiceCardForm(forms.ModelForm):
     class Meta:
         model = models.ServiceCard
         fields = '__all__'
+
 
 class SMEGuidelineCardForm(forms.ModelForm):
     class Meta:
         model = models.SMEGuidelineCard
         fields = '__all__'
 
+
 class NewsEventTypeForm(forms.ModelForm):
     class Meta:
         model = models.NewsEventType
         fields = '__all__'
+
 
 class NewsEventStatusForm(forms.ModelForm):
     class Meta:
         model = models.NewsEventStatus
         fields = '__all__'
 
+
 class NewsEventForm(forms.ModelForm):
-    # content = forms.CharField(widget=CKEditorUploadingWidget()) 
+    # content = forms.CharField(widget=CKEditorUploadingWidget())
     publication_start = forms.DateTimeField(
         required=False,
         widget=forms.DateTimeInput(attrs={'type': 'datetime-local'})
@@ -271,24 +406,29 @@ class NewsEventForm(forms.ModelForm):
         required=False,
         widget=forms.DateTimeInput(attrs={'type': 'datetime-local'})
     )
+
     class Meta:
         model = models.NewsEvent
         fields = '__all__'
+
 
 class FooterQuickLinkForm(forms.ModelForm):
     class Meta:
         model = models.FooterQuickLink
         fields = '__all__'
 
+
 class FooterContactInfoForm(forms.ModelForm):
     class Meta:
         model = models.FooterContactInfo
         fields = '__all__'
 
+
 class FooterSocialMediaForm(forms.ModelForm):
     class Meta:
         model = models.FooterSocialMedia
         fields = '__all__'
+
 
 class NoticeForm(forms.ModelForm):
     published_date = forms.DateField(
@@ -302,10 +442,12 @@ class NoticeForm(forms.ModelForm):
         required=False,
         widget=forms.DateInput(attrs={'type': 'date'})
     )
-    content = forms.CharField(widget=CKEditorUploadingWidget()) 
+    content = forms.CharField(widget=CKEditorUploadingWidget())
+
     class Meta:
         model = models.Notice
         fields = '__all__'
+
 
 class NoticeAttachmentForm(forms.ModelForm):
     class Meta:

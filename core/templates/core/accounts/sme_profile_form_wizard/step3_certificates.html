@@ -1,0 +1,59 @@
+{% extends 'core/accounts/auth_base.html' %}
+{% load static %}
+{% load form_tags %}
+
+{% block title %}Certificates and Documents{% endblock %}
+
+{% block content %}
+<section class="max-w-2xl mx-auto pt-16 pb-32 px-6">
+  <!-- Page Title -->
+  <h1 class="text-2xl font-semibold text-gray-900 mb-2">Complete Your Profile</h1>
+  <p class="text-sm text-gray-600 mb-6">
+    Create an account as a PUI admin to keep track of your contributors. Once your account has been created then don’t forget to verify your account through mail.
+  </p>
+
+  <!-- Progress Indicator -->
+  <div class="flex items-center justify-between mb-8">
+    <div class="flex items-center gap-3 text-blue-600">
+      <div class="w-6 h-6 rounded-full bg-blue-600 text-white text-sm flex items-center justify-center font-semibold">1</div>
+      <span class="text-sm font-medium">Business Overview</span>
+    </div>
+    <div class="w-6 h-0.5 bg-blue-600"></div>
+    <div class="flex items-center gap-3 text-blue-600">
+      <div class="w-6 h-6 rounded-full bg-blue-600 text-white text-sm flex items-center justify-center font-semibold">2</div>
+      <span class="text-sm font-medium">Services Offered</span>
+    </div>
+    
+    <div class="w-6 h-0.5 bg-blue-600"></div>
+    <div class="flex items-center gap-3 text-blue-600">
+      <div class="w-6 h-6 rounded-full bg-blue-600 text-white text-sm flex items-center justify-center font-semibold">3</div>
+      <span class="text-sm font-medium">Certificates & Documents</span>
+    </div>
+  </div>
+
+  <!-- Step Info -->
+  <p class="text-sm text-gray-700 font-medium mb-2">Step 3 of 3</p>
+  <h2 class="text-xl font-semibold text-gray-900 mb-6">Certificates & Documents</h2>
+
+  <!-- Form -->
+  <form method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ wizard.management_form }}
+
+    {% for field in form.visible_fields %}
+      <div class="mb-6">
+        <label class="block text-sm font-medium text-gray-700 mb-1">{{ field.label }}</label>
+        {{ field|add_class:"w-full border border-dashed border-gray-300 rounded-md px-4 py-3 text-sm bg-gray-50" }}
+        {% if field.errors %}
+          <p class="text-red-500 text-sm">{{ field.errors.0 }}</p>
+        {% endif %}
+      </div>
+    {% endfor %}
+
+    <div class="flex justify-between mt-6">
+      <button name="wizard_goto_step" value="{{ wizard.steps.prev }}" class="text-gray-600 underline">← Back</button>
+      <button type="submit" class="bg-blue-600 hover:bg-blue-700 text-white font-semibold px-6 py-3 rounded-md">Submit</button>
+    </div>
+  </form>
+</section>
+{% endblock %}

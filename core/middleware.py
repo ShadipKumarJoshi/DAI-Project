@@ -80,3 +80,24 @@ class RequestLoggingMiddleware:
             ip = request.META.get('REMOTE_ADDR')
         return ip
 
+class SMEOnlyMiddleware:
+    """
+    Restrict access to SME profile wizard to authenticated users with role 'sme' only.
+    """
+    def __init__(self, get_response):
+        self.get_response = get_response
+
+    def __call__(self, request):
+        path = request.path
+
+        if path.startswith('/sme/profile/'):
+            user = request.user
+            if not user.is_authenticated:
+                messages.error(request, "You need to log in first.")
+                return redirect(reverse('login'))
+
+            if getattr(user, 'role', None) != 'sme':
+                messages.error(request, "Only SME users can access this page.")
+                return redirect(reverse('home'))
+
+        return self.get_response(request)

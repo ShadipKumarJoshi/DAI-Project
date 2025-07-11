@@ -1,5 +1,8 @@
 from django.urls import path
 from . import views
+from core.views.sme_profile_form_wizard import SMERegistrationWizard
+from core.views.sme_profile_form_wizard import SMERegistrationWizard
+
 
 urlpatterns = [
     path('', views.home, name='home'),
@@ -17,6 +20,9 @@ urlpatterns = [
     path('register/type/', views.register_type, name='register_type'),
     path('register/sme/', views.sme_register, name='sme_register'),
     path('register/bdsp/', views.bdsp_register, name='bdsp_register'),
+    path('sme/profile/', SMERegistrationWizard.as_view(), name='sme_profile_wizard'),
+    
+
 
 
     path('dashboard', views.dashboard, name='dashboard'),

@@ -7,3 +7,5 @@ from .home import home
 from .news import news, news_detail
 from .service import service_detail
 from .dummy import dummy
+from .sme_profile_form_wizard import SMERegistrationWizard
+
