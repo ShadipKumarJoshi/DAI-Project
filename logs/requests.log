@@ -55297,3 +55297,172 @@ django.urls.exceptions.NoReverseMatch: Reverse for 'sme_profile_detail' not foun
 [2025-07-11 10:47:54,561] INFO "GET /media/service_logos/pp_photo_optimized_1000.jpg HTTP/1.1" 304 0
 [2025-07-11 10:47:55,732] INFO "POST /sme/profile/ HTTP/1.1" 200 5489
 [2025-07-11 10:48:00,028] INFO "GET /media/certificates/pp_photo_optimized_1000.jpg HTTP/1.1" 200 983689
+[2025-07-11 10:57:48,227] INFO "GET /admin/core/smeprofile/1/change/ HTTP/1.1" 200 28514
+[2025-07-11 10:57:48,413] INFO "POST /sme/profile/ HTTP/1.1" 200 5489
+[2025-07-11 10:57:48,611] INFO "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+[2025-07-11 10:57:56,798] INFO "POST /sme/profile/ HTTP/1.1" 200 5489
+[2025-07-11 10:57:56,813] INFO "GET /admin/core/smeprofile/1/change/ HTTP/1.1" 200 28514
+[2025-07-11 10:57:56,862] INFO "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+[2025-07-11 10:59:19,429] INFO "POST /sme/profile/ HTTP/1.1" 200 5489
+[2025-07-11 10:59:19,455] INFO "GET /admin/core/smeprofile/1/change/ HTTP/1.1" 200 28514
+[2025-07-11 10:59:19,537] INFO "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+[2025-07-11 11:00:39,854] INFO D:\Young Minds\DAI Project\core\urls.py changed, reloading.
+[2025-07-11 11:00:40,592] INFO Watching for file changes with StatReloader
+[2025-07-11 11:00:40,878] WARNING Not Found: /sme/profile/
+[2025-07-11 11:00:40,879] WARNING "POST /sme/profile/ HTTP/1.1" 404 8571
+[2025-07-11 11:00:40,944] INFO "GET /admin/core/smeprofile/1/change/ HTTP/1.1" 200 28514
+[2025-07-11 11:00:41,201] INFO "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+[2025-07-11 11:00:48,951] INFO "GET /sme/profile/form HTTP/1.1" 200 7482
+[2025-07-11 11:01:50,693] INFO D:\Young Minds\DAI Project\core\urls.py changed, reloading.
+[2025-07-11 11:01:51,489] INFO Watching for file changes with StatReloader
+[2025-07-11 11:01:51,823] INFO "GET /sme/profile/form HTTP/1.1" 200 7482
+[2025-07-11 11:01:51,862] INFO "GET /admin/core/smeprofile/1/change/ HTTP/1.1" 200 28514
+[2025-07-11 11:01:51,926] INFO "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+[2025-07-11 11:01:52,964] INFO D:\Young Minds\DAI Project\core\urls.py changed, reloading.
+[2025-07-11 11:01:53,633] INFO Watching for file changes with StatReloader
+[2025-07-11 11:04:06,144] INFO D:\Young Minds\DAI Project\core\views\__init__.py changed, reloading.
+[2025-07-11 11:04:06,892] INFO Watching for file changes with StatReloader
+[2025-07-11 11:04:10,257] INFO D:\Young Minds\DAI Project\core\views\__init__.py changed, reloading.
+[2025-07-11 11:04:10,891] INFO Watching for file changes with StatReloader
+[2025-07-11 11:04:12,093] INFO D:\Young Minds\DAI Project\core\views\__init__.py changed, reloading.
+[2025-07-11 11:04:12,792] INFO Watching for file changes with StatReloader
+[2025-07-11 11:04:14,025] INFO D:\Young Minds\DAI Project\core\views\__init__.py changed, reloading.
+[2025-07-11 11:04:14,682] INFO Watching for file changes with StatReloader
+[2025-07-11 11:04:41,600] INFO D:\Young Minds\DAI Project\core\urls.py changed, reloading.
+[2025-07-11 11:04:42,344] INFO Watching for file changes with StatReloader
+[2025-07-11 11:04:45,775] INFO D:\Young Minds\DAI Project\core\urls.py changed, reloading.
+[2025-07-11 11:04:46,438] INFO Watching for file changes with StatReloader
+[2025-07-11 11:05:24,971] INFO Watching for file changes with StatReloader
+[2025-07-11 11:08:02,488] INFO Watching for file changes with StatReloader
+[2025-07-11 11:08:43,408] INFO D:\Young Minds\DAI Project\core\urls.py changed, reloading.
+[2025-07-11 11:08:44,054] INFO Watching for file changes with StatReloader
+[2025-07-11 11:08:48,514] INFO D:\Young Minds\DAI Project\core\urls.py changed, reloading.
+[2025-07-11 11:08:49,163] INFO Watching for file changes with StatReloader
+[2025-07-11 11:08:49,401] INFO "GET /sme/profile/form HTTP/1.1" 200 7482
+[2025-07-11 11:08:49,551] INFO "GET /admin/core/smeprofile/1/change/ HTTP/1.1" 200 28514
+[2025-07-11 11:08:49,628] INFO "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+[2025-07-11 11:09:03,218] INFO "GET /sme/profile/ HTTP/1.1" 200 5185
+[2025-07-11 11:09:03,239] INFO "GET /media/service_logos/pp_photo_optimized_1000.jpg HTTP/1.1" 304 0
+[2025-07-11 11:09:19,142] INFO "GET /media/certificates/pp_photo_optimized_1000.jpg HTTP/1.1" 304 0
+[2025-07-11 11:09:22,181] INFO "GET /media/certificates/keyboard-shortcuts-windows_e9hVsAX.pdf HTTP/1.1" 304 0
+[2025-07-11 11:09:37,702] INFO "GET /sme/profile/form HTTP/1.1" 200 7482
+[2025-07-11 11:09:50,247] INFO "GET /sme/profile/form HTTP/1.1" 200 7482
+[2025-07-11 11:09:52,811] INFO "POST /sme/profile/form HTTP/1.1" 200 6617
+[2025-07-11 11:09:56,841] INFO "GET /sme/profile/form HTTP/1.1" 200 7482
+[2025-07-11 11:16:01,057] INFO "GET /sme/profile/form HTTP/1.1" 200 7482
+[2025-07-11 11:16:01,083] INFO "GET /admin/core/smeprofile/1/change/ HTTP/1.1" 200 28514
+[2025-07-11 11:16:01,397] INFO "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+[2025-07-11 11:16:07,591] INFO "GET /sme/profile/form HTTP/1.1" 200 7482
+[2025-07-11 11:16:07,596] INFO "GET /admin/core/smeprofile/1/change/ HTTP/1.1" 200 28514
+[2025-07-11 11:16:07,641] INFO "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+[2025-07-11 11:16:12,241] INFO "GET /sme/profile/ HTTP/1.1" 200 4902
+[2025-07-11 11:16:12,323] INFO "GET /media/service_logos/pp_photo_optimized_1000.jpg HTTP/1.1" 304 0
+[2025-07-11 11:16:14,946] INFO "GET /sme/profile/ HTTP/1.1" 200 4902
+[2025-07-11 11:16:15,978] INFO "GET /sme/profile/ HTTP/1.1" 200 4902
+[2025-07-11 11:16:16,698] INFO "GET /sme/profile/ HTTP/1.1" 200 4902
+[2025-07-11 11:16:16,924] INFO "GET /sme/profile/ HTTP/1.1" 200 4902
+[2025-07-11 11:17:06,785] INFO "GET /sme/profile/ HTTP/1.1" 200 5185
+[2025-07-11 11:17:06,823] INFO "GET /admin/core/smeprofile/1/change/ HTTP/1.1" 200 28514
+[2025-07-11 11:17:06,901] INFO "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+[2025-07-11 11:19:05,620] INFO D:\Young Minds\DAI Project\core\models\sme_profile.py changed, reloading.
+[2025-07-11 11:19:06,418] INFO Watching for file changes with StatReloader
+[2025-07-11 11:19:06,693] INFO "GET /sme/profile/ HTTP/1.1" 200 5185
+[2025-07-11 11:19:06,745] INFO "GET /admin/core/smeprofile/1/change/ HTTP/1.1" 200 28514
+[2025-07-11 11:19:06,977] INFO "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+[2025-07-11 11:24:46,246] INFO D:\Young Minds\DAI Project\core\forms.py changed, reloading.
+[2025-07-11 11:24:47,024] INFO Watching for file changes with StatReloader
+[2025-07-11 11:25:04,536] INFO D:\Young Minds\DAI Project\core\constants.py changed, reloading.
+[2025-07-11 11:25:05,156] INFO Watching for file changes with StatReloader
+[2025-07-11 11:25:11,479] INFO D:\Young Minds\DAI Project\core\constants.py changed, reloading.
+[2025-07-11 11:25:12,131] INFO Watching for file changes with StatReloader
+[2025-07-11 11:25:14,392] INFO D:\Young Minds\DAI Project\core\constants.py changed, reloading.
+[2025-07-11 11:25:15,046] INFO Watching for file changes with StatReloader
+[2025-07-11 11:25:16,294] INFO D:\Young Minds\DAI Project\core\constants.py changed, reloading.
+[2025-07-11 11:25:16,908] INFO Watching for file changes with StatReloader
+[2025-07-11 11:25:32,295] INFO D:\Young Minds\DAI Project\core\constants.py changed, reloading.
+[2025-07-11 11:25:32,864] INFO Watching for file changes with StatReloader
+[2025-07-11 11:28:37,039] INFO D:\Young Minds\DAI Project\core\constants.py changed, reloading.
+[2025-07-11 11:28:37,868] INFO Watching for file changes with StatReloader
+[2025-07-11 11:29:04,551] INFO D:\Young Minds\DAI Project\core\models\sme_profile.py changed, reloading.
+[2025-07-11 11:29:05,136] INFO Watching for file changes with StatReloader
+[2025-07-11 11:29:54,198] INFO D:\Young Minds\DAI Project\core\models\sme_profile.py changed, reloading.
+[2025-07-11 11:29:54,849] INFO Watching for file changes with StatReloader
+[2025-07-11 11:29:58,123] INFO D:\Young Minds\DAI Project\core\models\sme_profile.py changed, reloading.
+[2025-07-11 11:29:58,658] INFO Watching for file changes with StatReloader
+[2025-07-11 11:30:00,904] INFO D:\Young Minds\DAI Project\core\models\sme_profile.py changed, reloading.
+[2025-07-11 11:30:01,512] INFO Watching for file changes with StatReloader
+[2025-07-11 11:31:03,651] INFO D:\Young Minds\DAI Project\core\models\sme_profile.py changed, reloading.
+[2025-07-11 11:31:04,384] INFO Watching for file changes with StatReloader
+[2025-07-11 11:31:12,754] INFO D:\Young Minds\DAI Project\core\models\sme_profile.py changed, reloading.
+[2025-07-11 11:31:13,413] INFO Watching for file changes with StatReloader
+[2025-07-11 11:31:18,715] INFO D:\Young Minds\DAI Project\core\models\sme_profile.py changed, reloading.
+[2025-07-11 11:31:19,311] INFO Watching for file changes with StatReloader
+[2025-07-11 11:31:21,535] INFO D:\Young Minds\DAI Project\core\models\sme_profile.py changed, reloading.
+[2025-07-11 11:31:22,129] INFO Watching for file changes with StatReloader
+[2025-07-11 11:31:24,367] INFO D:\Young Minds\DAI Project\core\models\sme_profile.py changed, reloading.
+[2025-07-11 11:31:24,947] INFO Watching for file changes with StatReloader
+[2025-07-11 11:31:30,202] INFO D:\Young Minds\DAI Project\core\models\sme_profile.py changed, reloading.
+[2025-07-11 11:31:30,977] INFO Watching for file changes with StatReloader
+[2025-07-11 11:31:32,228] INFO D:\Young Minds\DAI Project\core\models\sme_profile.py changed, reloading.
+[2025-07-11 11:31:32,883] INFO Watching for file changes with StatReloader
+[2025-07-11 11:31:37,227] INFO D:\Young Minds\DAI Project\core\models\sme_profile.py changed, reloading.
+[2025-07-11 11:31:37,792] INFO Watching for file changes with StatReloader
+[2025-07-11 11:31:42,076] INFO D:\Young Minds\DAI Project\core\models\sme_profile.py changed, reloading.
+[2025-07-11 11:31:42,698] INFO Watching for file changes with StatReloader
+[2025-07-11 11:32:27,692] INFO D:\Young Minds\DAI Project\core\models\sme_profile.py changed, reloading.
+[2025-07-11 11:32:28,427] INFO Watching for file changes with StatReloader
+[2025-07-11 11:32:37,746] INFO D:\Young Minds\DAI Project\core\models\sme_profile.py changed, reloading.
+[2025-07-11 11:32:38,355] INFO Watching for file changes with StatReloader
+[2025-07-11 11:32:42,691] INFO D:\Young Minds\DAI Project\core\models\sme_profile.py changed, reloading.
+[2025-07-11 11:32:43,273] INFO Watching for file changes with StatReloader
+[2025-07-11 11:32:48,564] INFO D:\Young Minds\DAI Project\core\models\sme_profile.py changed, reloading.
+[2025-07-11 11:32:49,180] INFO Watching for file changes with StatReloader
+[2025-07-11 11:33:15,793] INFO D:\Young Minds\DAI Project\core\forms.py changed, reloading.
+[2025-07-11 11:33:16,475] INFO Watching for file changes with StatReloader
+[2025-07-11 11:33:30,037] INFO Watching for file changes with StatReloader
+[2025-07-11 11:34:02,772] INFO D:\Young Minds\DAI Project\core\forms.py changed, reloading.
+[2025-07-11 11:34:03,352] INFO Watching for file changes with StatReloader
+[2025-07-11 11:35:34,948] INFO D:\Young Minds\DAI Project\core\forms.py changed, reloading.
+[2025-07-11 11:35:35,601] INFO Watching for file changes with StatReloader
+[2025-07-11 11:35:42,929] INFO D:\Young Minds\DAI Project\core\forms.py changed, reloading.
+[2025-07-11 11:35:43,685] INFO Watching for file changes with StatReloader
+[2025-07-11 11:35:46,967] INFO D:\Young Minds\DAI Project\core\forms.py changed, reloading.
+[2025-07-11 11:35:47,640] INFO Watching for file changes with StatReloader
+[2025-07-11 11:36:09,178] INFO D:\Young Minds\DAI Project\core\forms.py changed, reloading.
+[2025-07-11 11:36:09,747] INFO Watching for file changes with StatReloader
+[2025-07-11 11:36:15,488] INFO "GET /sme/profile/ HTTP/1.1" 200 5234
+[2025-07-11 11:36:15,553] INFO "GET /media/service_logos/pp_photo_optimized_1000.jpg HTTP/1.1" 304 0
+[2025-07-11 11:36:48,113] INFO D:\Young Minds\DAI Project\core\forms.py changed, reloading.
+[2025-07-11 11:36:48,819] INFO Watching for file changes with StatReloader
+[2025-07-11 11:36:49,174] INFO "GET /sme/profile/ HTTP/1.1" 200 5234
+[2025-07-11 11:36:55,552] INFO D:\Young Minds\DAI Project\core\forms.py changed, reloading.
+[2025-07-11 11:36:56,197] INFO Watching for file changes with StatReloader
+[2025-07-11 11:37:00,491] INFO D:\Young Minds\DAI Project\core\forms.py changed, reloading.
+[2025-07-11 11:37:01,110] INFO Watching for file changes with StatReloader
+[2025-07-11 11:37:18,564] INFO D:\Young Minds\DAI Project\core\constants.py changed, reloading.
+[2025-07-11 11:37:19,219] INFO Watching for file changes with StatReloader
+[2025-07-11 11:37:21,489] INFO D:\Young Minds\DAI Project\core\constants.py changed, reloading.
+[2025-07-11 11:37:22,189] INFO Watching for file changes with StatReloader
+[2025-07-11 11:37:24,413] INFO D:\Young Minds\DAI Project\core\constants.py changed, reloading.
+[2025-07-11 11:37:25,078] INFO Watching for file changes with StatReloader
+[2025-07-11 11:37:25,267] INFO "GET /sme/profile/ HTTP/1.1" 200 5234
+[2025-07-11 11:37:53,394] INFO D:\Young Minds\DAI Project\core\models\sme_profile.py changed, reloading.
+[2025-07-11 11:37:54,054] INFO Watching for file changes with StatReloader
+[2025-07-11 11:37:57,286] INFO D:\Young Minds\DAI Project\core\models\sme_profile.py changed, reloading.
+[2025-07-11 11:37:57,896] INFO Watching for file changes with StatReloader
+[2025-07-11 11:37:58,169] INFO "GET /sme/profile/ HTTP/1.1" 200 5245
+[2025-07-11 11:38:03,587] INFO D:\Young Minds\DAI Project\core\models\sme_profile.py changed, reloading.
+[2025-07-11 11:38:04,179] INFO Watching for file changes with StatReloader
+[2025-07-11 11:38:15,535] INFO D:\Young Minds\DAI Project\core\models\sme_profile.py changed, reloading.
+[2025-07-11 11:38:16,161] INFO Watching for file changes with StatReloader
+[2025-07-11 11:38:17,380] INFO D:\Young Minds\DAI Project\core\models\sme_profile.py changed, reloading.
+[2025-07-11 11:38:17,953] INFO Watching for file changes with StatReloader
+[2025-07-11 11:38:18,176] INFO "GET /sme/profile/ HTTP/1.1" 200 5245
+[2025-07-11 11:38:34,375] INFO D:\Young Minds\DAI Project\core\models\sme_profile.py changed, reloading.
+[2025-07-11 11:38:35,054] INFO Watching for file changes with StatReloader
+[2025-07-11 11:38:35,356] INFO "GET /sme/profile/ HTTP/1.1" 200 5245
+[2025-07-11 11:38:37,480] INFO D:\Young Minds\DAI Project\core\models\sme_profile.py changed, reloading.
+[2025-07-11 11:38:38,045] INFO Watching for file changes with StatReloader
+[2025-07-11 11:38:44,358] INFO D:\Young Minds\DAI Project\core\models\sme_profile.py changed, reloading.
+[2025-07-11 11:38:44,982] INFO Watching for file changes with StatReloader
+[2025-07-11 11:38:45,416] INFO "GET /sme/profile/ HTTP/1.1" 200 5245

@@ -8,4 +8,5 @@ from .news import news, news_detail
 from .service import service_detail
 from .dummy import dummy
 from .sme_profile_form_wizard import SMERegistrationWizard
+from .sme_profile_views import sme_profile_view
 

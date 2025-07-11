@@ -7,6 +7,7 @@ from django.utils.text import slugify
 import re  # for pattern matching
 from ckeditor_uploader.widgets import CKEditorUploadingWidget
 
+
 from django.contrib.auth import get_user_model
 
 User = get_user_model()
@@ -76,42 +77,7 @@ class BDSPRegistrationForm(BaseRegistrationForm):
 
 
 class SMEBusinessInfoWizardForm(forms.Form):
-    BUSINESS_SIZES = [
-        ('small', 'Small'),
-        ('medium', 'Medium'),
-        ('large', 'Large'),
-    ]
-
-    INDUSTRY_SECTORS = [
-        ('tech', 'Technology'),
-        ('finance', 'Finance'),
-        ('retail', 'Retail'),
-        ('agriculture', 'Agriculture'),
-        ('healthcare', 'Healthcare'),
-        ('others', 'Others'),
-        
-        # Add more as needed
-    ]
-
-    LEGAL_TYPES = [
-        ('sole', 'Sole Proprietorship'),
-        ('partnership', 'Partnership'),
-        ('llc', 'Limited Liability Company (LLC)'),
-        ('corporation', 'Corporation'),
-    ]
-
-    BUSINESS_STAGES = [
-        ('ideation', 'Ideation'),
-        ('early', 'Early Stage'),
-        ('growth', 'Growth'),
-        ('mature', 'Mature'),
-    ]
-
-    OWNERSHIP_TYPES = [
-        ('private', 'Private'),
-        ('public', 'Public'),
-        ('ngo', 'Non-Profit / NGO'),
-    ]
+   
 
     business_name = forms.CharField(
         label="Business Name",
@@ -123,39 +89,32 @@ class SMEBusinessInfoWizardForm(forms.Form):
 
     business_size = forms.ChoiceField(
         label="Business Size",
-        choices=[('', 'Select your business type')] + BUSINESS_SIZES
+        choices=[('', 'Select your business type')] + constants.BUSINESS_SIZES
     )
 
     industry_sector = forms.ChoiceField(
         label="Industry Sector",
-        choices=[('', 'Select your business legal type')] + INDUSTRY_SECTORS
+        choices=[('', 'Select your business legal type')] + constants.INDUSTRY_SECTORS
     )
 
     business_legal_type = forms.ChoiceField(
         label="Business Legal Type",
-        choices=[('', 'Select your business legal type')] + LEGAL_TYPES
+        choices=[('', 'Select your business legal type')] + constants.LEGAL_TYPES
     )
 
     business_stage = forms.ChoiceField(
         label="Business Stage",
-        choices=[('', 'Select your business stage')] + BUSINESS_STAGES
+        choices=[('', 'Select your business stage')] + constants.BUSINESS_STAGES
     )
 
     ownership_type = forms.ChoiceField(
         label="Ownership Type",
-        choices=[('', 'Select your business ownership type')] + OWNERSHIP_TYPES
+        choices=[('', 'Select your business ownership type')] + constants.OWNERSHIP_TYPES
     )
 
 
 class SMEServicesOfferedWizardForm(forms.Form):
-    SERVICE_TYPES = [
-        ('consulting', 'Consulting'),
-        ('development', 'Development'),
-        ('marketing', 'Marketing'),
-        ('others', 'Others'),
-        
-        # Add more types as needed
-    ]
+
 
     service_name = forms.CharField(
         label="Service Name",
@@ -165,7 +124,7 @@ class SMEServicesOfferedWizardForm(forms.Form):
 
     service_type = forms.ChoiceField(
         label="Service Type",
-        choices=[('', 'Your service type')] + SERVICE_TYPES
+        choices=[('', 'Your service type')] + constants.SERVICE_TYPES
     )
 
     service_description = forms.CharField(

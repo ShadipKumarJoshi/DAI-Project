@@ -1,0 +1,102 @@
+{% extends 'core/base.html' %}
+{% load static %}
+
+{% block title %}SME Profile Details{% endblock %}
+
+{% block content %}
+<section class="max-w-3xl mx-auto pt-16 pb-32 px-6 relative">
+
+  <!-- Edit Profile Button (top right) -->
+  <div class="absolute top-6 right-6">
+    <a href="{% url 'sme_profile_wizard' %}" 
+       class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-md text-sm font-semibold">
+      Edit Profile
+    </a>
+  </div>
+
+  <!-- Page Title -->
+  <h1 class="text-3xl font-semibold text-gray-900 mb-8">SME Profile Details</h1>
+
+  <!-- Business Overview -->
+  <section class="mb-10">
+    <h2 class="text-xl font-semibold text-gray-800 mb-4">Business Overview</h2>
+    <dl class="grid grid-cols-1 sm:grid-cols-2 gap-x-4 gap-y-4">
+  <div class="text-gray-600 font-medium">Business Name:</div>
+  <div class="text-gray-900">{{ profile.business_name }}</div>
+
+  <div class="text-gray-600 font-medium">Business Size:</div>
+  <div class="text-gray-900">{{ profile.get_business_size_display }}</div>
+
+  <div class="text-gray-600 font-medium">Industry Sector:</div>
+  <div class="text-gray-900">{{ profile.get_industry_sector_display }}</div>
+
+  <div class="text-gray-600 font-medium">Business Legal Type:</div>
+  <div class="text-gray-900">{{ profile.get_business_legal_type_display }}</div>
+
+  <div class="text-gray-600 font-medium">Business Stage:</div>
+  <div class="text-gray-900">{{ profile.get_business_stage_display }}</div>
+
+  <div class="text-gray-600 font-medium">Ownership Type:</div>
+  <div class="text-gray-900">{{ profile.get_ownership_type_display }}</div>
+</dl>
+
+
+  </section>
+
+  <!-- Services Offered -->
+  <section class="mb-10">
+    <h2 class="text-xl font-semibold text-gray-800 mb-4">Services Offered</h2>
+    <dl class="grid grid-cols-1 sm:grid-cols-2 gap-x-4 gap-y-4">
+  <div class="text-gray-600 font-medium">Service Name:</div>
+  <div class="text-gray-900">{{ profile.service_name }}</div>
+
+  <div class="text-gray-600 font-medium">Service Type:</div>
+  <div class="text-gray-900">{{ profile.get_service_type_display }}</div>
+
+  <div class="text-gray-600 font-medium">Service Description:</div>
+  <div class="text-gray-900">{{ profile.service_description|linebreaksbr }}</div>
+
+  <div class="text-gray-600 font-medium">Service Logo:</div>
+  <div>
+    {% if profile.service_logo %}
+      <a href="{{ profile.service_logo.url }}" target="_blank" class="text-blue-600 underline text-sm">View Logo</a>
+      <img src="{{ profile.service_logo.url }}" alt="Logo" class="max-h-40 mt-2 rounded shadow" />
+    {% else %}
+      <span class="text-gray-500 italic">No logo uploaded.</span>
+    {% endif %}
+  </div>
+</dl>
+
+  </section>
+
+  <!-- Certificates & Documents -->
+  <section>
+    <h2 class="text-xl font-semibold text-gray-800 mb-4">Certificates & Documents</h2>
+    <dl class="grid grid-cols-1 sm:grid-cols-2 gap-x-4 gap-y-4">
+  <div class="text-gray-600 font-medium">Registration Certificate:</div>
+  <div>
+    {% if profile.registration_certificate %}
+      <a href="{{ profile.registration_certificate.url }}" target="_blank" class="text-blue-600 underline text-sm">
+        View Registration Certificate
+      </a>
+    {% else %}
+      <span class="text-gray-500 italic">Not uploaded</span>
+    {% endif %}
+  </div>
+
+  <div class="text-gray-600 font-medium">Tax Clearance Certificate:</div>
+  <div>
+    {% if profile.tax_clearance_certificate %}
+      <a href="{{ profile.tax_clearance_certificate.url }}" target="_blank" class="text-blue-600 underline text-sm">
+        View Tax Clearance Certificate
+      </a>
+    {% else %}
+      <span class="text-gray-500 italic">Not uploaded</span>
+    {% endif %}
+  </div>
+</dl>
+
+  </section>
+
+</section>
+{% endblock %}
