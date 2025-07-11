@@ -81,7 +81,7 @@ class SMERegistrationWizard(SessionWizardView):
 
         sme_profile.save()
 
-        return redirect('home')  
+        return redirect('sme_profile_view')  
 
     def get_form_initial(self, step):
         """

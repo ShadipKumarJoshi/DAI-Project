@@ -246,7 +246,7 @@ class NavbarItemForm(forms.ModelForm):
                 return False
 
             # Exclude common dynamic/detail/edit/delete/view slugs
-            if re.search(r'(detail|edit|delete|update|view)$', name):
+            if re.search(r'(detail|edit|delete|update)$', name):
                 return False
 
             # Exclude routes that have path converters like <int:pk>, <slug:...>

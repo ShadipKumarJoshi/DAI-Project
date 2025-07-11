@@ -3,7 +3,6 @@ from . import views
 from core.views.sme_profile_form_wizard import SMERegistrationWizard
 
 
-
 urlpatterns = [
     path('', views.home, name='home'),
     path('login', views.login, name='login'),
@@ -20,10 +19,11 @@ urlpatterns = [
     path('register/type/', views.register_type, name='register_type'),
     path('register/sme/', views.sme_register, name='sme_register'),
     path('register/bdsp/', views.bdsp_register, name='bdsp_register'),
-    path('sme/profile/form', SMERegistrationWizard.as_view(), name='sme_profile_wizard'),
+    path('sme/profile/form', SMERegistrationWizard.as_view(),
+         name='sme_profile_wizard'),
     path('sme/profile/', views.sme_profile_view, name='sme_profile_view'),
 
-    
+
 
 
 
