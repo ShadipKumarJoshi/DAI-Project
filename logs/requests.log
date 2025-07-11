@@ -55784,3 +55784,268 @@ django.urls.exceptions.NoReverseMatch: Reverse for 'sme_profile_detail' not foun
 [2025-07-11 12:16:33,755] INFO "GET / HTTP/1.1" 200 31338
 [2025-07-11 12:16:33,839] INFO "GET /static/css/dist/styles.css?v=1752215493 HTTP/1.1" 200 36568
 [2025-07-11 12:16:33,877] INFO "GET /static/css/dist/styles.css?v=1752215493 HTTP/1.1" 200 36568
+[2025-07-11 12:16:38,163] INFO "GET /admin/core/navbaritem/15/change/ HTTP/1.1" 200 25590
+[2025-07-11 12:16:38,214] INFO "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+[2025-07-11 12:16:47,151] INFO "POST /admin/core/navbaritem/15/change/ HTTP/1.1" 302 0
+[2025-07-11 12:16:47,266] INFO "GET /admin/core/navbaritem/ HTTP/1.1" 200 29774
+[2025-07-11 12:16:47,315] INFO "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+[2025-07-11 12:16:51,391] INFO "GET /sme/profile/form HTTP/1.1" 200 17234
+[2025-07-11 12:16:51,410] INFO "GET /static/css/dist/styles.css?v=1752215511 HTTP/1.1" 200 36568
+[2025-07-11 12:16:53,574] INFO "GET /sme/profile/ HTTP/1.1" 200 14879
+[2025-07-11 12:16:53,601] INFO "GET /static/css/dist/styles.css?v=1752215513 HTTP/1.1" 200 36568
+[2025-07-11 12:16:53,609] INFO "GET /media/service_logos/pp_photo_optimized_1000.jpg HTTP/1.1" 304 0
+[2025-07-11 12:20:02,713] INFO "GET /sme/profile/ HTTP/1.1" 200 14879
+[2025-07-11 12:20:02,733] INFO "GET /static/css/dist/styles.css?v=1752215702 HTTP/1.1" 200 36568
+[2025-07-11 12:21:04,513] INFO "GET /sme/profile/ HTTP/1.1" 200 14908
+[2025-07-11 12:21:04,538] INFO "GET /admin/core/navbaritem/ HTTP/1.1" 200 29565
+[2025-07-11 12:21:04,548] INFO "GET /static/css/dist/styles.css?v=1752215764 HTTP/1.1" 200 36568
+[2025-07-11 12:21:04,947] INFO "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+[2025-07-11 12:21:11,053] INFO "GET /sme/profile/ HTTP/1.1" 200 14899
+[2025-07-11 12:21:11,081] INFO "GET /admin/core/navbaritem/ HTTP/1.1" 200 29565
+[2025-07-11 12:21:11,083] INFO "GET /static/css/dist/styles.css?v=1752215771 HTTP/1.1" 200 36568
+[2025-07-11 12:21:11,153] INFO "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+[2025-07-11 12:21:13,337] INFO "GET /sme/profile/ HTTP/1.1" 200 14907
+[2025-07-11 12:21:13,363] INFO "GET /admin/core/navbaritem/ HTTP/1.1" 200 29565
+[2025-07-11 12:21:13,370] INFO "GET /static/css/dist/styles.css?v=1752215773 HTTP/1.1" 200 36568
+[2025-07-11 12:21:13,440] INFO "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+[2025-07-11 12:21:16,944] INFO "GET /sme/profile/ HTTP/1.1" 200 14907
+[2025-07-11 12:21:16,962] INFO "GET /static/css/dist/styles.css?v=1752215776 HTTP/1.1" 200 36568
+[2025-07-11 12:22:13,308] INFO "GET /sme/profile/ HTTP/1.1" 200 14907
+[2025-07-11 12:22:13,323] INFO "GET /static/css/dist/styles.css?v=1752215833 HTTP/1.1" 200 36568
+[2025-07-11 12:22:19,986] INFO "GET /admin/core/navbaritem/ HTTP/1.1" 200 29565
+[2025-07-11 12:22:19,988] INFO "GET /sme/profile/ HTTP/1.1" 200 14879
+[2025-07-11 12:22:20,045] INFO "GET /static/css/dist/styles.css?v=1752215839 HTTP/1.1" 200 36568
+[2025-07-11 12:22:20,378] INFO "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+[2025-07-11 12:23:16,156] INFO "GET /sme/profile/ HTTP/1.1" 200 14881
+[2025-07-11 12:23:16,180] INFO "GET /admin/core/navbaritem/ HTTP/1.1" 200 29565
+[2025-07-11 12:23:16,200] INFO "GET /static/css/dist/styles.css?v=1752215896 HTTP/1.1" 200 36568
+[2025-07-11 12:23:16,645] INFO "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+[2025-07-11 12:23:18,070] INFO "GET /sme/profile/ HTTP/1.1" 200 14881
+[2025-07-11 12:23:18,090] INFO "GET /static/css/dist/styles.css?v=1752215898 HTTP/1.1" 200 36568
+[2025-07-11 12:23:26,515] INFO "GET /sme/profile/ HTTP/1.1" 200 14881
+[2025-07-11 12:23:26,530] INFO "GET /static/css/dist/styles.css?v=1752215906 HTTP/1.1" 200 36568
+[2025-07-11 12:23:51,342] INFO "GET /sme/profile/ HTTP/1.1" 200 14872
+[2025-07-11 12:23:51,349] INFO "GET /admin/core/navbaritem/ HTTP/1.1" 200 29565
+[2025-07-11 12:23:51,368] INFO "GET /static/css/dist/styles.css?v=1752215931 HTTP/1.1" 200 36568
+[2025-07-11 12:23:51,668] INFO "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+[2025-07-11 12:23:55,064] INFO "GET /sme/profile/ HTTP/1.1" 200 14872
+[2025-07-11 12:23:55,084] INFO "GET /static/css/dist/styles.css?v=1752215935 HTTP/1.1" 200 36568
+[2025-07-11 12:24:13,351] INFO "GET / HTTP/1.1" 200 31334
+[2025-07-11 12:24:13,396] INFO "GET /static/css/dist/styles.css?v=1752215953 HTTP/1.1" 200 36568
+[2025-07-11 12:24:16,853] INFO "GET /sme/profile/ HTTP/1.1" 200 14872
+[2025-07-11 12:24:16,873] INFO "GET /static/css/dist/styles.css?v=1752215956 HTTP/1.1" 200 36568
+[2025-07-11 12:24:43,644] INFO "GET /sme/profile/ HTTP/1.1" 200 14995
+[2025-07-11 12:24:43,673] INFO "GET /admin/core/navbaritem/ HTTP/1.1" 200 29565
+[2025-07-11 12:24:43,689] INFO "GET /static/css/dist/styles.css?v=1752215983 HTTP/1.1" 200 36568
+[2025-07-11 12:24:43,795] INFO "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+[2025-07-11 12:24:46,562] INFO "GET /sme/profile/ HTTP/1.1" 200 14995
+[2025-07-11 12:24:46,579] INFO "GET /static/css/dist/styles.css?v=1752215986 HTTP/1.1" 200 36568
+[2025-07-11 12:25:09,592] INFO "GET /sme/profile/ HTTP/1.1" 200 15000
+[2025-07-11 12:25:09,628] INFO "GET /static/css/dist/styles.css?v=1752216009 HTTP/1.1" 200 36568
+[2025-07-11 12:25:09,628] INFO "GET /admin/core/navbaritem/ HTTP/1.1" 200 29565
+[2025-07-11 12:25:09,692] INFO "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+[2025-07-11 12:25:10,600] INFO "GET /sme/profile/ HTTP/1.1" 200 15001
+[2025-07-11 12:25:10,613] INFO "GET /static/css/dist/styles.css?v=1752216010 HTTP/1.1" 200 36568
+[2025-07-11 12:25:10,699] INFO "GET /admin/core/navbaritem/ HTTP/1.1" 200 29565
+[2025-07-11 12:25:10,769] INFO "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+[2025-07-11 12:25:15,117] INFO "GET /sme/profile/ HTTP/1.1" 200 14872
+[2025-07-11 12:25:15,157] INFO "GET /static/css/dist/styles.css?v=1752216015 HTTP/1.1" 200 36568
+[2025-07-11 12:25:15,157] INFO "GET /admin/core/navbaritem/ HTTP/1.1" 200 29565
+[2025-07-11 12:25:15,209] INFO "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+[2025-07-11 12:25:18,364] INFO "GET /sme/profile/ HTTP/1.1" 200 14881
+[2025-07-11 12:25:18,389] INFO "GET /admin/core/navbaritem/ HTTP/1.1" 200 29565
+[2025-07-11 12:25:18,416] INFO "GET /static/css/dist/styles.css?v=1752216018 HTTP/1.1" 200 36568
+[2025-07-11 12:25:18,456] INFO "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+[2025-07-11 12:25:22,739] INFO "GET /sme/profile/ HTTP/1.1" 200 14817
+[2025-07-11 12:25:22,740] INFO "GET /admin/core/navbaritem/ HTTP/1.1" 200 29565
+[2025-07-11 12:25:22,777] INFO "GET /static/css/dist/styles.css?v=1752216022 HTTP/1.1" 200 36568
+[2025-07-11 12:25:22,816] INFO "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+[2025-07-11 12:25:41,100] INFO "GET /sme/profile/ HTTP/1.1" 200 14940
+[2025-07-11 12:25:41,143] INFO "GET /static/css/dist/styles.css?v=1752216041 HTTP/1.1" 200 36568
+[2025-07-11 12:25:41,146] INFO "GET /admin/core/navbaritem/ HTTP/1.1" 200 29565
+[2025-07-11 12:25:41,218] INFO "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+[2025-07-11 12:25:42,854] INFO "GET /sme/profile/ HTTP/1.1" 200 14940
+[2025-07-11 12:25:42,871] INFO "GET /static/css/dist/styles.css?v=1752216042 HTTP/1.1" 200 36568
+[2025-07-11 12:25:57,262] INFO "GET /sme/profile/ HTTP/1.1" 200 14917
+[2025-07-11 12:25:57,284] INFO "GET /admin/core/navbaritem/ HTTP/1.1" 200 29565
+[2025-07-11 12:25:57,306] INFO "GET /static/css/dist/styles.css?v=1752216057 HTTP/1.1" 200 36568
+[2025-07-11 12:25:57,309] INFO "GET /media/service_logos/pp_photo_optimized_1000.jpg HTTP/1.1" 304 0
+[2025-07-11 12:25:57,365] INFO "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+[2025-07-11 12:25:59,417] INFO "GET /sme/profile/ HTTP/1.1" 200 14916
+[2025-07-11 12:25:59,448] INFO "GET /static/css/dist/styles.css?v=1752216059 HTTP/1.1" 200 36568
+[2025-07-11 12:25:59,451] INFO "GET /admin/core/navbaritem/ HTTP/1.1" 200 29565
+[2025-07-11 12:25:59,510] INFO "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+[2025-07-11 12:26:13,576] INFO "GET /sme/profile/ HTTP/1.1" 200 14817
+[2025-07-11 12:26:13,620] INFO "GET /static/css/dist/styles.css?v=1752216073 HTTP/1.1" 200 36568
+[2025-07-11 12:26:13,621] INFO "GET /admin/core/navbaritem/ HTTP/1.1" 200 29565
+[2025-07-11 12:26:13,690] INFO "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+[2025-07-11 12:26:32,004] INFO "GET /sme/profile/ HTTP/1.1" 200 14957
+[2025-07-11 12:26:32,036] INFO "GET /admin/core/navbaritem/ HTTP/1.1" 200 29565
+[2025-07-11 12:26:32,037] INFO "GET /static/css/dist/styles.css?v=1752216091 HTTP/1.1" 200 36568
+[2025-07-11 12:26:32,107] INFO "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+[2025-07-11 12:26:34,531] INFO "GET /sme/profile/ HTTP/1.1" 200 14957
+[2025-07-11 12:26:34,553] INFO "GET /static/css/dist/styles.css?v=1752216094 HTTP/1.1" 200 36568
+[2025-07-11 12:26:57,030] INFO "GET /sme/profile/ HTTP/1.1" 200 14944
+[2025-07-11 12:26:57,059] INFO "GET /admin/core/navbaritem/ HTTP/1.1" 200 29565
+[2025-07-11 12:26:57,065] INFO "GET /static/css/dist/styles.css?v=1752216116 HTTP/1.1" 200 36568
+[2025-07-11 12:26:57,125] INFO "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+[2025-07-11 12:27:01,941] INFO "GET /sme/profile/ HTTP/1.1" 200 14944
+[2025-07-11 12:27:01,958] INFO "GET /static/css/dist/styles.css?v=1752216121 HTTP/1.1" 200 36568
+[2025-07-11 12:27:29,805] INFO "GET /sme/profile/ HTTP/1.1" 200 14945
+[2025-07-11 12:27:29,837] INFO "GET /admin/core/navbaritem/ HTTP/1.1" 200 29565
+[2025-07-11 12:27:29,837] INFO "GET /static/css/dist/styles.css?v=1752216149 HTTP/1.1" 200 36568
+[2025-07-11 12:27:30,095] INFO "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+[2025-07-11 12:27:30,989] INFO "GET /sme/profile/ HTTP/1.1" 200 14945
+[2025-07-11 12:27:31,003] INFO "GET /static/css/dist/styles.css?v=1752216150 HTTP/1.1" 200 36568
+[2025-07-11 12:27:31,683] INFO "GET /sme/profile/ HTTP/1.1" 200 14945
+[2025-07-11 12:27:31,700] INFO "GET /static/css/dist/styles.css?v=1752216151 HTTP/1.1" 200 36568
+[2025-07-11 12:27:32,080] INFO "GET /sme/profile/ HTTP/1.1" 200 14945
+[2025-07-11 12:27:32,099] INFO "GET /static/css/dist/styles.css?v=1752216152 HTTP/1.1" 200 36568
+[2025-07-11 12:27:32,427] INFO "GET /sme/profile/ HTTP/1.1" 200 14945
+[2025-07-11 12:27:37,507] INFO "GET /sme/profile/ HTTP/1.1" 200 14945
+[2025-07-11 12:27:37,547] INFO "GET /static/css/dist/styles.css?v=1752216157 HTTP/1.1" 200 36568
+[2025-07-11 12:27:37,549] INFO "GET /admin/core/navbaritem/ HTTP/1.1" 200 29565
+[2025-07-11 12:27:37,626] INFO "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+[2025-07-11 12:27:39,333] INFO "GET /sme/profile/ HTTP/1.1" 200 14945
+[2025-07-11 12:27:39,351] INFO "GET /static/css/dist/styles.css?v=1752216159 HTTP/1.1" 200 36568
+[2025-07-11 12:27:39,677] INFO "GET /sme/profile/ HTTP/1.1" 200 14945
+[2025-07-11 12:27:39,703] INFO "GET /admin/core/navbaritem/ HTTP/1.1" 200 29565
+[2025-07-11 12:27:39,745] INFO "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+[2025-07-11 12:27:45,064] INFO "GET /sme/profile/ HTTP/1.1" 200 14957
+[2025-07-11 12:27:45,093] INFO "GET /admin/core/navbaritem/ HTTP/1.1" 200 29565
+[2025-07-11 12:27:45,100] INFO "GET /static/css/dist/styles.css?v=1752216165 HTTP/1.1" 200 36568
+[2025-07-11 12:27:45,163] INFO "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+[2025-07-11 12:27:47,241] INFO "GET /sme/profile/ HTTP/1.1" 200 14944
+[2025-07-11 12:27:47,276] INFO "GET /static/css/dist/styles.css?v=1752216167 HTTP/1.1" 200 36568
+[2025-07-11 12:27:47,278] INFO "GET /admin/core/navbaritem/ HTTP/1.1" 200 29565
+[2025-07-11 12:27:47,334] INFO "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+[2025-07-11 12:27:48,099] INFO "GET /sme/profile/ HTTP/1.1" 200 14944
+[2025-07-11 12:27:48,116] INFO "GET /static/css/dist/styles.css?v=1752216168 HTTP/1.1" 200 36568
+[2025-07-11 12:27:59,227] INFO - Broken pipe from ('127.0.0.1', 63834)
+[2025-07-11 12:27:59,254] INFO "GET /admin/core/navbaritem/ HTTP/1.1" 200 29565
+[2025-07-11 12:27:59,325] INFO "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+[2025-07-11 12:27:59,715] INFO "GET /sme/profile/ HTTP/1.1" 200 14944
+[2025-07-11 12:27:59,733] INFO "GET /static/css/dist/styles.css?v=1752216179 HTTP/1.1" 200 36568
+[2025-07-11 12:28:02,531] INFO "GET /sme/profile/ HTTP/1.1" 200 14944
+[2025-07-11 12:28:02,567] INFO "GET /static/css/dist/styles.css?v=1752216182 HTTP/1.1" 200 36568
+[2025-07-11 12:28:02,567] INFO "GET /admin/core/navbaritem/ HTTP/1.1" 200 29565
+[2025-07-11 12:28:02,634] INFO "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+[2025-07-11 12:28:11,156] INFO "GET /sme/profile/ HTTP/1.1" 200 14944
+[2025-07-11 12:28:11,179] INFO "GET /admin/core/navbaritem/ HTTP/1.1" 200 29565
+[2025-07-11 12:28:11,186] INFO "GET /static/css/dist/styles.css?v=1752216191 HTTP/1.1" 200 36568
+[2025-07-11 12:28:11,247] INFO "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+[2025-07-11 12:28:12,227] INFO "GET /sme/profile/ HTTP/1.1" 200 14945
+[2025-07-11 12:28:12,257] INFO "GET /admin/core/navbaritem/ HTTP/1.1" 200 29565
+[2025-07-11 12:28:12,258] INFO "GET /static/css/dist/styles.css?v=1752216192 HTTP/1.1" 200 36568
+[2025-07-11 12:28:12,317] INFO "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+[2025-07-11 12:28:13,244] INFO "GET /sme/profile/ HTTP/1.1" 200 14945
+[2025-07-11 12:28:13,264] INFO "GET /static/css/dist/styles.css?v=1752216193 HTTP/1.1" 200 36568
+[2025-07-11 12:28:16,644] INFO "GET /sme/profile/ HTTP/1.1" 200 14944
+[2025-07-11 12:28:16,677] INFO "GET /admin/core/navbaritem/ HTTP/1.1" 200 29565
+[2025-07-11 12:28:16,682] INFO "GET /static/css/dist/styles.css?v=1752216196 HTTP/1.1" 200 36568
+[2025-07-11 12:28:16,743] INFO "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+[2025-07-11 12:28:18,900] INFO "GET /sme/profile/ HTTP/1.1" 200 14945
+[2025-07-11 12:28:18,925] INFO "GET /admin/core/navbaritem/ HTTP/1.1" 200 29565
+[2025-07-11 12:28:18,931] INFO "GET /static/css/dist/styles.css?v=1752216198 HTTP/1.1" 200 36568
+[2025-07-11 12:28:18,985] INFO "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+[2025-07-11 12:28:20,101] INFO "GET /sme/profile/ HTTP/1.1" 200 14944
+[2025-07-11 12:28:20,128] INFO "GET /admin/core/navbaritem/ HTTP/1.1" 200 29565
+[2025-07-11 12:28:20,135] INFO "GET /static/css/dist/styles.css?v=1752216200 HTTP/1.1" 200 36568
+[2025-07-11 12:28:20,196] INFO "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+[2025-07-11 12:28:33,072] INFO "GET /sme/profile/ HTTP/1.1" 200 14944
+[2025-07-11 12:28:33,105] INFO "GET /admin/core/navbaritem/ HTTP/1.1" 200 29565
+[2025-07-11 12:28:33,106] INFO "GET /static/css/dist/styles.css?v=1752216213 HTTP/1.1" 200 36568
+[2025-07-11 12:28:33,166] INFO "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+[2025-07-11 12:28:33,877] INFO "GET /sme/profile/ HTTP/1.1" 200 14944
+[2025-07-11 12:28:37,485] INFO "GET /sme/profile/ HTTP/1.1" 200 14944
+[2025-07-11 12:28:37,507] INFO "GET /admin/core/navbaritem/ HTTP/1.1" 200 29565
+[2025-07-11 12:28:37,522] INFO "GET /static/css/dist/styles.css?v=1752216217 HTTP/1.1" 200 36568
+[2025-07-11 12:28:37,577] INFO "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+[2025-07-11 12:29:18,985] INFO "GET /sme/profile/ HTTP/1.1" 200 14944
+[2025-07-11 12:29:19,000] INFO "GET /static/css/dist/styles.css?v=1752216258 HTTP/1.1" 200 36568
+[2025-07-11 12:30:12,219] WARNING Not Found: /.well-known/appspecific/com.chrome.devtools.json
+[2025-07-11 12:30:12,219] WARNING "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 8948
+[2025-07-11 12:35:55,225] INFO "GET /sme/profile/ HTTP/1.1" 200 14944
+[2025-07-11 12:35:55,247] INFO "GET /static/css/dist/styles.css?v=1752216655 HTTP/1.1" 200 36568
+[2025-07-11 12:35:55,253] INFO "GET /media/service_logos/pp_photo_optimized_1000.jpg HTTP/1.1" 304 0
+[2025-07-11 12:36:01,091] INFO "GET /sme/profile/ HTTP/1.1" 200 14881
+[2025-07-11 12:36:01,200] INFO "GET /admin/core/navbaritem/ HTTP/1.1" 200 29565
+[2025-07-11 12:36:01,200] INFO "GET /static/css/dist/styles.css?v=1752216660 HTTP/1.1" 200 36568
+[2025-07-11 12:36:01,542] INFO "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+[2025-07-11 12:36:02,405] INFO "GET /sme/profile/ HTTP/1.1" 200 5190
+[2025-07-11 12:36:02,439] INFO "GET /admin/core/navbaritem/ HTTP/1.1" 200 29565
+[2025-07-11 12:36:02,515] INFO "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+[2025-07-11 12:36:21,706] INFO "GET /admin/core/navbaritem/ HTTP/1.1" 200 29565
+[2025-07-11 12:36:21,732] ERROR Internal Server Error: /sme/profile/
+Traceback (most recent call last):
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\backends\django.py", line 107, in render
+    return self.template.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+           ~~~~~~~~~~~~^^^^^^^^^
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ~~~~~~~~~~~^^^^^^^^^
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\loader_tags.py", line 134, in render
+    compiled_parent = self.get_parent(context)
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\loader_tags.py", line 131, in get_parent
+    return self.find_template(parent, context)
+           ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\loader_tags.py", line 109, in find_template
+    template, origin = context.template.engine.find_template(
+                       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        template_name,
+        ^^^^^^^^^^^^^^
+        skip=history,
+        ^^^^^^^^^^^^^
+    )
+    ^
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\engine.py", line 163, in find_template
+    raise TemplateDoesNotExist(name, tried=tried)
+django.template.exceptions.TemplateDoesNotExist: corebase.html
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\contrib\auth\decorators.py", line 59, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "D:\Young Minds\DAI Project\core\views\sme_profile_views.py", line 13, in sme_profile_view
+    return render(request, 'core/accounts/sme_profile_view.html', {
+        'profile': profile,
+    })
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\backends\django.py", line 109, in render
+    reraise(exc, self.backend)
+    ~~~~~~~^^^^^^^^^^^^^^^^^^^
+  File "D:\Young Minds\DAI Project\venv\Lib\site-packages\django\template\backends\django.py", line 130, in reraise
+    raise new from exc
+django.template.exceptions.TemplateDoesNotExist: corebase.html
+[2025-07-11 12:36:21,740] ERROR "GET /sme/profile/ HTTP/1.1" 500 145391
+[2025-07-11 12:36:21,793] INFO "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+[2025-07-11 12:36:22,771] INFO "GET /sme/profile/ HTTP/1.1" 200 14942
+[2025-07-11 12:36:22,800] INFO "GET /static/css/dist/styles.css?v=1752216682 HTTP/1.1" 200 36568
+[2025-07-11 12:36:22,804] INFO "GET /admin/core/navbaritem/ HTTP/1.1" 200 29565
+[2025-07-11 12:36:22,863] INFO "GET /admin/jsi18n/ HTTP/1.1" 200 3342
+[2025-07-11 12:36:25,603] INFO "GET /sme/profile/ HTTP/1.1" 200 14942
+[2025-07-11 12:36:25,620] INFO "GET /static/css/dist/styles.css?v=1752216685 HTTP/1.1" 200 36568
+[2025-07-11 12:36:33,066] INFO "GET /sme/profile/form HTTP/1.1" 200 17234
+[2025-07-11 12:36:33,091] INFO "GET /static/css/dist/styles.css?v=1752216692 HTTP/1.1" 200 36568
+[2025-07-11 12:36:35,393] INFO "POST /sme/profile/form HTTP/1.1" 200 16358
+[2025-07-11 12:36:35,414] INFO "GET /static/css/dist/styles.css?v=1752216695 HTTP/1.1" 200 36568
+[2025-07-11 12:36:42,308] INFO "GET /sme/profile/ HTTP/1.1" 200 14942
+[2025-07-11 12:36:42,329] INFO "GET /static/css/dist/styles.css?v=1752216702 HTTP/1.1" 200 36568
