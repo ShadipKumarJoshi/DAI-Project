@@ -62561,3 +62561,10 @@ django.urls.exceptions.NoReverseMatch: Reverse for 'bdsp_profile_f' not found. '
 [2025-07-14 11:54:53,132] INFO Watching for file changes with StatReloader
 [2025-07-14 11:54:53,480] WARNING Not Found: /bdsp/profile/edit/
 [2025-07-14 11:54:53,480] WARNING "GET /bdsp/profile/edit/ HTTP/1.1" 404 9407
+[2025-07-14 11:55:00,791] WARNING Not Found: /bdsp/profile/edit/
+[2025-07-14 11:55:00,791] WARNING "GET /bdsp/profile/edit/ HTTP/1.1" 404 9407
+[2025-07-14 11:55:09,686] INFO "GET /bdsp/profile/ HTTP/1.1" 200 15148
+[2025-07-14 11:55:09,723] INFO "GET /media/bdsp_service_logos/img_2700.jpg HTTP/1.1" 304 0
+[2025-07-14 11:55:09,753] INFO "GET /static/css/dist/styles.css?v=1752473409 HTTP/1.1" 200 44223
+[2025-07-14 11:55:10,754] INFO "GET /bdsp/profile/form/ HTTP/1.1" 200 21794
+[2025-07-14 11:55:10,797] INFO "GET /static/css/dist/styles.css?v=1752473410 HTTP/1.1" 200 44223
