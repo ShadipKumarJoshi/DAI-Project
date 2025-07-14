@@ -64159,3 +64159,10 @@ django.template.exceptions.TemplateSyntaxError: Invalid block tag on line 40: 'e
 [2025-07-14 14:39:09,316] INFO "GET / HTTP/1.1" 200 35563
 [2025-07-14 14:39:09,397] INFO "GET /static/css/dist/styles.css?v=1752483249 HTTP/1.1" 200 44223
 [2025-07-14 14:39:09,405] INFO "GET /static/css/dist/styles.css?v=1752483249 HTTP/1.1" 200 44223
+[2025-07-14 14:39:15,475] INFO "GET /sme/profile/ HTTP/1.1" 200 15322
+[2025-07-14 14:39:15,494] INFO "GET /static/css/dist/styles.css?v=1752483255 HTTP/1.1" 200 44223
+[2025-07-14 14:39:15,852] INFO "GET /bdsp/profile/ HTTP/1.1" 302 0
+[2025-07-14 14:39:15,888] INFO "GET / HTTP/1.1" 200 35563
+[2025-07-14 14:39:16,633] INFO "GET /bdsp/profile/ HTTP/1.1" 302 0
+[2025-07-14 14:39:16,731] INFO "GET / HTTP/1.1" 200 35563
+[2025-07-14 14:39:16,763] INFO "GET /static/css/dist/styles.css?v=1752483256 HTTP/1.1" 200 44223
