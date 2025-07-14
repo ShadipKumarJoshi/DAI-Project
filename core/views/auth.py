@@ -67,7 +67,7 @@ def sme_register(request):
                 if authenticated_user is not None:
                     auth_login(request, authenticated_user)
                     messages.success(
-                        request, 'Registration is successful. Welcome!')
+                        request, 'Welcome! Your registration is successful. Please complete your profile!')
                     return redirect('sme_profile_wizard')
                 else:
                     messages.error(
@@ -96,8 +96,8 @@ def bdsp_register(request):
                 if authenticated_user is not None:
                     auth_login(request, authenticated_user)
                     messages.success(
-                        request, 'Registration is successful. Please login to access your account!')
-                    return redirect('home')
+                        request, 'Welcome! Your registration is successful. Please complete your profile!')
+                    return redirect('bdsp_profile_form')
                 else:
                     messages.error(
                         request, 'Authentication failed after registration.')
