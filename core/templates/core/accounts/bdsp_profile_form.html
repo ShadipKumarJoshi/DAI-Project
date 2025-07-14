@@ -87,11 +87,16 @@
       </div>
 
       <!-- Navigation Buttons -->
-      <div class="flex justify-between mt-8">
-        <button type="button" id="prev-btn" class="text-gray-600 underline" disabled>← Back</button>
-        <button type="button" id="next-btn" class="bg-blue-600 hover:bg-blue-700 text-white font-semibold px-6 py-3 rounded-md text-sm">Next →</button>
-        <button type="submit" id="submit-btn" class="bg-green-600 hover:bg-green-700 text-white font-semibold px-6 py-3 rounded-md text-sm hidden">Submit</button>
-      </div>
+      <div class="flex justify-between items-center mt-8">
+  <div class="w-24">
+    <button type="button" id="prev-btn" class="text-gray-600 underline hidden">← Back</button>
+  </div>
+  <div>
+    <button type="button" id="next-btn" class="bg-blue-600 hover:bg-blue-700 text-white font-semibold px-6 py-3 rounded-md text-sm">Next →</button>
+    <button type="submit" id="submit-btn" class="bg-green-600 hover:bg-green-700 text-white font-semibold px-6 py-3 rounded-md text-sm hidden">Submit</button>
+  </div>
+</div>
+
     </form>
   </div>
 </section>
@@ -156,17 +161,46 @@ document.addEventListener('DOMContentLoaded', function () {
     steps.forEach((step, i) => step.classList.toggle('hidden', i !== index));
     updateProgressIndicator(index);
 
-    prevBtn.disabled = index === 0;
+    prevBtn.classList.toggle('hidden', index === 0);
+
     nextBtn.classList.toggle('hidden', index === steps.length - 1);
     submitBtn.classList.toggle('hidden', index !== steps.length - 1);
   }
 
-  nextBtn.addEventListener('click', () => {
-    if (currentStep < steps.length - 1) {
-      currentStep++;
-      showStep(currentStep);
+ nextBtn.addEventListener('click', () => {
+  const currentFields = steps[currentStep].querySelectorAll('input, select, textarea');
+  let isValid = true;
+
+  currentFields.forEach(field => {
+    if (field.required && !field.value.trim()) {
+      isValid = false;
+      field.classList.add('border-red-500', 'ring-2', 'ring-red-300');
+
+      // Add an inline error message if not already present
+      if (!field.nextElementSibling || !field.nextElementSibling.classList.contains('js-error-message')) {
+        const error = document.createElement('p');
+        error.textContent = 'This field is required.';
+        error.classList.add('text-red-500', 'text-sm', 'mt-1', 'js-error-message');
+        field.parentNode.appendChild(error);
+      }
+    } else {
+      field.classList.remove('border-red-500', 'ring-2', 'ring-red-300');
+
+      // Remove error message if field is valid
+      if (field.nextElementSibling && field.nextElementSibling.classList.contains('js-error-message')) {
+        field.nextElementSibling.remove();
+      }
     }
   });
+
+  if (!isValid) return;
+
+  if (currentStep < steps.length - 1) {
+    currentStep++;
+    showStep(currentStep);
+  }
+});
+
 
   prevBtn.addEventListener('click', () => {
     if (currentStep > 0) {
