@@ -1,0 +1,2885 @@
+[
+    {
+        "model": "admin.logentry",
+        "pk": 81,
+        "fields": {
+            "action_time": "2025-07-10T05:17:58.833Z",
+            "user": 1,
+            "content_type": 17,
+            "object_id": "2",
+            "object_repr": " (sme)",
+            "action_flag": 3,
+            "change_message": ""
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 82,
+        "fields": {
+            "action_time": "2025-07-10T05:43:15.931Z",
+            "user": 1,
+            "content_type": 17,
+            "object_id": "3",
+            "object_repr": "1@gmail.com (sme)",
+            "action_flag": 3,
+            "change_message": ""
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 83,
+        "fields": {
+            "action_time": "2025-07-10T05:43:15.932Z",
+            "user": 1,
+            "content_type": 17,
+            "object_id": "2",
+            "object_repr": "a@gmail.com (sme)",
+            "action_flag": 3,
+            "change_message": ""
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 84,
+        "fields": {
+            "action_time": "2025-07-10T05:43:15.932Z",
+            "user": 1,
+            "content_type": 17,
+            "object_id": "4",
+            "object_repr": "ad@gmail.com (sme)",
+            "action_flag": 3,
+            "change_message": ""
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 85,
+        "fields": {
+            "action_time": "2025-07-11T03:44:42.981Z",
+            "user": 1,
+            "content_type": 23,
+            "object_id": "2",
+            "object_repr": "111",
+            "action_flag": 3,
+            "change_message": ""
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 86,
+        "fields": {
+            "action_time": "2025-07-11T03:44:42.981Z",
+            "user": 1,
+            "content_type": 23,
+            "object_id": "1",
+            "object_repr": "111",
+            "action_flag": 3,
+            "change_message": ""
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 87,
+        "fields": {
+            "action_time": "2025-07-11T06:09:32.529Z",
+            "user": 1,
+            "content_type": 18,
+            "object_id": "13",
+            "object_repr": "Settings",
+            "action_flag": 1,
+            "change_message": "[{\"added\": {}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 88,
+        "fields": {
+            "action_time": "2025-07-11T06:12:13.220Z",
+            "user": 1,
+            "content_type": 18,
+            "object_id": "13",
+            "object_repr": "Settings",
+            "action_flag": 2,
+            "change_message": "[{\"changed\": {\"fields\": [\"Button style\"]}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 89,
+        "fields": {
+            "action_time": "2025-07-11T06:13:06.664Z",
+            "user": 1,
+            "content_type": 18,
+            "object_id": "10",
+            "object_repr": "Logout",
+            "action_flag": 2,
+            "change_message": "[{\"changed\": {\"fields\": [\"Parent\"]}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 90,
+        "fields": {
+            "action_time": "2025-07-11T06:13:13.271Z",
+            "user": 1,
+            "content_type": 18,
+            "object_id": "10",
+            "object_repr": "Logout",
+            "action_flag": 2,
+            "change_message": "[]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 91,
+        "fields": {
+            "action_time": "2025-07-11T06:13:48.732Z",
+            "user": 1,
+            "content_type": 18,
+            "object_id": "10",
+            "object_repr": "Logout",
+            "action_flag": 2,
+            "change_message": "[]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 92,
+        "fields": {
+            "action_time": "2025-07-11T06:14:46.158Z",
+            "user": 1,
+            "content_type": 18,
+            "object_id": "10",
+            "object_repr": "Logout",
+            "action_flag": 3,
+            "change_message": ""
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 93,
+        "fields": {
+            "action_time": "2025-07-11T06:15:22.284Z",
+            "user": 1,
+            "content_type": 18,
+            "object_id": "14",
+            "object_repr": "Logout",
+            "action_flag": 1,
+            "change_message": "[{\"added\": {}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 94,
+        "fields": {
+            "action_time": "2025-07-11T06:16:45.419Z",
+            "user": 1,
+            "content_type": 18,
+            "object_id": "14",
+            "object_repr": "Logout",
+            "action_flag": 2,
+            "change_message": "[{\"changed\": {\"fields\": [\"Is button\"]}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 95,
+        "fields": {
+            "action_time": "2025-07-11T06:19:42.274Z",
+            "user": 1,
+            "content_type": 18,
+            "object_id": "13",
+            "object_repr": "Settings",
+            "action_flag": 2,
+            "change_message": "[{\"changed\": {\"fields\": [\"Is button\"]}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 96,
+        "fields": {
+            "action_time": "2025-07-11T06:19:49.075Z",
+            "user": 1,
+            "content_type": 18,
+            "object_id": "14",
+            "object_repr": "Logout",
+            "action_flag": 2,
+            "change_message": "[]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 97,
+        "fields": {
+            "action_time": "2025-07-11T06:20:30.447Z",
+            "user": 1,
+            "content_type": 18,
+            "object_id": "15",
+            "object_repr": "Profile",
+            "action_flag": 1,
+            "change_message": "[{\"added\": {}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 98,
+        "fields": {
+            "action_time": "2025-07-11T06:23:41.453Z",
+            "user": 1,
+            "content_type": 18,
+            "object_id": "15",
+            "object_repr": "Profile",
+            "action_flag": 2,
+            "change_message": "[{\"changed\": {\"fields\": [\"module_name\"]}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 99,
+        "fields": {
+            "action_time": "2025-07-11T06:24:32.157Z",
+            "user": 1,
+            "content_type": 18,
+            "object_id": "15",
+            "object_repr": "Profile",
+            "action_flag": 2,
+            "change_message": "[{\"changed\": {\"fields\": [\"module_name\"]}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 100,
+        "fields": {
+            "action_time": "2025-07-11T06:24:55.422Z",
+            "user": 1,
+            "content_type": 18,
+            "object_id": "15",
+            "object_repr": "Profile",
+            "action_flag": 2,
+            "change_message": "[{\"changed\": {\"fields\": [\"module_name\"]}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 101,
+        "fields": {
+            "action_time": "2025-07-11T06:31:47.143Z",
+            "user": 1,
+            "content_type": 18,
+            "object_id": "15",
+            "object_repr": "Profile",
+            "action_flag": 2,
+            "change_message": "[{\"changed\": {\"fields\": [\"module_name\"]}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 102,
+        "fields": {
+            "action_time": "2025-07-11T10:19:34.482Z",
+            "user": 1,
+            "content_type": 18,
+            "object_id": "3",
+            "object_repr": "Register",
+            "action_flag": 2,
+            "change_message": "[{\"changed\": {\"fields\": [\"Position\"]}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 103,
+        "fields": {
+            "action_time": "2025-07-11T10:19:42.763Z",
+            "user": 1,
+            "content_type": 18,
+            "object_id": "2",
+            "object_repr": "Login",
+            "action_flag": 2,
+            "change_message": "[{\"changed\": {\"fields\": [\"Position\"]}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 104,
+        "fields": {
+            "action_time": "2025-07-11T10:20:02.372Z",
+            "user": 1,
+            "content_type": 18,
+            "object_id": "2",
+            "object_repr": "Login",
+            "action_flag": 2,
+            "change_message": "[{\"changed\": {\"fields\": [\"Button style\"]}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 105,
+        "fields": {
+            "action_time": "2025-07-11T10:21:20.284Z",
+            "user": 1,
+            "content_type": 18,
+            "object_id": "13",
+            "object_repr": "Settings",
+            "action_flag": 2,
+            "change_message": "[{\"changed\": {\"fields\": [\"Position\"]}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 106,
+        "fields": {
+            "action_time": "2025-07-11T10:23:09.717Z",
+            "user": 1,
+            "content_type": 18,
+            "object_id": "16",
+            "object_repr": "test",
+            "action_flag": 1,
+            "change_message": "[{\"added\": {}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 107,
+        "fields": {
+            "action_time": "2025-07-11T10:23:35.017Z",
+            "user": 1,
+            "content_type": 18,
+            "object_id": "16",
+            "object_repr": "test",
+            "action_flag": 2,
+            "change_message": "[{\"changed\": {\"fields\": [\"Button style\"]}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 108,
+        "fields": {
+            "action_time": "2025-07-11T10:23:57.609Z",
+            "user": 1,
+            "content_type": 18,
+            "object_id": "16",
+            "object_repr": "test",
+            "action_flag": 2,
+            "change_message": "[{\"changed\": {\"fields\": [\"Position\"]}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 109,
+        "fields": {
+            "action_time": "2025-07-11T10:24:25.886Z",
+            "user": 1,
+            "content_type": 18,
+            "object_id": "16",
+            "object_repr": "test",
+            "action_flag": 3,
+            "change_message": ""
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 110,
+        "fields": {
+            "action_time": "2025-07-11T10:24:37.650Z",
+            "user": 1,
+            "content_type": 18,
+            "object_id": "17",
+            "object_repr": "test",
+            "action_flag": 1,
+            "change_message": "[{\"added\": {}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 111,
+        "fields": {
+            "action_time": "2025-07-11T10:24:51.162Z",
+            "user": 1,
+            "content_type": 18,
+            "object_id": "17",
+            "object_repr": "test",
+            "action_flag": 2,
+            "change_message": "[{\"changed\": {\"fields\": [\"Is button\"]}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 112,
+        "fields": {
+            "action_time": "2025-07-11T10:25:11.688Z",
+            "user": 1,
+            "content_type": 18,
+            "object_id": "17",
+            "object_repr": "test",
+            "action_flag": 2,
+            "change_message": "[{\"changed\": {\"fields\": [\"Visible to\"]}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 113,
+        "fields": {
+            "action_time": "2025-07-11T10:25:27.242Z",
+            "user": 1,
+            "content_type": 18,
+            "object_id": "17",
+            "object_repr": "test",
+            "action_flag": 3,
+            "change_message": ""
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 114,
+        "fields": {
+            "action_time": "2025-07-11T10:30:40.403Z",
+            "user": 1,
+            "content_type": 18,
+            "object_id": "14",
+            "object_repr": "Logout",
+            "action_flag": 2,
+            "change_message": "[{\"changed\": {\"fields\": [\"Order\"]}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 115,
+        "fields": {
+            "action_time": "2025-07-11T10:32:22.420Z",
+            "user": 1,
+            "content_type": 17,
+            "object_id": "8",
+            "object_repr": "test2@gmail.com (sme)",
+            "action_flag": 3,
+            "change_message": ""
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 116,
+        "fields": {
+            "action_time": "2025-07-11T10:32:22.420Z",
+            "user": 1,
+            "content_type": 17,
+            "object_id": "9",
+            "object_repr": "test3@gmail.com (sme)",
+            "action_flag": 3,
+            "change_message": ""
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 117,
+        "fields": {
+            "action_time": "2025-07-11T10:32:22.421Z",
+            "user": 1,
+            "content_type": 17,
+            "object_id": "10",
+            "object_repr": "test4@gmail.com (sme)",
+            "action_flag": 3,
+            "change_message": ""
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 118,
+        "fields": {
+            "action_time": "2025-07-11T10:32:22.421Z",
+            "user": 1,
+            "content_type": 17,
+            "object_id": "11",
+            "object_repr": "test5@gmail.com (sme)",
+            "action_flag": 3,
+            "change_message": ""
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 119,
+        "fields": {
+            "action_time": "2025-07-13T13:01:55.563Z",
+            "user": 1,
+            "content_type": 13,
+            "object_id": "1",
+            "object_repr": "Nepal festival",
+            "action_flag": 2,
+            "change_message": "[{\"changed\": {\"fields\": [\"Pop up\"]}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 120,
+        "fields": {
+            "action_time": "2025-07-14T07:16:35.129Z",
+            "user": 1,
+            "content_type": 18,
+            "object_id": "15",
+            "object_repr": "Profile",
+            "action_flag": 2,
+            "change_message": "[{\"changed\": {\"fields\": [\"Visible to\"]}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 121,
+        "fields": {
+            "action_time": "2025-07-14T07:17:08.288Z",
+            "user": 1,
+            "content_type": 18,
+            "object_id": "18",
+            "object_repr": "Profile",
+            "action_flag": 1,
+            "change_message": "[{\"added\": {}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 122,
+        "fields": {
+            "action_time": "2025-07-14T08:24:58.898Z",
+            "user": 1,
+            "content_type": 18,
+            "object_id": "15",
+            "object_repr": "SME Profile",
+            "action_flag": 2,
+            "change_message": "[{\"changed\": {\"fields\": [\"Title\", \"Visible to\"]}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 123,
+        "fields": {
+            "action_time": "2025-07-14T08:25:11.049Z",
+            "user": 1,
+            "content_type": 18,
+            "object_id": "18",
+            "object_repr": "BDSP Profile",
+            "action_flag": 2,
+            "change_message": "[{\"changed\": {\"fields\": [\"Title\", \"Visible to\"]}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 124,
+        "fields": {
+            "action_time": "2025-07-14T08:25:15.583Z",
+            "user": 1,
+            "content_type": 18,
+            "object_id": "15",
+            "object_repr": "SME Profile",
+            "action_flag": 2,
+            "change_message": "[{\"changed\": {\"fields\": [\"Visible to\"]}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 125,
+        "fields": {
+            "action_time": "2025-07-14T08:38:43.371Z",
+            "user": 1,
+            "content_type": 18,
+            "object_id": "18",
+            "object_repr": "BDSP Profile",
+            "action_flag": 2,
+            "change_message": "[{\"changed\": {\"fields\": [\"Required role\"]}}]"
+        }
+    },
+    {
+        "model": "admin.logentry",
+        "pk": 126,
+        "fields": {
+            "action_time": "2025-07-14T08:38:49.810Z",
+            "user": 1,
+            "content_type": 18,
+            "object_id": "15",
+            "object_repr": "SME Profile",
+            "action_flag": 2,
+            "change_message": "[{\"changed\": {\"fields\": [\"Required role\"]}}]"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 1,
+        "fields": {
+            "name": "Can add log entry",
+            "content_type": 1,
+            "codename": "add_logentry"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 2,
+        "fields": {
+            "name": "Can change log entry",
+            "content_type": 1,
+            "codename": "change_logentry"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 3,
+        "fields": {
+            "name": "Can delete log entry",
+            "content_type": 1,
+            "codename": "delete_logentry"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 4,
+        "fields": {
+            "name": "Can view log entry",
+            "content_type": 1,
+            "codename": "view_logentry"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 5,
+        "fields": {
+            "name": "Can add permission",
+            "content_type": 2,
+            "codename": "add_permission"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 6,
+        "fields": {
+            "name": "Can change permission",
+            "content_type": 2,
+            "codename": "change_permission"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 7,
+        "fields": {
+            "name": "Can delete permission",
+            "content_type": 2,
+            "codename": "delete_permission"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 8,
+        "fields": {
+            "name": "Can view permission",
+            "content_type": 2,
+            "codename": "view_permission"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 9,
+        "fields": {
+            "name": "Can add group",
+            "content_type": 3,
+            "codename": "add_group"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 10,
+        "fields": {
+            "name": "Can change group",
+            "content_type": 3,
+            "codename": "change_group"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 11,
+        "fields": {
+            "name": "Can delete group",
+            "content_type": 3,
+            "codename": "delete_group"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 12,
+        "fields": {
+            "name": "Can view group",
+            "content_type": 3,
+            "codename": "view_group"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 13,
+        "fields": {
+            "name": "Can add content type",
+            "content_type": 4,
+            "codename": "add_contenttype"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 14,
+        "fields": {
+            "name": "Can change content type",
+            "content_type": 4,
+            "codename": "change_contenttype"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 15,
+        "fields": {
+            "name": "Can delete content type",
+            "content_type": 4,
+            "codename": "delete_contenttype"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 16,
+        "fields": {
+            "name": "Can view content type",
+            "content_type": 4,
+            "codename": "view_contenttype"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 17,
+        "fields": {
+            "name": "Can add session",
+            "content_type": 5,
+            "codename": "add_session"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 18,
+        "fields": {
+            "name": "Can change session",
+            "content_type": 5,
+            "codename": "change_session"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 19,
+        "fields": {
+            "name": "Can delete session",
+            "content_type": 5,
+            "codename": "delete_session"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 20,
+        "fields": {
+            "name": "Can view session",
+            "content_type": 5,
+            "codename": "view_session"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 21,
+        "fields": {
+            "name": "Can add cms page",
+            "content_type": 6,
+            "codename": "add_cmspage"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 22,
+        "fields": {
+            "name": "Can change cms page",
+            "content_type": 6,
+            "codename": "change_cmspage"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 23,
+        "fields": {
+            "name": "Can delete cms page",
+            "content_type": 6,
+            "codename": "delete_cmspage"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 24,
+        "fields": {
+            "name": "Can view cms page",
+            "content_type": 6,
+            "codename": "view_cmspage"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 25,
+        "fields": {
+            "name": "Can add footer contact info",
+            "content_type": 7,
+            "codename": "add_footercontactinfo"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 26,
+        "fields": {
+            "name": "Can change footer contact info",
+            "content_type": 7,
+            "codename": "change_footercontactinfo"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 27,
+        "fields": {
+            "name": "Can delete footer contact info",
+            "content_type": 7,
+            "codename": "delete_footercontactinfo"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 28,
+        "fields": {
+            "name": "Can view footer contact info",
+            "content_type": 7,
+            "codename": "view_footercontactinfo"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 29,
+        "fields": {
+            "name": "Can add footer quick link",
+            "content_type": 8,
+            "codename": "add_footerquicklink"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 30,
+        "fields": {
+            "name": "Can change footer quick link",
+            "content_type": 8,
+            "codename": "change_footerquicklink"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 31,
+        "fields": {
+            "name": "Can delete footer quick link",
+            "content_type": 8,
+            "codename": "delete_footerquicklink"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 32,
+        "fields": {
+            "name": "Can view footer quick link",
+            "content_type": 8,
+            "codename": "view_footerquicklink"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 33,
+        "fields": {
+            "name": "Can add footer social media",
+            "content_type": 9,
+            "codename": "add_footersocialmedia"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 34,
+        "fields": {
+            "name": "Can change footer social media",
+            "content_type": 9,
+            "codename": "change_footersocialmedia"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 35,
+        "fields": {
+            "name": "Can delete footer social media",
+            "content_type": 9,
+            "codename": "delete_footersocialmedia"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 36,
+        "fields": {
+            "name": "Can view footer social media",
+            "content_type": 9,
+            "codename": "view_footersocialmedia"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 37,
+        "fields": {
+            "name": "Can add hero carousel",
+            "content_type": 10,
+            "codename": "add_herocarousel"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 38,
+        "fields": {
+            "name": "Can change hero carousel",
+            "content_type": 10,
+            "codename": "change_herocarousel"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 39,
+        "fields": {
+            "name": "Can delete hero carousel",
+            "content_type": 10,
+            "codename": "delete_herocarousel"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 40,
+        "fields": {
+            "name": "Can view hero carousel",
+            "content_type": 10,
+            "codename": "view_herocarousel"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 41,
+        "fields": {
+            "name": "Can add news event status",
+            "content_type": 11,
+            "codename": "add_newseventstatus"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 42,
+        "fields": {
+            "name": "Can change news event status",
+            "content_type": 11,
+            "codename": "change_newseventstatus"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 43,
+        "fields": {
+            "name": "Can delete news event status",
+            "content_type": 11,
+            "codename": "delete_newseventstatus"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 44,
+        "fields": {
+            "name": "Can view news event status",
+            "content_type": 11,
+            "codename": "view_newseventstatus"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 45,
+        "fields": {
+            "name": "Can add news event type",
+            "content_type": 12,
+            "codename": "add_newseventtype"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 46,
+        "fields": {
+            "name": "Can change news event type",
+            "content_type": 12,
+            "codename": "change_newseventtype"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 47,
+        "fields": {
+            "name": "Can delete news event type",
+            "content_type": 12,
+            "codename": "delete_newseventtype"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 48,
+        "fields": {
+            "name": "Can view news event type",
+            "content_type": 12,
+            "codename": "view_newseventtype"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 49,
+        "fields": {
+            "name": "Can add notice",
+            "content_type": 13,
+            "codename": "add_notice"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 50,
+        "fields": {
+            "name": "Can change notice",
+            "content_type": 13,
+            "codename": "change_notice"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 51,
+        "fields": {
+            "name": "Can delete notice",
+            "content_type": 13,
+            "codename": "delete_notice"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 52,
+        "fields": {
+            "name": "Can view notice",
+            "content_type": 13,
+            "codename": "view_notice"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 53,
+        "fields": {
+            "name": "Can add service tag",
+            "content_type": 14,
+            "codename": "add_servicetag"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 54,
+        "fields": {
+            "name": "Can change service tag",
+            "content_type": 14,
+            "codename": "change_servicetag"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 55,
+        "fields": {
+            "name": "Can delete service tag",
+            "content_type": 14,
+            "codename": "delete_servicetag"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 56,
+        "fields": {
+            "name": "Can view service tag",
+            "content_type": 14,
+            "codename": "view_servicetag"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 57,
+        "fields": {
+            "name": "Can add sme development step section",
+            "content_type": 15,
+            "codename": "add_smedevelopmentstepsection"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 58,
+        "fields": {
+            "name": "Can change sme development step section",
+            "content_type": 15,
+            "codename": "change_smedevelopmentstepsection"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 59,
+        "fields": {
+            "name": "Can delete sme development step section",
+            "content_type": 15,
+            "codename": "delete_smedevelopmentstepsection"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 60,
+        "fields": {
+            "name": "Can view sme development step section",
+            "content_type": 15,
+            "codename": "view_smedevelopmentstepsection"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 61,
+        "fields": {
+            "name": "Can add sme guideline card",
+            "content_type": 16,
+            "codename": "add_smeguidelinecard"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 62,
+        "fields": {
+            "name": "Can change sme guideline card",
+            "content_type": 16,
+            "codename": "change_smeguidelinecard"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 63,
+        "fields": {
+            "name": "Can delete sme guideline card",
+            "content_type": 16,
+            "codename": "delete_smeguidelinecard"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 64,
+        "fields": {
+            "name": "Can view sme guideline card",
+            "content_type": 16,
+            "codename": "view_smeguidelinecard"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 65,
+        "fields": {
+            "name": "Can add user",
+            "content_type": 17,
+            "codename": "add_user"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 66,
+        "fields": {
+            "name": "Can change user",
+            "content_type": 17,
+            "codename": "change_user"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 67,
+        "fields": {
+            "name": "Can delete user",
+            "content_type": 17,
+            "codename": "delete_user"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 68,
+        "fields": {
+            "name": "Can view user",
+            "content_type": 17,
+            "codename": "view_user"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 69,
+        "fields": {
+            "name": "Can add navbar item",
+            "content_type": 18,
+            "codename": "add_navbaritem"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 70,
+        "fields": {
+            "name": "Can change navbar item",
+            "content_type": 18,
+            "codename": "change_navbaritem"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 71,
+        "fields": {
+            "name": "Can delete navbar item",
+            "content_type": 18,
+            "codename": "delete_navbaritem"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 72,
+        "fields": {
+            "name": "Can view navbar item",
+            "content_type": 18,
+            "codename": "view_navbaritem"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 73,
+        "fields": {
+            "name": "Can add news event",
+            "content_type": 19,
+            "codename": "add_newsevent"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 74,
+        "fields": {
+            "name": "Can change news event",
+            "content_type": 19,
+            "codename": "change_newsevent"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 75,
+        "fields": {
+            "name": "Can delete news event",
+            "content_type": 19,
+            "codename": "delete_newsevent"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 76,
+        "fields": {
+            "name": "Can view news event",
+            "content_type": 19,
+            "codename": "view_newsevent"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 77,
+        "fields": {
+            "name": "Can add notice attachment",
+            "content_type": 20,
+            "codename": "add_noticeattachment"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 78,
+        "fields": {
+            "name": "Can change notice attachment",
+            "content_type": 20,
+            "codename": "change_noticeattachment"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 79,
+        "fields": {
+            "name": "Can delete notice attachment",
+            "content_type": 20,
+            "codename": "delete_noticeattachment"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 80,
+        "fields": {
+            "name": "Can view notice attachment",
+            "content_type": 20,
+            "codename": "view_noticeattachment"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 81,
+        "fields": {
+            "name": "Can add service card",
+            "content_type": 21,
+            "codename": "add_servicecard"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 82,
+        "fields": {
+            "name": "Can change service card",
+            "content_type": 21,
+            "codename": "change_servicecard"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 83,
+        "fields": {
+            "name": "Can delete service card",
+            "content_type": 21,
+            "codename": "delete_servicecard"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 84,
+        "fields": {
+            "name": "Can view service card",
+            "content_type": 21,
+            "codename": "view_servicecard"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 85,
+        "fields": {
+            "name": "Can add sme development step",
+            "content_type": 22,
+            "codename": "add_smedevelopmentstep"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 86,
+        "fields": {
+            "name": "Can change sme development step",
+            "content_type": 22,
+            "codename": "change_smedevelopmentstep"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 87,
+        "fields": {
+            "name": "Can delete sme development step",
+            "content_type": 22,
+            "codename": "delete_smedevelopmentstep"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 88,
+        "fields": {
+            "name": "Can view sme development step",
+            "content_type": 22,
+            "codename": "view_smedevelopmentstep"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 89,
+        "fields": {
+            "name": "Can add sme profile",
+            "content_type": 23,
+            "codename": "add_smeprofile"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 90,
+        "fields": {
+            "name": "Can change sme profile",
+            "content_type": 23,
+            "codename": "change_smeprofile"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 91,
+        "fields": {
+            "name": "Can delete sme profile",
+            "content_type": 23,
+            "codename": "delete_smeprofile"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 92,
+        "fields": {
+            "name": "Can view sme profile",
+            "content_type": 23,
+            "codename": "view_smeprofile"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 93,
+        "fields": {
+            "name": "Can add service offered",
+            "content_type": 24,
+            "codename": "add_serviceoffered"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 94,
+        "fields": {
+            "name": "Can change service offered",
+            "content_type": 24,
+            "codename": "change_serviceoffered"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 95,
+        "fields": {
+            "name": "Can delete service offered",
+            "content_type": 24,
+            "codename": "delete_serviceoffered"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 96,
+        "fields": {
+            "name": "Can view service offered",
+            "content_type": 24,
+            "codename": "view_serviceoffered"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 97,
+        "fields": {
+            "name": "Can add bdsp profile",
+            "content_type": 25,
+            "codename": "add_bdspprofile"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 98,
+        "fields": {
+            "name": "Can change bdsp profile",
+            "content_type": 25,
+            "codename": "change_bdspprofile"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 99,
+        "fields": {
+            "name": "Can delete bdsp profile",
+            "content_type": 25,
+            "codename": "delete_bdspprofile"
+        }
+    },
+    {
+        "model": "auth.permission",
+        "pk": 100,
+        "fields": {
+            "name": "Can view bdsp profile",
+            "content_type": 25,
+            "codename": "view_bdspprofile"
+        }
+    },
+    {
+        "model": "contenttypes.contenttype",
+        "pk": 1,
+        "fields": {
+            "app_label": "admin",
+            "model": "logentry"
+        }
+    },
+    {
+        "model": "contenttypes.contenttype",
+        "pk": 2,
+        "fields": {
+            "app_label": "auth",
+            "model": "permission"
+        }
+    },
+    {
+        "model": "contenttypes.contenttype",
+        "pk": 3,
+        "fields": {
+            "app_label": "auth",
+            "model": "group"
+        }
+    },
+    {
+        "model": "contenttypes.contenttype",
+        "pk": 4,
+        "fields": {
+            "app_label": "contenttypes",
+            "model": "contenttype"
+        }
+    },
+    {
+        "model": "contenttypes.contenttype",
+        "pk": 5,
+        "fields": {
+            "app_label": "sessions",
+            "model": "session"
+        }
+    },
+    {
+        "model": "contenttypes.contenttype",
+        "pk": 6,
+        "fields": {
+            "app_label": "core",
+            "model": "cmspage"
+        }
+    },
+    {
+        "model": "contenttypes.contenttype",
+        "pk": 7,
+        "fields": {
+            "app_label": "core",
+            "model": "footercontactinfo"
+        }
+    },
+    {
+        "model": "contenttypes.contenttype",
+        "pk": 8,
+        "fields": {
+            "app_label": "core",
+            "model": "footerquicklink"
+        }
+    },
+    {
+        "model": "contenttypes.contenttype",
+        "pk": 9,
+        "fields": {
+            "app_label": "core",
+            "model": "footersocialmedia"
+        }
+    },
+    {
+        "model": "contenttypes.contenttype",
+        "pk": 10,
+        "fields": {
+            "app_label": "core",
+            "model": "herocarousel"
+        }
+    },
+    {
+        "model": "contenttypes.contenttype",
+        "pk": 11,
+        "fields": {
+            "app_label": "core",
+            "model": "newseventstatus"
+        }
+    },
+    {
+        "model": "contenttypes.contenttype",
+        "pk": 12,
+        "fields": {
+            "app_label": "core",
+            "model": "newseventtype"
+        }
+    },
+    {
+        "model": "contenttypes.contenttype",
+        "pk": 13,
+        "fields": {
+            "app_label": "core",
+            "model": "notice"
+        }
+    },
+    {
+        "model": "contenttypes.contenttype",
+        "pk": 14,
+        "fields": {
+            "app_label": "core",
+            "model": "servicetag"
+        }
+    },
+    {
+        "model": "contenttypes.contenttype",
+        "pk": 15,
+        "fields": {
+            "app_label": "core",
+            "model": "smedevelopmentstepsection"
+        }
+    },
+    {
+        "model": "contenttypes.contenttype",
+        "pk": 16,
+        "fields": {
+            "app_label": "core",
+            "model": "smeguidelinecard"
+        }
+    },
+    {
+        "model": "contenttypes.contenttype",
+        "pk": 17,
+        "fields": {
+            "app_label": "core",
+            "model": "user"
+        }
+    },
+    {
+        "model": "contenttypes.contenttype",
+        "pk": 18,
+        "fields": {
+            "app_label": "core",
+            "model": "navbaritem"
+        }
+    },
+    {
+        "model": "contenttypes.contenttype",
+        "pk": 19,
+        "fields": {
+            "app_label": "core",
+            "model": "newsevent"
+        }
+    },
+    {
+        "model": "contenttypes.contenttype",
+        "pk": 20,
+        "fields": {
+            "app_label": "core",
+            "model": "noticeattachment"
+        }
+    },
+    {
+        "model": "contenttypes.contenttype",
+        "pk": 21,
+        "fields": {
+            "app_label": "core",
+            "model": "servicecard"
+        }
+    },
+    {
+        "model": "contenttypes.contenttype",
+        "pk": 22,
+        "fields": {
+            "app_label": "core",
+            "model": "smedevelopmentstep"
+        }
+    },
+    {
+        "model": "contenttypes.contenttype",
+        "pk": 23,
+        "fields": {
+            "app_label": "core",
+            "model": "smeprofile"
+        }
+    },
+    {
+        "model": "contenttypes.contenttype",
+        "pk": 24,
+        "fields": {
+            "app_label": "core",
+            "model": "serviceoffered"
+        }
+    },
+    {
+        "model": "contenttypes.contenttype",
+        "pk": 25,
+        "fields": {
+            "app_label": "core",
+            "model": "bdspprofile"
+        }
+    },
+    {
+        "model": "sessions.session",
+        "pk": "1rt6hdz78vw4uui3xk96f20dneafqd8g",
+        "fields": {
+            "session_data": ".eJxVi0sKwzAMBe_idQlx_Iu6LPQcRrIkHPqDOFmV3r0JZNEu582bt8m4LjWvTeY8sTkba06_G2G5yXMX5TVLd2Drrg-c7pdD_hUVW93uA7mSQMX7iKIskBRcVOYBuNegqWd2gezIQg6d9QWsQgg4Rpswkvl8AWwtMtg:1ua4gP:y_NShGCFnjHcowjx95h1-1yr1EGk61BiUIB12Mv1d0A",
+            "expire_date": "2025-07-25T03:44:21.976Z"
+        }
+    },
+    {
+        "model": "sessions.session",
+        "pk": "lmxr68x74d5lmws3xggkwfst39tqcw0l",
+        "fields": {
+            "session_data": ".eJxVjc0OgjAQhN-lZ2Og0C5wNPE5mm27SCM_pi3RSHh3SyBGT5OZb2d2YQrn2Kk5kFfOsoYJdvrNNJo7jRswk6fzYcP5OqDrLwf8a3QYunTOoQCeY0FoITOlzrgQUEphW6NrU5AEW-msolxIao0EUUqrNYABQKgLnkaf7o3eqjCQ8nRzIXqMbhrVnrNmYSHSI_3aJE-FTZXFiImth21dT2H39EoLX76uH_hDVXU:1uZpVe:q6S2LQKOl6JS7UFl4y8NR8QgjG4gsWVKt3G7mSA50m4",
+            "expire_date": "2025-07-24T11:32:14.614Z"
+        }
+    },
+    {
+        "model": "sessions.session",
+        "pk": "phz41sygoltkkekjc3xjxhfrpuux0jmf",
+        "fields": {
+            "session_data": ".eJxVi0sKwzAMBe_idQlx_Iu6LPQcRrIkHPqDOFmV3r0JZNEu582bt8m4LjWvTeY8sTkba06_G2G5yXMX5TVLd2Drrg-c7pdD_hUVW93uA7mSQMX7iKIskBRcVOYBuNegqWd2gezIQg6d9QWsQgg4Rpswkvl8AWwtMtg:1ubFe4:J0Nmh-b4DyjdynNpp9cXcW5QdSkuXZz_yJF3V762sI0",
+            "expire_date": "2025-07-28T09:38:48.206Z"
+        }
+    },
+    {
+        "model": "core.cmspage",
+        "pk": 1,
+        "fields": {
+            "title": "pub",
+            "slug": "pub",
+            "image": "cms_images/6t1xr7.jpg",
+            "content": "<p>dddbkfkabdfk&nbsp;</p>\r\n\r\n<p>&#39;fbvajv fka</p>\r\n\r\n<p>&nbsp;dhasVgf aS</p>\r\n\r\n<p>d vjabK F</p>\r\n\r\n<p><img alt=\"\" src=\"/media/uploads/2025/07/09/6t1xr7_4Y4r2jA.jpg\" style=\"height:361px; width:691px\" /></p>\r\n\r\n<p>dgsdg&nbsp;</p>",
+            "published": true,
+            "created_at": "2025-07-09T04:30:51.369Z",
+            "updated_at": "2025-07-09T06:39:29.478Z",
+            "seo_title": null,
+            "seo_description": null,
+            "seo_keywords": null
+        }
+    },
+    {
+        "model": "core.cmspage",
+        "pk": 2,
+        "fields": {
+            "title": "apple",
+            "slug": "apple",
+            "image": "cms_images/news.jpg",
+            "content": "<p>Apple launched iphone 300</p>\r\n\r\n<p>&nbsp;<img alt=\"\" src=\"/media/uploads/2025/07/09/6t1xr7_r9HDxrP.jpg\" style=\"height:361px; width:691px\" /></p>",
+            "published": true,
+            "created_at": "2025-07-09T06:39:59.547Z",
+            "updated_at": "2025-07-09T06:39:59.547Z",
+            "seo_title": null,
+            "seo_description": null,
+            "seo_keywords": null
+        }
+    },
+    {
+        "model": "core.footerquicklink",
+        "pk": 1,
+        "fields": {
+            "title": "Events & Trainings",
+            "url": "http://127.0.0.1:8000/dummy",
+            "order": 0,
+            "is_active": true
+        }
+    },
+    {
+        "model": "core.footerquicklink",
+        "pk": 2,
+        "fields": {
+            "title": "Governance & Policy",
+            "url": "http://127.0.0.1:8000/dummy",
+            "order": 0,
+            "is_active": true
+        }
+    },
+    {
+        "model": "core.footerquicklink",
+        "pk": 3,
+        "fields": {
+            "title": "FAQs",
+            "url": "http://127.0.0.1:8000/dummy",
+            "order": 0,
+            "is_active": true
+        }
+    },
+    {
+        "model": "core.footerquicklink",
+        "pk": 4,
+        "fields": {
+            "title": "Contact",
+            "url": "http://127.0.0.1:8000/dummy",
+            "order": 0,
+            "is_active": true
+        }
+    },
+    {
+        "model": "core.footercontactinfo",
+        "pk": 1,
+        "fields": {
+            "icon": "footer_icons/contact.svg",
+            "label": "email",
+            "value": "contact@company.com",
+            "url": "http://contact@company.com",
+            "order": 0,
+            "is_active": true
+        }
+    },
+    {
+        "model": "core.footercontactinfo",
+        "pk": 2,
+        "fields": {
+            "icon": "footer_icons/phone.svg",
+            "label": "phone",
+            "value": "(977) 9807890435",
+            "url": null,
+            "order": 0,
+            "is_active": true
+        }
+    },
+    {
+        "model": "core.footercontactinfo",
+        "pk": 3,
+        "fields": {
+            "icon": "footer_icons/location.svg",
+            "label": "address",
+            "value": "Kathmandu, Nepa",
+            "url": null,
+            "order": 0,
+            "is_active": true
+        }
+    },
+    {
+        "model": "core.footersocialmedia",
+        "pk": 1,
+        "fields": {
+            "platform_name": "fb",
+            "icon": "social_icons/facebook.png",
+            "url": "https://www.facebook.com/",
+            "order": 0,
+            "is_active": true
+        }
+    },
+    {
+        "model": "core.footersocialmedia",
+        "pk": 2,
+        "fields": {
+            "platform_name": "x",
+            "icon": "social_icons/instagram.png",
+            "url": "https://www.instagram.com/",
+            "order": 0,
+            "is_active": true
+        }
+    },
+    {
+        "model": "core.footersocialmedia",
+        "pk": 3,
+        "fields": {
+            "platform_name": "x",
+            "icon": "social_icons/twitter.png",
+            "url": "https://x.com/",
+            "order": 0,
+            "is_active": true
+        }
+    },
+    {
+        "model": "core.herocarousel",
+        "pk": 1,
+        "fields": {
+            "title": "Empowering Small & Medium Enterprises in Koshi Province",
+            "description": "Access business development resources, apply for government support schemes, and grow your enterprise.",
+            "is_slide_active": true,
+            "button1_text": null,
+            "button1_class": null,
+            "button1_url": null,
+            "button2_text": null,
+            "button2_class": null,
+            "button2_url": null,
+            "order": 0
+        }
+    },
+    {
+        "model": "core.herocarousel",
+        "pk": 2,
+        "fields": {
+            "title": "Unlock Growth Opportunities for Your Business",
+            "description": "Discover expert guidance, funding options, and training programs tailored to SMEs in Koshi.",
+            "is_slide_active": true,
+            "button1_text": null,
+            "button1_class": "black",
+            "button1_url": null,
+            "button2_text": null,
+            "button2_class": "white",
+            "button2_url": null,
+            "order": 0
+        }
+    },
+    {
+        "model": "core.herocarousel",
+        "pk": 3,
+        "fields": {
+            "title": "Connect with Industry Experts and Peers",
+            "description": "Join a thriving community of entrepreneurs and benefit from shared knowledge and collaboration.",
+            "is_slide_active": true,
+            "button1_text": null,
+            "button1_class": null,
+            "button1_url": null,
+            "button2_text": null,
+            "button2_class": null,
+            "button2_url": null,
+            "order": 0
+        }
+    },
+    {
+        "model": "core.user",
+        "pk": 1,
+        "fields": {
+            "password": "pbkdf2_sha256$1000000$x6KubcBzx8SSIsZugrd6HJ$xSh8K58bfp7xSeoMbEYrWIcKWuZSTgPNiVtz27NT6eg=",
+            "last_login": "2025-07-14T09:38:48.198Z",
+            "is_superuser": true,
+            "username": "admin",
+            "first_name": "",
+            "last_name": "",
+            "is_staff": true,
+            "is_active": true,
+            "date_joined": "2025-07-10T05:15:43.444Z",
+            "role": "",
+            "business_name": "",
+            "pan_vat": "",
+            "full_name": "",
+            "mobile": "",
+            "email": "admin@gmail.com",
+            "business_registration_number": null,
+            "business_type": null,
+            "groups": [],
+            "user_permissions": []
+        }
+    },
+    {
+        "model": "core.user",
+        "pk": 7,
+        "fields": {
+            "password": "pbkdf2_sha256$1000000$GjgWTaO4tuoTbJuQ9517qS$8qBjYRFzN7DPN/NIjysAIIG5/KDAQ0hkC4GuI2xLrLs=",
+            "last_login": "2025-07-14T08:53:19.364Z",
+            "is_superuser": false,
+            "username": "test1@gmail.com",
+            "first_name": "",
+            "last_name": "",
+            "is_staff": false,
+            "is_active": true,
+            "date_joined": "2025-07-11T03:47:05.020Z",
+            "role": "sme",
+            "business_name": "Test1",
+            "pan_vat": "qwee224",
+            "full_name": "abc",
+            "mobile": "9876543210",
+            "email": "test1@gmail.com",
+            "business_registration_number": "Asdsd2324",
+            "business_type": null,
+            "groups": [],
+            "user_permissions": []
+        }
+    },
+    {
+        "model": "core.user",
+        "pk": 12,
+        "fields": {
+            "password": "pbkdf2_sha256$1000000$HTkKrBt0nzmHBb5aCp5ieq$fZzcsanElxV6HYjXcdBiiOS9JlwFNV6B60DLcHwGZew=",
+            "last_login": "2025-07-11T11:55:08.076Z",
+            "is_superuser": false,
+            "username": "test2@gmail.com",
+            "first_name": "",
+            "last_name": "",
+            "is_staff": false,
+            "is_active": true,
+            "date_joined": "2025-07-11T10:32:53.180Z",
+            "role": "sme",
+            "business_name": "Test2",
+            "pan_vat": "sgsg",
+            "full_name": "abc",
+            "mobile": "9876543211",
+            "email": "test2@gmail.com",
+            "business_registration_number": "dgdsg",
+            "business_type": null,
+            "groups": [],
+            "user_permissions": []
+        }
+    },
+    {
+        "model": "core.user",
+        "pk": 13,
+        "fields": {
+            "password": "pbkdf2_sha256$1000000$y9pw4f2vFP3YVEDVGUmo7Y$nV+JFnBsNKLrha5W/CWYlm2wx/hJLeU2czzvrYEi1p4=",
+            "last_login": "2025-07-11T11:05:20.171Z",
+            "is_superuser": false,
+            "username": "test3@gmail.com",
+            "first_name": "",
+            "last_name": "",
+            "is_staff": false,
+            "is_active": true,
+            "date_joined": "2025-07-11T11:05:18.528Z",
+            "role": "sme",
+            "business_name": "Test 2",
+            "pan_vat": "1234",
+            "full_name": "Shadip Kumar Joshi",
+            "mobile": "9841665831",
+            "email": "test3@gmail.com",
+            "business_registration_number": "erer232",
+            "business_type": null,
+            "groups": [],
+            "user_permissions": []
+        }
+    },
+    {
+        "model": "core.user",
+        "pk": 14,
+        "fields": {
+            "password": "pbkdf2_sha256$1000000$UjIhq9BjUh2Ti1tALdoQjR$FxWgHDxW6Gopr3HZ3uLbRBSS3YW8rT3ilf0eEK9q7qo=",
+            "last_login": "2025-07-14T09:27:48.386Z",
+            "is_superuser": false,
+            "username": "test10@gmail.com",
+            "first_name": "",
+            "last_name": "",
+            "is_staff": false,
+            "is_active": true,
+            "date_joined": "2025-07-11T11:45:27.135Z",
+            "role": "bdsp",
+            "business_name": "sdsd",
+            "pan_vat": "fgdfg353",
+            "full_name": "Shadip Kumar Joshi",
+            "mobile": "9841665831",
+            "email": "test10@gmail.com",
+            "business_registration_number": null,
+            "business_type": "firm",
+            "groups": [],
+            "user_permissions": []
+        }
+    },
+    {
+        "model": "core.user",
+        "pk": 15,
+        "fields": {
+            "password": "pbkdf2_sha256$1000000$c4Y8xuFG32WVk3vkyY8dWt$FFR/1CwEyNBCY+6YVfVE9HS+uhGp8wd3CSBDj2XiT0c=",
+            "last_login": "2025-07-12T11:56:42.842Z",
+            "is_superuser": false,
+            "username": "test7@gmail.com",
+            "first_name": "",
+            "last_name": "",
+            "is_staff": false,
+            "is_active": true,
+            "date_joined": "2025-07-12T11:56:39.793Z",
+            "role": "sme",
+            "business_name": "Test7",
+            "pan_vat": "HJ778",
+            "full_name": "Rsm Shre",
+            "mobile": "9876543211",
+            "email": "test7@gmail.com",
+            "business_registration_number": "2434F",
+            "business_type": null,
+            "groups": [],
+            "user_permissions": []
+        }
+    },
+    {
+        "model": "core.user",
+        "pk": 16,
+        "fields": {
+            "password": "pbkdf2_sha256$1000000$Ob2Z6NJ941azDND6eSL3t3$wighNUEbEStDX7BhUTH2NeAspMJT6Hq8alMjD/fAlSc=",
+            "last_login": "2025-07-14T09:03:28.510Z",
+            "is_superuser": false,
+            "username": "test11@gmail.com",
+            "first_name": "",
+            "last_name": "",
+            "is_staff": false,
+            "is_active": true,
+            "date_joined": "2025-07-14T07:11:19.514Z",
+            "role": "bdsp",
+            "business_name": "Test11",
+            "pan_vat": "fvvds",
+            "full_name": "Ajn",
+            "mobile": "9877777753",
+            "email": "test11@gmail.com",
+            "business_registration_number": null,
+            "business_type": "partnership",
+            "groups": [],
+            "user_permissions": []
+        }
+    },
+    {
+        "model": "core.user",
+        "pk": 17,
+        "fields": {
+            "password": "pbkdf2_sha256$1000000$LT5T0ePpNZyxV8E0wql1NM$hhwhrt4rlnHxNyzxBpym/IG+v5OyIpq5k3hWeaxDvhE=",
+            "last_login": "2025-07-14T08:59:21.836Z",
+            "is_superuser": false,
+            "username": "test12@gmail.com",
+            "first_name": "",
+            "last_name": "",
+            "is_staff": false,
+            "is_active": true,
+            "date_joined": "2025-07-14T08:59:18.834Z",
+            "role": "bdsp",
+            "business_name": "Test 12",
+            "pan_vat": "sfsdv",
+            "full_name": "dgd",
+            "mobile": "9877777777",
+            "email": "test12@gmail.com",
+            "business_registration_number": null,
+            "business_type": "partnership",
+            "groups": [],
+            "user_permissions": []
+        }
+    },
+    {
+        "model": "core.user",
+        "pk": 18,
+        "fields": {
+            "password": "pbkdf2_sha256$1000000$ePgIMw2cJGA9Po3Tmm66GQ$44vVl5KGzZCzkhMuk/c37aJqpeJ86aMpcy/eXorNFSU=",
+            "last_login": "2025-07-14T09:40:39.589Z",
+            "is_superuser": false,
+            "username": "test13@gmail.com",
+            "first_name": "",
+            "last_name": "",
+            "is_staff": false,
+            "is_active": true,
+            "date_joined": "2025-07-14T09:40:36.034Z",
+            "role": "bdsp",
+            "business_name": "Test13",
+            "pan_vat": "adfsdv",
+            "full_name": "Shadip Kumar Joshi",
+            "mobile": "9841665831",
+            "email": "test13@gmail.com",
+            "business_registration_number": null,
+            "business_type": "firm",
+            "groups": [],
+            "user_permissions": []
+        }
+    },
+    {
+        "model": "core.navbaritem",
+        "pk": 1,
+        "fields": {
+            "title": "Home",
+            "parent": null,
+            "order": 0,
+            "is_button": false,
+            "button_style": null,
+            "is_active": true,
+            "visible_to": "all",
+            "required_role": null,
+            "position": "left",
+            "link_type": "module",
+            "module_name": "home",
+            "cms_page": null,
+            "external_url": ""
+        }
+    },
+    {
+        "model": "core.navbaritem",
+        "pk": 2,
+        "fields": {
+            "title": "Login",
+            "parent": null,
+            "order": 1,
+            "is_button": true,
+            "button_style": "blue",
+            "is_active": true,
+            "visible_to": "anonymous",
+            "required_role": null,
+            "position": "right",
+            "link_type": "module",
+            "module_name": "login",
+            "cms_page": null,
+            "external_url": ""
+        }
+    },
+    {
+        "model": "core.navbaritem",
+        "pk": 3,
+        "fields": {
+            "title": "Register",
+            "parent": null,
+            "order": 0,
+            "is_button": true,
+            "button_style": "black",
+            "is_active": true,
+            "visible_to": "anonymous",
+            "required_role": null,
+            "position": "right",
+            "link_type": "module",
+            "module_name": "register_type",
+            "cms_page": null,
+            "external_url": ""
+        }
+    },
+    {
+        "model": "core.navbaritem",
+        "pk": 4,
+        "fields": {
+            "title": "Blogs",
+            "parent": null,
+            "order": 0,
+            "is_button": false,
+            "button_style": null,
+            "is_active": true,
+            "visible_to": "all",
+            "required_role": null,
+            "position": "left",
+            "link_type": null,
+            "module_name": "",
+            "cms_page": null,
+            "external_url": ""
+        }
+    },
+    {
+        "model": "core.navbaritem",
+        "pk": 5,
+        "fields": {
+            "title": "External",
+            "parent": null,
+            "order": 0,
+            "is_button": false,
+            "button_style": null,
+            "is_active": true,
+            "visible_to": "all",
+            "required_role": null,
+            "position": "left",
+            "link_type": null,
+            "module_name": "",
+            "cms_page": null,
+            "external_url": ""
+        }
+    },
+    {
+        "model": "core.navbaritem",
+        "pk": 6,
+        "fields": {
+            "title": "Facebook",
+            "parent": 5,
+            "order": 0,
+            "is_button": false,
+            "button_style": null,
+            "is_active": true,
+            "visible_to": "all",
+            "required_role": null,
+            "position": "left",
+            "link_type": "external",
+            "module_name": "",
+            "cms_page": null,
+            "external_url": "https://www.facebook.com/"
+        }
+    },
+    {
+        "model": "core.navbaritem",
+        "pk": 7,
+        "fields": {
+            "title": "Instagram",
+            "parent": 5,
+            "order": 0,
+            "is_button": false,
+            "button_style": null,
+            "is_active": true,
+            "visible_to": "all",
+            "required_role": null,
+            "position": "left",
+            "link_type": "external",
+            "module_name": "",
+            "cms_page": null,
+            "external_url": "http://www.instagram.com"
+        }
+    },
+    {
+        "model": "core.navbaritem",
+        "pk": 8,
+        "fields": {
+            "title": "Notice",
+            "parent": null,
+            "order": 0,
+            "is_button": false,
+            "button_style": null,
+            "is_active": true,
+            "visible_to": "all",
+            "required_role": null,
+            "position": "left",
+            "link_type": "module",
+            "module_name": "notice",
+            "cms_page": null,
+            "external_url": ""
+        }
+    },
+    {
+        "model": "core.navbaritem",
+        "pk": 9,
+        "fields": {
+            "title": "News",
+            "parent": null,
+            "order": 0,
+            "is_button": false,
+            "button_style": null,
+            "is_active": true,
+            "visible_to": "all",
+            "required_role": null,
+            "position": "left",
+            "link_type": "module",
+            "module_name": "news",
+            "cms_page": null,
+            "external_url": ""
+        }
+    },
+    {
+        "model": "core.navbaritem",
+        "pk": 11,
+        "fields": {
+            "title": "publications",
+            "parent": 4,
+            "order": 0,
+            "is_button": false,
+            "button_style": null,
+            "is_active": true,
+            "visible_to": "all",
+            "required_role": null,
+            "position": "left",
+            "link_type": "cms",
+            "module_name": "",
+            "cms_page": 1,
+            "external_url": ""
+        }
+    },
+    {
+        "model": "core.navbaritem",
+        "pk": 12,
+        "fields": {
+            "title": "Apple",
+            "parent": 4,
+            "order": 0,
+            "is_button": false,
+            "button_style": null,
+            "is_active": true,
+            "visible_to": "all",
+            "required_role": null,
+            "position": "left",
+            "link_type": "cms",
+            "module_name": "",
+            "cms_page": 2,
+            "external_url": ""
+        }
+    },
+    {
+        "model": "core.navbaritem",
+        "pk": 13,
+        "fields": {
+            "title": "Settings",
+            "parent": null,
+            "order": 0,
+            "is_button": false,
+            "button_style": "blue",
+            "is_active": true,
+            "visible_to": "authenticated",
+            "required_role": null,
+            "position": "right",
+            "link_type": null,
+            "module_name": "",
+            "cms_page": null,
+            "external_url": ""
+        }
+    },
+    {
+        "model": "core.navbaritem",
+        "pk": 14,
+        "fields": {
+            "title": "Logout",
+            "parent": 13,
+            "order": 1,
+            "is_button": false,
+            "button_style": "blue",
+            "is_active": true,
+            "visible_to": "authenticated",
+            "required_role": null,
+            "position": "left",
+            "link_type": "module",
+            "module_name": "logout",
+            "cms_page": null,
+            "external_url": ""
+        }
+    },
+    {
+        "model": "core.navbaritem",
+        "pk": 15,
+        "fields": {
+            "title": "SME Profile",
+            "parent": 13,
+            "order": 0,
+            "is_button": false,
+            "button_style": null,
+            "is_active": true,
+            "visible_to": "authenticated",
+            "required_role": "sme",
+            "position": "left",
+            "link_type": "module",
+            "module_name": "sme_profile_view",
+            "cms_page": null,
+            "external_url": ""
+        }
+    },
+    {
+        "model": "core.navbaritem",
+        "pk": 18,
+        "fields": {
+            "title": "BDSP Profile",
+            "parent": 13,
+            "order": 0,
+            "is_button": false,
+            "button_style": null,
+            "is_active": true,
+            "visible_to": "authenticated",
+            "required_role": "bdsp",
+            "position": "right",
+            "link_type": "module",
+            "module_name": "bdsp_profile_view",
+            "cms_page": null,
+            "external_url": ""
+        }
+    },
+    {
+        "model": "core.notice",
+        "pk": 1,
+        "fields": {
+            "title": "Nepal festival",
+            "content": "<p>New eveloped by <span style=\"font-size:48px\"><strong><span style=\"background-color:#2ecc71\">YMC</span></strong></span></p>\r\n\r\n<p><img alt=\"\" src=\"/media/uploads/2025/07/09/6t1xr7_vFDVIA0.jpg\" style=\"height:361px; width:691px\" /></p>\r\n\r\n<p>is tarak mehta ko a sulta chasma</p>",
+            "published_date": "2025-07-09",
+            "image": "notices/keyboard-shortcuts-windows.pdf",
+            "pop_up": true,
+            "popup_start_date": "2025-07-09",
+            "popup_end_date": "2025-08-09"
+        }
+    },
+    {
+        "model": "core.newseventtype",
+        "pk": 1,
+        "fields": {
+            "name": "News"
+        }
+    },
+    {
+        "model": "core.newseventtype",
+        "pk": 2,
+        "fields": {
+            "name": "Events"
+        }
+    },
+    {
+        "model": "core.newseventtype",
+        "pk": 3,
+        "fields": {
+            "name": "Webinar"
+        }
+    },
+    {
+        "model": "core.newseventstatus",
+        "pk": 1,
+        "fields": {
+            "name": "New"
+        }
+    },
+    {
+        "model": "core.newseventstatus",
+        "pk": 2,
+        "fields": {
+            "name": "Coming Soon"
+        }
+    },
+    {
+        "model": "core.newsevent",
+        "pk": 1,
+        "fields": {
+            "title": "Government Launches SME Support Fund in Koshi",
+            "description": "<p>A new initiative to improve financing access for local enterprises. Six curiosity day assurance bed necessary.</p>",
+            "location": "Shantinagar",
+            "image": "news_images/pexels-mizyuk-1674114.jpg",
+            "created_at": "2025-07-09T05:55:38.575Z",
+            "updated_at": "2025-07-09T05:56:02.336Z",
+            "status_tag": null,
+            "type": 1,
+            "is_featured": false,
+            "is_active": true,
+            "publication_start": "2025-07-09T05:55:29Z",
+            "publication_end": "2025-08-09T05:55:31Z"
+        }
+    },
+    {
+        "model": "core.newsevent",
+        "pk": 2,
+        "fields": {
+            "title": "Digital BDSPs Goes Live",
+            "description": "<p>A province-wide platform empowering small businesses through technology. And partially estimating terminated day everything.</p>",
+            "location": "Biratnagar",
+            "image": "news_images/news1_aDBnYpe.jpg",
+            "created_at": "2025-07-09T06:02:08.258Z",
+            "updated_at": "2025-07-09T06:05:42.256Z",
+            "status_tag": null,
+            "type": 1,
+            "is_featured": false,
+            "is_active": true,
+            "publication_start": "2025-07-09T06:02:01Z",
+            "publication_end": "2025-09-09T06:02:03Z"
+        }
+    },
+    {
+        "model": "core.newsevent",
+        "pk": 3,
+        "fields": {
+            "title": "Digital Ecosystem for SMEs and BDSPs Goes Live",
+            "description": "<p>A province-wide platform empowering small businesses through technology. And partially estimating terminated day everything.</p>",
+            "location": "Biratnagar",
+            "image": "news_images/pexels-pixabay-159833.jpg",
+            "created_at": "2025-07-09T06:05:12.130Z",
+            "updated_at": "2025-07-09T06:05:12.130Z",
+            "status_tag": null,
+            "type": 1,
+            "is_featured": false,
+            "is_active": true,
+            "publication_start": "2025-07-09T06:02:01Z",
+            "publication_end": "2025-09-09T06:02:03Z"
+        }
+    },
+    {
+        "model": "core.newsevent",
+        "pk": 4,
+        "fields": {
+            "title": "Gwarko Overpass",
+            "description": "<p>vskdbf abksN ckl<img alt=\"\" src=\"/media/uploads/2025/07/09/6t1xr7.jpg\" style=\"height:361px; width:691px\" /></p>",
+            "location": "Kathmandu",
+            "image": "news_images/news.jpg",
+            "created_at": "2025-07-09T06:07:07.741Z",
+            "updated_at": "2025-07-09T06:07:07.741Z",
+            "status_tag": null,
+            "type": 3,
+            "is_featured": false,
+            "is_active": true,
+            "publication_start": "2025-07-09T06:06:59Z",
+            "publication_end": "2025-09-09T06:07:01Z"
+        }
+    },
+    {
+        "model": "core.newsevent",
+        "pk": 5,
+        "fields": {
+            "title": "New website",
+            "description": "<p>New website is developed by <span style=\"font-size:28px\"><strong><span style=\"background-color:#2ecc71\">YMC</span></strong></span></p>",
+            "location": "Kathmandu",
+            "image": "news_images/news.jpg",
+            "created_at": "2025-07-09T06:14:43.331Z",
+            "updated_at": "2025-07-09T06:15:14.197Z",
+            "status_tag": null,
+            "type": null,
+            "is_featured": true,
+            "is_active": true,
+            "publication_start": "2025-06-09T06:14:37Z",
+            "publication_end": "2025-09-09T06:14:39Z"
+        }
+    },
+    {
+        "model": "core.newsevent",
+        "pk": 6,
+        "fields": {
+            "title": "Nepal Bandha",
+            "description": "<p>Government closes all offices</p>",
+            "location": "Baluwatar",
+            "image": "news_images/news4.jpg",
+            "created_at": "2025-07-09T06:16:55.383Z",
+            "updated_at": "2025-07-09T06:16:55.383Z",
+            "status_tag": null,
+            "type": 2,
+            "is_featured": false,
+            "is_active": true,
+            "publication_start": "2025-07-09T06:16:50Z",
+            "publication_end": "2025-09-09T06:16:51Z"
+        }
+    },
+    {
+        "model": "core.servicetag",
+        "pk": 1,
+        "fields": {
+            "name": "secure",
+            "is_active": true
+        }
+    },
+    {
+        "model": "core.servicetag",
+        "pk": 2,
+        "fields": {
+            "name": "compliance",
+            "is_active": true
+        }
+    },
+    {
+        "model": "core.servicecard",
+        "pk": 1,
+        "fields": {
+            "title": "News & Regulation Updates",
+            "description": "Get real-time updates on legal changes, policies, and compliance notices.",
+            "icon_path": null,
+            "image": "service_images/6t1xr7.jpg",
+            "is_active": true,
+            "order": 0,
+            "tags": []
+        }
+    },
+    {
+        "model": "core.servicecard",
+        "pk": 2,
+        "fields": {
+            "title": "Schemes & Subsidies",
+            "description": "Access government, bank, and NGO/INGO financial assistance programs.",
+            "icon_path": null,
+            "image": "service_images/news1.jpg",
+            "is_active": true,
+            "order": 0,
+            "tags": [
+                1,
+                2
+            ]
+        }
+    },
+    {
+        "model": "core.servicecard",
+        "pk": 3,
+        "fields": {
+            "title": "Compliance Calendar & Reminders",
+            "description": "Never miss a deadline for VAT, PAN, renewal, and more with automated alerts.",
+            "icon_path": null,
+            "image": "service_images/6t1xr7_RPpoYBF.jpg",
+            "is_active": true,
+            "order": 0,
+            "tags": [
+                1
+            ]
+        }
+    },
+    {
+        "model": "core.servicecard",
+        "pk": 4,
+        "fields": {
+            "title": "Articles",
+            "description": "Articles related to the organisation",
+            "icon_path": null,
+            "image": "",
+            "is_active": true,
+            "order": 0,
+            "tags": [
+                2
+            ]
+        }
+    },
+    {
+        "model": "core.smedevelopmentstepsection",
+        "pk": 1,
+        "fields": {
+            "title": "SME Development Steps",
+            "description": "A step-by-step path designed to guide you through your business journey.",
+            "is_active": true,
+            "is_button_active": true,
+            "button_text": "Get Started",
+            "button_class": "blue",
+            "button_url": "http://127.0.0.1:8000/register/type/"
+        }
+    },
+    {
+        "model": "core.smedevelopmentstep",
+        "pk": 1,
+        "fields": {
+            "section": 1,
+            "image": "development_steps_images/start.png",
+            "title": "Starting a Business",
+            "description": "Register your business, get legal approvals, and access initial support to begin your journey.",
+            "order": 0,
+            "is_active": true
+        }
+    },
+    {
+        "model": "core.smedevelopmentstep",
+        "pk": 2,
+        "fields": {
+            "section": 1,
+            "image": "development_steps_images/manage.png",
+            "title": "Managing a Business",
+            "description": "Handle operations, maintain records, file taxes, and stay compliant with government rules.",
+            "order": 0,
+            "is_active": true
+        }
+    },
+    {
+        "model": "core.smedevelopmentstep",
+        "pk": 3,
+        "fields": {
+            "section": 1,
+            "image": "development_steps_images/growth.png",
+            "title": "Growing a Business",
+            "description": "Access finance, training, and support to expand your team, market, and impact.",
+            "order": 0,
+            "is_active": true
+        }
+    },
+    {
+        "model": "core.smedevelopmentstep",
+        "pk": 4,
+        "fields": {
+            "section": 1,
+            "image": "development_steps_images/sustain.png",
+            "title": "Sustaining a Business",
+            "description": "Improve efficiency, stay competitive, and build long-term resilience.",
+            "order": 0,
+            "is_active": true
+        }
+    },
+    {
+        "model": "core.smeguidelinecard",
+        "pk": 1,
+        "fields": {
+            "icon": "guidelines_icons/1.png",
+            "title": "Register and Verify Your Company's SME Status",
+            "description": "A registration process is applied to verify the SME status of all companies that meet the SME criteria.",
+            "order": 0,
+            "is_active": true
+        }
+    },
+    {
+        "model": "core.smeguidelinecard",
+        "pk": 2,
+        "fields": {
+            "icon": "guidelines_icons/2.png",
+            "title": "Are you a SME?",
+            "description": "In response to economic changes since 2005�like inflation, structural shifts, and evolving business trends�Nepal revised its SME definition, officially endorsed at the 14th NSDC meeting in July 2013.",
+            "order": 0,
+            "is_active": true
+        }
+    },
+    {
+        "model": "core.smeguidelinecard",
+        "pk": 3,
+        "fields": {
+            "icon": "guidelines_icons/4_KH4ihLj.png",
+            "title": "Why SME Matters In Koshi Province?",
+            "description": "Over 90%+ of businesses in Nepal are MSMEs, driving economic growth and jobs. With 923K+ establishments (2018), many are based in Koshi Province, including key hubs like Birnagar and Itahari. SMEs contribute 22% to GDP and 70%+ of non-farm employment.",
+            "order": 0,
+            "is_active": true
+        }
+    },
+    {
+        "model": "core.smeguidelinecard",
+        "pk": 4,
+        "fields": {
+            "icon": "guidelines_icons/3_qlCJaku.png",
+            "title": "Webinar & SME Development Programme",
+            "description": "In 2022, 213 entrepreneurship and SME development programs were planned for Koshi Province by various ministries and implementing agencies to strengthen the local business ecosystem.",
+            "order": 0,
+            "is_active": true
+        }
+    },
+    {
+        "model": "core.smeprofile",
+        "pk": 1,
+        "fields": {
+            "user": 7,
+            "business_name": "Test1",
+            "business_size": "medium",
+            "industry_sector": "tech",
+            "business_legal_type": "sole",
+            "business_stage": "ideation",
+            "ownership_type": "ngo",
+            "service_name": "loan",
+            "service_type": "development",
+            "service_description": "description",
+            "service_logo": "service_logos/img_2700_q7WYJFM.jpg",
+            "registration_certificate": "certificates/pp_photo_optimized_1000.jpg",
+            "tax_clearance_certificate": "certificates/keyboard-shortcuts-windows_Du2JbQW.pdf",
+            "created_at": "2025-07-11T03:51:56.365Z",
+            "updated_at": "2025-07-14T03:35:21.279Z"
+        }
+    },
+    {
+        "model": "core.smeprofile",
+        "pk": 4,
+        "fields": {
+            "user": 12,
+            "business_name": "test2",
+            "business_size": "medium",
+            "industry_sector": "tech",
+            "business_legal_type": "sole",
+            "business_stage": "mature",
+            "ownership_type": "private",
+            "service_name": "loan",
+            "service_type": "consulting",
+            "service_description": "fgs",
+            "service_logo": "service_logos/pp_photo_optimized_1000_5NXMStA.jpg",
+            "registration_certificate": "certificates/value_of_project_management.pdf",
+            "tax_clearance_certificate": "",
+            "created_at": "2025-07-11T10:36:30.897Z",
+            "updated_at": "2025-07-11T11:52:43.658Z"
+        }
+    },
+    {
+        "model": "core.smeprofile",
+        "pk": 5,
+        "fields": {
+            "user": 15,
+            "business_name": "Adfdf",
+            "business_size": "small",
+            "industry_sector": "tech",
+            "business_legal_type": "sole",
+            "business_stage": "ideation",
+            "ownership_type": "private",
+            "service_name": "loan",
+            "service_type": "consulting",
+            "service_description": "ad",
+            "service_logo": "service_logos/img_2700.jpg",
+            "registration_certificate": "certificates/keyboard-shortcuts-windows_JYU6fop.pdf",
+            "tax_clearance_certificate": "",
+            "created_at": "2025-07-12T11:57:49.144Z",
+            "updated_at": "2025-07-12T11:57:49.144Z"
+        }
+    },
+    {
+        "model": "core.bdspprofile",
+        "pk": 1,
+        "fields": {
+            "user": 14,
+            "organization_name": "qwer",
+            "organization_size": "small",
+            "industry_sector": "tech",
+            "legal_type": "sole",
+            "stage_of_development": "ideation",
+            "ownership_type": "public",
+            "service_name": "aa",
+            "service_type": "consulting",
+            "service_description": "AAAAAAAAAAAAAAAAAAAAAAAA",
+            "service_logo": "bdsp_service_logos/1752239256487_5GMeP5I.jpeg",
+            "business_registration_certificate": "bdsp_certificates/keyboard-shortcuts-windows.pdf",
+            "tax_clearance_certificate": "",
+            "created_at": "2025-07-14T05:50:28.705Z",
+            "updated_at": "2025-07-14T09:29:08.134Z"
+        }
+    },
+    {
+        "model": "core.bdspprofile",
+        "pk": 2,
+        "fields": {
+            "user": 16,
+            "organization_name": "adasf",
+            "organization_size": "small",
+            "industry_sector": "finance",
+            "legal_type": "sole",
+            "stage_of_development": "early",
+            "ownership_type": "public",
+            "service_name": "dfa",
+            "service_type": "marketing",
+            "service_description": "Not providedafd.",
+            "service_logo": "bdsp_service_logos/6t1xr7.jpg",
+            "business_registration_certificate": "bdsp_certificates/Job_Fair_Attending_Companies.pdf",
+            "tax_clearance_certificate": "",
+            "created_at": "2025-07-14T07:12:22.878Z",
+            "updated_at": "2025-07-14T07:12:48.618Z"
+        }
+    },
+    {
+        "model": "core.bdspprofile",
+        "pk": 3,
+        "fields": {
+            "user": 17,
+            "organization_name": "ddg",
+            "organization_size": "medium",
+            "industry_sector": "healthcare",
+            "legal_type": "partnership",
+            "stage_of_development": "early",
+            "ownership_type": "public",
+            "service_name": "fgf",
+            "service_type": "marketing",
+            "service_description": "Not provided.",
+            "service_logo": "bdsp_service_logos/1752239256487_bVPhO5M.jpeg",
+            "business_registration_certificate": "bdsp_certificates/1752239256487.jpeg",
+            "tax_clearance_certificate": "bdsp_certificates/1752239256487_JMIR5du.jpeg",
+            "created_at": "2025-07-14T09:08:44.063Z",
+            "updated_at": "2025-07-14T09:12:50.486Z"
+        }
+    }
+]

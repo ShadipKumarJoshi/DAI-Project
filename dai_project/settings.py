@@ -92,10 +92,18 @@ WSGI_APPLICATION = 'dai_project.wsgi.application'
 # https://docs.djangoproject.com/en/5.2/ref/settings/#databases
 
 DATABASES = {
+    # 'default': {
+    #     'ENGINE': 'django.db.backends.sqlite3',
+    #     'NAME': BASE_DIR / 'db.sqlite3',
+    # }
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
+                'ENGINE': 'django.db.backends.postgresql',
+                'NAME': 'dai_project_db',
+                'USER': 'admin',
+                'PASSWORD': 'admin',
+                'HOST': 'localhost',  # Or your PostgreSQL host/IP
+                'PORT': '5432',       # Or your PostgreSQL port
+            }
 }
 
 
