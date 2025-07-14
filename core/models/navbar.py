@@ -1,6 +1,7 @@
 from django.db import models
 from core import constants
 from django.core.exceptions import ValidationError
+from core.models.user import User 
 
 class NavbarItem(models.Model):
     title = models.CharField(max_length=100, null=False, blank=False)
@@ -17,6 +18,13 @@ class NavbarItem(models.Model):
     default='all',
     null=False,
     blank=False,
+)
+    required_role = models.CharField(
+    max_length=10,
+    choices=User.ROLE_CHOICES,
+    null=True,
+    blank=True,
+    help_text="If set, only users with this role can see the item."
 )
     position = models.CharField(
     max_length=10,

@@ -34,8 +34,11 @@
       style="display: none;"
     >
       {% for child in item.children.all %}
-        {% include 'core/components/nav_item.html' with item=child level=lvl|add:'1' %}
-      {% endfor %}
+  {% if not child.required_role or child.required_role == request.user.role %}
+    {% include 'core/components/nav_item.html' with item=child level=lvl|add:'1' %}
+  {% endif %}
+{% endfor %}
+
     </ul>
 
   {% else %}

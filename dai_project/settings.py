@@ -61,6 +61,8 @@ MIDDLEWARE = [
     'core.middleware.RequestLoggingMiddleware',
     'core.middleware.RedirectAuthenticatedMiddleware',
     'core.middleware.SMEOnlyMiddleware',
+    'core.middleware.BDSPOnlyMiddleware',
+    
 ]
 
 ROOT_URLCONF = 'dai_project.urls'
