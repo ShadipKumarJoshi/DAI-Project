@@ -24,8 +24,10 @@ def bdsp_profile_form(request):
     user = request.user
     try:
         profile = user.bdsp_profile
+        existing_service_logo = profile.service_logo.url if profile.service_logo else None
     except BDSPProfile.DoesNotExist:
         profile = None
+        existing_service_logo = None
 
     BDSPProfileForm = modelform_factory(
         BDSPProfile,
@@ -56,4 +58,5 @@ def bdsp_profile_form(request):
         "form_step1": fields[0:6],
         "form_step2": fields[6:10],
         "form_step3": fields[10:],
+        "existing_service_logo": existing_service_logo, 
     })

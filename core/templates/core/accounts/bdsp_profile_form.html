@@ -8,26 +8,26 @@
 <section class="max-w-2xl mx-auto pt-16 pb-32 px-6">
   <div class="bg-white p-6 rounded-lg shadow-md border-2 border-transparent hover:shadow-lg relative">
     <h1 class="text-2xl font-semibold text-gray-900 mb-6">Complete Your BDSP Profile</h1>
+    <p class="text-sm text-gray-600 mb-6">
+      Complete the details below to create your account. You’ll receive an OTP to verify your email before accessing the platform.
+    </p>
 
     <!-- Progress Indicator -->
     <div class="flex items-center justify-between mb-8">
-{% for i in "123" %}
-  <div id="step-indicator-{{ i }}" class="flex items-center gap-3 {% if forloop.first %}text-blue-600{% else %}text-gray-400{% endif %}">
-    <div class="w-6 h-6 rounded-full text-sm flex items-center justify-center font-semibold
-      {% if forloop.first %}
-        bg-blue-600 text-white
-      {% else %}
-        border border-gray-300
-      {% endif %}">
-      {{ i }}
-    </div>
-    <span class="text-sm font-medium">Step {{ i }}</span>
-  </div>
-  {% if not forloop.last %}
-    <div class="w-6 h-0.5 bg-gray-300"></div>
-  {% endif %}
-{% endfor %}
-
+      <div id="step-indicator-1" class="flex items-center gap-3">
+        <div class="w-6 h-6 rounded-full text-sm flex items-center justify-center font-semibold">1</div>
+        <span class="text-sm font-medium">Business Overview</span>
+      </div>
+      <div id="connector-1" class="w-6 h-0.5"></div>
+      <div id="step-indicator-2" class="flex items-center gap-3">
+        <div class="w-6 h-6 rounded-full text-sm flex items-center justify-center">2</div>
+        <span class="text-sm">Services Offered</span>
+      </div>
+      <div id="connector-2" class="w-6 h-0.5"></div>
+      <div id="step-indicator-3" class="flex items-center gap-3">
+        <div class="w-6 h-6 rounded-full text-sm flex items-center justify-center">3</div>
+        <span class="text-sm">Certificates & Documents</span>
+      </div>
     </div>
 
     <form method="POST" enctype="multipart/form-data" id="bdsp-profile-form">
@@ -52,6 +52,20 @@
           <div class="mb-4">
             <label class="block text-sm font-medium text-gray-700 mb-1">{{ field.label }}</label>
             {{ field|add_class:"w-full border rounded-md px-4 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500" }}
+
+            {% if field.name == "service_logo" %}
+              {% if existing_service_logo %}
+                <div id="existing-logo-preview" class="mt-2">
+                  <a href="{{ existing_service_logo }}" target="_blank" class="text-blue-600 underline text-sm">View current logo</a>
+                  <br>
+                  <img src="{{ existing_service_logo }}" alt="Service Logo" class="max-h-24 mt-1 border rounded" />
+                </div>
+              {% endif %}
+              <div id="new-logo-preview-container" class="hidden mt-2">
+                <img id="new-logo-preview" src="#" alt="New Logo Preview" class="max-h-24 mt-1 border rounded" />
+              </div>
+            {% endif %}
+
             {% if field.errors %}
               <p class="text-red-500 text-sm">{{ field.errors.0 }}</p>
             {% endif %}
@@ -75,55 +89,117 @@
       <!-- Navigation Buttons -->
       <div class="flex justify-between mt-8">
         <button type="button" id="prev-btn" class="text-gray-600 underline" disabled>← Back</button>
-        <button type="button" id="next-btn" class="bg-blue-600 hover:bg-blue-700 text-white font-semibold px-6 py-3 rounded-md text-sm">
-          Next →
-        </button>
-        <button type="submit" id="submit-btn" class="bg-green-600 hover:bg-green-700 text-white font-semibold px-6 py-3 rounded-md text-sm hidden">
-          Submit
-        </button>
+        <button type="button" id="next-btn" class="bg-blue-600 hover:bg-blue-700 text-white font-semibold px-6 py-3 rounded-md text-sm">Next →</button>
+        <button type="submit" id="submit-btn" class="bg-green-600 hover:bg-green-700 text-white font-semibold px-6 py-3 rounded-md text-sm hidden">Submit</button>
       </div>
     </form>
   </div>
 </section>
 
 <script>
-  document.addEventListener('DOMContentLoaded', function () {
-    const steps = Array.from(document.querySelectorAll('.step'));
-    const nextBtn = document.getElementById('next-btn');
-    const prevBtn = document.getElementById('prev-btn');
-    const submitBtn = document.getElementById('submit-btn');
-    const indicators = [
-      document.getElementById('step-indicator-1'),
-      document.getElementById('step-indicator-2'),
-      document.getElementById('step-indicator-3')
-    ];
-    let currentStep = 0;
+document.addEventListener('DOMContentLoaded', function () {
+  const steps = Array.from(document.querySelectorAll('.step'));
+  const nextBtn = document.getElementById('next-btn');
+  const prevBtn = document.getElementById('prev-btn');
+  const submitBtn = document.getElementById('submit-btn');
 
-    function showStep(index) {
-      steps.forEach((step, i) => {
-        step.classList.toggle('hidden', i !== index);
-        indicators[i].classList.toggle('text-blue-600', i === index);
-        indicators[i].classList.toggle('text-gray-400', i !== index);
-        indicators[i].querySelector('div').classList.toggle('bg-blue-600', i === index);
-        indicators[i].querySelector('div').classList.toggle('border-gray-300', i !== index);
-      });
+  // Progress indicators and connectors
+  const indicators = [
+    document.getElementById('step-indicator-1'),
+    document.getElementById('step-indicator-2'),
+    document.getElementById('step-indicator-3'),
+  ];
 
-      prevBtn.disabled = index === 0;
-      nextBtn.classList.toggle('hidden', index === steps.length - 1);
-      submitBtn.classList.toggle('hidden', index !== steps.length - 1);
-    }
+  const circles = indicators.map(indicator => indicator.querySelector('div'));
+  const labels = indicators.map(indicator => indicator.querySelector('span'));
 
-    nextBtn.addEventListener('click', () => {
+  const connectors = [
+    document.getElementById('connector-1'),
+    document.getElementById('connector-2'),
+  ];
+
+  let currentStep = 0;
+
+  function updateProgressIndicator(index) {
+    indicators.forEach((indicator, i) => {
+      if (i <= index) {
+        indicator.classList.add('text-blue-600');
+        indicator.classList.remove('text-gray-400');
+
+        circles[i].classList.add('bg-blue-600', 'text-white', 'font-semibold');
+        circles[i].classList.remove('border', 'border-gray-300');
+
+        labels[i].classList.add('font-semibold');
+      } else {
+        indicator.classList.remove('text-blue-600');
+        indicator.classList.add('text-gray-400');
+
+        circles[i].classList.remove('bg-blue-600', 'text-white', 'font-semibold');
+        circles[i].classList.add('border', 'border-gray-300');
+
+        labels[i].classList.remove('font-semibold');
+      }
+    });
+
+    connectors.forEach((connector, i) => {
+      if (i < index) {
+        connector.classList.remove('bg-gray-300');
+        connector.classList.add('bg-blue-600');
+      } else {
+        connector.classList.remove('bg-blue-600');
+        connector.classList.add('bg-gray-300');
+      }
+    });
+  }
+
+  function showStep(index) {
+    steps.forEach((step, i) => step.classList.toggle('hidden', i !== index));
+    updateProgressIndicator(index);
+
+    prevBtn.disabled = index === 0;
+    nextBtn.classList.toggle('hidden', index === steps.length - 1);
+    submitBtn.classList.toggle('hidden', index !== steps.length - 1);
+  }
+
+  nextBtn.addEventListener('click', () => {
+    if (currentStep < steps.length - 1) {
       currentStep++;
       showStep(currentStep);
-    });
+    }
+  });
 
-    prevBtn.addEventListener('click', () => {
+  prevBtn.addEventListener('click', () => {
+    if (currentStep > 0) {
       currentStep--;
       showStep(currentStep);
-    });
-
-    showStep(currentStep);
+    }
   });
+
+  showStep(currentStep);
+
+  // Image preview logic for service_logo
+  const fileInput = document.querySelector('input[name="service_logo"]');
+  const newPreviewContainer = document.getElementById('new-logo-preview-container');
+  const newPreviewImg = document.getElementById('new-logo-preview');
+  const existingPreview = document.getElementById('existing-logo-preview');
+
+  if (fileInput) {
+    fileInput.addEventListener('change', function(event) {
+      const file = event.target.files[0];
+      if (file) {
+        const reader = new FileReader();
+        reader.onload = function(e) {
+          newPreviewImg.src = e.target.result;
+          newPreviewContainer.classList.remove('hidden');
+          if (existingPreview) existingPreview.style.display = 'none';
+        };
+        reader.readAsDataURL(file);
+      } else {
+        newPreviewContainer.classList.add('hidden');
+        if (existingPreview) existingPreview.style.display = 'block';
+      }
+    });
+  }
+});
 </script>
 {% endblock %}
