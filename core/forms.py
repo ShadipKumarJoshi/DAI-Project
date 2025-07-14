@@ -8,6 +8,7 @@ import re  # for pattern matching
 from ckeditor_uploader.widgets import CKEditorUploadingWidget
 
 
+
 from django.contrib.auth import get_user_model
 
 User = get_user_model()
@@ -191,6 +192,61 @@ class SMEDocumentUploadWizardForm(forms.Form):
                     "Only PDF and image files are allowed for Tax Clearance Certificate."
                 )
         return file
+
+
+# ------------------------------
+# BDSP Profile Wizard Forms
+# ------------------------------
+
+
+
+class BDSPProfileForm(forms.ModelForm):
+    class Meta:
+        model = models.BDSPProfile
+        fields = [
+            'organization_name',
+            'organization_size',
+            'industry_sector',
+            'legal_type',
+            'stage_of_development',
+            'ownership_type',
+            'service_name',
+            'service_type',
+            'service_description',
+            'service_logo',
+            'business_registration_certificate',
+            'tax_clearance_certificate',
+        ]
+
+    ALLOWED_LOGO_CONTENT_TYPES = [
+        'image/jpeg', 'image/jpg', 'image/gif', 'image/svg+xml', 'image/png',
+    ]
+
+    ALLOWED_CERT_CONTENT_TYPES = [
+        'application/pdf', 'image/jpeg', 'image/png', 'image/jpg',
+    ]
+
+    def clean_service_logo(self):
+        file = self.cleaned_data.get('service_logo')
+        if file:
+            if file.content_type not in self.ALLOWED_LOGO_CONTENT_TYPES:
+                raise forms.ValidationError("Only image files (jpeg, jpg, gif, svg, png) are allowed for the logo.")
+        return file
+
+    def clean_business_registration_certificate(self):
+        file = self.cleaned_data.get('business_registration_certificate')
+        if file:
+            if file.content_type not in self.ALLOWED_CERT_CONTENT_TYPES:
+                raise forms.ValidationError("Only PDF and image files are allowed for Registration Certificate.")
+        return file
+
+    def clean_tax_clearance_certificate(self):
+        file = self.cleaned_data.get('tax_clearance_certificate')
+        if file:
+            if file.content_type not in self.ALLOWED_CERT_CONTENT_TYPES:
+                raise forms.ValidationError("Only PDF and image files are allowed for Tax Clearance Certificate.")
+        return file
+
 
 # ------------------------------
 # CMS Forms

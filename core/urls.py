@@ -22,6 +22,8 @@ urlpatterns = [
     path('sme/profile/form', SMERegistrationWizard.as_view(),
          name='sme_profile_wizard'),
     path('sme/profile/', views.sme_profile_view, name='sme_profile_view'),
+    path('bdsp/profile/', views.bdsp_profile_view, name='bdsp_profile_view'),
+    path('bdsp/profile/form/', views.bdsp_profile_form, name='bdsp_profile_form'),
 
 
 

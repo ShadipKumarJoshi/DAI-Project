@@ -5,7 +5,7 @@ from django import forms
 from .forms import NavbarItemForm, CMSPageForm
 from django.contrib.auth.admin import UserAdmin as BaseUserAdmin
 from .models.user import User
-from .models import SMEProfile
+from .models import SMEProfile, BDSPProfile
 
 class UserAdmin(BaseUserAdmin):
     fieldsets = BaseUserAdmin.fieldsets + (
@@ -53,7 +53,38 @@ class SMEProfileAdmin(admin.ModelAdmin):
         }),
         ('Timestamps', {'fields': ('created_at', 'updated_at')}),
     )
+@admin.register(BDSPProfile)
+class BDSPProfileAdmin(admin.ModelAdmin):
+    list_display = [
+        'organization_name', 'user', 'organization_size',
+        'industry_sector', 'stage_of_development', 'created_at'
+    ]
+    search_fields = ['organization_name', 'user__username']
+    list_filter = ['organization_size', 'industry_sector', 'stage_of_development']
+    readonly_fields = ['created_at', 'updated_at']
 
+    fieldsets = (
+        ('User', {'fields': ('user',)}),
+        ('Organization Info', {
+            'fields': (
+                'organization_name', 'organization_size', 'industry_sector',
+                'legal_type', 'stage_of_development', 'ownership_type'
+            )
+        }),
+        ('Service Info', {
+            'fields': (
+                'service_name', 'service_type',
+                'service_description', 'service_logo'
+            )
+        }),
+        ('Documents', {
+            'fields': (
+                'business_registration_certificate', 'tax_clearance_certificate'
+            )
+        }),
+        ('Timestamps', {'fields': ('created_at', 'updated_at')}),
+    )
+    
 @admin.register(models.NavbarItem)
 class NavbarItemAdmin(admin.ModelAdmin):
     form = NavbarItemForm  
