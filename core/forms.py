@@ -24,32 +24,26 @@ class BaseRegistrationForm(forms.ModelForm):
         fields = ['email', 'password', 'confirm_password',
                   'full_name', 'mobile', 'pan_vat', 'business_name']
 
-    def clean_full_name(self):
-        full_name = self.cleaned_data.get('full_name')
-
-        # Match words made of letters with optional dot at the end, separated by a single space
-        pattern = r'^([A-Za-z]+\.?)( [A-Za-z]+\.?)*$'
-
-        if not re.fullmatch(pattern, full_name):
-            raise ValidationError(
-                "Full name must contain only words with alphabets.")
-
-        return full_name
-
-    def clean_mobile(self):
-        mobile = self.cleaned_data.get('mobile')
-        if not re.fullmatch(r'9\d{9}', mobile):
-            raise ValidationError(
-                "Mobile number must start with 9 and be exactly 10 digits long.")
-        return mobile
 
     def clean(self):
         cleaned_data = super().clean()
+        
+        full_name = cleaned_data.get('full_name')
+        mobile = cleaned_data.get('mobile')
         password = cleaned_data.get('password')
         confirm = cleaned_data.get('confirm_password')
+        
+        if full_name and not re.fullmatch(r'^([A-Za-z]+\.?)( [A-Za-z]+\.?)*$', full_name):
+            self.add_error('full_name', "Full name must contain only words with alphabets.")
+
+        if mobile and not re.fullmatch(r'9\d{9}', mobile):
+            self.add_error('mobile', "Mobile number must start with 9 and be exactly 10 digits long.")
+
         if password and confirm and password != confirm:
-            raise forms.ValidationError("Passwords do not match")
+            self.add_error('confirm_password', "Passwords do not match")
+
         return cleaned_data
+
 
 
 class SMERegistrationForm(BaseRegistrationForm):
@@ -149,20 +143,29 @@ class SMEServicesOfferedWizardForm(forms.Form):
             'image/png',
     ]
     
-    def clean_service_logo(self):
-        file = self.cleaned_data.get('service_logo')
-        if file:
-            content_type = file.content_type
+
+    def clean(self):
+        cleaned_data = super().clean()
+
+        service_name = cleaned_data.get('service_name')
+        service_logo = cleaned_data.get('service_logo')
+
+        # Validate service_name: only letters and spaces
+        if service_name and not re.fullmatch(r'[A-Za-z ]+', service_name):
+            self.add_error('service_name', "Service name must contain only letters and spaces.")
+
+        # Validate service_logo: must be an allowed image type
+        if service_logo:
+            content_type = service_logo.content_type
             if content_type not in self.ALLOWED_LOGO_CONTENT_TYPES:
-                raise forms.ValidationError(
-                    "Only image files (jpeg, jpg, gif, svg, png) are allowed for the logo."
-                )
-        return file
+                self.add_error('service_logo', "Only image files (jpeg, jpg, gif, svg, png) are allowed for the logo.")
+
+        return cleaned_data
     
 class SMEDocumentUploadWizardForm(forms.Form):
     registration_certificate = forms.FileField(
         label="Registration Certificate",
-        required=False)
+        required=True)
     tax_clearance_certificate = forms.FileField(
         label="Tax Clearance Certificate", required=False)
     
@@ -173,25 +176,27 @@ class SMEDocumentUploadWizardForm(forms.Form):
         'image/jpg',
 
     ]
-    def clean_registration_certificate(self):
-        file = self.cleaned_data.get('registration_certificate')
-        if file:
-            content_type = file.content_type
-            if content_type not in self.ALLOWED_CONTENT_TYPES:
-                raise forms.ValidationError(
-                    "Only PDF and image files are allowed for Registration Certificate."
-                )
-        return file
+    def clean(self):
+        cleaned_data = super().clean()
 
-    def clean_tax_clearance_certificate(self):
-        file = self.cleaned_data.get('tax_clearance_certificate')
-        if file:
-            content_type = file.content_type
-            if content_type not in self.ALLOWED_CONTENT_TYPES:
-                raise forms.ValidationError(
-                    "Only PDF and image files are allowed for Tax Clearance Certificate."
-                )
-        return file
+        registration_certificate = cleaned_data.get('registration_certificate')
+        tax_clearance_certificate = cleaned_data.get('tax_clearance_certificate')
+
+        allowed_types = self.ALLOWED_CONTENT_TYPES
+
+        # Validate registration_certificate
+        if registration_certificate:
+            content_type = registration_certificate.content_type
+            if content_type not in allowed_types:
+                self.add_error('registration_certificate', "Only PDF and image files are allowed for Registration Certificate.")
+
+        # Validate tax_clearance_certificate
+        if tax_clearance_certificate:
+            content_type = tax_clearance_certificate.content_type
+            if content_type not in allowed_types:
+                self.add_error('tax_clearance_certificate', "Only PDF and image files are allowed for Tax Clearance Certificate.")
+
+        return cleaned_data
 
 
 # ------------------------------
@@ -226,26 +231,35 @@ class BDSPProfileForm(forms.ModelForm):
         'application/pdf', 'image/jpeg', 'image/png', 'image/jpg',
     ]
 
-    def clean_service_logo(self):
-        file = self.cleaned_data.get('service_logo')
-        if file:
-            if file.content_type not in self.ALLOWED_LOGO_CONTENT_TYPES:
-                raise forms.ValidationError("Only image files (jpeg, jpg, gif, svg, png) are allowed for the logo.")
-        return file
+    def clean(self):
+        cleaned_data = super().clean()
 
-    def clean_business_registration_certificate(self):
-        file = self.cleaned_data.get('business_registration_certificate')
-        if file:
-            if file.content_type not in self.ALLOWED_CERT_CONTENT_TYPES:
-                raise forms.ValidationError("Only PDF and image files are allowed for Registration Certificate.")
-        return file
+        service_name = cleaned_data.get('service_name')
+        service_logo = cleaned_data.get('service_logo')
+        business_registration_certificate = cleaned_data.get('business_registration_certificate')
+        tax_clearance_certificate = cleaned_data.get('tax_clearance_certificate')
 
-    def clean_tax_clearance_certificate(self):
-        file = self.cleaned_data.get('tax_clearance_certificate')
-        if file:
-            if file.content_type not in self.ALLOWED_CERT_CONTENT_TYPES:
-                raise forms.ValidationError("Only PDF and image files are allowed for Tax Clearance Certificate.")
-        return file
+        # Validate service_name: only letters and spaces
+        if service_name and not re.fullmatch(r'^[A-Za-z]+(?: [A-Za-z]+)*$', service_name.strip()):
+            self.add_error('service_name', "Service name must contain only letters and spaces (no numbers or special characters).")
+
+        #  Validate service_logo
+        if service_logo:
+            if service_logo.content_type not in self.ALLOWED_LOGO_CONTENT_TYPES:
+                self.add_error('service_logo', "Only image files (jpeg, jpg, gif, svg, png) are allowed for the logo.")
+
+        #  Validate business_registration_certificate
+        if business_registration_certificate:
+            if business_registration_certificate.content_type not in self.ALLOWED_CERT_CONTENT_TYPES:
+                self.add_error('business_registration_certificate', "Only PDF and image files are allowed for Registration Certificate.")
+
+        #  Validate tax_clearance_certificate
+        if tax_clearance_certificate:
+            if tax_clearance_certificate.content_type not in self.ALLOWED_CERT_CONTENT_TYPES:
+                self.add_error('tax_clearance_certificate', "Only PDF and image files are allowed for Tax Clearance Certificate.")
+
+        return cleaned_data
+
 
 
 # ------------------------------
